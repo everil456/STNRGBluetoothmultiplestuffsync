@@ -1,0 +1,835 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:16
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\src\hw_config.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\src\hw_config.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\hw_config.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj\hw_config.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Project\BLE_Chat_Client\src\hw_config.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : hw_config.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 04-Oct-2013
+      6          * Description        : Hardware Configuration & Setup
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17           #include "stm32l1xx_it.h"
+     18           
+     19          #include <stdio.h>
+     20          #include "usb_lib.h"
+     21          #include "usb_prop.h"
+     22          #include "usb_desc.h"
+     23          #include "hw_config.h"
+     24          #include "platform_config.h"
+     25          #include "usb_pwr.h"
+     26          #include "gp_timer.h"
+     27          #include "hal.h"
+     28          #include "hci.h"
+     29          #include "hal_lis3dh.h"
+     30          #include "hal_stlm75.h"
+     31          #include "hal_lps25h.h"
+     32          #include <string.h>
+     33          
+     34          #include "SDK_EVAL_Config.h"
+     35          
+     36          #ifdef __GNUC__
+     37          # define _LLIO_STDIN ((int) stdin)
+     38          # define _LLIO_STDOUT ((int) stdout)
+     39          # define _LLIO_STDERR ((int) stderr)
+     40          # define _LLIO_ERROR  (-1)
+     41          #else
+     42          # ifdef __ICCARM__
+     43          # include <yfuns.h>
+     44          # endif
+     45          #endif
+     46          
+     47          /* Private typedef -----------------------------------------------------------*/
+     48          /* Private define ------------------------------------------------------------*/
+     49          /* Private macro -------------------------------------------------------------*/
+     50          /* Private variables ---------------------------------------------------------*/
+     51          #ifdef ENABLE_USB
+     52          uint8_t  USART_Rx_Buffer [USART_RX_DATA_SIZE]; 
+     53          #endif
+     54          uint32_t USART_Rx_ptr_in = 0;
+     55          volatile uint32_t USART_Rx_ptr_out = 0;
+     56          uint32_t USART_Rx_length  = 0;
+     57          
+     58          uint8_t  USB_Tx_State = 0;
+     59          
+     60          
+     61          static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len);
+     62          /* Extern variables ----------------------------------------------------------*/
+     63          /* Private function prototypes -----------------------------------------------*/
+     64          /* Private functions ---------------------------------------------------------*/
+     65          
+     66          /*******************************************************************************
+     67          * Variable Name  : timer_expired
+     68          * Description    : This variable is set to TRUE when the timer is expired.
+     69          *                  It is not automatically set to FALSE.
+     70          *******************************************************************************/
+     71          uint8_t user_timer_expired = FALSE;
+     72          
+     73          
+     74          /**
+     75            * @brief  Configures peripherals' clock.
+     76            * @param  None
+     77            * @retval None
+     78            */
+     79          void RCC_Configuration(void)
+     80          {
+     81            
+     82            /* Enable the GPIOs Clock */
+     83            RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC| RCC_AHBPeriph_GPIOD| RCC_AHBPeriph_GPIOE| RCC_AHBPeriph_GPIOH, ENABLE);     
+     84              
+     85            /* Enable SYSCFG */
+     86            RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG , ENABLE);
+     87            
+     88            /* Set low power configuration */
+     89            RCC->AHBLPENR = RCC_AHBENR_GPIOAEN|RCC_AHBENR_GPIOBEN;   
+     90            RCC->APB1LPENR = RCC_APB1ENR_PWREN|RCC_APB1ENR_TIM2EN;
+     91            RCC->APB2LPENR = 0;  
+     92          }
+     93          
+     94          /*******************************************************************************
+     95          * Function Name  : Set_System
+     96          * Description    : Configures all GPIOs that as to be set ASAP.
+     97          *                  Called at startup.
+     98          * Input          : None.
+     99          * Return         : None.
+    100          *******************************************************************************/
+    101          void Set_System(void)
+    102          {
+    103          
+    104          }
+    105          
+    106          /**
+    107            * @brief  To initialize the I/O ports
+    108            * @caller main
+    109            * @param None
+    110            * @retval None
+    111            */
+    112          void  Init_GPIOs(void)
+    113          {
+    114            GPIO_InitTypeDef GPIO_InitStructure;
+    115          
+    116            /* Configure all GPIO port pins in Analog Input mode (floating input trigger OFF) */
+    117            GPIO_InitStructure.GPIO_Pin = GPIO_Pin_All;
+    118            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
+    119            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    120          
+    121            GPIOD->MODER   = 0xFFFFFFFF;
+    122            GPIOE->MODER   = 0xFFFFFFFF;
+    123            GPIOH->MODER   = 0xFFFFFFFF;
+    124          
+    125          #ifndef ENABLE_USB  
+    126             /* Configure all GPIO port pins in Analog Input mode (floating input trigger OFF) except debug pins. */
+    127            GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4| GPIO_Pin_5 | GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8 \
+    128                                           | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |  GPIO_Pin_12;
+    129          #else
+    130            GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4| GPIO_Pin_5 | GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8 \
+    131                                           | GPIO_Pin_9 | GPIO_Pin_10;
+    132          #endif
+    133            
+    134            GPIO_Init(GPIOA, &GPIO_InitStructure);
+    135            
+    136            GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_5 | GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8 \
+    137                                           | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |  GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15 ;
+    138            
+    139            GPIO_Init(GPIOB, &GPIO_InitStructure);
+    140            
+    141            
+    142            GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4| GPIO_Pin_5 | GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8 \
+    143                                           | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |  GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15 ;
+    144             
+    145            GPIO_Init(GPIOC, &GPIO_InitStructure);
+    146            
+    147            GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4| GPIO_Pin_5 | GPIO_Pin_6| GPIO_Pin_7| GPIO_Pin_8 \
+    148                                           | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |  GPIO_Pin_12 | GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15 ;   
+    149            GPIO_Init(GPIOD, &GPIO_InitStructure);
+    150            
+    151          }
+    152          
+    153          
+    154          /*******************************************************************************
+    155          * Function Name  : Set_USBClock
+    156          * Description    : Configures USB Clock input (48MHz)
+    157          * Input          : None.
+    158          * Return         : None.
+    159          *******************************************************************************/
+    160          void Set_USBClock(void)
+    161          {
+    162            /* Enable USB clock */
+    163            RCC_APB1PeriphClockCmd(RCC_APB1Periph_USB, ENABLE);
+    164          }
+    165          
+    166          /*******************************************************************************
+    167          * Function Name  : USB_Interrupts_Config
+    168          * Description    : Configures the USB interrupts
+    169          * Input          : None.
+    170          * Return         : None.
+    171          *******************************************************************************/
+    172          void USB_Interrupts_Config(void)
+    173          {
+    174            NVIC_InitTypeDef NVIC_InitStructure;
+    175          
+    176            NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+    177          
+    178            NVIC_InitStructure.NVIC_IRQChannel = USB_LP_IRQn;
+    179            NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    180            NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    181            NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    182            NVIC_Init(&NVIC_InitStructure);  
+    183          }
+    184          
+    185          void LIS3DH_Interrupts_Config(void)
+    186          {
+    187            GPIO_InitTypeDef GPIO_InitStructure;
+    188            EXTI_InitTypeDef  EXTI_InitStructure;
+    189            NVIC_InitTypeDef  NVIC_InitStructure;
+    190            
+    191            /* Configure external interrupt pin. */
+    192            GPIO_InitStructure.GPIO_Pin =  LIS_A_INT2_PIN;
+    193            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+    194            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    195            GPIO_Init(LIS_A_INT2_GPIO_PORT, &GPIO_InitStructure);
+    196            
+    197            SYSCFG_EXTILineConfig(LIS_A_INT2_EXTI_PORT_SOURCE, LIS_A_INT2_EXTI_PIN_SOURCE);
+    198           
+    199            EXTI_InitStructure.EXTI_Line = LIS_A_INT2_EXTI_LINE;
+    200            EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    201            EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+    202            EXTI_InitStructure.EXTI_LineCmd = ENABLE;    
+    203            EXTI_Init(&EXTI_InitStructure);
+    204            
+    205            EXTI_ClearFlag(LIS_A_INT2_EXTI_LINE);
+    206            
+    207            NVIC_InitStructure.NVIC_IRQChannel = LIS_A_INT2_EXTI_IRQn;
+    208            NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+    209            NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    210            NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    211            NVIC_Init(&NVIC_InitStructure);
+    212          }
+    213          
+    214          /**
+    215          * @brief  Initializes the I2C peripheral used to drive the STLM75
+    216          * @param  None
+    217          * @retval None
+    218          */
+    219          
+    220          void LPS25H_I2C_Init(void)
+    221          {
+    222            I2C_InitTypeDef  I2C_InitStructure;
+    223            GPIO_InitTypeDef GPIO_InitStructure;
+    224          
+    225            /* Enable I2C and GPIO clocks */
+    226            RCC_APB1PeriphClockCmd(LPS25H_RCC_Periph_I2C, ENABLE); 
+    227            RCC_APB2PeriphClockCmd(LPS25H_RCC_Port_I2C, ENABLE);
+    228           
+    229            /* GPIO AF configuration */
+    230            GPIO_PinAFConfig(LPS25H_I2C_Port, LPS25H_I2C_SCL_Pin_Source, LPS25H_I2C_SCL_AF);
+    231            GPIO_PinAFConfig(LPS25H_I2C_Port, LPS25H_I2C_SDA_Pin_Source, LPS25H_I2C_SCL_AF);
+    232            
+    233            /* Configure I2C pins: SCL and SDA */
+    234            GPIO_InitStructure.GPIO_Pin =  LPS25H_I2C_SCL_Pin | LPS25H_I2C_SDA_Pin;
+    235            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+    236            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    237            GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+    238            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    239            GPIO_Init(LPS25H_I2C_Port, &GPIO_InitStructure);
+    240            
+    241            /* I2C configuration */
+    242            I2C_DeInit(LPS25H_I2C);
+    243            I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+    244            I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+    245            I2C_InitStructure.I2C_OwnAddress1 = 0x00;
+    246            I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;
+    247            I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+    248            I2C_InitStructure.I2C_ClockSpeed = LPS25H_I2C_Speed;
+    249            
+    250              /* Apply I2C configuration after enabling it */
+    251            I2C_Init(LPS25H_I2C, &I2C_InitStructure);  
+    252            
+    253            /* I2C Peripheral Enable */
+    254            I2C_Cmd(LPS25H_I2C, ENABLE);
+    255            
+    256          }
+    257          
+    258          void STLM75_I2C_DeInit_GPIO(void)
+    259          {
+    260            GPIO_InitTypeDef GPIO_InitStructure;
+    261          
+    262            GPIO_InitStructure.GPIO_Pin =  STLM75_I2C_SCL_Pin | STLM75_I2C_SDA_Pin;
+    263            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AN;
+    264            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    265            GPIO_Init(STLM75_I2C_Port, &GPIO_InitStructure);  
+    266          }
+    267          
+    268          void STLM75_I2C_Init_GPIO(void)
+    269          {
+    270            GPIO_InitTypeDef GPIO_InitStructure;
+    271            
+    272            /* Configure I2C pins: SCL and SDA */
+    273            GPIO_InitStructure.GPIO_Pin =  STLM75_I2C_SCL_Pin | STLM75_I2C_SDA_Pin;
+    274            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+    275            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    276            GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+    277            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+    278            GPIO_Init(STLM75_I2C_Port, &GPIO_InitStructure); 
+    279          }
+    280          
+    281          
+    282          /**
+    283          * @brief  Initializes the I2C peripheral used to drive the STLM75
+    284          * @param  None
+    285          * @retval None
+    286          */
+    287          
+    288          void STLM75_I2C_Init(void)
+    289          {
+    290            I2C_InitTypeDef  I2C_InitStructure;
+    291          
+    292            /* Enable I2C and GPIO clocks */
+    293            RCC_APB1PeriphClockCmd(STLM75_RCC_Periph_I2C, ENABLE); 
+    294            RCC_APB2PeriphClockCmd(STLM75_RCC_Port_I2C, ENABLE);
+    295           
+    296            /* GPIO AF configuration */
+    297            GPIO_PinAFConfig(STLM75_I2C_Port, STLM75_I2C_SCL_Pin_Source, STLM75_I2C_SCL_AF);
+    298            GPIO_PinAFConfig(STLM75_I2C_Port, STLM75_I2C_SDA_Pin_Source, STLM75_I2C_SCL_AF);
+    299            
+    300            STLM75_I2C_Init_GPIO();
+    301            
+    302            /* I2C configuration */
+    303            I2C_DeInit(STLM75_I2C);
+    304            I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
+    305            I2C_InitStructure.I2C_DutyCycle = I2C_DutyCycle_2;
+    306            I2C_InitStructure.I2C_OwnAddress1 = 0x00;
+    307            I2C_InitStructure.I2C_Ack = I2C_Ack_Enable;
+    308            I2C_InitStructure.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
+    309            I2C_InitStructure.I2C_ClockSpeed = STLM75_I2C_Speed;
+    310            
+    311              /* Apply I2C configuration after enabling it */
+    312            I2C_Init(STLM75_I2C, &I2C_InitStructure);
+    313            
+    314            /* I2C Peripheral Enable */
+    315            I2C_Cmd(STLM75_I2C, ENABLE);
+    316            
+    317          }
+    318          
+    319          /*******************************************************************************
+    320          * Function Name  : USB_Cable_Config
+    321          * Description    : Software Connection/Disconnection of USB Cable
+    322          * Input          : None.
+    323          * Return         : Status
+    324          *******************************************************************************/
+    325          void USB_Cable_Config (FunctionalState NewState)
+    326          {
+    327            if (NewState != DISABLE)
+    328            {
+    329              STM32L15_USB_CONNECT;
+    330            }
+    331            else
+    332            {
+    333              STM32L15_USB_DISCONNECT;
+    334            }  
+    335          }
+    336          
+    337          /*******************************************************************************
+    338          * Function Name  : Init_User_Timer
+    339          * Description    : Initialize a timer for application usage.
+    340          * Input          : None.
+    341          * Return         : None.
+    342          *******************************************************************************/
+    343          void Init_User_Timer(void)
+    344          {
+    345          	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
+    346          	NVIC_InitTypeDef NVIC_InitStructure;
+    347              
+    348          	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+    349              
+    350          	TIM_TimeBaseInitStruct.TIM_Prescaler = USER_TIMER_PRESCALER;
+    351          	TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Down;
+    352          	TIM_TimeBaseInitStruct.TIM_Period = USER_TIMER_PERIOD;
+    353          	TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
+    354              
+    355          	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseInitStruct);
+    356              
+    357              TIM_ClearFlag(TIM3, TIM_FLAG_Update);
+    358              
+    359              TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
+    360              
+    361          	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
+    362          	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    363          	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    364          	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    365          	NVIC_Init(&NVIC_InitStructure);
+    366          }
+    367          
+    368          /*******************************************************************************
+    369          * Function Name  : Start_User_Timer
+    370          * Description    : Start the user timer
+    371          * Input          : None.
+    372          * Return         : None.
+    373          *******************************************************************************/
+    374          void Start_User_Timer(void)
+    375          {
+    376              TIM3->CNT = 0;
+    377              TIM_Cmd(TIM3, ENABLE);
+    378          }
+    379          
+    380          /*******************************************************************************
+    381          * Function Name  : Stop_User_Timer
+    382          * Description    : Stop the user timer
+    383          * Input          : None.
+    384          * Return         : None.
+    385          *******************************************************************************/
+    386          void Stop_User_Timer(void)
+    387          {
+    388              TIM_Cmd(TIM3, DISABLE);    
+    389          }
+    390          
+    391          /*******************************************************************************
+    392          * Function Name  : TIM3_IRQHandler
+    393          * Description    : User Timer ISR
+    394          * Input          : None.
+    395          * Return         : None.
+    396          *******************************************************************************/
+    397          void TIM3_IRQHandler(void)
+    398          {
+    399          	TIM_ClearFlag(TIM3, TIM_FLAG_Update);
+    400              user_timer_expired = TRUE;    
+    401              
+    402          #if ENABLE_MICRO_SLEEP
+    403              Exit_LP_Sleep_Mode();
+    404          #endif
+    405          }
+    406          
+    407          // TODO: implement with clock-independent function.
+    408          void us150Delay()
+    409          {
+    410          #if SYSCLK_FREQ == 4000000
+    411          for(volatile int i = 0; i < 35; i++)__NOP();
+    412          #elif SYSCLK_FREQ == 32000000
+    413          for(volatile int i = 0; i < 420; i++)__NOP();
+    414          #else
+    415          #error Implement delay function.
+    416          #endif    
+    417          }
+    418          
+    419          /*******************************************************************************
+    420          * Function Name  : Handle_USBAsynchXfer.
+    421          * Description    : send data to USB.
+    422          * Input          : None.
+    423          * Return         : none.
+    424          *******************************************************************************/
+    425          #ifdef ENABLE_USB
+    426          void Handle_USBAsynchXfer (void)
+    427          {
+    428            
+    429            uint16_t USB_Tx_ptr;
+    430            uint16_t USB_Tx_length;
+    431            
+    432            if(USB_Tx_State != 1)
+    433            {
+    434              if (USART_Rx_ptr_out == USART_RX_DATA_SIZE)
+    435              {
+    436                USART_Rx_ptr_out = 0;
+    437              }
+    438              
+    439              if(USART_Rx_ptr_out == USART_Rx_ptr_in) 
+    440              {
+    441                USB_Tx_State = 0; 
+    442                return;
+    443              }
+    444              
+    445              if(USART_Rx_ptr_out > USART_Rx_ptr_in) /* rollback */
+    446              { 
+    447                USART_Rx_length = USART_RX_DATA_SIZE - USART_Rx_ptr_out;
+    448              }
+    449              else 
+    450              {
+    451                USART_Rx_length = USART_Rx_ptr_in - USART_Rx_ptr_out;
+    452              }
+    453              
+    454              if (USART_Rx_length > VIRTUAL_COM_PORT_DATA_SIZE)
+    455              {
+    456                USB_Tx_ptr = USART_Rx_ptr_out;
+    457                USB_Tx_length = VIRTUAL_COM_PORT_DATA_SIZE;
+    458                
+    459                USART_Rx_ptr_out += VIRTUAL_COM_PORT_DATA_SIZE;	
+    460                USART_Rx_length -= VIRTUAL_COM_PORT_DATA_SIZE;	
+    461              }
+    462              else
+    463              {
+    464                USB_Tx_ptr = USART_Rx_ptr_out;
+    465                USB_Tx_length = USART_Rx_length;
+    466                
+    467                USART_Rx_ptr_out += USART_Rx_length;
+    468                USART_Rx_length = 0;
+    469              }
+    470              USB_Tx_State = 1; 
+    471              
+    472          #ifdef USE_STM3210C_EVAL
+    473              USB_SIL_Write(EP1_IN, &USART_Rx_Buffer[USB_Tx_ptr], USB_Tx_length);  
+    474          #else
+    475              UserToPMABufferCopy(&USART_Rx_Buffer[USB_Tx_ptr], ENDP1_TXADDR, USB_Tx_length);
+    476              SetEPTxCount(ENDP1, USB_Tx_length);
+    477              SetEPTxValid(ENDP1); 
+    478          #endif /* USE_STM3210C_EVAL */
+    479            }  
+    480            
+    481          }
+    482          #endif
+    483          /*******************************************************************************
+    484          * Function Name  : USB_Send_Data.
+    485          * Description    : Insert a byte to USB buffer for transmission.
+    486          * Input          : None.
+    487          * Return         : none.
+    488          *******************************************************************************/
+    489          #ifdef ENABLE_USB
+    490          void USB_Send_Data(uint8_t byte)
+    491          {
+    492            
+    493            USART_Rx_Buffer[USART_Rx_ptr_in] = byte;
+    494            
+    495            USART_Rx_ptr_in++;
+    496            
+    497            /* To avoid buffer overflow */
+    498            if(USART_Rx_ptr_in == USART_RX_DATA_SIZE)
+    499            {
+    500              USART_Rx_ptr_in = 0;
+    501            }
+    502          }
+    503          #endif
+    504          
+    505          /*******************************************************************************
+    506          * Function Name  : Get_SerialNum.
+    507          * Description    : Create the serial number string descriptor.
+    508          * Input          : None.
+    509          * Output         : None.
+    510          * Return         : None.
+    511          *******************************************************************************/
+    512          void Get_SerialNum(void)
+    513          {
+    514            uint32_t Device_Serial0, Device_Serial1, Device_Serial2;
+    515          
+    516            Device_Serial0 = *(uint32_t*)(0x1FF80050);
+    517            Device_Serial1 = *(uint32_t*)(0x1FF80054);
+    518            Device_Serial2 = *(uint32_t*)(0x1FF80064);
+    519          
+    520            Device_Serial0 += Device_Serial2;
+    521          
+    522            if (Device_Serial0 != 0)
+    523            {
+    524              IntToUnicode (Device_Serial0, &Virtual_Com_Port_StringSerial[2] , 8);
+    525              IntToUnicode (Device_Serial1, &Virtual_Com_Port_StringSerial[18], 4);
+    526            }
+    527          }
+    528          
+    529          /*******************************************************************************
+    530          * Function Name  : HexToChar.
+    531          * Description    : Convert Hex 32Bits value into char.
+    532          * Input          : None.
+    533          * Output         : None.
+    534          * Return         : None.
+    535          *******************************************************************************/
+    536          static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)
+    537          {
+    538            uint8_t idx = 0;
+    539            
+    540            for( idx = 0 ; idx < len ; idx ++)
+    541            {
+    542              if( ((value >> 28)) < 0xA )
+    543              {
+    544                pbuf[ 2* idx] = (value >> 28) + '0';
+    545              }
+    546              else
+    547              {
+    548                pbuf[2* idx] = (value >> 28) + 'A' - 10; 
+    549              }
+    550              
+    551              value = value << 4;
+    552              
+    553              pbuf[ 2* idx + 1] = 0;
+    554            }
+    555          }
+    556          
+    557          #ifdef ENABLE_USB_PRINTF
+    558          #undef putchar
+    559          
+    560          int putchar(int c)
+    561          {
+    562            int i = 0xFFFF;/* Buffer full: wait till previous data is transmitted */
+    563            while(USB_OUT_BUFFER_IS_FULL() && i-- > 0);
+    564            if(i==0){
+    565                const char *str = "\nOVERFLOW\n";
+    566                while(*str != '\0')
+    567                    USB_Send_Data(*str++);
+    568            }
+    569            
+    570            USB_Send_Data(c);
+    571            return c;
+    572          }
+    573          
+    574          void __io_putchar(char c)
+    575          {
+    576            putchar(c);
+    577          }
+    578          
+    579          size_t _write(int handle, const unsigned char * buffer, size_t size)
+    580          {
+    581            size_t nChars = 0;
+    582          
+    583            if (handle != _LLIO_STDOUT && handle != _LLIO_STDERR) {
+    584              return _LLIO_ERROR;
+    585            }
+    586          
+    587            if (buffer == 0) {
+    588              // This means that we should flush internal buffers.
+    589              //spin until TX complete (TX is idle)
+    590              while (!USB_OUT_BUFFER_IS_EMPTY()) {}
+    591              return 0;
+    592            }
+    593          
+    594            while(size--) {
+    595              __io_putchar(*buffer++);
+    596              ++nChars;
+    597            }
+    598          
+    599            return nChars;
+    600          }
+    601          
+    602          
+    603          size_t _read(int handle, unsigned char * buffer, size_t size)
+    604          {
+    605            return 0;
+    606          }
+    607          
+    608          #endif
+    609          
+    610          int USB_free_buffer_size()
+    611          {
+    612            int free_space;
+    613            
+    614            if(USART_Rx_ptr_in == USART_Rx_ptr_out){
+    615              free_space = USART_RX_DATA_SIZE;
+    616            }
+    617            else if(USART_Rx_ptr_out > USART_Rx_ptr_in) /* rollback */
+    618            { 
+    619              free_space = USART_Rx_ptr_out - USART_Rx_ptr_in;
+    620            }
+    621            else 
+    622            {
+    623              free_space = USART_RX_DATA_SIZE - USART_Rx_ptr_in + USART_Rx_ptr_out;
+    624            }
+    625            
+    626            return free_space;
+    627          }
+    628          
+    629          
+    630          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+    631          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Get_SerialNum
+       8   Handle_USBAsynchXfer
+         8   -> SetEPTxCount
+         0   -> SetEPTxValid
+         8   -> UserToPMABufferCopy
+      24   Init_GPIOs
+        24   -> GPIO_Init
+      24   Init_User_Timer
+        24   -> NVIC_Init
+        24   -> RCC_APB1PeriphClockCmd
+        24   -> TIM_ClearFlag
+        24   -> TIM_ITConfig
+        24   -> TIM_TimeBaseInit
+      32   LIS3DH_Interrupts_Config
+        32   -> EXTI_ClearFlag
+        32   -> EXTI_Init
+        32   -> GPIO_Init
+        32   -> NVIC_Init
+        32   -> SYSCFG_EXTILineConfig
+      32   LPS25H_I2C_Init
+        32   -> GPIO_Init
+        32   -> GPIO_PinAFConfig
+        32   -> I2C_Cmd
+        32   -> I2C_DeInit
+        32   -> I2C_Init
+        32   -> RCC_APB1PeriphClockCmd
+        32   -> RCC_APB2PeriphClockCmd
+       8   RCC_Configuration
+         8   -> RCC_AHBPeriphClockCmd
+         8   -> RCC_APB2PeriphClockCmd
+      16   STLM75_I2C_DeInit_GPIO
+        16   -> GPIO_Init
+      32   STLM75_I2C_Init
+        32   -> GPIO_Init
+        32   -> GPIO_PinAFConfig
+        32   -> I2C_Cmd
+        32   -> I2C_DeInit
+        32   -> I2C_Init
+        32   -> RCC_APB1PeriphClockCmd
+        32   -> RCC_APB2PeriphClockCmd
+      16   STLM75_I2C_Init_GPIO
+        16   -> GPIO_Init
+       0   Set_System
+       0   Set_USBClock
+         0   -> RCC_APB1PeriphClockCmd
+       0   Start_User_Timer
+         0   -> TIM_Cmd
+       0   Stop_User_Timer
+         0   -> TIM_Cmd
+       8   TIM3_IRQHandler
+         8   -> TIM_ClearFlag
+       0   USB_Cable_Config
+         0   -> SYSCFG_USBPuCmd
+       8   USB_Interrupts_Config
+         8   -> NVIC_Init
+         8   -> NVIC_PriorityGroupConfig
+       0   USB_Send_Data
+       0   USB_free_buffer_size
+       0   __io_putchar
+         0   -> putchar
+       0   _read
+      24   _write
+       8   putchar
+       4   us150Delay
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable17
+       4  ??DataTable17_1
+       4  ??DataTable17_10
+       4  ??DataTable17_11
+       4  ??DataTable17_2
+       4  ??DataTable17_3
+       4  ??DataTable17_4
+       4  ??DataTable17_5
+       4  ??DataTable17_6
+       4  ??DataTable17_7
+       4  ??DataTable17_8
+       4  ??DataTable17_9
+      12  ?_0
+     134  Get_SerialNum
+     146  Handle_USBAsynchXfer
+     102  Init_GPIOs
+      96  Init_User_Timer
+     104  LIS3DH_Interrupts_Config
+     154  LPS25H_I2C_Init
+      42  RCC_Configuration
+      34  STLM75_I2C_DeInit_GPIO
+     152  STLM75_I2C_Init
+      44  STLM75_I2C_Init_GPIO
+       2  Set_System
+      10  Set_USBClock
+      12  Start_User_Timer
+       8  Stop_User_Timer
+      22  TIM3_IRQHandler
+       8  USB_Cable_Config
+      46  USB_Interrupts_Config
+      26  USB_Send_Data
+    2016  USB_Tx_State
+          USART_Rx_Buffer
+          USART_Rx_ptr_in
+          USART_Rx_ptr_out
+          USART_Rx_length
+      48  USB_free_buffer_size
+       2  __io_putchar
+       4  _read
+     204  _write
+     116  putchar
+      26  us150Delay
+       1  user_timer_expired
+
+ 
+ 2 017 bytes in section .bss
+ 1 602 bytes in section .text
+ 
+ 1 602 bytes of CODE memory
+ 2 017 bytes of DATA memory
+
+Errors: none
+Warnings: none

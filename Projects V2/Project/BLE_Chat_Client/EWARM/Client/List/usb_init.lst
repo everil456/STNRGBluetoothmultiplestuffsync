@@ -1,0 +1,172 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:49:09
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c"
+#        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\usb_init.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_init.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_init.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : usb_init.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V3.3.0
+      5          * Date               : 21-March-2011
+      6          * Description        : Initialization routines & global variables
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "usb_lib.h"
+     18          
+     19          /* Private typedef -----------------------------------------------------------*/
+     20          /* Private define ------------------------------------------------------------*/
+     21          /* Private macro -------------------------------------------------------------*/
+     22          /* Private variables ---------------------------------------------------------*/
+     23          /*  The number of current endpoint, it will be used to specify an endpoint */
+     24           uint8_t	EPindex;
+     25          /*  The number of current device, it is an index to the Device_Table */
+     26          /* uint8_t	Device_no; */
+     27          /*  Points to the DEVICE_INFO structure of current device */
+     28          /*  The purpose of this register is to speed up the execution */
+     29          DEVICE_INFO *pInformation;
+     30          /*  Points to the DEVICE_PROP structure of current device */
+     31          /*  The purpose of this register is to speed up the execution */
+     32          DEVICE_PROP *pProperty;
+     33          /*  Temporary save the state of Rx & Tx status. */
+     34          /*  Whenever the Rx or Tx state is changed, its value is saved */
+     35          /*  in this variable first and will be set to the EPRB or EPRA */
+     36          /*  at the end of interrupt process */
+     37          uint16_t	SaveState ;
+     38          uint16_t  wInterrupt_Mask;
+     39          DEVICE_INFO	Device_Info;
+     40          USER_STANDARD_REQUESTS  *pUser_Standard_Requests;
+     41          
+     42          /* Extern variables ----------------------------------------------------------*/
+     43          /* Private function prototypes -----------------------------------------------*/
+     44          /* Private functions ---------------------------------------------------------*/
+     45          
+     46          /*******************************************************************************
+     47          * Function Name  : USB_Init
+     48          * Description    : USB system initialization
+     49          * Input          : None.
+     50          * Output         : None.
+     51          * Return         : None.
+     52          *******************************************************************************/
+     53          void USB_Init(void)
+     54          {
+     55            pInformation = &Device_Info;
+     56            pInformation->ControlState = 2;
+     57            pProperty = &Device_Property;
+     58            pUser_Standard_Requests = &User_Standard_Requests;
+     59            /* Initialize devices one by one */
+     60            pProperty->Init();
+     61          }
+     62          
+     63          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   USB_Init
+         0   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  Device_Info
+          pInformation
+          pProperty
+          pUser_Standard_Requests
+       1  EPindex
+       2  SaveState
+      32  USB_Init
+       2  wInterrupt_Mask
+
+ 
+ 45 bytes in section .bss
+ 32 bytes in section .text
+ 
+ 32 bytes of CODE memory
+ 45 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,204 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:17
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\src\led.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\src\led.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\led.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj\led.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Project\BLE_Chat_Client\src\led.c
+      1          #include "led.h"
+      2          #include "stm32l1xx.h"
+      3          #include "stm32l1xx_gpio.h"
+      4          #include "stm32l1xx_rcc.h"
+      5          #include <stdio.h>
+      6          
+      7          /**
+      8            * @brief  Configures and initializes the user LED GPIO
+      9            * @param  None
+     10            * @retval None
+     11            */
+     12          void initLED(int ledx)
+     13          {
+     14            /*After reset, the peripheral clock (used for registers read/write access) is disabled
+     15              and the application software has to enable this clock before using it.*/
+     16          
+     17              GPIO_InitTypeDef GPIO_Structure;                              //Instantiate a GPIO_InitTypeDef used for setting up GPIO
+     18              switch(ledx)
+     19              {
+     20                case(0):
+     21                  GPIO_Structure.GPIO_Pin = LED0;
+     22                  break;
+     23                case(1):
+     24                  GPIO_Structure.GPIO_Pin = LED1;
+     25                  break;
+     26                case(2):
+     27                  GPIO_Structure.GPIO_Pin = LED2;
+     28                  break;
+     29                case(3):
+     30                  GPIO_Structure.GPIO_Pin = LED3;
+     31                  break;
+     32                case(4):
+     33                  GPIO_Structure.GPIO_Pin = LED4;
+     34                  break;
+     35              }
+     36          
+     37              GPIO_Structure.GPIO_Mode = GPIO_Mode_OUT;                     //Set output mode of LED pins to output
+     38              GPIO_Structure.GPIO_Speed = GPIO_Speed_40MHz;
+     39              
+     40              if(ledx == 2)
+     41              {
+     42                GPIO_Init(GPIOD, &GPIO_Structure);                            //Initialize GPIOG with the set parameters
+     43                return;
+     44              }
+     45              else
+     46              {
+     47                GPIO_Init(GPIOC, &GPIO_Structure);                            //Initialize GPIOG with the set parameters
+     48              }
+     49              turnLED(ledx,OFF);
+     50          }
+     51          
+     52          /**
+     53            * @brief  Turns the specified LED to the specified state (either ON or OFF)
+     54            * @param  led - the LED to be affected (LEDx where x is 0,1,2,3 or 4)
+     55            * @param  state - the state of the affected LED (ON or OFF)
+     56            * @retval None
+     57            */
+     58          void turnLED(int led, State_TypeDef state)
+     59          {
+     60            if(state == ON)
+     61            {
+     62              switch(led)
+     63              {
+     64                case(0):
+     65                  GPIOC->ODR &= ~(0x00000000 | LED0);
+     66                  break;
+     67                case(1):
+     68                  GPIOC->ODR &= ~(0x00000000 | LED1);
+     69                  break;
+     70                case(2):
+     71                  GPIOD->ODR &= ~(0x00000000 | LED2);
+     72                  break;
+     73                case(3):
+     74                  GPIOC->ODR &= ~(0x00000000 | LED3);
+     75                  break;
+     76                case(4):
+     77                  GPIOC->ODR &= ~(0x00000000 | LED4);
+     78                  break;
+     79              }
+     80            }
+     81            else if(state == OFF)
+     82            {
+     83              switch(led)
+     84              {
+     85                case(0):
+     86                  GPIOC->ODR |= LED0;
+     87                  break;
+     88                case(1):
+     89                  GPIOC->ODR |= LED1;
+     90                  break;
+     91                case(2):
+     92                  GPIOD->ODR |= LED2;
+     93                  break;
+     94                case(3):
+     95                  GPIOC->ODR |= LED3;
+     96                  break;
+     97                case(4):
+     98                  GPIOC->ODR |= LED4;
+     99                  break;
+    100              }
+    101            }
+    102          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   initLED
+        24   -> GPIO_Init
+       0   turnLED
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+     142  initLED
+     158  turnLED
+
+ 
+ 312 bytes in section .text
+ 
+ 312 bytes of CODE memory
+
+Errors: none
+Warnings: none

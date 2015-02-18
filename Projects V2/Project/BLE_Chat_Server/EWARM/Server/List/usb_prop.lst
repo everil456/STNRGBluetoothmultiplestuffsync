@@ -1,0 +1,577 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:40:11
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\src\usb_prop.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\src\usb_prop.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\usb_prop.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\Obj\usb_prop.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Project\BLE_Chat_Server\src\usb_prop.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : usb_prop.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V3.3.0
+      5          * Date               : 21-March-2011
+      6          * Description        : All processing related to Virtual Com Port Demo
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "usb_lib.h"
+     18          #include "usb_conf.h"
+     19          #include "usb_prop.h"
+     20          #include "usb_desc.h"
+     21          #include "usb_pwr.h"
+     22          #include "hw_config.h"
+     23          #include "platform_config.h"
+     24          
+     25          /* Private typedef -----------------------------------------------------------*/
+     26          /* Private define ------------------------------------------------------------*/
+     27          /* Private macro -------------------------------------------------------------*/
+     28          /* Private variables ---------------------------------------------------------*/
+     29          uint8_t Request = 0;
+     30          
+     31          LINE_CODING linecoding =
+     32            {
+     33              115200, /* baud rate*/
+     34              0x00,   /* stop bits-1*/
+     35              0x00,   /* parity - none*/
+     36              0x08    /* no. of bits 8*/
+     37            };
+     38          
+     39          CONTROL_SIGNAL control_signal = 0;
+     40          
+     41          /* -------------------------------------------------------------------------- */
+     42          /*  Structures initializations */
+     43          /* -------------------------------------------------------------------------- */
+     44          
+     45          DEVICE Device_Table =
+     46            {
+     47              EP_NUM,
+     48              1
+     49            };
+     50          
+     51          DEVICE_PROP Device_Property =
+     52            {
+     53              Virtual_Com_Port_init,
+     54              Virtual_Com_Port_Reset,
+     55              Virtual_Com_Port_Status_In,
+     56              Virtual_Com_Port_Status_Out,
+     57              Virtual_Com_Port_Data_Setup,
+     58              Virtual_Com_Port_NoData_Setup,
+     59              Virtual_Com_Port_Get_Interface_Setting,
+     60              Virtual_Com_Port_GetDeviceDescriptor,
+     61              Virtual_Com_Port_GetConfigDescriptor,
+     62              Virtual_Com_Port_GetStringDescriptor,
+     63              0,
+     64              0x40 /*MAX PACKET SIZE*/
+     65            };
+     66          
+     67          USER_STANDARD_REQUESTS User_Standard_Requests =
+     68            {
+     69              Virtual_Com_Port_GetConfiguration,
+     70              Virtual_Com_Port_SetConfiguration,
+     71              Virtual_Com_Port_GetInterface,
+     72              Virtual_Com_Port_SetInterface,
+     73              Virtual_Com_Port_GetStatus,
+     74              Virtual_Com_Port_ClearFeature,
+     75              Virtual_Com_Port_SetEndPointFeature,
+     76              Virtual_Com_Port_SetDeviceFeature,
+     77              Virtual_Com_Port_SetDeviceAddress
+     78            };
+     79          
+     80          ONE_DESCRIPTOR Device_Descriptor =
+     81            {
+     82              (uint8_t*)Virtual_Com_Port_DeviceDescriptor,
+     83              VIRTUAL_COM_PORT_SIZ_DEVICE_DESC
+     84            };
+     85          
+     86          ONE_DESCRIPTOR Config_Descriptor =
+     87            {
+     88              (uint8_t*)Virtual_Com_Port_ConfigDescriptor,
+     89              VIRTUAL_COM_PORT_SIZ_CONFIG_DESC
+     90            };
+     91          
+     92          ONE_DESCRIPTOR String_Descriptor[4] =
+     93            {
+     94              {(uint8_t*)Virtual_Com_Port_StringLangID, VIRTUAL_COM_PORT_SIZ_STRING_LANGID},
+     95              {(uint8_t*)Virtual_Com_Port_StringVendor, VIRTUAL_COM_PORT_SIZ_STRING_VENDOR},
+     96              {(uint8_t*)Virtual_Com_Port_StringProduct, VIRTUAL_COM_PORT_SIZ_STRING_PRODUCT},
+     97              {(uint8_t*)Virtual_Com_Port_StringSerial, VIRTUAL_COM_PORT_SIZ_STRING_SERIAL}
+     98            };
+     99          
+    100          /* Extern variables ----------------------------------------------------------*/
+    101          /* Private function prototypes -----------------------------------------------*/
+    102          /* Extern function prototypes ------------------------------------------------*/
+    103          /* Private functions ---------------------------------------------------------*/
+    104          /*******************************************************************************
+    105          * Function Name  : Virtual_Com_Port_init.
+    106          * Description    : Virtual COM Port Mouse init routine.
+    107          * Input          : None.
+    108          * Output         : None.
+    109          * Return         : None.
+    110          *******************************************************************************/
+    111          void Virtual_Com_Port_init(void)
+    112          {
+    113          
+    114            /* Update the serial number string descriptor with the data from the unique
+    115            ID*/
+    116            Get_SerialNum();
+    117          
+    118            pInformation->Current_Configuration = 0;
+    119          
+    120            /* Connect the device */
+    121            PowerOn();
+    122          
+    123            /* Perform basic device initialization operations */
+    124            USB_SIL_Init();
+    125          
+    126            bDeviceState = UNCONNECTED;
+    127          }
+    128          
+    129          /*******************************************************************************
+    130          * Function Name  : Virtual_Com_Port_Reset
+    131          * Description    : Virtual_Com_Port Mouse reset routine
+    132          * Input          : None.
+    133          * Output         : None.
+    134          * Return         : None.
+    135          *******************************************************************************/
+    136          void Virtual_Com_Port_Reset(void)
+    137          {
+    138            /* Set Virtual_Com_Port DEVICE as not configured */
+    139            pInformation->Current_Configuration = 0;
+    140          
+    141            /* Current Feature initialization */
+    142            pInformation->Current_Feature = Virtual_Com_Port_ConfigDescriptor[7];
+    143          
+    144            /* Set Virtual_Com_Port DEVICE with the default Interface*/
+    145            pInformation->Current_Interface = 0;
+    146          
+    147          #ifdef STM32F10X_CL     
+    148            /* EP0 is already configured by USB_SIL_Init() function */
+    149            
+    150            /* Init EP1 IN as Bulk endpoint */
+    151            OTG_DEV_EP_Init(EP1_IN, OTG_DEV_EP_TYPE_BULK, VIRTUAL_COM_PORT_DATA_SIZE);
+    152            
+    153            /* Init EP2 IN as Interrupt endpoint */
+    154            OTG_DEV_EP_Init(EP2_IN, OTG_DEV_EP_TYPE_INT, VIRTUAL_COM_PORT_INT_SIZE);
+    155          
+    156            /* Init EP3 OUT as Bulk endpoint */
+    157            OTG_DEV_EP_Init(EP3_OUT, OTG_DEV_EP_TYPE_BULK, VIRTUAL_COM_PORT_DATA_SIZE);  
+    158          #else 
+    159          
+    160            SetBTABLE(BTABLE_ADDRESS);
+    161          
+    162            /* Initialize Endpoint 0 */
+    163            SetEPType(ENDP0, EP_CONTROL);
+    164            SetEPTxStatus(ENDP0, EP_TX_STALL);
+    165            SetEPRxAddr(ENDP0, ENDP0_RXADDR);
+    166            SetEPTxAddr(ENDP0, ENDP0_TXADDR);
+    167            Clear_Status_Out(ENDP0);
+    168            SetEPRxCount(ENDP0, Device_Property.MaxPacketSize);
+    169            SetEPRxValid(ENDP0);
+    170          
+    171            /* Initialize Endpoint 1 */
+    172            SetEPType(ENDP1, EP_BULK);
+    173            SetEPTxAddr(ENDP1, ENDP1_TXADDR);
+    174            SetEPTxStatus(ENDP1, EP_TX_NAK);
+    175            SetEPRxStatus(ENDP1, EP_RX_DIS);
+    176          
+    177            /* Initialize Endpoint 2 */
+    178            SetEPType(ENDP2, EP_INTERRUPT);
+    179            SetEPTxAddr(ENDP2, ENDP2_TXADDR);
+    180            SetEPRxStatus(ENDP2, EP_RX_DIS);
+    181            SetEPTxStatus(ENDP2, EP_TX_NAK);
+    182          
+    183            /* Initialize Endpoint 3 */
+    184            SetEPType(ENDP3, EP_BULK);
+    185            SetEPRxAddr(ENDP3, ENDP3_RXADDR);
+    186            SetEPRxCount(ENDP3, VIRTUAL_COM_PORT_DATA_SIZE);
+    187            SetEPRxStatus(ENDP3, EP_RX_VALID);
+    188            SetEPTxStatus(ENDP3, EP_TX_DIS);
+    189          
+    190            /* Set this device to response on default address */
+    191            SetDeviceAddress(0);
+    192          #endif /* STM32F10X_CL */
+    193          
+    194            bDeviceState = ATTACHED;
+    195          }
+    196          
+    197          /*******************************************************************************
+    198          * Function Name  : Virtual_Com_Port_SetConfiguration.
+    199          * Description    : Update the device state to configured.
+    200          * Input          : None.
+    201          * Output         : None.
+    202          * Return         : None.
+    203          *******************************************************************************/
+    204          void Virtual_Com_Port_SetConfiguration(void)
+    205          {
+    206            DEVICE_INFO *pInfo = &Device_Info;
+    207          
+    208            if (pInfo->Current_Configuration != 0)
+    209            {
+    210              /* Device configured */
+    211              bDeviceState = CONFIGURED;
+    212            }
+    213          }
+    214          
+    215          /*******************************************************************************
+    216          * Function Name  : Virtual_Com_Port_SetConfiguration.
+    217          * Description    : Update the device state to addressed.
+    218          * Input          : None.
+    219          * Output         : None.
+    220          * Return         : None.
+    221          *******************************************************************************/
+    222          void Virtual_Com_Port_SetDeviceAddress (void)
+    223          {
+    224            bDeviceState = ADDRESSED;
+    225          }
+    226          
+    227          /*******************************************************************************
+    228          * Function Name  : Virtual_Com_Port_Status_In.
+    229          * Description    : Virtual COM Port Status In Routine.
+    230          * Input          : None.
+    231          * Output         : None.
+    232          * Return         : None.
+    233          *******************************************************************************/
+    234          void Virtual_Com_Port_Status_In(void)
+    235          {
+    236          }
+    237          
+    238          /*******************************************************************************
+    239          * Function Name  : Virtual_Com_Port_Status_Out
+    240          * Description    : Virtual COM Port Status OUT Routine.
+    241          * Input          : None.
+    242          * Output         : None.
+    243          * Return         : None.
+    244          *******************************************************************************/
+    245          void Virtual_Com_Port_Status_Out(void)
+    246          {}
+    247          
+    248          /*******************************************************************************
+    249          * Function Name  : Virtual_Com_Port_Data_Setup
+    250          * Description    : handle the data class specific requests
+    251          * Input          : Request Nb.
+    252          * Output         : None.
+    253          * Return         : USB_UNSUPPORT or USB_SUCCESS.
+    254          *******************************************************************************/
+    255          RESULT Virtual_Com_Port_Data_Setup(uint8_t RequestNo)
+    256          {
+    257            uint8_t    *(*CopyRoutine)(uint16_t);
+    258          
+    259            CopyRoutine = NULL;
+    260          
+    261            if (RequestNo == GET_LINE_CODING)
+    262            {
+    263              if (Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+    264              {
+    265                CopyRoutine = Virtual_Com_Port_GetLineCoding;
+    266              }
+    267            }
+    268            else if (RequestNo == SET_LINE_CODING)
+    269            {
+    270              if (Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+    271              {
+    272                CopyRoutine = Virtual_Com_Port_SetLineCoding;
+    273              }
+    274              Request = SET_LINE_CODING;
+    275            }
+    276          
+    277            if (CopyRoutine == NULL)
+    278            {
+    279              return USB_UNSUPPORT;
+    280            }
+    281          
+    282            pInformation->Ctrl_Info.CopyData = CopyRoutine;
+    283            pInformation->Ctrl_Info.Usb_wOffset = 0;
+    284            (*CopyRoutine)(0);
+    285            return USB_SUCCESS;
+    286          }
+    287          
+    288          /*******************************************************************************
+    289          * Function Name  : Virtual_Com_Port_NoData_Setup.
+    290          * Description    : handle the no data class specific requests.
+    291          * Input          : Request Nb.
+    292          * Output         : None.
+    293          * Return         : USB_UNSUPPORT or USB_SUCCESS.
+    294          *******************************************************************************/
+    295          RESULT Virtual_Com_Port_NoData_Setup(uint8_t RequestNo)
+    296          {
+    297          
+    298            if (Type_Recipient == (CLASS_REQUEST | INTERFACE_RECIPIENT))
+    299            {
+    300              if (RequestNo == SET_COMM_FEATURE)
+    301              {
+    302                return USB_SUCCESS;
+    303              }
+    304              else if (RequestNo == SET_CONTROL_LINE_STATE)
+    305              {
+    306                //Virtual_Com_Port_SetControlLineState();      
+    307                return USB_SUCCESS;
+    308              }
+    309            }
+    310          
+    311            return USB_UNSUPPORT;
+    312          }
+    313          
+    314          /*******************************************************************************
+    315          * Function Name  : Virtual_Com_Port_GetDeviceDescriptor.
+    316          * Description    : Gets the device descriptor.
+    317          * Input          : Length.
+    318          * Output         : None.
+    319          * Return         : The address of the device descriptor.
+    320          *******************************************************************************/
+    321          uint8_t *Virtual_Com_Port_GetDeviceDescriptor(uint16_t Length)
+    322          {
+    323            return Standard_GetDescriptorData(Length, &Device_Descriptor);
+    324          }
+    325          
+    326          /*******************************************************************************
+    327          * Function Name  : Virtual_Com_Port_GetConfigDescriptor.
+    328          * Description    : get the configuration descriptor.
+    329          * Input          : Length.
+    330          * Output         : None.
+    331          * Return         : The address of the configuration descriptor.
+    332          *******************************************************************************/
+    333          uint8_t *Virtual_Com_Port_GetConfigDescriptor(uint16_t Length)
+    334          {
+    335            return Standard_GetDescriptorData(Length, &Config_Descriptor);
+    336          }
+    337          
+    338          /*******************************************************************************
+    339          * Function Name  : Virtual_Com_Port_GetStringDescriptor
+    340          * Description    : Gets the string descriptors according to the needed index
+    341          * Input          : Length.
+    342          * Output         : None.
+    343          * Return         : The address of the string descriptors.
+    344          *******************************************************************************/
+    345          uint8_t *Virtual_Com_Port_GetStringDescriptor(uint16_t Length)
+    346          {
+    347            uint8_t wValue0 = pInformation->USBwValue0;
+    348            if (wValue0 > 4)
+    349            {
+    350              return NULL;
+    351            }
+    352            else
+    353            {
+    354              return Standard_GetDescriptorData(Length, &String_Descriptor[wValue0]);
+    355            }
+    356          }
+    357          
+    358          /*******************************************************************************
+    359          * Function Name  : Virtual_Com_Port_Get_Interface_Setting.
+    360          * Description    : test the interface and the alternate setting according to the
+    361          *                  supported one.
+    362          * Input1         : uint8_t: Interface : interface number.
+    363          * Input2         : uint8_t: AlternateSetting : Alternate Setting number.
+    364          * Output         : None.
+    365          * Return         : The address of the string descriptors.
+    366          *******************************************************************************/
+    367          RESULT Virtual_Com_Port_Get_Interface_Setting(uint8_t Interface, uint8_t AlternateSetting)
+    368          {
+    369            if (AlternateSetting > 0)
+    370            {
+    371              return USB_UNSUPPORT;
+    372            }
+    373            else if (Interface > 1)
+    374            {
+    375              return USB_UNSUPPORT;
+    376            }
+    377            return USB_SUCCESS;
+    378          }
+    379          
+    380          /*******************************************************************************
+    381          * Function Name  : Virtual_Com_Port_GetLineCoding.
+    382          * Description    : send the linecoding structure to the PC host.
+    383          * Input          : Length.
+    384          * Output         : None.
+    385          * Return         : Linecoding structure base address.
+    386          *******************************************************************************/
+    387          uint8_t *Virtual_Com_Port_GetLineCoding(uint16_t Length)
+    388          {
+    389            if (Length == 0)
+    390            {
+    391              pInformation->Ctrl_Info.Usb_wLength = sizeof(linecoding);
+    392              return NULL;
+    393            }
+    394            return(uint8_t *)&linecoding;
+    395          }
+    396          
+    397          /*******************************************************************************
+    398          * Function Name  : Virtual_Com_Port_SetLineCoding.
+    399          * Description    : Set the linecoding structure fields.
+    400          * Input          : Length.
+    401          * Output         : None.
+    402          * Return         : Linecoding structure base address.
+    403          *******************************************************************************/
+    404          uint8_t *Virtual_Com_Port_SetLineCoding(uint16_t Length)
+    405          {
+    406            if (Length == 0)
+    407            {
+    408              pInformation->Ctrl_Info.Usb_wLength = sizeof(linecoding);
+    409              return NULL;
+    410            }
+    411            return(uint8_t *)&linecoding;
+    412          }
+    413          
+    414          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+    415          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Virtual_Com_Port_Data_Setup
+         8   -- Indirect call
+       0   Virtual_Com_Port_GetConfigDescriptor
+         0   -> Standard_GetDescriptorData
+       0   Virtual_Com_Port_GetDeviceDescriptor
+         0   -> Standard_GetDescriptorData
+       0   Virtual_Com_Port_GetLineCoding
+       0   Virtual_Com_Port_GetStringDescriptor
+         0   -> Standard_GetDescriptorData
+       0   Virtual_Com_Port_Get_Interface_Setting
+       0   Virtual_Com_Port_NoData_Setup
+       8   Virtual_Com_Port_Reset
+         8   -> Clear_Status_Out
+         8   -> SetBTABLE
+         8   -> SetDeviceAddress
+         8   -> SetEPRxAddr
+         8   -> SetEPRxCount
+         8   -> SetEPRxStatus
+         8   -> SetEPRxValid
+         8   -> SetEPTxAddr
+         8   -> SetEPTxStatus
+         8   -> SetEPType
+       0   Virtual_Com_Port_SetConfiguration
+       0   Virtual_Com_Port_SetDeviceAddress
+       0   Virtual_Com_Port_SetLineCoding
+       0   Virtual_Com_Port_Status_In
+       0   Virtual_Com_Port_Status_Out
+       8   Virtual_Com_Port_init
+         8   -> Get_SerialNum
+         8   -> PowerOn
+         8   -> USB_SIL_Init
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable10_3
+       4  ??DataTable10_4
+       4  ??DataTable10_5
+       4  ??DataTable10_6
+       4  ??DataTable10_7
+       4  ??DataTable10_8
+       4  ??DataTable10_9
+       8  Config_Descriptor
+       8  Device_Descriptor
+      48  Device_Property
+       4  Device_Table
+       1  Request
+      32  String_Descriptor
+      36  User_Standard_Requests
+      96  Virtual_Com_Port_Data_Setup
+       6  Virtual_Com_Port_GetConfigDescriptor
+       6  Virtual_Com_Port_GetDeviceDescriptor
+      18  Virtual_Com_Port_GetLineCoding
+      24  Virtual_Com_Port_GetStringDescriptor
+      14  Virtual_Com_Port_Get_Interface_Setting
+      30  Virtual_Com_Port_NoData_Setup
+     218  Virtual_Com_Port_Reset
+      14  Virtual_Com_Port_SetConfiguration
+       8  Virtual_Com_Port_SetDeviceAddress
+      18  Virtual_Com_Port_SetLineCoding
+       2  Virtual_Com_Port_Status_In
+       2  Virtual_Com_Port_Status_Out
+      34  Virtual_Com_Port_init
+       2  control_signal
+       8  linecoding
+
+ 
+   3 bytes in section .bss
+ 144 bytes in section .data
+ 530 bytes in section .text
+ 
+ 530 bytes of CODE memory
+ 147 bytes of DATA memory
+
+Errors: none
+Warnings: none

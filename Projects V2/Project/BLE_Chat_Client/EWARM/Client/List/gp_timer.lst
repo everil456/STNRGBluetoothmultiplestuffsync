@@ -1,0 +1,245 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:08
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\utils\gp_timer.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\utils\gp_timer.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\gp_timer.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj\gp_timer.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\utils\gp_timer.c
+      1          /*
+      2           * Copyright (c) 2004, Swedish Institute of Computer Science.
+      3           * All rights reserved.
+      4           *
+      5           * Redistribution and use in source and binary forms, with or without
+      6           * modification, are permitted provided that the following conditions
+      7           * are met:
+      8           * 1. Redistributions of source code must retain the above copyright
+      9           *    notice, this list of conditions and the following disclaimer.
+     10           * 2. Redistributions in binary form must reproduce the above copyright
+     11           *    notice, this list of conditions and the following disclaimer in the
+     12           *    documentation and/or other materials provided with the distribution.
+     13           * 3. Neither the name of the Institute nor the names of its contributors
+     14           *    may be used to endorse or promote products derived from this software
+     15           *    without specific prior written permission.
+     16           *
+     17           * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
+     18           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     19           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+     20           * ARE DISCLAIMED.  IN NO EVENT SHALL THE INSTITUTE OR CONTRIBUTORS BE LIABLE
+     21           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+     22           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+     23           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+     24           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+     25           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+     26           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+     27           * SUCH DAMAGE.
+     28           *
+     29           * This file is part of the Contiki operating system.
+     30           *
+     31           * Author: Adam Dunkels <adam@sics.se>
+     32           *
+     33           */
+     34          
+     35          #include "clock.h"
+     36          #include "gp_timer.h"
+     37          
+     38          /*---------------------------------------------------------------------------*/
+     39          /**
+     40           * Set a timer.
+     41           *
+     42           * This function sets a timer for a time sometime in the
+     43           * future. The function timer_expired() will evaluate to true after
+     44           * the timer has expired.
+     45           *
+     46           * @param[in] t         A pointer to the timer
+     47           * @param[in] interval  The interval before the timer expires.
+     48           *
+     49           */
+     50          void
+     51          Timer_Set(struct timer *t, tClockTime interval)
+     52          {
+     53            t->interval = interval;
+     54            t->start = Clock_Time();
+     55          }
+     56          /*---------------------------------------------------------------------------*/
+     57          /**
+     58           * Reset the timer with the same interval.
+     59           *
+     60           * This function resets the timer with the same interval that was
+     61           * given to the timer_set() function. The start point of the interval
+     62           * is the exact time that the timer last expired. Therefore, this
+     63           * function will cause the timer to be stable over time, unlike the
+     64           * timer_restart() function.
+     65           *
+     66           * \param t A pointer to the timer.
+     67           *
+     68           * \sa timer_restart()
+     69           */
+     70          void
+     71          Timer_Reset(struct timer *t)
+     72          {
+     73            t->start += t->interval;
+     74          }
+     75          /*---------------------------------------------------------------------------*/
+     76          /**
+     77           * Restart the timer from the current point in time
+     78           *
+     79           * This function restarts a timer with the same interval that was
+     80           * given to the timer_set() function. The timer will start at the
+     81           * current time.
+     82           *
+     83           * \note A periodic timer will drift if this function is used to reset
+     84           * it. For preioric timers, use the timer_reset() function instead.
+     85           *
+     86           * \param t A pointer to the timer.
+     87           *
+     88           * \sa timer_reset()
+     89           */
+     90          void
+     91          Timer_Restart(struct timer *t)
+     92          {
+     93            t->start = Clock_Time();
+     94          }
+     95          /*---------------------------------------------------------------------------*/
+     96          /**
+     97           * Check if a timer has expired.
+     98           *
+     99           * This function tests if a timer has expired and returns true or
+    100           * false depending on its status.
+    101           *
+    102           * \param t A pointer to the timer
+    103           *
+    104           * \return Non-zero if the timer has expired, zero otherwise.
+    105           *
+    106           */
+    107          int
+    108          Timer_Expired(struct timer *t)
+    109          {
+    110            /* Note: Can not return diff >= t->interval so we add 1 to diff and return
+    111               t->interval < diff - required to avoid an internal error in mspgcc. */
+    112            tClockTime diff = (Clock_Time() - t->start) + 1;
+    113            return t->interval < diff;
+    114          
+    115          }
+    116          /*---------------------------------------------------------------------------*/
+    117          /**
+    118           * The time until the timer expires
+    119           *
+    120           * This function returns the time until the timer expires.
+    121           *
+    122           * \param t A pointer to the timer
+    123           *
+    124           * \return The time until the timer expires
+    125           *
+    126           */
+    127          tClockTime
+    128          Timer_Remaining(struct timer *t)
+    129          {
+    130            return t->start + t->interval - Clock_Time();
+    131          }
+    132          /*---------------------------------------------------------------------------*/
+    133          
+    134          /** @} */
+    135          
+    136          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Timer_Expired
+         8   -> Clock_Time
+       8   Timer_Remaining
+         8   -> Clock_Time
+       0   Timer_Reset
+       8   Timer_Restart
+         8   -> Clock_Time
+       8   Timer_Set
+         8   -> Clock_Time
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      24  Timer_Expired
+      18  Timer_Remaining
+      10  Timer_Reset
+      12  Timer_Restart
+      14  Timer_Set
+
+ 
+ 78 bytes in section .text
+ 
+ 78 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1509 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:39:24
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\hci.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\hci.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\hci.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\Obj\hci.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\hci.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    hci.c 
+      4            * @author  AMS/HESA Application Team
+      5            * @brief   Function for managing HCI interface.
+      6            ******************************************************************************
+      7            *
+      8            *
+      9            * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     10            * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     11            * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     12            * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     13            * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     14            * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     15            *
+     16            * <h2><center>&copy; COPYRIGHT 2013 STMicroelectronics</center></h2>
+     17            */ 
+     18          
+     19          #include "hal_types.h"
+     20          #include "osal.h"
+     21          #include "ble_status.h"
+     22          #include "hal.h"
+     23          #include "hci_const.h"
+     24          #include "gp_timer.h"
+     25          #include "low_power.h"
+     26          
+     27          #if BLE_CONFIG_DBG_ENABLE
+     28          #define PRINTF(...) printf(__VA_ARGS__)
+     29          #else
+     30          #define PRINTF(...)
+     31          #endif
+     32          
+     33          #define HCI_LOG_ON 0
+     34          
+     35          #define HCI_READ_PACKET_NUM_MAX 		 (5)
+     36          
+     37          #define MIN(a,b)            ((a) < (b) )? (a) : (b)
+     38          #define MAX(a,b)            ((a) > (b) )? (a) : (b)
+     39          
+     40          static void enqueue_packet(tHciDataPacket * hciReadPacket);
+     41          
+     42          tListNode hciReadPktPool;
+     43          tListNode hciReadPktRxQueue;
+     44          /* pool of hci read packets */
+     45          static tHciDataPacket     hciReadPacketBuffer[HCI_READ_PACKET_NUM_MAX];
+     46          
+     47          static uint8_t *hci_buffer = NULL;
+     48          static volatile uint16_t hci_pckt_len;
+     49          
+     50          volatile uint8_t readPacketListFull=FALSE;
+     51          
+     52          void HCI_Init(void)
+     53          {
+     54            uint8_t index;
+     55            
+     56            /* Initialize list heads of ready and free hci data packet queues */
+     57            list_init_head (&hciReadPktPool);
+     58            list_init_head (&hciReadPktRxQueue);
+     59            
+     60            /* Initialize the queue of free hci data packets */
+     61            for (index = 0; index < HCI_READ_PACKET_NUM_MAX; index++)
+     62            {
+     63              list_insert_tail(&hciReadPktPool, (tListNode *)&hciReadPacketBuffer[index]);
+     64            }
+     65          }
+     66          
+     67          static volatile hci_packet_complete_callback packet_complete_callback = NULL;
+     68          
+     69          static void hci_set_packet_complete_callback(hci_packet_complete_callback cb)
+     70          {
+     71            packet_complete_callback = cb;
+     72          }
+     73          
+     74          void HCI_Input(tHciDataPacket * hciReadPacket)
+     75          {
+     76            uint8_t byte;
+     77            hci_acl_hdr *acl_hdr;
+     78            
+     79            static hci_state state = WAITING_TYPE;
+     80            
+     81            uint16_t collected_payload_len = 0;
+     82            uint16_t payload_len;
+     83            
+     84            hci_buffer = hciReadPacket->dataBuff;
+     85            
+     86            if(state == WAITING_TYPE)
+     87              hci_pckt_len = 0;
+     88            
+     89            while(hci_pckt_len < HCI_PACKET_SIZE){
+     90              
+     91              byte = hci_buffer[hci_pckt_len++];
+     92              
+     93              if(state == WAITING_TYPE){
+     94                /* Only ACL Data and Events packets are accepted. */
+     95                if(byte == HCI_EVENT_PKT){
+     96                  state = WAITING_EVENT_CODE;
+     97                }
+     98                //            else if(byte == HCI_ACLDATA_PKT){
+     99                //                state = WAITING_HANDLE;
+    100                //            }
+    101                else{
+    102                  /* Incorrect type. Reset state machine. */
+    103                  state = WAITING_TYPE;
+    104                  break;
+    105                }
+    106              }
+    107              else if(state == WAITING_EVENT_CODE)
+    108                state = WAITING_PARAM_LEN;
+    109              else if(state == WAITING_HANDLE)
+    110                state = WAITING_HANDLE_FLAG;
+    111              else if(state == WAITING_HANDLE_FLAG)
+    112                state = WAITING_DATA_LEN1;
+    113              else if(state == WAITING_DATA_LEN1)
+    114                state = WAITING_DATA_LEN2;
+    115              
+    116              else if(state == WAITING_DATA_LEN2){
+    117                acl_hdr = (void *)&hci_buffer[HCI_HDR_SIZE];
+    118                payload_len = acl_hdr->dlen;
+    119                collected_payload_len = 0;
+    120                state = WAITING_PAYLOAD;
+    121              }
+    122              else if(state == WAITING_PARAM_LEN){
+    123                payload_len = byte;
+    124                collected_payload_len = 0;
+    125                state = WAITING_PAYLOAD;
+    126              }
+    127              else if(state == WAITING_PAYLOAD){
+    128                collected_payload_len += 1;
+    129                if(collected_payload_len >= payload_len){
+    130                  /* Reset state machine. */
+    131                  state = WAITING_TYPE;
+    132                  enqueue_packet(hciReadPacket);
+    133                  
+    134                  if(packet_complete_callback){
+    135                    uint16_t len = hci_pckt_len;
+    136                    packet_complete_callback(hci_buffer, len);
+    137                  }
+    138                  break;
+    139                }
+    140              }
+    141            }        
+    142          }
+    143          
+    144          void enqueue_packet(tHciDataPacket * hciReadPacket)
+    145          {
+    146            hci_uart_pckt *hci_pckt = (void*)hciReadPacket->dataBuff;
+    147            hci_event_pckt *event_pckt = (void*)hci_pckt->data;
+    148            
+    149            // Do not enqueue Command Complete or Command Status events
+    150            
+    151            if((hci_pckt->type != HCI_EVENT_PKT) ||
+    152               event_pckt->evt == EVT_CMD_COMPLETE ||
+    153                 event_pckt->evt == EVT_CMD_STATUS){
+    154                   // Insert the packet back into the pool.
+    155                   list_insert_tail(&hciReadPktPool, (tListNode *)hciReadPacket);
+    156                 }
+    157            else {    
+    158              // Insert the packet into the queue of events to be processed.
+    159              list_insert_tail(&hciReadPktRxQueue, (tListNode *)hciReadPacket);
+    160            }
+    161          }
+    162          
+    163          void HCI_Process(void)
+    164          {
+    165            uint8_t data_len;
+    166            uint8_t buffer[HCI_PACKET_SIZE];
+    167            tHciDataPacket * hciReadPacket = NULL;
+    168            
+    169            Disable_SPI_IRQ();
+    170            uint8_t list_empty = list_is_empty(&hciReadPktRxQueue);        
+    171            /* process any pending events read */
+    172            while(list_empty == FALSE)
+    173            {
+    174              list_remove_head (&hciReadPktRxQueue, (tListNode **)&hciReadPacket);
+    175              Enable_SPI_IRQ();
+    176              HCI_Event_CB(hciReadPacket->dataBuff);
+    177              Disable_SPI_IRQ();
+    178              list_insert_tail(&hciReadPktPool, (tListNode *)hciReadPacket);
+    179              list_empty = list_is_empty(&hciReadPktRxQueue);
+    180            }
+    181            if (readPacketListFull) {
+    182              while(BlueNRG_DataPresent()) {
+    183                data_len = BlueNRG_SPI_Read_All(buffer, HCI_PACKET_SIZE);
+    184                if(data_len > 0)
+    185                  HCI_Event_CB(buffer);
+    186              }
+    187              readPacketListFull = FALSE;
+    188            }
+    189            
+    190            Enable_SPI_IRQ();    
+    191          }
+    192          
+    193          BOOL HCI_Queue_Empty(void)
+    194          {
+    195            return list_is_empty(&hciReadPktRxQueue);
+    196          }
+    197          
+    198          void HCI_Isr(void)
+    199          {
+    200            tHciDataPacket * hciReadPacket = NULL;
+    201            uint8_t data_len;
+    202            
+    203            Clear_SPI_EXTI_Flag();
+    204            while(SdkEvalSPI_Irq_Pin()){        
+    205              if (list_is_empty (&hciReadPktPool) == FALSE){
+    206                
+    207                /* enqueueing a packet for read */
+    208                list_remove_head (&hciReadPktPool, (tListNode **)&hciReadPacket);
+    209                
+    210                data_len = BlueNRG_SPI_Read_All(hciReadPacket->dataBuff,HCI_PACKET_SIZE);
+    211                if(data_len > 0){                    
+    212                  HCI_Input(hciReadPacket);
+    213                  // Packet will be inserted to te correct queue by 
+    214                }
+    215                else {
+    216                  // Insert the packet back into the pool.
+    217                  list_insert_head(&hciReadPktPool, (tListNode *)hciReadPacket);
+    218                }
+    219                
+    220              }
+    221              else{
+    222                // HCI Read Packet Pool is empty, wait for a free packet.
+    223                readPacketListFull = TRUE;
+    224                Clear_SPI_EXTI_Flag();
+    225                return;
+    226              }
+    227              
+    228              Clear_SPI_EXTI_Flag();
+    229            }
+    230          }
+    231          
+    232          void hci_write(const void* data1, const void* data2, uint16_t n_bytes1, uint16_t n_bytes2){
+    233          #if  HCI_LOG_ON
+    234            PRINTF("HCI <- ");
+    235            for(int i=0; i < n_bytes1; i++)
+    236              PRINTF("%02X ", *((uint8_t*)data1 + i));
+    237            for(int i=0; i < n_bytes2; i++)
+    238              PRINTF("%02X ", *((uint8_t*)data2 + i));
+    239            PRINTF("\n");    
+    240          #endif
+    241            
+    242            Hal_Write_Serial(data1, data2, n_bytes1, n_bytes2);
+    243          }
+    244          
+    245          int hci_send_cmd(uint16_t ogf, uint16_t ocf, uint8_t plen, void *param)
+    246          {
+    247            hci_command_hdr hc;
+    248            
+    249            hc.opcode = htobs(cmd_opcode_pack(ogf, ocf));
+    250            hc.plen= plen;
+    251            
+    252            uint8_t header[HCI_HDR_SIZE + HCI_COMMAND_HDR_SIZE];
+    253            header[0] = HCI_COMMAND_PKT;
+    254            Osal_MemCpy(header+1, &hc, sizeof(hc));
+    255            
+    256            hci_write(header, param, sizeof(header), plen);
+    257            
+    258            return 0;
+    259          }
+    260          
+    261          static uint8_t new_packet;
+    262          
+    263          void new_hci_event(void *pckt, uint16_t len)
+    264          {
+    265            Disable_SPI_IRQ(); /* Must be re-enabled after packet processing. */
+    266            
+    267            new_packet = TRUE;
+    268          }
+    269          
+    270          /* 'to' is timeout in system clock ticks.  */
+    271          int hci_send_req(struct hci_request *r, BOOL async)
+    272          {
+    273            uint8_t *ptr;
+    274            uint16_t opcode = htobs(cmd_opcode_pack(r->ogf, r->ocf));
+    275            hci_event_pckt *event_pckt;
+    276            hci_uart_pckt *hci_hdr;
+    277            int to = DEFAULT_TIMEOUT;
+    278            struct timer t;
+    279            
+    280            new_packet = FALSE;
+    281            hci_set_packet_complete_callback(new_hci_event);
+    282            if (hci_send_cmd(r->ogf, r->ocf, r->clen, r->cparam) < 0)
+    283              goto failed;
+    284            
+    285            if(async){
+    286              goto done;
+    287            }
+    288            
+    289            /* Minimum timeout is 1. */
+    290            if(to == 0)
+    291              to = 1;
+    292            
+    293            Timer_Set(&t, to);
+    294            
+    295            while(1) {
+    296              evt_cmd_complete *cc;
+    297              evt_cmd_status *cs;
+    298              evt_le_meta_event *me;
+    299              int len;
+    300                
+    301              while(1){
+    302                if(Timer_Expired(&t)){
+    303                  goto failed;
+    304                }
+    305                if(new_packet){
+    306                  break;
+    307                }
+    308              }
+    309              
+    310              hci_hdr = (void *)hci_buffer;
+    311              if(hci_hdr->type != HCI_EVENT_PKT){
+    312                new_packet = FALSE;
+    313                Enable_SPI_IRQ();
+    314                continue;
+    315              }
+    316              
+    317              event_pckt = (void *) (hci_hdr->data);
+    318              
+    319              ptr = hci_buffer + (1 + HCI_EVENT_HDR_SIZE);
+    320              len = hci_pckt_len - (1 + HCI_EVENT_HDR_SIZE);
+    321              
+    322              switch (event_pckt->evt) {
+    323                
+    324              case EVT_CMD_STATUS:
+    325                cs = (void *) ptr;
+    326                
+    327                if (cs->opcode != opcode)
+    328                  break;
+    329                
+    330                if (r->event != EVT_CMD_STATUS) {
+    331                  if (cs->status) {
+    332                    goto failed;
+    333                  }
+    334                  break;
+    335                }
+    336                
+    337                r->rlen = MIN(len, r->rlen);
+    338                Osal_MemCpy(r->rparam, ptr, r->rlen);
+    339                goto done;
+    340                
+    341              case EVT_CMD_COMPLETE:
+    342                cc = (void *) ptr;
+    343                
+    344                if (cc->opcode != opcode)
+    345                  break;
+    346                
+    347                ptr += EVT_CMD_COMPLETE_SIZE;
+    348                len -= EVT_CMD_COMPLETE_SIZE;
+    349                
+    350                r->rlen = MIN(len, r->rlen);
+    351                Osal_MemCpy(r->rparam, ptr, r->rlen);
+    352                goto done;
+    353                
+    354              case EVT_LE_META_EVENT:
+    355                me = (void *) ptr;
+    356                
+    357                if (me->subevent != r->event)
+    358                  break;
+    359                
+    360                len -= 1;
+    361                r->rlen = MIN(len, r->rlen);
+    362                Osal_MemCpy(r->rparam, me->data, r->rlen);
+    363                goto done;
+    364                
+    365              case EVT_HARDWARE_ERROR:            
+    366                goto failed;
+    367                
+    368              default:
+    369                break; // In the meantime there could be other events from the controller.
+    370              }
+    371              
+    372              new_packet = FALSE;
+    373              Enable_SPI_IRQ();
+    374              
+    375            }
+    376            
+    377          failed:
+    378            hci_set_packet_complete_callback(NULL);
+    379            Enable_SPI_IRQ();
+    380            return -1;
+    381            
+    382          done:
+    383            hci_set_packet_complete_callback(NULL);
+    384            Enable_SPI_IRQ();
+    385            return 0;
+    386          }
+    387          
+    388          int hci_reset()
+    389          {
+    390            struct hci_request rq;
+    391            uint8_t status;
+    392            
+    393            Osal_MemSet(&rq, 0, sizeof(rq));
+    394            rq.ogf = OGF_HOST_CTL;
+    395            rq.ocf = OCF_RESET;
+    396            rq.rparam = &status;
+    397            rq.rlen = 1;
+    398            
+    399            if (hci_send_req(&rq, FALSE) < 0)
+    400              return BLE_STATUS_TIMEOUT;
+    401            
+    402            return status;  
+    403          }
+    404          
+    405          int hci_disconnect(uint16_t	handle, uint8_t reason)
+    406          {
+    407            struct hci_request rq;
+    408            disconnect_cp cp;
+    409            uint8_t status;
+    410            
+    411            cp.handle = handle;
+    412            cp.reason = reason;
+    413            
+    414            Osal_MemSet(&rq, 0, sizeof(rq));
+    415            rq.ogf = OGF_LINK_CTL;
+    416            rq.ocf = OCF_DISCONNECT;
+    417            rq.cparam = &cp;
+    418            rq.clen = DISCONNECT_CP_SIZE;
+    419            rq.event = EVT_CMD_STATUS;
+    420            rq.rparam = &status;
+    421            rq.rlen = 1;
+    422            
+    423            if (hci_send_req(&rq, FALSE) < 0)
+    424              return BLE_STATUS_TIMEOUT;
+    425            
+    426            return status;  
+    427          }
+    428          
+    429          int hci_le_read_local_version(uint8_t *hci_version, uint16_t *hci_revision, uint8_t *lmp_pal_version, 
+    430                                        uint16_t *manufacturer_name, uint16_t *lmp_pal_subversion)
+    431          {
+    432            struct hci_request rq;
+    433            read_local_version_rp resp;
+    434            
+    435            Osal_MemSet(&resp, 0, sizeof(resp));
+    436            
+    437            Osal_MemSet(&rq, 0, sizeof(rq));
+    438            rq.ogf = OGF_INFO_PARAM;
+    439            rq.ocf = OCF_READ_LOCAL_VERSION;
+    440            rq.cparam = NULL;
+    441            rq.clen = 0;
+    442            rq.rparam = &resp;
+    443            rq.rlen = READ_LOCAL_VERSION_RP_SIZE;
+    444            
+    445            if (hci_send_req(&rq, FALSE) < 0)
+    446              return BLE_STATUS_TIMEOUT;
+    447            
+    448            if (resp.status) {
+    449              return resp.status;
+    450            }
+    451            
+    452            
+    453            *hci_version = resp.hci_version;
+    454            *hci_revision =  btohs(resp.hci_revision);
+    455            *lmp_pal_version = resp.lmp_pal_version;
+    456            *manufacturer_name = btohs(resp.manufacturer_name);
+    457            *lmp_pal_subversion = btohs(resp.lmp_pal_subversion);
+    458            
+    459            return 0;
+    460          }
+    461          
+    462          int hci_le_read_buffer_size(uint16_t *pkt_len, uint8_t *max_pkt)
+    463          {
+    464            struct hci_request rq;
+    465            le_read_buffer_size_rp resp;
+    466            
+    467            Osal_MemSet(&resp, 0, sizeof(resp));
+    468            
+    469            Osal_MemSet(&rq, 0, sizeof(rq));
+    470            rq.ogf = OGF_LE_CTL;
+    471            rq.ocf = OCF_LE_READ_BUFFER_SIZE;
+    472            rq.cparam = NULL;
+    473            rq.clen = 0;
+    474            rq.rparam = &resp;
+    475            rq.rlen = LE_READ_BUFFER_SIZE_RP_SIZE;
+    476            
+    477            if (hci_send_req(&rq, FALSE) < 0)
+    478              return BLE_STATUS_TIMEOUT;
+    479            
+    480            if (resp.status) {
+    481              return resp.status;
+    482            }
+    483            
+    484            *pkt_len = resp.pkt_len;
+    485            *max_pkt = resp.max_pkt;
+    486            
+    487            return 0;
+    488          }
+    489          
+    490          int hci_le_set_advertising_parameters(uint16_t min_interval, uint16_t max_interval, uint8_t advtype,
+    491                                                uint8_t own_bdaddr_type, uint8_t direct_bdaddr_type, const tBDAddr direct_bdaddr, uint8_t chan_map,
+    492                                                uint8_t filter)
+    493          {
+    494            struct hci_request rq;
+    495            le_set_adv_parameters_cp adv_cp;
+    496            uint8_t status;
+    497            
+    498            Osal_MemSet(&adv_cp, 0, sizeof(adv_cp));
+    499            adv_cp.min_interval = min_interval;
+    500            adv_cp.max_interval = max_interval;
+    501            adv_cp.advtype = advtype;
+    502            adv_cp.own_bdaddr_type = own_bdaddr_type;
+    503            adv_cp.direct_bdaddr_type = direct_bdaddr_type;
+    504            Osal_MemCpy(adv_cp.direct_bdaddr,direct_bdaddr,sizeof(adv_cp.direct_bdaddr));
+    505            adv_cp.chan_map = chan_map;
+    506            adv_cp.filter = filter;
+    507            
+    508            Osal_MemSet(&rq, 0, sizeof(rq));
+    509            rq.ogf = OGF_LE_CTL;
+    510            rq.ocf = OCF_LE_SET_ADV_PARAMETERS;
+    511            rq.cparam = &adv_cp;
+    512            rq.clen = LE_SET_ADV_PARAMETERS_CP_SIZE;
+    513            rq.rparam = &status;
+    514            rq.rlen = 1;
+    515            
+    516            if (hci_send_req(&rq, FALSE) < 0)
+    517              return BLE_STATUS_TIMEOUT;
+    518            
+    519            return status;
+    520          }
+    521          
+    522          int hci_le_set_advertising_data(uint8_t length, const uint8_t data[])
+    523          {
+    524            struct hci_request rq;
+    525            le_set_adv_data_cp adv_cp;
+    526            uint8_t status;
+    527            
+    528            Osal_MemSet(&adv_cp, 0, sizeof(adv_cp));
+    529            adv_cp.length = length;
+    530            Osal_MemCpy(adv_cp.data, data, MIN(31,length));
+    531            
+    532            Osal_MemSet(&rq, 0, sizeof(rq));
+    533            rq.ogf = OGF_LE_CTL;
+    534            rq.ocf = OCF_LE_SET_ADV_DATA;
+    535            rq.cparam = &adv_cp;
+    536            rq.clen = LE_SET_ADV_DATA_CP_SIZE;
+    537            rq.rparam = &status;
+    538            rq.rlen = 1;
+    539            
+    540            if (hci_send_req(&rq, FALSE) < 0)
+    541              return BLE_STATUS_TIMEOUT;
+    542            
+    543            return status;
+    544          }
+    545          
+    546          int hci_le_set_advertise_enable(uint8_t enable)
+    547          {
+    548            struct hci_request rq;
+    549            le_set_advertise_enable_cp adv_cp;
+    550            uint8_t status;
+    551            
+    552            Osal_MemSet(&adv_cp, 0, sizeof(adv_cp));
+    553            adv_cp.enable = enable?1:0;
+    554            
+    555            Osal_MemSet(&rq, 0, sizeof(rq));
+    556            rq.ogf = OGF_LE_CTL;
+    557            rq.ocf = OCF_LE_SET_ADVERTISE_ENABLE;
+    558            rq.cparam = &adv_cp;
+    559            rq.clen = LE_SET_ADVERTISE_ENABLE_CP_SIZE;
+    560            rq.rparam = &status;
+    561            rq.rlen = 1;
+    562            
+    563            if (hci_send_req(&rq, FALSE) < 0)
+    564              return BLE_STATUS_TIMEOUT;
+    565            
+    566            return status;
+    567          }
+    568          
+    569          int hci_le_set_scan_parameters(uint8_t	type, uint16_t interval,
+    570                                         uint16_t window, uint8_t own_bdaddr_type,
+    571                                         uint8_t	filter)
+    572          {
+    573            struct hci_request rq;
+    574            le_set_scan_parameters_cp scan_cp;
+    575            uint8_t status;
+    576            
+    577            Osal_MemSet(&scan_cp, 0, sizeof(scan_cp));
+    578            scan_cp.type = type;
+    579            scan_cp.interval = interval;
+    580            scan_cp.window = window;
+    581            scan_cp.own_bdaddr_type = own_bdaddr_type;
+    582            scan_cp.filter = filter;
+    583            
+    584            Osal_MemSet(&rq, 0, sizeof(rq));
+    585            rq.ogf = OGF_LE_CTL;
+    586            rq.ocf = OCF_LE_SET_SCAN_PARAMETERS;
+    587            rq.cparam = &scan_cp;
+    588            rq.clen = LE_SET_SCAN_PARAMETERS_CP_SIZE;
+    589            rq.rparam = &status;
+    590            rq.rlen = 1;
+    591            
+    592            if (hci_send_req(&rq, FALSE) < 0)
+    593              return BLE_STATUS_TIMEOUT;
+    594            
+    595            return status;
+    596          }
+    597          
+    598          int hci_le_set_scan_enable(uint8_t enable, uint8_t filter_dup)
+    599          {
+    600            struct hci_request rq;
+    601            le_set_scan_enable_cp scan_cp;
+    602            uint8_t status;
+    603            
+    604            Osal_MemSet(&scan_cp, 0, sizeof(scan_cp));
+    605            scan_cp.enable = enable?1:0;
+    606            scan_cp.filter_dup = filter_dup;
+    607            
+    608            Osal_MemSet(&rq, 0, sizeof(rq));
+    609            rq.ogf = OGF_LE_CTL;
+    610            rq.ocf = OCF_LE_SET_SCAN_ENABLE;
+    611            rq.cparam = &scan_cp;
+    612            rq.clen = LE_SET_SCAN_ENABLE_CP_SIZE;
+    613            rq.rparam = &status;
+    614            rq.rlen = 1;
+    615            
+    616            if (hci_send_req(&rq, FALSE) < 0)
+    617              return BLE_STATUS_TIMEOUT;
+    618            
+    619            return status;
+    620          }
+    621          
+    622          int hci_le_rand(uint8_t random_number[8])
+    623          {
+    624            struct hci_request rq;
+    625            le_rand_rp resp;
+    626            
+    627            Osal_MemSet(&resp, 0, sizeof(resp));
+    628            
+    629            Osal_MemSet(&rq, 0, sizeof(rq));
+    630            rq.ogf = OGF_LE_CTL;
+    631            rq.ocf = OCF_LE_RAND;
+    632            rq.cparam = NULL;
+    633            rq.clen = 0;
+    634            rq.rparam = &resp;
+    635            rq.rlen = LE_RAND_RP_SIZE;
+    636            
+    637            if (hci_send_req(&rq, FALSE) < 0)
+    638              return BLE_STATUS_TIMEOUT;
+    639            
+    640            if (resp.status) {
+    641              return resp.status;
+    642            }
+    643            
+    644            Osal_MemCpy(random_number, resp.random, 8);
+    645            
+    646            return 0;
+    647          }
+    648          
+    649          int hci_le_set_scan_resp_data(uint8_t length, const uint8_t data[])
+    650          {
+    651            struct hci_request rq;
+    652            le_set_scan_response_data_cp scan_resp_cp;
+    653            uint8_t status;
+    654            
+    655            Osal_MemSet(&scan_resp_cp, 0, sizeof(scan_resp_cp));
+    656            scan_resp_cp.length = length;
+    657            Osal_MemCpy(scan_resp_cp.data, data, MIN(31,length));
+    658            
+    659            Osal_MemSet(&rq, 0, sizeof(rq));
+    660            rq.ogf = OGF_LE_CTL;
+    661            rq.ocf = OCF_LE_SET_SCAN_RESPONSE_DATA;
+    662            rq.cparam = &scan_resp_cp;
+    663            rq.clen = LE_SET_SCAN_RESPONSE_DATA_CP_SIZE;
+    664            rq.rparam = &status;
+    665            rq.rlen = 1;
+    666            
+    667            if (hci_send_req(&rq, FALSE) < 0)
+    668              return BLE_STATUS_TIMEOUT;
+    669            
+    670            return status;
+    671          }
+    672          
+    673          int hci_le_read_advertising_channel_tx_power(int8_t *tx_power_level)
+    674          {
+    675            struct hci_request rq;
+    676            le_read_adv_channel_tx_power_rp resp;
+    677            
+    678            Osal_MemSet(&resp, 0, sizeof(resp));
+    679            
+    680            Osal_MemSet(&rq, 0, sizeof(rq));
+    681            rq.ogf = OGF_LE_CTL;
+    682            rq.ocf = OCF_LE_READ_ADV_CHANNEL_TX_POWER;
+    683            rq.cparam = NULL;
+    684            rq.clen = 0;
+    685            rq.rparam = &resp;
+    686            rq.rlen = LE_RAND_RP_SIZE;
+    687            
+    688            if (hci_send_req(&rq, FALSE) < 0)
+    689              return BLE_STATUS_TIMEOUT;
+    690            
+    691            if (resp.status) {
+    692              return resp.status;
+    693            }
+    694            
+    695            *tx_power_level = resp.level;
+    696            
+    697            return 0;
+    698          }
+    699          
+    700          int hci_le_set_random_address(tBDAddr bdaddr)
+    701          {
+    702            struct hci_request rq;
+    703            le_set_random_address_cp set_rand_addr_cp;
+    704            uint8_t status;
+    705            
+    706            Osal_MemSet(&set_rand_addr_cp, 0, sizeof(set_rand_addr_cp));
+    707            Osal_MemCpy(set_rand_addr_cp.bdaddr, bdaddr, sizeof(tBDAddr));
+    708            
+    709            Osal_MemSet(&rq, 0, sizeof(rq));
+    710            rq.ogf = OGF_LE_CTL;
+    711            rq.ocf = OCF_LE_SET_RANDOM_ADDRESS;
+    712            rq.cparam = &set_rand_addr_cp;
+    713            rq.clen = LE_SET_RANDOM_ADDRESS_CP_SIZE;
+    714            rq.rparam = &status;
+    715            rq.rlen = 1;
+    716            
+    717            if (hci_send_req(&rq, FALSE) < 0)
+    718              return BLE_STATUS_TIMEOUT;
+    719            
+    720            return status;
+    721          }
+    722          
+    723          int hci_read_bd_addr(tBDAddr bdaddr)
+    724          {
+    725            struct hci_request rq;
+    726            read_bd_addr_rp resp;
+    727            
+    728            Osal_MemSet(&resp, 0, sizeof(resp));
+    729            
+    730            Osal_MemSet(&rq, 0, sizeof(rq));
+    731            rq.ogf = OGF_INFO_PARAM;
+    732            rq.ocf = OCF_READ_BD_ADDR;
+    733            rq.cparam = NULL;
+    734            rq.clen = 0;
+    735            rq.rparam = &resp;
+    736            rq.rlen = READ_BD_ADDR_RP_SIZE;
+    737            
+    738            if (hci_send_req(&rq, FALSE) < 0)
+    739              return BLE_STATUS_TIMEOUT;
+    740            
+    741            if (resp.status) {
+    742              return resp.status;
+    743            }
+    744            Osal_MemCpy(bdaddr, resp.bdaddr, sizeof(tBDAddr));
+    745            
+    746            return 0;
+    747          }
+    748          
+    749          int hci_le_create_connection(uint16_t interval,	uint16_t window, uint8_t initiator_filter, uint8_t peer_bdaddr_type,
+    750                                       const tBDAddr peer_bdaddr,	uint8_t	own_bdaddr_type, uint16_t min_interval,	uint16_t max_interval,
+    751                                       uint16_t latency,	uint16_t supervision_timeout, uint16_t min_ce_length, uint16_t max_ce_length)
+    752          {
+    753            struct hci_request rq;
+    754            le_create_connection_cp create_cp;
+    755            uint8_t status;
+    756            
+    757            Osal_MemSet(&create_cp, 0, sizeof(create_cp));
+    758            create_cp.interval = interval;
+    759            create_cp.window =  window;
+    760            create_cp.initiator_filter = initiator_filter;
+    761            create_cp.peer_bdaddr_type = peer_bdaddr_type;
+    762            Osal_MemCpy(create_cp.peer_bdaddr, peer_bdaddr, sizeof(tBDAddr));
+    763            create_cp.own_bdaddr_type = own_bdaddr_type;
+    764            create_cp.min_interval=min_interval;
+    765            create_cp.max_interval=max_interval;
+    766            create_cp.latency = latency;
+    767            create_cp.supervision_timeout=supervision_timeout;
+    768            create_cp.min_ce_length=min_ce_length;
+    769            create_cp.max_ce_length=max_ce_length;
+    770            
+    771            Osal_MemSet(&rq, 0, sizeof(rq));
+    772            rq.ogf = OGF_LE_CTL;
+    773            rq.ocf = OCF_LE_CREATE_CONN;
+    774            rq.cparam = &create_cp;
+    775            rq.clen = LE_CREATE_CONN_CP_SIZE;
+    776            rq.event = EVT_CMD_STATUS;
+    777            rq.rparam = &status;
+    778            rq.rlen = 1;
+    779            
+    780            if (hci_send_req(&rq, FALSE) < 0)
+    781              return BLE_STATUS_TIMEOUT;
+    782            
+    783            return status;
+    784          }
+    785          
+    786          int hci_le_encrypt(uint8_t key[16], uint8_t plaintextData[16], uint8_t encryptedData[16])
+    787          {
+    788            struct hci_request rq;
+    789            le_encrypt_cp params;
+    790            le_encrypt_rp resp;
+    791            
+    792            Osal_MemSet(&resp, 0, sizeof(resp));
+    793            
+    794            Osal_MemCpy(params.key, key, 16);
+    795            Osal_MemCpy(params.plaintext, plaintextData, 16);
+    796            
+    797            Osal_MemSet(&rq, 0, sizeof(rq));
+    798            rq.ogf = OGF_LE_CTL;
+    799            rq.ocf = OCF_LE_ENCRYPT;
+    800            rq.cparam = &params;
+    801            rq.clen = LE_ENCRYPT_CP_SIZE;
+    802            rq.rparam = &resp;
+    803            rq.rlen = LE_ENCRYPT_RP_SIZE;
+    804            
+    805            if (hci_send_req(&rq, FALSE) < 0){
+    806              return BLE_STATUS_TIMEOUT;
+    807            }
+    808            
+    809            if (resp.status) {
+    810              return resp.status;
+    811            }
+    812            
+    813            Osal_MemCpy(encryptedData, resp.encdata, 16);
+    814            
+    815            return 0;
+    816          }
+    817          
+    818          int hci_le_ltk_request_reply(uint8_t key[16])
+    819          {
+    820            struct hci_request rq;
+    821            le_ltk_reply_cp params;
+    822            le_ltk_reply_rp resp;
+    823            
+    824            Osal_MemSet(&resp, 0, sizeof(resp));
+    825            
+    826            params.handle = 1;
+    827            Osal_MemCpy(params.key, key, 16);
+    828            
+    829            Osal_MemSet(&rq, 0, sizeof(rq));
+    830            rq.ogf = OGF_LE_CTL;
+    831            rq.ocf = OCF_LE_LTK_REPLY;
+    832            rq.cparam = &params;
+    833            rq.clen = LE_LTK_REPLY_CP_SIZE;
+    834            rq.rparam = &resp;
+    835            rq.rlen = LE_LTK_REPLY_RP_SIZE;
+    836            
+    837            if (hci_send_req(&rq, FALSE) < 0)
+    838              return BLE_STATUS_TIMEOUT;
+    839            
+    840            return resp.status;
+    841          }
+    842          
+    843          int hci_le_ltk_request_neg_reply()
+    844          {
+    845            struct hci_request rq;
+    846            le_ltk_neg_reply_cp params;
+    847            le_ltk_neg_reply_rp resp;
+    848            
+    849            Osal_MemSet(&resp, 0, sizeof(resp));
+    850            
+    851            params.handle = 1;
+    852            
+    853            Osal_MemSet(&rq, 0, sizeof(rq));
+    854            rq.ogf = OGF_LE_CTL;
+    855            rq.ocf = OCF_LE_LTK_NEG_REPLY;
+    856            rq.cparam = &params;
+    857            rq.clen = LE_LTK_NEG_REPLY_CP_SIZE;
+    858            rq.rparam = &resp;
+    859            rq.rlen = LE_LTK_NEG_REPLY_RP_SIZE;
+    860            
+    861            if (hci_send_req(&rq, FALSE) < 0)
+    862              return BLE_STATUS_TIMEOUT;
+    863            
+    864            return resp.status;
+    865          }
+    866          
+    867          int hci_le_read_white_list_size(uint8_t *size)
+    868          {
+    869            struct hci_request rq;
+    870            le_read_white_list_size_rp resp;
+    871            
+    872            Osal_MemSet(&resp, 0, sizeof(resp));
+    873            
+    874            Osal_MemSet(&rq, 0, sizeof(rq));
+    875            rq.ogf = OGF_LE_CTL;
+    876            rq.ocf = OCF_LE_READ_WHITE_LIST_SIZE;
+    877            rq.rparam = &resp;
+    878            rq.rlen = LE_READ_WHITE_LIST_SIZE_RP_SIZE;
+    879            
+    880            if (hci_send_req(&rq, FALSE) < 0){
+    881              return BLE_STATUS_TIMEOUT;
+    882            }
+    883            
+    884            if (resp.status) {
+    885              return resp.status;
+    886            }
+    887            
+    888            *size = resp.size;
+    889            
+    890            return 0;
+    891          }
+    892          
+    893          int hci_le_clear_white_list()
+    894          {
+    895            struct hci_request rq;
+    896            uint8_t status;
+    897            
+    898            Osal_MemSet(&rq, 0, sizeof(rq));
+    899            rq.ogf = OGF_LE_CTL;
+    900            rq.ocf = OCF_LE_CLEAR_WHITE_LIST;
+    901            rq.rparam = &status;
+    902            rq.rlen = 1;
+    903            
+    904            if (hci_send_req(&rq, FALSE) < 0){
+    905              return BLE_STATUS_TIMEOUT;
+    906            }
+    907            
+    908            return status;
+    909          }
+    910          
+    911          int hci_le_add_device_to_white_list(uint8_t	bdaddr_type, tBDAddr bdaddr)
+    912          {
+    913            struct hci_request rq;
+    914            le_add_device_to_white_list_cp params;
+    915            uint8_t status;
+    916            
+    917            params.bdaddr_type = bdaddr_type;
+    918            Osal_MemCpy(params.bdaddr, bdaddr, 6);
+    919            
+    920            Osal_MemSet(&rq, 0, sizeof(rq));
+    921            rq.ogf = OGF_LE_CTL;
+    922            rq.ocf = OCF_LE_ADD_DEVICE_TO_WHITE_LIST;
+    923            rq.cparam = &params;
+    924            rq.clen = LE_ADD_DEVICE_TO_WHITE_LIST_CP_SIZE;
+    925            rq.rparam = &status;
+    926            rq.rlen = 1;
+    927            
+    928            if (hci_send_req(&rq, FALSE) < 0){
+    929              return BLE_STATUS_TIMEOUT;
+    930            }
+    931            
+    932            return status;
+    933          }
+    934          
+    935          int hci_le_remove_device_from_white_list(uint8_t bdaddr_type, tBDAddr bdaddr)
+    936          {
+    937            struct hci_request rq;
+    938            le_remove_device_from_white_list_cp params;
+    939            uint8_t status;
+    940            
+    941            params.bdaddr_type = bdaddr_type;
+    942            Osal_MemCpy(params.bdaddr, bdaddr, 6);
+    943            
+    944            Osal_MemSet(&rq, 0, sizeof(rq));
+    945            rq.ogf = OGF_LE_CTL;
+    946            rq.ocf = OCF_LE_REMOVE_DEVICE_FROM_WHITE_LIST;
+    947            rq.cparam = &params;
+    948            rq.clen = LE_REMOVE_DEVICE_FROM_WHITE_LIST_CP_SIZE;
+    949            rq.rparam = &status;
+    950            rq.rlen = 1;
+    951            
+    952            if (hci_send_req(&rq, FALSE) < 0){
+    953              return BLE_STATUS_TIMEOUT;
+    954            }
+    955            
+    956            return status;
+    957          }
+    958          
+    959          int hci_read_transmit_power_level(uint16_t *conn_handle, uint8_t type, int8_t * tx_level)
+    960          {
+    961            struct hci_request rq;
+    962            read_transmit_power_level_cp params;
+    963            read_transmit_power_level_rp resp;
+    964            
+    965            Osal_MemSet(&resp, 0, sizeof(resp));
+    966            
+    967            params.handle = *conn_handle;
+    968            params.type = type;
+    969            
+    970            Osal_MemSet(&rq, 0, sizeof(rq));
+    971            rq.ogf = OGF_HOST_CTL;
+    972            rq.ocf = OCF_READ_TRANSMIT_POWER_LEVEL;
+    973            rq.cparam = &params;
+    974            rq.clen = READ_TRANSMIT_POWER_LEVEL_CP_SIZE;
+    975            rq.rparam = &resp;
+    976            rq.rlen = READ_TRANSMIT_POWER_LEVEL_RP_SIZE;
+    977            
+    978            if (hci_send_req(&rq, FALSE) < 0){
+    979              return BLE_STATUS_TIMEOUT;
+    980            }
+    981            
+    982            if (resp.status) {
+    983              return resp.status;
+    984            }
+    985            
+    986            *conn_handle = resp.handle;
+    987            *tx_level = resp.level;
+    988            
+    989            return 0;
+    990          }
+    991          
+    992          int hci_read_rssi(uint16_t *conn_handle, int8_t * rssi)
+    993          {
+    994            struct hci_request rq;
+    995            read_rssi_cp params;
+    996            read_rssi_rp resp;
+    997            
+    998            Osal_MemSet(&resp, 0, sizeof(resp));
+    999            
+   1000            params.handle = *conn_handle;
+   1001            
+   1002            Osal_MemSet(&rq, 0, sizeof(rq));
+   1003            rq.ogf = OGF_STATUS_PARAM;
+   1004            rq.ocf = OCF_READ_RSSI;
+   1005            rq.cparam = &params;
+   1006            rq.clen = READ_RSSI_CP_SIZE;
+   1007            rq.rparam = &resp;
+   1008            rq.rlen = READ_RSSI_RP_SIZE;
+   1009            
+   1010            if (hci_send_req(&rq, FALSE) < 0){
+   1011              return BLE_STATUS_TIMEOUT;
+   1012            }
+   1013            
+   1014            if (resp.status) {
+   1015              return resp.status;
+   1016            }
+   1017            
+   1018            *conn_handle = resp.handle;
+   1019            *rssi = resp.rssi;
+   1020            
+   1021            return 0;
+   1022          }
+   1023          
+   1024          int hci_le_read_local_supported_features(uint8_t *features)
+   1025          {
+   1026            struct hci_request rq;
+   1027            le_read_local_supported_features_rp resp;
+   1028            
+   1029            Osal_MemSet(&resp, 0, sizeof(resp));
+   1030            
+   1031            Osal_MemSet(&rq, 0, sizeof(rq));
+   1032            rq.ogf = OGF_LE_CTL;
+   1033            rq.ocf = OCF_LE_READ_LOCAL_SUPPORTED_FEATURES;
+   1034            rq.rparam = &resp;
+   1035            rq.rlen = LE_READ_LOCAL_SUPPORTED_FEATURES_RP_SIZE;
+   1036            
+   1037            if (hci_send_req(&rq, FALSE) < 0){
+   1038              return BLE_STATUS_TIMEOUT;
+   1039            }
+   1040            
+   1041            if (resp.status) {
+   1042              return resp.status;
+   1043            }
+   1044            
+   1045            Osal_MemCpy(features, resp.features, sizeof(resp.features));
+   1046            
+   1047            return 0;
+   1048          }
+   1049          
+   1050          int hci_le_read_channel_map(uint16_t conn_handle, uint8_t ch_map[5])
+   1051          {
+   1052            struct hci_request rq;
+   1053            le_read_channel_map_cp params;
+   1054            le_read_channel_map_rp resp;
+   1055            
+   1056            Osal_MemSet(&resp, 0, sizeof(resp));
+   1057            
+   1058            params.handle = conn_handle;
+   1059            
+   1060            Osal_MemSet(&rq, 0, sizeof(rq));
+   1061            rq.ogf = OGF_LE_CTL;
+   1062            rq.ocf = OCF_LE_READ_CHANNEL_MAP;
+   1063            rq.cparam = &params;
+   1064            rq.clen = LE_READ_CHANNEL_MAP_CP_SIZE;
+   1065            rq.rparam = &resp;
+   1066            rq.rlen = LE_READ_CHANNEL_MAP_RP_SIZE;
+   1067            
+   1068            if (hci_send_req(&rq, FALSE) < 0){
+   1069              return BLE_STATUS_TIMEOUT;
+   1070            }
+   1071            
+   1072            if (resp.status) {
+   1073              return resp.status;
+   1074            }
+   1075            
+   1076            Osal_MemCpy(ch_map, resp.map, 5);
+   1077            
+   1078            return 0;
+   1079          }
+   1080          
+   1081          int hci_le_read_supported_states(uint8_t states[8])
+   1082          {
+   1083            struct hci_request rq;
+   1084            le_read_supported_states_rp resp;
+   1085            
+   1086            Osal_MemSet(&resp, 0, sizeof(resp));
+   1087            
+   1088            Osal_MemSet(&rq, 0, sizeof(rq));
+   1089            rq.ogf = OGF_LE_CTL;
+   1090            rq.ocf = OCF_LE_READ_SUPPORTED_STATES;
+   1091            rq.rparam = &resp;
+   1092            rq.rlen = LE_READ_SUPPORTED_STATES_RP_SIZE;
+   1093            
+   1094            if (hci_send_req(&rq, FALSE) < 0){
+   1095              return BLE_STATUS_TIMEOUT;
+   1096            }
+   1097            
+   1098            if (resp.status) {
+   1099              return resp.status;
+   1100            }
+   1101            
+   1102            Osal_MemCpy(states, resp.states, 8);
+   1103            
+   1104            return 0;
+   1105          }
+   1106          
+   1107          int hci_le_receiver_test(uint8_t frequency)
+   1108          {
+   1109            struct hci_request rq;
+   1110            le_receiver_test_cp params;
+   1111            uint8_t status;
+   1112            
+   1113            params.frequency = frequency;
+   1114            
+   1115            Osal_MemSet(&rq, 0, sizeof(rq));
+   1116            rq.ogf = OGF_LE_CTL;
+   1117            rq.ocf = OCF_LE_RECEIVER_TEST;
+   1118            rq.cparam = &params;
+   1119            rq.clen = LE_RECEIVER_TEST_CP_SIZE;
+   1120            rq.rparam = &status;
+   1121            rq.rlen = 1;
+   1122            
+   1123            if (hci_send_req(&rq, FALSE) < 0){
+   1124              return BLE_STATUS_TIMEOUT;
+   1125            }
+   1126            
+   1127            return status;
+   1128          }
+   1129          
+   1130          int hci_le_transmitter_test(uint8_t frequency, uint8_t length, uint8_t payload)
+   1131          {
+   1132            struct hci_request rq;
+   1133            le_transmitter_test_cp params;
+   1134            uint8_t status;
+   1135            
+   1136            params.frequency = frequency;
+   1137            params.length = length;
+   1138            params.payload = payload;
+   1139            
+   1140            Osal_MemSet(&rq, 0, sizeof(rq));
+   1141            rq.ogf = OGF_LE_CTL;
+   1142            rq.ocf = OCF_LE_TRANSMITTER_TEST;
+   1143            rq.cparam = &params;
+   1144            rq.clen = LE_TRANSMITTER_TEST_CP_SIZE;
+   1145            rq.rparam = &status;
+   1146            rq.rlen = 1;
+   1147            
+   1148            if (hci_send_req(&rq, FALSE) < 0){
+   1149              return BLE_STATUS_TIMEOUT;
+   1150            }
+   1151            
+   1152            return status;
+   1153          }
+   1154          
+   1155          int hci_le_test_end(uint16_t *num_pkts)
+   1156          {
+   1157            struct hci_request rq;
+   1158            le_test_end_rp resp;
+   1159            
+   1160            Osal_MemSet(&resp, 0, sizeof(resp));
+   1161            
+   1162            Osal_MemSet(&rq, 0, sizeof(rq));
+   1163            rq.ogf = OGF_LE_CTL;
+   1164            rq.ocf = OCF_LE_TEST_END;
+   1165            rq.rparam = &resp;
+   1166            rq.rlen = LE_TEST_END_RP_SIZE;
+   1167            
+   1168            if (hci_send_req(&rq, FALSE) < 0){
+   1169              return BLE_STATUS_TIMEOUT;
+   1170            }
+   1171            
+   1172            if (resp.status) {
+   1173              return resp.status;
+   1174            }
+   1175            
+   1176            *num_pkts = resp.num_pkts;
+   1177            
+   1178            return 0;
+   1179          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   HCI_Init
+         8   -> list_init_head
+         0   -> list_insert_tail
+         8   -> list_insert_tail
+      16   HCI_Input
+         0   -- Indirect call
+        16   -> list_insert_tail
+      16   HCI_Isr
+        16   -> BlueNRG_SPI_Read_All
+        16   -> Clear_SPI_EXTI_Flag
+        16   -> HCI_Input
+        16   -> SdkEvalSPI_Irq_Pin
+        16   -> list_insert_head
+        16   -> list_is_empty
+        16   -> list_remove_head
+     144   HCI_Process
+       144   -> BlueNRG_DataPresent
+       144   -> BlueNRG_SPI_Read_All
+       144   -> Disable_SPI_IRQ
+       144   -> Enable_SPI_IRQ
+       144   -> HCI_Event_CB
+       144   -> list_insert_tail
+       144   -> list_is_empty
+       144   -> list_remove_head
+       0   HCI_Queue_Empty
+         0   -> list_is_empty
+      40   hci_disconnect
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   hci_le_add_device_to_white_list
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      32   hci_le_clear_white_list
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      80   hci_le_create_connection
+        80   -> Osal_MemCpy
+        80   -> Osal_MemSet
+        80   -> hci_send_req
+      96   hci_le_encrypt
+        96   -> Osal_MemCpy
+        96   -> Osal_MemSet
+        96   -> hci_send_req
+      40   hci_le_ltk_request_neg_reply
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      56   hci_le_ltk_request_reply
+        56   -> Osal_MemCpy
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      48   hci_le_rand
+        48   -> Osal_MemCpy
+        48   -> Osal_MemSet
+        48   -> hci_send_req
+      40   hci_le_read_advertising_channel_tx_power
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   hci_le_read_buffer_size
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   hci_le_read_channel_map
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      80   hci_le_read_local_supported_features
+        80   -> Enable_SPI_IRQ
+        80   -> Hal_Write_Serial
+        80   -> Osal_MemCpy
+        80   -> Osal_MemSet
+        80   -> Timer_Expired
+        80   -> Timer_Set
+      56   hci_le_read_local_version
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      80   hci_le_read_supported_states
+        80   -> Enable_SPI_IRQ
+        80   -> Hal_Write_Serial
+        80   -> Osal_MemCpy
+        80   -> Osal_MemSet
+        80   -> Timer_Expired
+        80   -> Timer_Set
+      40   hci_le_read_white_list_size
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      64   hci_le_receiver_test
+        64   -> Enable_SPI_IRQ
+        64   -> Hal_Write_Serial
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> Timer_Expired
+        64   -> Timer_Set
+      72   hci_le_remove_device_from_white_list
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      40   hci_le_set_advertise_enable
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   hci_le_set_advertising_data
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+      64   hci_le_set_advertising_parameters
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+      48   hci_le_set_random_address
+        48   -> Osal_MemCpy
+        48   -> Osal_MemSet
+        48   -> hci_send_req
+      48   hci_le_set_scan_enable
+        48   -> Osal_MemSet
+        48   -> hci_send_req
+      56   hci_le_set_scan_parameters
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      72   hci_le_set_scan_resp_data
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+      72   hci_le_test_end
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      64   hci_le_transmitter_test
+        64   -> Enable_SPI_IRQ
+        64   -> Hal_Write_Serial
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> Timer_Expired
+        64   -> Timer_Set
+      40   hci_read_bd_addr
+        40   -> Osal_MemCpy
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   hci_read_rssi
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      72   hci_read_transmit_power_level
+        72   -> Enable_SPI_IRQ
+        72   -> Hal_Write_Serial
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> Timer_Expired
+        72   -> Timer_Set
+      32   hci_reset
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      24   hci_send_cmd
+        24   -> Hal_Write_Serial
+        24   -> Osal_MemCpy
+      48   hci_send_req
+        48   -> Enable_SPI_IRQ
+        48   -> Hal_Write_Serial
+        48   -> Osal_MemCpy
+        48   -> Timer_Expired
+        48   -> Timer_Set
+       0   hci_write
+         0   -> Hal_Write_Serial
+       8   new_hci_event
+         8   -> Disable_SPI_IRQ
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable10
+       4  ??DataTable10_1
+       4  ??DataTable10_2
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable16_2
+       4  ??DataTable8
+       4  ??DataTable9
+      86  HCI_Init
+     186  HCI_Input
+      94  HCI_Isr
+     116  HCI_Process
+       8  HCI_Queue_Empty
+      76  hci_disconnect
+     314  hci_le_add_device_to_white_list
+      56  hci_le_clear_white_list
+     156  hci_le_create_connection
+     118  hci_le_encrypt
+      80  hci_le_ltk_request_neg_reply
+      94  hci_le_ltk_request_reply
+      92  hci_le_rand
+      86  hci_le_read_advertising_channel_tx_power
+      94  hci_le_read_buffer_size
+     340  hci_le_read_channel_map
+     336  hci_le_read_local_supported_features
+     118  hci_le_read_local_version
+     336  hci_le_read_supported_states
+      80  hci_le_read_white_list_size
+     298  hci_le_receiver_test
+     314  hci_le_remove_device_from_white_list
+      88  hci_le_set_advertise_enable
+      98  hci_le_set_advertising_data
+     128  hci_le_set_advertising_parameters
+      86  hci_le_set_random_address
+      94  hci_le_set_scan_enable
+     104  hci_le_set_scan_parameters
+     100  hci_le_set_scan_resp_data
+     322  hci_le_test_end
+     308  hci_le_transmitter_test
+      92  hci_read_bd_addr
+     342  hci_read_rssi
+     350  hci_read_transmit_power_level
+      54  hci_reset
+      60  hci_send_cmd
+     302  hci_send_req
+       4  hci_write
+      20  new_hci_event
+     712  readPacketListFull
+          state
+          new_packet
+          hci_pckt_len
+          hci_buffer
+          packet_complete_callback
+          hciReadPktPool
+          hciReadPktRxQueue
+          hciReadPacketBuffer
+
+ 
+   712 bytes in section .bss
+ 6 062 bytes in section .text
+ 
+ 6 062 bytes of CODE memory
+   712 bytes of DATA memory
+
+Errors: none
+Warnings: none

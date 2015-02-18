@@ -1,0 +1,1214 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:39:09
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gap_aci.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gap_aci.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\bluenrg_gap_aci.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\bluenrg_gap_aci.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gap_aci.c
+      1          /******************** (C) COPYRIGHT 2014 STMicroelectronics ********************
+      2          * File Name          : bluenrg_hci.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 4-Oct-2013
+      6          * Description        : File with HCI commands for BlueNRG FW6.0 and above.
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #include "hal_types.h"
+     17          #include "osal.h"
+     18          #include "ble_status.h"
+     19          #include "hal.h"
+     20          #include "osal.h"
+     21          #include "hci_const.h"
+     22          #include "bluenrg_aci_const.h"
+     23          #include "bluenrg_gap_aci.h"
+     24          #include "gatt_server.h"
+     25          #include "gap.h"
+     26          
+     27          #define MIN(a,b)            ((a) < (b) )? (a) : (b)
+     28          #define MAX(a,b)            ((a) > (b) )? (a) : (b)
+     29          
+     30          
+     31          tBleStatus aci_gap_init(uint8_t role, uint16_t* service_handle, uint16_t* dev_name_char_handle, uint16_t* appearance_char_handle)
+     32          {
+     33            struct hci_request rq;
+     34            gap_init_cp cp;
+     35            gap_init_rp resp;
+     36          
+     37            cp.role = role;
+     38              
+     39            Osal_MemSet(&resp, 0, sizeof(resp));
+     40            
+     41            Osal_MemSet(&rq, 0, sizeof(rq));
+     42            rq.ogf = OGF_VENDOR_CMD;
+     43            rq.ocf = OCF_GAP_INIT;
+     44            rq.cparam = &cp;
+     45            rq.clen = GAP_INIT_CP_SIZE;
+     46            rq.rparam = &resp;
+     47            rq.rlen = GAP_INIT_RP_SIZE;
+     48            
+     49            if (hci_send_req(&rq, FALSE) < 0)
+     50              return BLE_STATUS_TIMEOUT;
+     51            
+     52            if (resp.status) {
+     53              return resp.status;
+     54            }
+     55            
+     56            *service_handle = btohs(resp.service_handle);
+     57            *dev_name_char_handle = btohs(resp.dev_name_char_handle);
+     58            *appearance_char_handle = btohs(resp.appearance_char_handle);
+     59            
+     60            return 0;
+     61          }
+     62          
+     63          tBleStatus aci_gap_set_non_discoverable(void)
+     64          {
+     65            struct hci_request rq;
+     66            uint8_t status;
+     67            
+     68            Osal_MemSet(&rq, 0, sizeof(rq));
+     69            rq.ogf = OGF_VENDOR_CMD;
+     70            rq.ocf = OCF_GAP_SET_NON_DISCOVERABLE;
+     71            rq.rparam = &status;
+     72            rq.rlen = 1;
+     73            
+     74            if (hci_send_req(&rq, FALSE) < 0)
+     75              return BLE_STATUS_TIMEOUT;
+     76            
+     77            return status;  
+     78          }
+     79          
+     80          tBleStatus aci_gap_set_limited_discoverable(uint8_t AdvType, uint16_t AdvIntervMin, uint16_t AdvIntervMax,
+     81          					    uint8_t OwnAddrType, uint8_t AdvFilterPolicy, uint8_t LocalNameLen,
+     82          					    const char *LocalName, uint8_t ServiceUUIDLen, uint8_t* ServiceUUIDList,
+     83          					    uint16_t SlaveConnIntervMin, uint16_t SlaveConnIntervMax)
+     84          {
+     85            struct hci_request rq;
+     86            uint8_t status;    
+     87            uint8_t buffer[40];
+     88            uint8_t indx = 0;
+     89              
+     90            if ((LocalNameLen+ServiceUUIDLen+14) > sizeof(buffer))
+     91              return BLE_STATUS_INVALID_PARAMS;
+     92          
+     93            buffer[indx] = AdvType;
+     94            indx++;
+     95              
+     96            AdvIntervMin = htobs(AdvIntervMin);
+     97            Osal_MemCpy(buffer + indx, &AdvIntervMin, 2);
+     98            indx +=  2;
+     99              
+    100            AdvIntervMax = htobs(AdvIntervMax);
+    101            Osal_MemCpy(buffer + indx, &AdvIntervMax, 2);
+    102            indx +=  2;
+    103              
+    104            buffer[indx] = OwnAddrType;
+    105            indx++;
+    106              
+    107            buffer[indx] = AdvFilterPolicy;
+    108            indx++;
+    109              
+    110            buffer[indx] = LocalNameLen;
+    111            indx++;
+    112              
+    113            Osal_MemCpy(buffer + indx, LocalName, LocalNameLen);
+    114            indx +=  LocalNameLen;
+    115          
+    116            buffer[indx] = ServiceUUIDLen;
+    117            indx++;
+    118          
+    119            Osal_MemCpy(buffer + indx, ServiceUUIDList, ServiceUUIDLen);
+    120            indx +=  ServiceUUIDLen;
+    121          
+    122            Osal_MemCpy(buffer + indx, &SlaveConnIntervMin, 2);
+    123            indx +=  2;
+    124          
+    125            Osal_MemCpy(buffer + indx, &SlaveConnIntervMax, 2);
+    126            indx +=  2;    
+    127          
+    128            Osal_MemSet(&rq, 0, sizeof(rq));
+    129            rq.ogf = OGF_VENDOR_CMD;
+    130            rq.ocf = OCF_GAP_SET_LIMITED_DISCOVERABLE;
+    131            rq.cparam = (void *)buffer;
+    132            rq.clen = indx;
+    133            rq.event = EVT_CMD_STATUS;
+    134            rq.rparam = &status;
+    135            rq.rlen = 1;
+    136          
+    137            if (hci_send_req(&rq, FALSE) < 0)
+    138              return BLE_STATUS_TIMEOUT;
+    139          
+    140            return status;
+    141          }
+    142          
+    143          tBleStatus aci_gap_set_discoverable(uint8_t AdvType, uint16_t AdvIntervMin, uint16_t AdvIntervMax,
+    144                                       uint8_t OwnAddrType, uint8_t AdvFilterPolicy, uint8_t LocalNameLen,
+    145                                       const char *LocalName, uint8_t ServiceUUIDLen, uint8_t* ServiceUUIDList,
+    146                                       uint16_t SlaveConnIntervMin, uint16_t SlaveConnIntervMax)
+    147          {
+    148            struct hci_request rq;
+    149            uint8_t status;    
+    150            uint8_t buffer[40];
+    151            uint8_t indx = 0;
+    152            
+    153            if ((LocalNameLen+ServiceUUIDLen+14) > sizeof(buffer))
+    154              return BLE_STATUS_INVALID_PARAMS;
+    155          
+    156            buffer[indx] = AdvType;
+    157            indx++;
+    158            
+    159            AdvIntervMin = htobs(AdvIntervMin);
+    160            Osal_MemCpy(buffer + indx, &AdvIntervMin, 2);
+    161            indx +=  2;
+    162              
+    163            AdvIntervMax = htobs(AdvIntervMax);
+    164            Osal_MemCpy(buffer + indx, &AdvIntervMax, 2);
+    165            indx +=  2;
+    166              
+    167            buffer[indx] = OwnAddrType;
+    168            indx++;
+    169              
+    170            buffer[indx] = AdvFilterPolicy;
+    171            indx++;
+    172              
+    173            buffer[indx] = LocalNameLen;
+    174            indx++;
+    175              
+    176            Osal_MemCpy(buffer + indx, LocalName, LocalNameLen);
+    177            indx +=  LocalNameLen;
+    178            
+    179            buffer[indx] = ServiceUUIDLen;
+    180            indx++;
+    181          
+    182            Osal_MemCpy(buffer + indx, ServiceUUIDList, ServiceUUIDLen);
+    183            indx +=  ServiceUUIDLen;  
+    184          
+    185            SlaveConnIntervMin = htobs(SlaveConnIntervMin);
+    186            Osal_MemCpy(buffer + indx, &SlaveConnIntervMin, 2);
+    187            indx +=  2;
+    188            
+    189            SlaveConnIntervMax = htobs(SlaveConnIntervMax);
+    190            Osal_MemCpy(buffer + indx, &SlaveConnIntervMax, 2);
+    191            indx +=  2;    
+    192          
+    193            Osal_MemSet(&rq, 0, sizeof(rq));
+    194            rq.ogf = OGF_VENDOR_CMD;
+    195            rq.ocf = OCF_GAP_SET_DISCOVERABLE;
+    196            rq.cparam = (void *)buffer;
+    197            rq.clen = indx;
+    198            rq.rparam = &status;
+    199            rq.rlen = 1;
+    200          
+    201            if (hci_send_req(&rq, FALSE) < 0)
+    202              return BLE_STATUS_TIMEOUT;
+    203          
+    204            if (status) {
+    205              return status;
+    206            }
+    207          
+    208            return 0;
+    209          }
+    210          
+    211          tBleStatus aci_gap_set_direct_connectable(uint8_t own_addr_type, uint8_t initiator_addr_type, const uint8_t *initiator_addr)
+    212          {
+    213            struct hci_request rq;
+    214            gap_set_direct_conectable_cp cp;
+    215            uint8_t status;    
+    216          
+    217            cp.own_bdaddr_type = own_addr_type;
+    218            cp.direct_bdaddr_type = initiator_addr_type;
+    219            Osal_MemCpy(cp.direct_bdaddr, initiator_addr, 6);
+    220          
+    221            Osal_MemSet(&rq, 0, sizeof(rq));
+    222            rq.ogf = OGF_VENDOR_CMD;
+    223            rq.ocf = OCF_GAP_SET_DIRECT_CONNECTABLE;
+    224            rq.cparam = &cp;
+    225            rq.clen = GAP_SET_DIRECT_CONNECTABLE_CP_SIZE;
+    226            rq.rparam = &status;
+    227            rq.rlen = 1;
+    228              
+    229            if (hci_send_req(&rq, FALSE) < 0)
+    230              return BLE_STATUS_TIMEOUT;
+    231              
+    232            return status;
+    233          }
+    234          
+    235          tBleStatus aci_gap_set_io_capability(uint8_t io_capability)
+    236          {
+    237            struct hci_request rq;
+    238            uint8_t status;
+    239            gap_set_io_capability_cp cp;
+    240              
+    241            cp.io_capability = io_capability;
+    242          
+    243            Osal_MemSet(&rq, 0, sizeof(rq));
+    244            rq.ogf = OGF_VENDOR_CMD;
+    245            rq.ocf = OCF_GAP_SET_IO_CAPABILITY;
+    246            rq.cparam = &cp;
+    247            rq.clen = GAP_SET_IO_CAPABILITY_CP_SIZE;
+    248            rq.rparam = &status;
+    249            rq.rlen = 1;
+    250              
+    251            if (hci_send_req(&rq, FALSE) < 0)
+    252              return BLE_STATUS_TIMEOUT;
+    253              
+    254            return status;
+    255          }
+    256          
+    257          tBleStatus aci_gap_set_auth_requirement(uint8_t mitm_mode,
+    258                                                  uint8_t oob_enable,
+    259                                                  uint8_t oob_data[16],
+    260                                                  uint8_t min_encryption_key_size,
+    261                                                  uint8_t max_encryption_key_size,
+    262                                                  uint8_t use_fixed_pin,
+    263                                                  uint32_t fixed_pin,
+    264                                                  uint8_t bonding_mode)
+    265          {
+    266            struct hci_request rq;
+    267            gap_set_auth_requirement_cp cp;    
+    268            uint8_t status;
+    269              
+    270            cp.mitm_mode = mitm_mode;
+    271            cp.oob_enable = oob_enable;
+    272            Osal_MemCpy(cp.oob_data, oob_data, 16);
+    273            cp.min_encryption_key_size = min_encryption_key_size;
+    274            cp.max_encryption_key_size = max_encryption_key_size;
+    275            cp.use_fixed_pin = use_fixed_pin;
+    276            cp.fixed_pin = htobl(fixed_pin);
+    277            cp.bonding_mode = bonding_mode;
+    278          
+    279            Osal_MemSet(&rq, 0, sizeof(rq));
+    280            rq.ogf = OGF_VENDOR_CMD;
+    281            rq.ocf = OCF_GAP_SET_AUTH_REQUIREMENT;
+    282            rq.cparam = &cp;
+    283            rq.clen = GAP_SET_AUTH_REQUIREMENT_CP_SIZE;
+    284            rq.rparam = &status;
+    285            rq.rlen = 1;
+    286          
+    287            if (hci_send_req(&rq, FALSE) < 0)
+    288              return BLE_STATUS_TIMEOUT;
+    289          
+    290            if (status) {
+    291              return status;
+    292            }
+    293              
+    294            return 0;
+    295          }
+    296          
+    297          tBleStatus aci_gap_set_author_requirement(uint16_t conn_handle, uint8_t authorization_enable)
+    298          {
+    299            struct hci_request rq;
+    300            gap_set_author_requirement_cp cp;    
+    301            uint8_t status;
+    302              
+    303            cp.conn_handle = htobs(conn_handle);
+    304            cp.authorization_enable = authorization_enable;
+    305          
+    306            Osal_MemSet(&rq, 0, sizeof(rq));
+    307            rq.ogf = OGF_VENDOR_CMD;
+    308            rq.ocf = OCF_GAP_SET_AUTHOR_REQUIREMENT;
+    309            rq.cparam = &cp;
+    310            rq.clen = GAP_SET_AUTHOR_REQUIREMENT_CP_SIZE;
+    311            rq.rparam = &status;
+    312            rq.rlen = 1;
+    313          
+    314            if (hci_send_req(&rq, FALSE) < 0)
+    315              return BLE_STATUS_TIMEOUT;
+    316            
+    317            return status;
+    318          }
+    319          
+    320          tBleStatus aci_gap_pass_key_response(uint16_t conn_handle, uint32_t passkey)
+    321          {
+    322            struct hci_request rq;
+    323            gap_passkey_response_cp cp;    
+    324            uint8_t status;
+    325              
+    326            cp.conn_handle = htobs(conn_handle);
+    327            cp.passkey = htobl(passkey);
+    328          
+    329            Osal_MemSet(&rq, 0, sizeof(rq));
+    330            rq.ogf = OGF_VENDOR_CMD;
+    331            rq.ocf = OCF_GAP_PASSKEY_RESPONSE;
+    332            rq.cparam = &cp;
+    333            rq.clen = GAP_PASSKEY_RESPONSE_CP_SIZE;
+    334            rq.event = EVT_CMD_STATUS;
+    335            rq.rparam = &status;
+    336            rq.rlen = 1;
+    337            
+    338            if (hci_send_req(&rq, FALSE) < 0)
+    339              return BLE_STATUS_TIMEOUT;
+    340            
+    341            return status;
+    342          }
+    343          
+    344          tBleStatus aci_gap_authorization_response(uint16_t conn_handle, uint8_t authorize)
+    345          {
+    346            struct hci_request rq;
+    347            gap_authorization_response_cp cp;    
+    348            uint8_t status;
+    349              
+    350            cp.conn_handle = htobs(conn_handle);
+    351            cp.authorize = authorize;
+    352          
+    353            Osal_MemSet(&rq, 0, sizeof(rq));
+    354            rq.ogf = OGF_VENDOR_CMD;
+    355            rq.ocf = OCF_GAP_AUTHORIZATION_RESPONSE;
+    356            rq.cparam = &cp;
+    357            rq.clen = GAP_AUTHORIZATION_RESPONSE_CP_SIZE;
+    358            rq.rparam = &status;
+    359            rq.rlen = 1;
+    360            
+    361            if (hci_send_req(&rq, FALSE) < 0)
+    362              return BLE_STATUS_TIMEOUT;
+    363            
+    364            return status;
+    365          }
+    366          
+    367          tBleStatus aci_gap_set_non_connectable(uint8_t adv_type)
+    368          {
+    369            struct hci_request rq;
+    370            gap_set_non_connectable_cp cp;    
+    371            uint8_t status;
+    372              
+    373            cp.advertising_event_type = adv_type;
+    374          
+    375            Osal_MemSet(&rq, 0, sizeof(rq));
+    376            rq.ogf = OGF_VENDOR_CMD;
+    377            rq.ocf = OCF_GAP_SET_NON_CONNECTABLE;
+    378            rq.cparam = &cp;
+    379            rq.clen = GAP_SET_NON_CONNECTABLE_CP_SIZE;
+    380            rq.rparam = &status;
+    381            rq.rlen = 1;
+    382            
+    383            if (hci_send_req(&rq, FALSE) < 0)
+    384              return BLE_STATUS_TIMEOUT;
+    385            
+    386            return status;
+    387          }
+    388          
+    389          tBleStatus aci_gap_set_undirected_connectable(uint8_t own_addr_type, uint8_t adv_filter_policy)
+    390          {
+    391            struct hci_request rq;
+    392            gap_set_undirected_connectable_cp cp;    
+    393            uint8_t status;
+    394              
+    395            cp.own_addr_type = own_addr_type;
+    396            cp.adv_filter_policy = adv_filter_policy;
+    397          
+    398            Osal_MemSet(&rq, 0, sizeof(rq));
+    399            rq.ogf = OGF_VENDOR_CMD;
+    400            rq.ocf = OCF_GAP_SET_UNDIRECTED_CONNECTABLE;
+    401            rq.cparam = &cp;
+    402            rq.clen = GAP_SET_UNDIRECTED_CONNECTABLE_CP_SIZE;
+    403            rq.rparam = &status;
+    404            rq.rlen = 1;
+    405            
+    406            if (hci_send_req(&rq, FALSE) < 0)
+    407              return BLE_STATUS_TIMEOUT;
+    408            
+    409            return status;
+    410          }
+    411          
+    412          tBleStatus aci_gap_slave_security_request(uint16_t conn_handle, uint8_t bonding, uint8_t mitm_protection)
+    413          {
+    414            struct hci_request rq;
+    415            gap_slave_security_request_cp cp;
+    416            uint8_t status;
+    417          
+    418            cp.conn_handle = htobs(conn_handle);
+    419            cp.bonding = bonding;
+    420            cp.mitm_protection = mitm_protection;
+    421            
+    422            Osal_MemSet(&rq, 0, sizeof(rq));
+    423            rq.ogf = OGF_VENDOR_CMD;
+    424            rq.ocf = OCF_GAP_SLAVE_SECURITY_REQUEST;
+    425            rq.cparam = &cp;
+    426            rq.clen = GAP_SLAVE_SECURITY_REQUEST_CP_SIZE;
+    427            rq.event = EVT_CMD_STATUS;
+    428            rq.rparam = &status;
+    429            rq.rlen = 1;
+    430            
+    431            if (hci_send_req(&rq, FALSE) < 0)
+    432              return BLE_STATUS_TIMEOUT;
+    433          
+    434            return status;
+    435          
+    436          }
+    437          
+    438          tBleStatus aci_gap_update_adv_data(uint8_t AdvLen, const uint8_t *AdvData)
+    439          {
+    440            struct hci_request rq;
+    441            uint8_t status;
+    442            uint8_t buffer[32];
+    443            uint8_t indx = 0;
+    444              
+    445            if (AdvLen > (sizeof(buffer)-1))
+    446              return BLE_STATUS_INVALID_PARAMS;
+    447          
+    448            buffer[indx] = AdvLen;
+    449            indx++;
+    450              
+    451            Osal_MemCpy(buffer + indx, AdvData, AdvLen);
+    452            indx +=  AdvLen;
+    453              
+    454            Osal_MemSet(&rq, 0, sizeof(rq));
+    455            rq.ogf = OGF_VENDOR_CMD;
+    456            rq.ocf = OCF_GAP_UPDATE_ADV_DATA;
+    457            rq.cparam = (void *)buffer;
+    458            rq.clen = indx;
+    459            rq.rparam = &status;
+    460            rq.rlen = 1;
+    461              
+    462            if (hci_send_req(&rq, FALSE) < 0)
+    463              return BLE_STATUS_TIMEOUT;
+    464              
+    465            return status;
+    466          }
+    467          
+    468          tBleStatus aci_gap_delete_ad_type(uint8_t ad_type)
+    469          {
+    470            struct hci_request rq;
+    471            gap_delete_ad_type_cp cp;
+    472            uint8_t status;
+    473          
+    474            cp.ad_type = ad_type;
+    475            
+    476            Osal_MemSet(&rq, 0, sizeof(rq));
+    477            rq.ogf = OGF_VENDOR_CMD;
+    478            rq.ocf = OCF_GAP_DELETE_AD_TYPE;
+    479            rq.cparam = &cp;
+    480            rq.clen = GAP_DELETE_AD_TYPE_CP_SIZE;
+    481            rq.rparam = &status;
+    482            rq.rlen = 1;
+    483            
+    484            if (hci_send_req(&rq, FALSE) < 0)
+    485              return BLE_STATUS_TIMEOUT;
+    486          
+    487            return status;
+    488          }
+    489          
+    490          tBleStatus aci_gap_get_security_level(uint8_t* mitm_protection, uint8_t* bonding,
+    491                                                uint8_t* oob_data, uint8_t* passkey_required)
+    492          {
+    493            struct hci_request rq;
+    494            gap_get_security_level_rp resp;
+    495              
+    496            Osal_MemSet(&resp, 0, sizeof(resp));
+    497            
+    498            Osal_MemSet(&rq, 0, sizeof(rq));
+    499            rq.ogf = OGF_VENDOR_CMD;
+    500            rq.ocf = OCF_GAP_GET_SECURITY_LEVEL;
+    501            rq.rparam = &resp;
+    502            rq.rlen = GAP_GET_SECURITY_LEVEL_RP_SIZE;
+    503            
+    504            if (hci_send_req(&rq, FALSE) < 0)
+    505              return BLE_STATUS_TIMEOUT;
+    506            
+    507            if (resp.status) {
+    508              return resp.status;
+    509            }
+    510            
+    511            *mitm_protection = resp.mitm_protection;
+    512            *bonding = resp.bonding;
+    513            *oob_data = resp.oob_data;
+    514            *passkey_required = resp.passkey_required;
+    515          
+    516            return resp.status;
+    517          }
+    518          
+    519          tBleStatus aci_gap_configure_whitelist(void)
+    520          {
+    521            struct hci_request rq;
+    522            uint8_t status, dummy;
+    523            
+    524            dummy = 0;
+    525            
+    526            Osal_MemSet(&rq, 0, sizeof(rq));
+    527            rq.ogf = OGF_VENDOR_CMD;
+    528            rq.ocf = OCF_GAP_CONFIGURE_WHITELIST;
+    529            rq.cparam = (void*)&dummy;
+    530            rq.clen = 0;
+    531            rq.rparam = &status;
+    532            rq.rlen = 1;
+    533            
+    534            if (hci_send_req(&rq, FALSE) < 0)
+    535              return BLE_STATUS_TIMEOUT;
+    536          
+    537            return status;
+    538          }
+    539          
+    540          tBleStatus aci_gap_terminate(uint16_t conn_handle, uint8_t reason)
+    541          {
+    542            struct hci_request rq;
+    543            gap_terminate_cp cp;
+    544            uint8_t status;  
+    545          
+    546            cp.handle = htobs(conn_handle);
+    547            cp.reason = reason;
+    548          
+    549            Osal_MemSet(&rq, 0, sizeof(rq));
+    550            rq.ogf = OGF_VENDOR_CMD;
+    551            rq.ocf = OCF_GAP_TERMINATE;
+    552            rq.cparam = &cp;
+    553            rq.clen = GAP_TERMINATE_CP_SIZE;
+    554            rq.event = EVT_CMD_STATUS;
+    555            rq.rparam = &status;
+    556            rq.rlen = 1;
+    557            
+    558            if (hci_send_req(&rq, FALSE) < 0)
+    559              return BLE_STATUS_TIMEOUT;
+    560          
+    561            return status; 
+    562          }
+    563          
+    564          tBleStatus aci_gap_clear_security_database(void)
+    565          {
+    566            struct hci_request rq;
+    567            uint8_t status, dummy;
+    568            
+    569            dummy = 0;
+    570            
+    571            Osal_MemSet(&rq, 0, sizeof(rq));
+    572            rq.ogf = OGF_VENDOR_CMD;
+    573            rq.ocf = OCF_GAP_CLEAR_SECURITY_DB;
+    574            rq.cparam = (void*)&dummy;
+    575            rq.clen = 0;
+    576            rq.rparam = &status;
+    577            rq.rlen = 1;
+    578            
+    579            if (hci_send_req(&rq, FALSE) < 0)
+    580              return BLE_STATUS_TIMEOUT;
+    581          
+    582            return status;
+    583          }
+    584          
+    585          tBleStatus aci_gap_allow_rebond(void)
+    586          {
+    587            struct hci_request rq;
+    588            uint8_t status, dummy;
+    589            
+    590            dummy = 0;
+    591            
+    592            Osal_MemSet(&rq, 0, sizeof(rq));
+    593            rq.ogf = OGF_VENDOR_CMD;
+    594            rq.ocf = OCF_GAP_ALLOW_REBOND_DB;
+    595            rq.cparam = (void*)&dummy;
+    596            rq.clen = 0;
+    597            rq.rparam = &status;
+    598            rq.rlen = 1;
+    599            
+    600            if (hci_send_req(&rq, FALSE) < 0)
+    601              return BLE_STATUS_TIMEOUT;
+    602          
+    603            return status;
+    604          }
+    605          
+    606          tBleStatus aci_gap_start_limited_discovery_proc(uint16_t scanInterval, uint16_t scanWindow,
+    607          						uint8_t own_address_type, uint8_t filterDuplicates)
+    608          {
+    609            struct hci_request rq;
+    610            gap_start_limited_discovery_proc_cp cp;
+    611            uint8_t status;  
+    612          
+    613            cp.scanInterval = htobs(scanInterval);
+    614            cp.scanWindow = htobs(scanWindow);
+    615            cp.own_address_type = own_address_type;
+    616            cp.filterDuplicates = filterDuplicates;
+    617          
+    618            Osal_MemSet(&rq, 0, sizeof(rq));
+    619            rq.ogf = OGF_VENDOR_CMD;
+    620            rq.ocf = OCF_GAP_START_LIMITED_DISCOVERY_PROC;
+    621            rq.cparam = &cp;
+    622            rq.clen = GAP_START_LIMITED_DISCOVERY_PROC_CP_SIZE;
+    623            rq.event = EVT_CMD_STATUS;
+    624            rq.rparam = &status;
+    625            rq.rlen = 1;
+    626            
+    627            if (hci_send_req(&rq, FALSE) < 0)
+    628              return BLE_STATUS_TIMEOUT;
+    629          
+    630            return status;
+    631          }
+    632          
+    633          tBleStatus aci_gap_start_general_discovery_proc(uint16_t scanInterval, uint16_t scanWindow,
+    634          						uint8_t own_address_type, uint8_t filterDuplicates)
+    635          {
+    636            struct hci_request rq;
+    637            gap_start_general_discovery_proc_cp cp;
+    638            uint8_t status;  
+    639          
+    640            cp.scanInterval = htobs(scanInterval);
+    641            cp.scanWindow = htobs(scanWindow);
+    642            cp.own_address_type = own_address_type;
+    643            cp.filterDuplicates = filterDuplicates;
+    644          
+    645            Osal_MemSet(&rq, 0, sizeof(rq));
+    646            rq.ogf = OGF_VENDOR_CMD;
+    647            rq.ocf = OCF_GAP_START_GENERAL_DISCOVERY_PROC;
+    648            rq.cparam = &cp;
+    649            rq.clen = GAP_START_GENERAL_DISCOVERY_PROC_CP_SIZE;
+    650            rq.event = EVT_CMD_STATUS;
+    651            rq.rparam = &status;
+    652            rq.rlen = 1;
+    653            
+    654            if (hci_send_req(&rq, FALSE) < 0)
+    655              return BLE_STATUS_TIMEOUT;
+    656          
+    657            return status;
+    658          }
+    659          
+    660          
+    661          tBleStatus aci_gap_start_name_discovery_proc(uint16_t scanInterval, uint16_t scanWindow,
+    662          				     uint8_t peer_bdaddr_type, tBDAddr peer_bdaddr,	
+    663          				     uint8_t own_bdaddr_type, uint16_t conn_min_interval,	
+    664          				     uint16_t conn_max_interval, uint16_t conn_latency,	
+    665          				     uint16_t supervision_timeout, uint16_t min_conn_length, 
+    666          				     uint16_t max_conn_length)
+    667          {
+    668            struct hci_request rq;
+    669            gap_start_name_discovery_proc_cp cp;
+    670            uint8_t status;  
+    671          
+    672            cp.scanInterval = htobs(scanInterval);
+    673            cp.scanWindow = htobs(scanWindow);
+    674            cp.peer_bdaddr_type = peer_bdaddr_type;
+    675            Osal_MemCpy(cp.peer_bdaddr, peer_bdaddr, 6);
+    676            cp.own_bdaddr_type = own_bdaddr_type;
+    677            cp.conn_min_interval = htobs(conn_min_interval);
+    678            cp.conn_max_interval = htobs(conn_max_interval);
+    679            cp.conn_latency = htobs(conn_latency);
+    680            cp.supervision_timeout = htobs(supervision_timeout);
+    681            cp.min_conn_length = htobs(min_conn_length);
+    682            cp.max_conn_length = htobs(max_conn_length);
+    683          
+    684            Osal_MemSet(&rq, 0, sizeof(rq));
+    685            rq.ogf = OGF_VENDOR_CMD;
+    686            rq.ocf = OCF_GAP_START_NAME_DISCOVERY_PROC;
+    687            rq.cparam = &cp;
+    688            rq.clen = GAP_START_NAME_DISCOVERY_PROC_CP_SIZE;
+    689            rq.event = EVT_CMD_STATUS;
+    690            rq.rparam = &status;
+    691            rq.rlen = 1;
+    692            
+    693            if (hci_send_req(&rq, FALSE) < 0)
+    694              return BLE_STATUS_TIMEOUT;
+    695          
+    696            return status;
+    697          }
+    698          
+    699          
+    700          tBleStatus aci_gap_start_auto_conn_establish_proc(uint16_t scanInterval, uint16_t scanWindow,
+    701          						 uint8_t own_bdaddr_type, uint16_t conn_min_interval,	
+    702          						 uint16_t conn_max_interval, uint16_t conn_latency,	
+    703          						 uint16_t supervision_timeout, uint16_t min_conn_length, 
+    704          						 uint16_t max_conn_length,
+    705                                   uint8_t use_reconn_addr,
+    706                                   const tBDAddr reconn_addr,
+    707                                   uint8_t num_whitelist_entries,
+    708                                   const uint8_t *addr_array)
+    709          {
+    710            struct hci_request rq;
+    711            uint8_t status;
+    712            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    713            uint8_t indx = 0;
+    714              
+    715            if (((num_whitelist_entries*7)+25) > HCI_MAX_PACKET_SIZE)
+    716              return BLE_STATUS_INVALID_PARAMS;
+    717          
+    718            scanInterval = htobs(scanInterval);
+    719            Osal_MemCpy(buffer + indx, &scanInterval, 2);
+    720            indx += 2;
+    721              
+    722            scanWindow = htobs(scanWindow);
+    723            Osal_MemCpy(buffer + indx, &scanWindow, 2);
+    724            indx += 2;
+    725          
+    726            buffer[indx] = own_bdaddr_type;
+    727            indx++;
+    728            
+    729            conn_min_interval = htobs(conn_min_interval);
+    730            Osal_MemCpy(buffer + indx, &conn_min_interval, 2);
+    731            indx +=  2;
+    732          
+    733            conn_max_interval = htobs(conn_max_interval);
+    734            Osal_MemCpy(buffer + indx, &conn_max_interval, 2);
+    735            indx +=  2;
+    736          
+    737            conn_latency = htobs(conn_latency);
+    738            Osal_MemCpy(buffer + indx, &conn_latency, 2);
+    739            indx +=  2;
+    740          
+    741            supervision_timeout = htobs(supervision_timeout);
+    742            Osal_MemCpy(buffer + indx, &supervision_timeout, 2);
+    743            indx +=  2;
+    744          
+    745            min_conn_length = htobs(min_conn_length);
+    746            Osal_MemCpy(buffer + indx, &min_conn_length, 2);
+    747            indx +=  2;
+    748          
+    749            max_conn_length = htobs(max_conn_length);
+    750            Osal_MemCpy(buffer + indx, &max_conn_length, 2);
+    751            indx +=  2;
+    752            
+    753            buffer[indx] = use_reconn_addr;
+    754            indx++;
+    755          
+    756            Osal_MemCpy(buffer + indx, reconn_addr, 6);
+    757            indx += 6;
+    758          
+    759            buffer[indx] = num_whitelist_entries;
+    760            indx++;
+    761          
+    762            Osal_MemCpy(buffer + indx, addr_array, (num_whitelist_entries*7));
+    763            indx +=  num_whitelist_entries * 7;
+    764          
+    765            Osal_MemSet(&rq, 0, sizeof(rq));
+    766            rq.ogf = OGF_VENDOR_CMD;
+    767            rq.ocf = OCF_GAP_START_AUTO_CONN_ESTABLISH_PROC;
+    768            rq.cparam = (void *)buffer;
+    769            rq.clen = indx;
+    770            rq.event = EVT_CMD_STATUS;
+    771            rq.rparam = &status;
+    772            rq.rlen = 1;
+    773          
+    774            if (hci_send_req(&rq, FALSE) < 0)
+    775              return BLE_STATUS_TIMEOUT;
+    776          
+    777            return status;  
+    778          }
+    779          
+    780          tBleStatus aci_gap_start_general_conn_establish_proc(uint8_t scan_type, uint16_t scan_interval, uint16_t scan_window,
+    781          						 uint8_t own_address_type, uint8_t filter_duplicates, uint8_t use_reconn_addr, const tBDAddr reconn_addr)
+    782          {
+    783            struct hci_request rq;
+    784            gap_start_general_conn_establish_proc_cp cp;
+    785            uint8_t status;  
+    786          
+    787            cp.scan_type = scan_type;
+    788            cp.scan_interval = htobs(scan_interval);
+    789            cp.scan_window = htobs(scan_window);
+    790            cp.own_address_type = own_address_type;
+    791            cp.filter_duplicates = filter_duplicates;
+    792            cp.use_reconn_addr = use_reconn_addr;
+    793            Osal_MemCpy(cp.reconn_addr, reconn_addr, 6);
+    794          
+    795            Osal_MemSet(&rq, 0, sizeof(rq));
+    796            rq.ogf = OGF_VENDOR_CMD;
+    797            rq.ocf = OCF_GAP_START_GENERAL_CONN_ESTABLISH_PROC;
+    798            rq.cparam = &cp;
+    799            rq.clen = GAP_START_GENERAL_CONN_ESTABLISH_PROC_CP_SIZE;
+    800            rq.event = EVT_CMD_STATUS;
+    801            rq.rparam = &status;
+    802            rq.rlen = 1;
+    803            
+    804            if (hci_send_req(&rq, FALSE) < 0)
+    805              return BLE_STATUS_TIMEOUT;
+    806          
+    807            return status;
+    808          }
+    809          
+    810          tBleStatus aci_gap_start_selective_conn_establish_proc(uint8_t scan_type, uint16_t scan_interval, uint16_t scan_window,
+    811          						 uint8_t own_address_type, uint8_t filter_duplicates, uint8_t num_whitelist_entries,
+    812                                   const uint8_t *addr_array)
+    813          {
+    814            struct hci_request rq;
+    815            gap_start_selective_conn_establish_proc_cp cp;
+    816            uint8_t status;
+    817            
+    818            if (((num_whitelist_entries*7)+GAP_START_SELECTIVE_CONN_ESTABLISH_PROC_CP_SIZE) > HCI_MAX_PACKET_SIZE)
+    819              return BLE_STATUS_INVALID_PARAMS;
+    820            
+    821            cp.scan_type = scan_type;
+    822            cp.scan_interval = htobs(scan_interval);
+    823            cp.scan_window = htobs(scan_window);
+    824            cp.own_address_type = own_address_type;
+    825            cp.filter_duplicates = filter_duplicates;
+    826            cp.num_whitelist_entries = num_whitelist_entries;  
+    827            
+    828            Osal_MemCpy(cp.addr_array, addr_array, (num_whitelist_entries*7));
+    829          
+    830            Osal_MemSet(&rq, 0, sizeof(rq));
+    831            rq.ogf = OGF_VENDOR_CMD;
+    832            rq.ocf = OCF_GAP_START_SELECTIVE_CONN_ESTABLISH_PROC;
+    833            rq.cparam = &cp;
+    834            rq.clen = GAP_START_SELECTIVE_CONN_ESTABLISH_PROC_CP_SIZE + (num_whitelist_entries*7);
+    835            rq.event = EVT_CMD_STATUS;
+    836            rq.rparam = &status;
+    837            rq.rlen = 1;
+    838            
+    839            if (hci_send_req(&rq, FALSE) < 0)
+    840              return BLE_STATUS_TIMEOUT;
+    841          
+    842            return status;
+    843          }
+    844          
+    845          tBleStatus aci_gap_create_connection(uint16_t scanInterval, uint16_t scanWindow,
+    846          				     uint8_t peer_bdaddr_type, tBDAddr peer_bdaddr,	
+    847          				     uint8_t own_bdaddr_type, uint16_t conn_min_interval,	
+    848          				     uint16_t conn_max_interval, uint16_t conn_latency,	
+    849          				     uint16_t supervision_timeout, uint16_t min_conn_length, 
+    850          				     uint16_t max_conn_length)
+    851          {
+    852            struct hci_request rq;
+    853            gap_create_connection_cp cp;
+    854            uint8_t status;  
+    855          
+    856            cp.scanInterval = htobs(scanInterval);
+    857            cp.scanWindow = htobs(scanWindow);
+    858            cp.peer_bdaddr_type = peer_bdaddr_type;
+    859            Osal_MemCpy(cp.peer_bdaddr, peer_bdaddr, 6);
+    860            cp.own_bdaddr_type = own_bdaddr_type;
+    861            cp.conn_min_interval = htobs(conn_min_interval);
+    862            cp.conn_max_interval = htobs(conn_max_interval);
+    863            cp.conn_latency = htobs(conn_latency);
+    864            cp.supervision_timeout = htobs(supervision_timeout);
+    865            cp.min_conn_length = htobs(min_conn_length);
+    866            cp.max_conn_length = htobs(max_conn_length);
+    867          
+    868            Osal_MemSet(&rq, 0, sizeof(rq));
+    869            rq.ogf = OGF_VENDOR_CMD;
+    870            rq.ocf = OCF_GAP_CREATE_CONNECTION;
+    871            rq.cparam = &cp;
+    872            rq.clen = GAP_CREATE_CONNECTION_CP_SIZE;
+    873            rq.event = EVT_CMD_STATUS;
+    874            rq.rparam = &status;
+    875            rq.rlen = 1;
+    876            
+    877            if (hci_send_req(&rq, FALSE) < 0)
+    878              return BLE_STATUS_TIMEOUT;
+    879          
+    880            return status;
+    881          }
+    882          
+    883          tBleStatus aci_gap_terminate_gap_procedure(uint8_t procedure_code)
+    884          {
+    885            struct hci_request rq;
+    886            uint8_t status;  
+    887          
+    888            Osal_MemSet(&rq, 0, sizeof(rq));
+    889            rq.ogf = OGF_VENDOR_CMD;
+    890            rq.ocf = OCF_GAP_TERMINATE_GAP_PROCEDURE;
+    891            rq.cparam = &procedure_code;
+    892            rq.clen = 1;
+    893            rq.rparam = &status;
+    894            rq.rlen = 1;
+    895            
+    896            if (hci_send_req(&rq, FALSE) < 0)
+    897              return BLE_STATUS_TIMEOUT;
+    898          
+    899            return status;
+    900          
+    901          }
+    902          
+    903          tBleStatus aci_gap_start_connection_update(uint16_t conn_handle, uint16_t conn_min_interval,	
+    904                                                     uint16_t conn_max_interval, uint16_t conn_latency,	
+    905                                                     uint16_t supervision_timeout, uint16_t min_conn_length, 
+    906                                                     uint16_t max_conn_length)
+    907          {
+    908            struct hci_request rq;
+    909            gap_start_connection_update_cp cp;
+    910            uint8_t status;  
+    911          
+    912            cp.conn_handle = htobs(conn_handle);
+    913            cp.conn_min_interval = htobs(conn_min_interval);
+    914            cp.conn_max_interval = htobs(conn_max_interval);
+    915            cp.conn_latency = htobs(conn_latency);
+    916            cp.supervision_timeout = htobs(supervision_timeout);
+    917            cp.min_conn_length = htobs(min_conn_length);
+    918            cp.max_conn_length = htobs(max_conn_length);
+    919          
+    920            Osal_MemSet(&rq, 0, sizeof(rq));
+    921            rq.ogf = OGF_VENDOR_CMD;
+    922            rq.ocf = OCF_GAP_START_CONNECTION_UPDATE;
+    923            rq.cparam = &cp;
+    924            rq.clen = GAP_START_CONNECTION_UPDATE_CP_SIZE;
+    925            rq.event = EVT_CMD_STATUS;
+    926            rq.rparam = &status;
+    927            rq.rlen = 1;
+    928            
+    929            if (hci_send_req(&rq, FALSE) < 0)
+    930              return BLE_STATUS_TIMEOUT;
+    931          
+    932            return status;
+    933          }
+    934          
+    935          tBleStatus aci_gap_send_pairing_request(uint16_t conn_handle, uint8_t force_rebond)
+    936          {
+    937            struct hci_request rq;
+    938            gap_send_pairing_request_cp cp;
+    939            uint8_t status;  
+    940          
+    941            cp.conn_handle = htobs(conn_handle);
+    942            cp.force_rebond = force_rebond;
+    943          
+    944            Osal_MemSet(&rq, 0, sizeof(rq));
+    945            rq.ogf = OGF_VENDOR_CMD;
+    946            rq.ocf = OCF_GAP_SEND_PAIRING_REQUEST;
+    947            rq.cparam = &cp;
+    948            rq.clen = GAP_GAP_SEND_PAIRING_REQUEST_CP_SIZE;
+    949            rq.event = EVT_CMD_STATUS;
+    950            rq.rparam = &status;
+    951            rq.rlen = 1;
+    952            
+    953            if (hci_send_req(&rq, FALSE) < 0)
+    954              return BLE_STATUS_TIMEOUT;
+    955          
+    956            return status;
+    957          }
+    958          
+    959          tBleStatus aci_gap_resolve_private_address(const tBDAddr address)
+    960          {
+    961            struct hci_request rq;
+    962            gap_resolve_private_address_cp cp;
+    963            uint8_t status;
+    964          
+    965            Osal_MemCpy(cp.address, address, 6);
+    966          
+    967            Osal_MemSet(&rq, 0, sizeof(rq));
+    968            rq.ogf = OGF_VENDOR_CMD;
+    969            rq.ocf = OCF_GAP_RESOLVE_PRIVATE_ADDRESS;
+    970            rq.cparam = &cp;
+    971            rq.clen = GAP_RESOLVE_PRIVATE_ADDRESS_CP_SIZE;
+    972            rq.event = EVT_CMD_STATUS;
+    973            rq.rparam = &status;
+    974            rq.rlen = 1;
+    975            
+    976            if (hci_send_req(&rq, FALSE) < 0)
+    977              return BLE_STATUS_TIMEOUT;
+    978          
+    979            return status;
+    980          }
+    981          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   aci_gap_allow_rebond
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      40   aci_gap_authorization_response
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      32   aci_gap_clear_security_database
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      32   aci_gap_configure_whitelist
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      56   aci_gap_create_connection
+        56   -> Osal_MemCpy
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      40   aci_gap_delete_ad_type
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      56   aci_gap_get_security_level
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      56   aci_gap_init
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      40   aci_gap_pass_key_response
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_resolve_private_address
+        40   -> Osal_MemCpy
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_send_pairing_request
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   aci_gap_set_auth_requirement
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+      40   aci_gap_set_author_requirement
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_set_direct_connectable
+        40   -> Osal_MemCpy
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      96   aci_gap_set_discoverable
+        96   -> Osal_MemCpy
+        96   -> Osal_MemSet
+        96   -> hci_send_req
+      40   aci_gap_set_io_capability
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      96   aci_gap_set_limited_discoverable
+        96   -> Osal_MemCpy
+        96   -> Osal_MemSet
+        96   -> hci_send_req
+      40   aci_gap_set_non_connectable
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      32   aci_gap_set_non_discoverable
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      40   aci_gap_set_undirected_connectable
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_slave_security_request
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+     192   aci_gap_start_auto_conn_establish_proc
+       192   -> Osal_MemCpy
+       192   -> Osal_MemSet
+       192   -> hci_send_req
+      48   aci_gap_start_connection_update
+        48   -> Osal_MemSet
+        48   -> hci_send_req
+      48   aci_gap_start_general_conn_establish_proc
+        48   -> Osal_MemCpy
+        48   -> Osal_MemSet
+        48   -> hci_send_req
+      40   aci_gap_start_general_discovery_proc
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_start_limited_discovery_proc
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      56   aci_gap_start_name_discovery_proc
+        56   -> Osal_MemCpy
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+     176   aci_gap_start_selective_conn_establish_proc
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+      40   aci_gap_terminate
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gap_terminate_gap_procedure
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   aci_gap_update_adv_data
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      72  aci_gap_allow_rebond
+      72  aci_gap_authorization_response
+      72  aci_gap_clear_security_database
+      72  aci_gap_configure_whitelist
+     134  aci_gap_create_connection
+      68  aci_gap_delete_ad_type
+     106  aci_gap_get_security_level
+     108  aci_gap_init
+      76  aci_gap_pass_key_response
+      78  aci_gap_resolve_private_address
+      76  aci_gap_send_pairing_request
+     118  aci_gap_set_auth_requirement
+      72  aci_gap_set_author_requirement
+      86  aci_gap_set_direct_connectable
+     194  aci_gap_set_discoverable
+      68  aci_gap_set_io_capability
+     198  aci_gap_set_limited_discoverable
+      68  aci_gap_set_non_connectable
+      56  aci_gap_set_non_discoverable
+      72  aci_gap_set_undirected_connectable
+      80  aci_gap_slave_security_request
+     224  aci_gap_start_auto_conn_establish_proc
+     102  aci_gap_start_connection_update
+     110  aci_gap_start_general_conn_establish_proc
+      84  aci_gap_start_general_discovery_proc
+      84  aci_gap_start_limited_discovery_proc
+     136  aci_gap_start_name_discovery_proc
+     122  aci_gap_start_selective_conn_establish_proc
+      76  aci_gap_terminate
+      64  aci_gap_terminate_gap_procedure
+      90  aci_gap_update_adv_data
+
+ 
+ 3 038 bytes in section .text
+ 
+ 3 038 bytes of CODE memory
+
+Errors: none
+Warnings: none

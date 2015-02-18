@@ -1,0 +1,273 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:01
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_hal_aci.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_hal_aci.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\bluenrg_hal_aci.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_hal_aci.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_hal_aci.c
+      1          /******************** (C) COPYRIGHT 2013 STMicroelectronics ********************
+      2          * File Name          : bluenrg_hci.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 4-Oct-2013
+      6          * Description        : File with HCI commands for BlueNRG FW6.0 and above.
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #include "hal_types.h"
+     17          #include "osal.h"
+     18          #include "ble_status.h"
+     19          #include "hal.h"
+     20          #include "osal.h"
+     21          #include "hci_const.h"
+     22          #include "bluenrg_aci_const.h"
+     23          #include "bluenrg_hal_aci.h"
+     24          #include "gatt_server.h"
+     25          #include "gap.h"
+     26          
+     27          #define MIN(a,b)            ((a) < (b) )? (a) : (b)
+     28          #define MAX(a,b)            ((a) > (b) )? (a) : (b)
+     29          
+     30          
+     31          tBleStatus aci_hal_write_config_data(uint8_t offset, 
+     32                                              uint8_t len,
+     33                                              const uint8_t *val)
+     34          {
+     35            struct hci_request rq;
+     36            uint8_t status;
+     37            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+     38            uint8_t indx = 0;
+     39              
+     40            if ((len+2) > HCI_MAX_PACKET_SIZE)
+     41              return BLE_STATUS_INVALID_PARAMS;
+     42          
+     43            buffer[indx] = offset;
+     44            indx++;
+     45              
+     46            buffer[indx] = len;
+     47            indx++;
+     48                  
+     49            Osal_MemCpy(buffer + indx, val, len);
+     50            indx +=  len;
+     51          
+     52            Osal_MemSet(&rq, 0, sizeof(rq));
+     53            rq.ogf = OGF_VENDOR_CMD;
+     54            rq.ocf = OCF_HAL_WRITE_CONFIG_DATA;
+     55            rq.cparam = (void *)buffer;
+     56            rq.clen = indx;
+     57            rq.rparam = &status;
+     58            rq.rlen = 1;
+     59          
+     60            if (hci_send_req(&rq, FALSE) < 0)
+     61              return BLE_STATUS_TIMEOUT;
+     62          
+     63            if (status) {
+     64              return status;
+     65            }
+     66          
+     67            return 0;
+     68          }
+     69          
+     70          tBleStatus aci_hal_set_tx_power_level(uint8_t en_high_power, uint8_t pa_level)
+     71          {
+     72            struct hci_request rq;
+     73            hal_set_tx_power_level_cp cp;    
+     74            uint8_t status;
+     75              
+     76            cp.en_high_power = en_high_power;
+     77            cp.pa_level = pa_level;
+     78          
+     79            Osal_MemSet(&rq, 0, sizeof(rq));
+     80            rq.ogf = OGF_VENDOR_CMD;
+     81            rq.ocf = OCF_HAL_SET_TX_POWER_LEVEL;
+     82            rq.cparam = &cp;
+     83            rq.clen = HAL_SET_TX_POWER_LEVEL_CP_SIZE;
+     84            rq.rparam = &status;
+     85            rq.rlen = 1;
+     86          
+     87            if (hci_send_req(&rq, FALSE) < 0)
+     88              return BLE_STATUS_TIMEOUT;
+     89          
+     90            if (status) {
+     91              return status;
+     92            }
+     93          
+     94            return 0;
+     95          }
+     96          
+     97          tBleStatus aci_hal_device_standby(void)
+     98          {
+     99            struct hci_request rq;
+    100            uint8_t status;
+    101          
+    102            Osal_MemSet(&rq, 0, sizeof(rq));
+    103            rq.ogf = OGF_VENDOR_CMD;
+    104            rq.ocf = OCF_HAL_DEVICE_STANDBY;
+    105            rq.rparam = &status;
+    106            rq.rlen = 1;
+    107          
+    108            if (hci_send_req(&rq, FALSE) < 0)
+    109              return BLE_STATUS_TIMEOUT;
+    110          
+    111            return status;
+    112          }
+    113          
+    114          tBleStatus aci_hal_tone_start(uint8_t rf_channel)
+    115          {
+    116            struct hci_request rq;
+    117            hal_tone_start_cp cp;    
+    118            uint8_t status;
+    119              
+    120            cp.rf_channel = rf_channel;
+    121          
+    122            Osal_MemSet(&rq, 0, sizeof(rq));
+    123            rq.ogf = OGF_VENDOR_CMD;
+    124            rq.ocf = OCF_HAL_TONE_START;
+    125            rq.cparam = &cp;
+    126            rq.clen = HAL_TONE_START_CP_SIZE;
+    127            rq.rparam = &status;
+    128            rq.rlen = 1;
+    129          
+    130            if (hci_send_req(&rq, FALSE) < 0)
+    131              return BLE_STATUS_TIMEOUT;
+    132              
+    133            return status;
+    134          }
+    135          
+    136          tBleStatus aci_hal_tone_stop(void)
+    137          {
+    138            struct hci_request rq;
+    139            uint8_t status;
+    140          
+    141            Osal_MemSet(&rq, 0, sizeof(rq));
+    142            rq.ogf = OGF_VENDOR_CMD;
+    143            rq.ocf = OCF_HAL_TONE_STOP;
+    144            rq.rparam = &status;
+    145            rq.rlen = 1;
+    146          
+    147            if (hci_send_req(&rq, FALSE) < 0)
+    148              return BLE_STATUS_TIMEOUT;
+    149          
+    150            return status;
+    151          }
+    152          
+    153          
+    154          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   aci_hal_device_standby
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      40   aci_hal_set_tx_power_level
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_hal_tone_start
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      32   aci_hal_tone_stop
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+     168   aci_hal_write_config_data
+       168   -> Osal_MemCpy
+       168   -> Osal_MemSet
+       168   -> hci_send_req
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      56  aci_hal_device_standby
+      72  aci_hal_set_tx_power_level
+      68  aci_hal_tone_start
+      56  aci_hal_tone_stop
+      98  aci_hal_write_config_data
+
+ 
+ 350 bytes in section .text
+ 
+ 350 bytes of CODE memory
+
+Errors: none
+Warnings: none

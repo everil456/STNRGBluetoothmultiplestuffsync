@@ -1,0 +1,536 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:39:30
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_pcd.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_pcd.c"
+#        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\otgd_fs_pcd.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\otgd_fs_pcd.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_pcd.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : otgd_fs_pcd.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V3.3.0
+      5          * Date               : 21-March-2011
+      6          * Description        : Peripheral Device Interface low layer.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #ifdef STM32F10X_CL
+     17          
+     18          #include "usb_lib.h"
+     19          #include "otgd_fs_cal.h"
+     20          #include "otgd_fs_pcd.h"
+     21          
+     22          USB_OTG_PCD_DEV USB_OTG_PCD_dev;
+     23          
+     24          extern USB_OTG_CORE_REGS     USB_OTG_FS_regs;
+     25          /*******************************************************************************
+     26          * Function Name  : PCD_Init
+     27          * Description    : Initialize the USB Device portion of the driver.
+     28          * Input          : None
+     29          * Output         : None
+     30          * Return         : None
+     31          *******************************************************************************/
+     32          void PCD_Init(void)
+     33          {
+     34            uint32_t i = 0;
+     35            USB_OTG_EP *ep;
+     36          
+     37            /**** SOFTWARE INIT *****/ 
+     38            
+     39            ep = &USB_OTG_PCD_dev.ep0;
+     40          
+     41            /* Init ep structure */
+     42            ep->num = 0;
+     43            ep->tx_fifo_num = 0;
+     44          
+     45            /* Control until ep is activated */
+     46            ep->type = EP_TYPE_CTRL;
+     47            ep->maxpacket = MAX_PACKET_SIZE;
+     48          
+     49            ep->xfer_buff = 0;
+     50            ep->xfer_len = 0;
+     51          
+     52            for (i = 1; i < NUM_TX_FIFOS ; i++)
+     53            {
+     54              ep = &USB_OTG_PCD_dev.in_ep[i-1];
+     55          
+     56              /* Init ep structure */
+     57              ep->is_in = 1;
+     58              ep->num = i;
+     59              ep->tx_fifo_num = i;
+     60          
+     61              /* Control until ep is activated */
+     62              ep->type = EP_TYPE_CTRL;
+     63              ep->maxpacket = MAX_PACKET_SIZE;
+     64              ep->xfer_buff = 0;
+     65              ep->xfer_len = 0;
+     66            }
+     67          
+     68            for (i = 1; i < NUM_TX_FIFOS; i++)
+     69            {
+     70              ep = &USB_OTG_PCD_dev.out_ep[i-1];
+     71          
+     72              /* Init ep structure */
+     73              ep->is_in = 0;
+     74              ep->num = i;
+     75              ep->tx_fifo_num = i;
+     76          
+     77              /* Control until ep is activated */
+     78              ep->type = EP_TYPE_CTRL;
+     79              ep->maxpacket = MAX_PACKET_SIZE;
+     80              ep->xfer_buff = 0;
+     81              ep->xfer_len = 0;
+     82            }
+     83          
+     84            USB_OTG_PCD_dev.ep0.maxpacket = MAX_EP0_SIZE;
+     85            USB_OTG_PCD_dev.ep0.type = EP_TYPE_CTRL;
+     86          
+     87            /**** HARDWARE INIT *****/
+     88            
+     89            /* Set the OTG_USB base registers address */
+     90            OTGD_FS_SetAddress(USB_OTG_FS_BASE_ADDR);
+     91            
+     92            /* Disable all global interrupts */
+     93            OTGD_FS_DisableGlobalInt();
+     94          
+     95            /*Init the Core */
+     96            OTGD_FS_CoreInit();
+     97          
+     98            /* Init Device mode*/
+     99            OTGD_FS_CoreInitDev();  
+    100          }
+    101          
+    102          /*******************************************************************************
+    103          * Function Name  : PCD_EP_Open
+    104          * Description    : Configure an Endpoint
+    105          * Input          : None
+    106          * Output         : None
+    107          * Return         : status
+    108          *******************************************************************************/
+    109          uint32_t PCD_EP_Open(EP_DESCRIPTOR *epdesc)
+    110          {
+    111            USB_OTG_EP *ep;
+    112          
+    113          
+    114            if ((0x80 & epdesc->bEndpointAddress) != 0)
+    115            {
+    116              ep = PCD_GetInEP(epdesc->bEndpointAddress & 0x7F);
+    117              ep->is_in = 1;
+    118            }
+    119            else
+    120            {
+    121              ep = PCD_GetOutEP(epdesc->bEndpointAddress & 0x7F);
+    122              ep->is_in = 0;
+    123            }
+    124          
+    125            ep->num   = epdesc->bEndpointAddress & 0x7F;
+    126            ep->maxpacket = epdesc->wMaxPacketSize;
+    127            ep->type = epdesc->bmAttributes & USB_ENDPOINT_XFERTYPE_MASK;
+    128          
+    129            if (ep->is_in)
+    130            {
+    131              /* Assign a Tx FIFO */
+    132              ep->tx_fifo_num = ep->num;
+    133            }
+    134          
+    135            OTGD_FS_EPActivate(ep );
+    136          
+    137            return 0;
+    138          }
+    139          
+    140          /*******************************************************************************
+    141          * Function Name  : PCD_EP_Close
+    142          * Description    : Called when an EP is disabled
+    143          * Input          : Endpoint address.
+    144          * Output         : None
+    145          * Return         : status
+    146          *******************************************************************************/
+    147          uint32_t PCD_EP_Close(uint8_t  ep_addr)
+    148          {
+    149          
+    150            USB_OTG_EP *ep;
+    151          
+    152            if ((0x80 & ep_addr) != 0)
+    153            {
+    154              ep = PCD_GetInEP(ep_addr & 0x7F);
+    155            }
+    156            else
+    157            {
+    158              ep = PCD_GetOutEP(ep_addr & 0x7F);
+    159            }
+    160          
+    161            ep->num   = ep_addr & 0x7F;
+    162            ep->is_in = (0x80 & ep_addr) != 0;
+    163          
+    164            OTGD_FS_EPDeactivate(ep );
+    165            return 0;
+    166          }
+    167          
+    168          /*******************************************************************************
+    169          * Function Name  : PCD_EP_Read
+    170          * Description    : Read data from Fifo
+    171          * Input          : Endpoint address.
+    172          * Output         : None
+    173          * Return         : status
+    174          *******************************************************************************/
+    175          uint32_t PCD_EP_Read (uint8_t ep_addr, uint8_t *pbuf, uint32_t buf_len)
+    176          {
+    177            USB_OTG_EP *ep;
+    178            uint32_t i = 0;
+    179          
+    180            ep = PCD_GetOutEP(ep_addr & 0x7F);
+    181          
+    182            /* copy received data into application buffer */
+    183            for (i = 0 ; i < buf_len ; i++)
+    184            {
+    185              pbuf[i] = ep->xfer_buff[i];
+    186            }
+    187          
+    188            /*setup and start the Xfer */
+    189            ep->xfer_buff = pbuf;
+    190            ep->xfer_len = buf_len;
+    191            ep->xfer_count = 0;
+    192            ep->is_in = 0;
+    193            ep->num = ep_addr & 0x7F;
+    194          
+    195            if ( ep->num == 0 )
+    196            {
+    197              OTGD_FS_EP0StartXfer(ep);
+    198            }
+    199            else
+    200            {
+    201              OTGD_FS_EPStartXfer( ep );
+    202            }
+    203          
+    204            return 0;
+    205          }
+    206          
+    207          /*******************************************************************************
+    208          * Function Name  : USBF_EP_Write
+    209          * Description    : Read data from Fifo
+    210          * Input          : ep
+    211          * Output         : None
+    212          * Return         : status
+    213          *******************************************************************************/
+    214          uint32_t  PCD_EP_Write (uint8_t ep_addr, uint8_t *pbuf, uint32_t buf_len)
+    215          {
+    216            USB_OTG_EP *ep;
+    217          
+    218            ep = PCD_GetInEP(ep_addr & 0x7f);
+    219          
+    220            /* assign data to EP structure buffer */
+    221            ep->xfer_buff = pbuf;
+    222          
+    223            /* Setup and start the Transfer */
+    224            ep->xfer_count = 0;
+    225            ep->xfer_len = buf_len;
+    226            ep->is_in = 1;
+    227            ep->num = ep_addr & 0x7F;
+    228            
+    229            if ( ep->num == 0 )
+    230            {
+    231              OTGD_FS_EP0StartXfer(ep);
+    232            }
+    233            else
+    234            {
+    235              OTGD_FS_EPStartXfer( ep );
+    236            }
+    237          
+    238            return 0;
+    239          }
+    240          
+    241          /*******************************************************************************
+    242          * Function Name  : PCD_EP_Stall
+    243          * Description    : Stall an endpoint.
+    244          * Input          : Endpoint Address.
+    245          * Output         : None
+    246          * Return         : status
+    247          *******************************************************************************/
+    248          uint32_t  PCD_EP_Stall (uint8_t ep_addr)
+    249          {
+    250            USB_OTG_EP *ep;
+    251          
+    252            if ((0x80 & ep_addr) != 0)
+    253            {
+    254              ep = PCD_GetInEP(ep_addr & 0x7F);
+    255            }
+    256            else
+    257            {
+    258              ep = PCD_GetOutEP(ep_addr & 0x7F);
+    259            }
+    260          
+    261            ep->num   = ep_addr & 0x7F;
+    262            ep->is_in = ((ep_addr & 0x80) == 0x80) ? 1 : 0;
+    263          
+    264            OTGD_FS_EPSetStall(ep);
+    265            return (0);
+    266          }
+    267          /*******************************************************************************
+    268          * Function Name  : PCD_EP_ClrStall
+    269          * Description    : Clear stall condition on endpoints.
+    270          * Input          : Endpoint Address.
+    271          * Output         : None
+    272          * Return         : status
+    273          *******************************************************************************/
+    274          uint32_t  PCD_EP_ClrStall (uint8_t ep_addr)
+    275          {
+    276          
+    277            USB_OTG_EP *ep;
+    278          
+    279            if ((0x80 & ep_addr) != 0)
+    280            {
+    281              ep = PCD_GetInEP(ep_addr & 0x7F);
+    282            }
+    283            else
+    284            {
+    285              ep = PCD_GetOutEP(ep_addr & 0x7F);
+    286            }
+    287          
+    288            ep->num   = ep_addr & 0x7F;
+    289            ep->is_in = ((ep_addr & 0x80) == 0x80) ? 1 : 0;
+    290          
+    291            OTGD_FS_EPClearStall(ep);
+    292          
+    293            return (0);
+    294          }
+    295          
+    296          /*******************************************************************************
+    297          * Function Name  : USBF_FCD_EP_Flush()
+    298          * Description    : This Function flushes the buffer.
+    299          * Input          : Endpoint Address.
+    300          * Output         : None
+    301          * Return         : status
+    302          *******************************************************************************/
+    303          uint32_t  PCD_EP_Flush (uint8_t ep_addr)
+    304          {
+    305          
+    306            uint8_t  is_out = 0;
+    307            uint8_t  ep_nbr = 0;
+    308          
+    309            ep_nbr   = ep_addr & 0x7F;
+    310            is_out = ((ep_addr & 0x80) == 0x80) ? 0 : 1;
+    311          
+    312            if (is_out == 0)
+    313            {
+    314              OTGD_FS_FlushTxFifo(ep_nbr);
+    315            }
+    316            else
+    317            {
+    318              OTGD_FS_FlushRxFifo();
+    319            }
+    320            PCD_EP_ClrStall(ep_addr);
+    321            return (0);
+    322          }
+    323          
+    324          /*******************************************************************************
+    325          * Function Name  : PCD_EP_SetAddress
+    326          * Description    : This Function set USB device address
+    327          * Input          : The new device Address to be set.
+    328          * Output         : None
+    329          * Return         : status
+    330          *******************************************************************************/
+    331          void  PCD_EP_SetAddress (uint8_t address)
+    332          {
+    333          
+    334            USB_OTG_DCFG_TypeDef dcfg;
+    335          
+    336            dcfg.d32 = 0;
+    337            
+    338            dcfg.b.devaddr = address;
+    339            USB_OTG_MODIFY_REG32( &USB_OTG_FS_regs.DEV->DCFG, 0, dcfg.d32);
+    340          }
+    341          
+    342          
+    343          /*******************************************************************************
+    344          * Function Name  : PCD_GetInEP
+    345          * Description    : This function returns pointer to IN EP struct with number ep_num
+    346          * Input          : Endpoint Number.
+    347          * Output         : None
+    348          * Return         : status
+    349          *******************************************************************************/
+    350          USB_OTG_EP* PCD_GetInEP(uint32_t ep_num)
+    351          {
+    352            if (ep_num == 0)
+    353            {
+    354              return &USB_OTG_PCD_dev.ep0;
+    355            }
+    356            else
+    357            {
+    358              return &USB_OTG_PCD_dev.in_ep[ep_num - 1];
+    359            }
+    360          }
+    361          /*******************************************************************************
+    362          * Function Name  : PCD_GetOutEP
+    363          * Description    : returns pointer to OUT EP struct with number ep_num
+    364          * Input          : Endpoint Number.
+    365          * Output         : None
+    366          * Return         : USBF_EP
+    367          *******************************************************************************/
+    368          USB_OTG_EP* PCD_GetOutEP(uint32_t ep_num)
+    369          {
+    370            if (ep_num == 0)
+    371            {
+    372              return &USB_OTG_PCD_dev.ep0;
+    373            }
+    374            else
+    375            {
+    376              return &USB_OTG_PCD_dev.out_ep[ep_num - 1];
+    377            }
+    378          }
+    379          
+    380          /*******************************************************************************
+    381          * Function Name  : PCD_DevConnect
+    382          * Description    : Connect device
+    383          * Input         : None
+    384          * Output         : None
+    385          * Return         : status
+    386          *******************************************************************************/
+    387          void  PCD_DevConnect(void)
+    388          {
+    389          
+    390            USB_OTG_DCTL_TypeDef dctl;
+    391            
+    392            dctl.d32 = 0;
+    393          
+    394            dctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DCTL);
+    395          
+    396            /* Connect device */
+    397            dctl.b.sftdiscon  = 0;
+    398            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DEV->DCTL, dctl.d32);
+    399            mDELAY(25);
+    400          }
+    401          
+    402          /*******************************************************************************
+    403          * Function Name  : PCD_DevDisconnect
+    404          * Description    : Disconnect device
+    405          * Input         : None
+    406          * Output         : None
+    407          * Return         : status
+    408          *******************************************************************************/
+    409          void  PCD_DevDisconnect (void)
+    410          {
+    411          
+    412            USB_OTG_DCTL_TypeDef dctl;
+    413          
+    414            dctl.d32 = 0;
+    415            
+    416            dctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DCTL);
+    417          
+    418            /* Disconnect device for 20ms */
+    419            dctl.b.sftdiscon  = 1;
+    420            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DEV->DCTL, dctl.d32);
+    421            mDELAY(25);
+    422          }
+    423          
+    424          /*******************************************************************************
+    425          * Function Name  : PCD_EP0_OutStart
+    426          * Description    : Configures EPO to receive SETUP packets.
+    427          * Input          : None
+    428          * Output         : None
+    429          * Return         : None
+    430          *******************************************************************************/
+    431          void PCD_EP0_OutStart(void)
+    432          {
+    433          
+    434            USB_OTG_DOEPTSIZ0_TypeDef doeptsize0;
+    435            doeptsize0.d32 = 0;
+    436            
+    437            
+    438            doeptsize0.b.supcnt = 3;
+    439            doeptsize0.b.pktcnt = 1;
+    440            doeptsize0.b.xfersize = 8 * 3;
+    441          
+    442            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DOUTEPS[0]->DOEPTSIZx, doeptsize0.d32 );
+    443          
+    444          }
+    445          
+    446          #endif /* STM32F10X_CL */
+    447          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+    448          
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

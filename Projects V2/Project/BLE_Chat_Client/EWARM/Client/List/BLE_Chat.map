@@ -1,0 +1,806 @@
+###############################################################################
+#
+# IAR ELF Linker V7.30.4.8167/W32 for ARM                 17/Feb/2015  12:08:36
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Exe\BLE_Chat.out
+#    Map file     =  
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\BLE_Chat.map
+#    Command line =  
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\BLE_Chat_main.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_gap_aci.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_gatt_aci.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_hal_aci.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_l2cap_aci.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_updater_aci.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\chat.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\clock.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\flags.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\gatt_db.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\gp_timer.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\hal.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\hci.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\hw_config.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\led.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\list.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\misc.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\osal.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\otgd_fs_cal.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\otgd_fs_dev.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\otgd_fs_int.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\otgd_fs_pcd.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\push_button.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\SDK_EVAL_Config.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\SDK_EVAL_Io.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\SDK_EVAL_Spi_Driver.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\slave_devices.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\startup_stm32l1xx_md.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_exti.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_flash.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_flash_ramfunc.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_gpio.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_i2c.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_it.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_pwr.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_rcc.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_rtc.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_spi.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_syscfg.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_systick.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_tim.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_usart.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\system_stm32l1xx.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\timer.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_core.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_desc.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_endp.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_init.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_int.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_istr.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_mem.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_prop.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_pwr.o" "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_regs.o"
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_sil.o" -o
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Exe\BLE_Chat.out" --map
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\BLE_Chat.map" --config
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\stm32l1xx_flash.icf" --semihosting
+#        --entry __iar_program_start --redirect
+#        __iar_sh_stdout=__iar_sh_stdout_swo --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08003000 { ro section .intvec };
+"P1":  place in [from 0x08003000 to 0x0801ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20003fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0xf4
+  .intvec            ro code  0x08003000    0xf4  startup_stm32l1xx_md.o [1]
+                            - 0x080030f4    0xf4
+
+"P1":                                     0x3f84
+  .text              ro code  0x080030f4   0x8ce  usb_core.o [1]
+  .text              ro code  0x080039c2    0x2e  copy_init3.o [4]
+  .text              ro code  0x080039f0   0x206  usb_regs.o [1]
+  .text              ro code  0x08003bf6    0x22  zero_init3.o [4]
+  .text              ro code  0x08003c18    0xd6  usb_mem.o [1]
+  .text              ro code  0x08003cf0   0x7e8  BLE_Chat_main.o [1]
+  .text              ro code  0x080044d8    0x90  misc.o [1]
+  .text              ro code  0x08004568    0xc8  SDK_EVAL_Config.o [1]
+  .text              ro code  0x08004630   0x2c4  hw_config.o [1]
+  .text              ro code  0x080048f4    0x20  stm32l1xx_pwr.o [1]
+  .text              ro code  0x08004914   0x13c  led.o [1]
+  .text              ro code  0x08004a50    0x54  push_button.o [1]
+  .text              ro code  0x08004aa4   0x1e0  timer.o [1]
+  .text              ro code  0x08004c84    0x54  slave_devices.o [1]
+  .text              ro code  0x08004cd8    0x1c  stm32l1xx_flash.o [1]
+  .text              ro code  0x08004cf4    0x4c  clock.o [1]
+  .text              ro code  0x08004d40    0x24  SDK_EVAL_Io.o [1]
+  .text              ro code  0x08004d64    0x24  printf.o [3]
+  .text              ro code  0x08004d88   0x334  hci.o [1]
+  .text              ro code  0x080050bc   0x658  SDK_EVAL_Spi_Driver.o [1]
+  .text              ro code  0x08005714    0xaa  bluenrg_hal_aci.o [1]
+  .text              ro code  0x080057be   0x19a  bluenrg_gatt_aci.o [1]
+  .text              ro code  0x08005958   0x1ba  bluenrg_gap_aci.o [1]
+  .text              ro code  0x08005b14    0xa8  stm32l1xx_gpio.o [1]
+  .text              ro code  0x08005bbc    0xd4  chat.o [1]
+  .text              ro code  0x08005c90    0x26  gp_timer.o [1]
+  .text              ro code  0x08005cb8    0x70  gatt_db.o [1]
+  .text              ro code  0x08005d28    0x44  stm32l1xx_rcc.o [1]
+  .text              ro code  0x08005d6c    0x40  stm32l1xx_syscfg.o [1]
+  .text              ro code  0x08005dac    0xa4  stm32l1xx_tim.o [1]
+  .text              ro code  0x08005e50    0x90  stm32l1xx_exti.o [1]
+  .text              ro code  0x08005ee0    0x76  ABImemcpy_unaligned.o [4]
+  .text              ro code  0x08005f58    0x5c  stm32l1xx_systick.o [1]
+  .text              ro code  0x08005fb4    0x20  usb_init.o [1]
+  .text              ro code  0x08005fd4   0x4d8  xprintfsmall_nomb.o [3]
+  .text              ro code  0x080064ac    0x4e  list.o [1]
+  .text              ro code  0x080064fa    0x20  osal.o [1]
+  .text              ro code  0x0800651c    0x3c  hal.o [1]
+  .text              ro code  0x08006558    0x62  stm32l1xx_spi.o [1]
+  .text              ro code  0x080065bc    0x16  strchr.o [4]
+  .text              ro code  0x080065d4    0x36  strlen.o [4]
+  .text              ro code  0x0800660c    0x58  memchr.o [4]
+  .text              ro code  0x08006664    0x66  ABImemset.o [4]
+  .text              ro code  0x080066cc   0x218  usb_prop.o [1]
+  .text              ro code  0x080068e4    0x30  usb_pwr.o [1]
+  .text              ro code  0x08006914    0x40  usb_sil.o [1]
+  .text              ro code  0x08006954   0x148  usb_int.o [1]
+  .text              ro code  0x08006a9c   0x110  system_stm32l1xx.o [1]
+  .rodata            const    0x08006bac    0xb8  usb_desc.o [1]
+  .text              ro code  0x08006c64    0xb4  usb_endp.o [1]
+  .text              ro code  0x08006d18    0x60  usb_istr.o [1]
+  .text              ro code  0x08006d78    0x28  data_init.o [4]
+  .iar.init_table    const    0x08006da0    0x24  - Linker created -
+  .text              ro code  0x08006dc4    0x1a  cmain.o [4]
+  .text              ro code  0x08006dde     0x4  low_level_init.o [3]
+  .text              ro code  0x08006de2     0x4  exit.o [3]
+  .text              ro code  0x08006de8     0xa  cexit.o [4]
+  .text              ro code  0x08006df4    0x14  exit.o [5]
+  .text              ro code  0x08006e08    0x18  stm32l1xx_it.o [1]
+  .text              ro code  0x08006e20    0x16  xprout.o [3]
+  .text              ro code  0x08006e38    0x10  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e48     0xc  cstartup_M.o [4]
+  .rodata            const    0x08006e54     0x4  clock.o [1]
+  .text              ro code  0x08006e58     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e5c     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e60     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e64     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e68     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e6c     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e70     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e74     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e78     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e7c     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e80     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e84     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e88     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e8c     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e90     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e94     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e98     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006e9c     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ea0     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ea4     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ea8     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006eac     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006eb0     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006eb4     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006eb8     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ebc     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ec0     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ec4     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ec8     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ecc     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ed0     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ed4     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ed8     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006edc     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ee0     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ee4     0x4  startup_stm32l1xx_md.o [1]
+  .text              ro code  0x08006ee8     0x4  startup_stm32l1xx_md.o [1]
+  .rodata            const    0x08006eec     0x0  zero_init3.o [4]
+  .rodata            const    0x08006eec     0x0  copy_init3.o [4]
+  Initializer bytes  const    0x08006eec   0x18c  <for P2 s0>
+                            - 0x08007078  0x3f84
+
+"P2":                                     0x1b00
+  P2 s0                       0x20000000   0x18c  <Init block>
+    .data            inited   0x20000000    0x94  SDK_EVAL_Spi_Driver.o [1]
+    .data            inited   0x20000094    0x30  usb_prop.o [1]
+    .data            inited   0x200000c4    0x24  usb_prop.o [1]
+    .data            inited   0x200000e8    0x20  usb_prop.o [1]
+    .data            inited   0x20000108    0x1c  usb_desc.o [1]
+    .data            inited   0x20000124    0x1c  usb_istr.o [1]
+    .data            inited   0x20000140    0x1c  usb_istr.o [1]
+    .data            inited   0x2000015c    0x14  BLE_Chat_main.o [1]
+    .data            inited   0x20000170     0x8  usb_prop.o [1]
+    .data            inited   0x20000178     0x8  usb_prop.o [1]
+    .data            inited   0x20000180     0x8  usb_prop.o [1]
+    .data            inited   0x20000188     0x4  usb_prop.o [1]
+  .bss               zero     0x2000018c   0x7e0  hw_config.o [1]
+  .bss               zero     0x2000096c   0x2c8  hci.o [1]
+  .bss               zero     0x20000c34   0x204  chat.o [1]
+  .bss               zero     0x20000e38    0x40  usb_endp.o [1]
+  .bss               zero     0x20000e78    0x30  slave_devices.o [1]
+  .bss               zero     0x20000ea8    0x28  usb_init.o [1]
+  .bss               zero     0x20000ed0     0x6  gatt_db.o [1]
+  .bss               zero     0x20000ed6     0x2  usb_init.o [1]
+  .bss               zero     0x20000ed8     0x4  clock.o [1]
+  .bss               zero     0x20000edc     0x4  push_button.o [1]
+  .bss               zero     0x20000ee0     0x4  SDK_EVAL_Io.o [1]
+  .bss               zero     0x20000ee4     0x4  usb_core.o [1]
+  .bss               zero     0x20000ee8     0x4  usb_endp.o [1]
+  .bss               zero     0x20000eec     0x4  usb_int.o [1]
+  .bss               zero     0x20000ef0     0x4  usb_istr.o [1]
+  .bss               zero     0x20000ef4     0x4  usb_pwr.o [1]
+  .bss               zero     0x20000ef8     0x1  hw_config.o [1]
+  .bss               zero     0x20000ef9     0x1  SDK_EVAL_Config.o [1]
+  .bss               zero     0x20000efa     0x1  usb_core.o [1]
+  .bss               zero     0x20000efb     0x1  usb_init.o [1]
+  .bss               zero     0x20000efc     0x1  usb_prop.o [1]
+  CSTACK                      0x20000f00   0xc00  <Block>
+    CSTACK           uninit   0x20000f00   0xc00  <Block tail>
+                            - 0x20001b00  0x1b00
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xd71:
+          0x2000018c  0xd71
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x18c:
+          0x08006eec  0x18c
+    1 destination range, total size 0x18c:
+          0x20000000  0x18c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj: [1]
+    BLE_Chat_main.o           2 024       20       20
+    SDK_EVAL_Config.o           200                 1
+    SDK_EVAL_Io.o                36                 4
+    SDK_EVAL_Spi_Driver.o     1 624      148      148
+    bluenrg_gap_aci.o           442
+    bluenrg_gatt_aci.o          410
+    bluenrg_hal_aci.o           170
+    chat.o                      212               516
+    clock.o                      76        4        4
+    gatt_db.o                   112                 6
+    gp_timer.o                   38
+    hal.o                        60
+    hci.o                       820               712
+    hw_config.o                 708             2 017
+    led.o                       316
+    list.o                       78
+    misc.o                      144
+    osal.o                       32
+    push_button.o                84                 4
+    slave_devices.o              84                48
+    startup_stm32l1xx_md.o      408
+    stm32l1xx_exti.o            144
+    stm32l1xx_flash.o            28
+    stm32l1xx_gpio.o            168
+    stm32l1xx_it.o               24
+    stm32l1xx_pwr.o              32
+    stm32l1xx_rcc.o              68
+    stm32l1xx_spi.o              98
+    stm32l1xx_syscfg.o           64
+    stm32l1xx_systick.o          92
+    stm32l1xx_tim.o             164
+    system_stm32l1xx.o          272
+    timer.o                     480
+    usb_core.o                2 254                 5
+    usb_desc.o                           212       28
+    usb_endp.o                  180                68
+    usb_init.o                   32                43
+    usb_int.o                   328                 4
+    usb_istr.o                   96       56       60
+    usb_mem.o                   214
+    usb_prop.o                  536      144      145
+    usb_pwr.o                    48                 4
+    usb_regs.o                  518
+    usb_sil.o                    64
+    -------------------------------------------------
+    Total:                   13 982      584    3 837
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                        4
+    low_level_init.o              4
+    printf.o                     36
+    xprintfsmall_nomb.o       1 240
+    xprout.o                     22
+    -------------------------------------------------
+    Total:                    1 306
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o       118
+    ABImemset.o                 102
+    cexit.o                      10
+    cmain.o                      26
+    copy_init3.o                 46
+    cstartup_M.o                 12
+    data_init.o                  40
+    memchr.o                     88
+    strchr.o                     22
+    strlen.o                     54
+    zero_init3.o                 34
+    -------------------------------------------------
+    Total:                      552
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                         24
+    Linker created                        36    3 072
+-----------------------------------------------------
+    Grand Total:             15 884      620    6 909
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x08006da0          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08006dc4          --   Gb  - Linker created -
+?main                   0x08006dc5         Code  Gb  cmain.o [4]
+Attribute_Modified_CB   0x08005cb9   0x4e  Code  Gb  gatt_db.o [1]
+BlueNRG_DataPresent     0x080053f5   0x20  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+BlueNRG_RST             0x080053c7   0x2e  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+BlueNRG_SPI_Read_All    0x08005459   0xc6  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+BlueNRG_SPI_Write       0x0800551f  0x182  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+BusFault_Handler        0x08006e0f    0x2  Code  Gb  stm32l1xx_it.o [1]
+ByteSwap                0x08003bed    0xa  Code  Gb  usb_regs.o [1]
+CLOCK_SECOND            0x08006e54    0x4  Data  Gb  clock.o [1]
+CSTACK$$Base            0x20000f00          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001b00          --   Gb  - Linker created -
+CTR_LP                  0x08006955  0x130  Code  Gb  usb_int.o [1]
+ClearDTOG_RX            0x08003ad3   0x24  Code  Gb  usb_regs.o [1]
+ClearDTOG_TX            0x08003af7   0x24  Code  Gb  usb_regs.o [1]
+Clear_SPI_EXTI_Flag     0x0800544d    0xc  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+Clear_Status_Out        0x08003ab7   0x1c  Code  Gb  usb_regs.o [1]
+Clock_Init              0x08004cff   0x28  Code  Gb  clock.o [1]
+Clock_Time              0x08004d27    0x6  Code  Gb  clock.o [1]
+Clock_Wait              0x08004d2d    0xe  Code  Gb  clock.o [1]
+Config_Descriptor       0x20000180    0x8  Data  Gb  usb_prop.o [1]
+DataStageIn             0x0800337f   0xb4  Code  Lc  usb_core.o [1]
+Data_Mul_MaxPacketSize  0x20000efa    0x1  Data  Gb  usb_core.o [1]
+Data_Setup0             0x08003537  0x1ba  Code  Lc  usb_core.o [1]
+DebugMon_Handler        0x08006e15    0x2  Code  Gb  stm32l1xx_it.o [1]
+Device_Descriptor       0x20000178    0x8  Data  Gb  usb_prop.o [1]
+Device_Info             0x20000ea8   0x1c  Data  Gb  usb_init.o [1]
+Device_Property         0x20000094   0x30  Data  Gb  usb_prop.o [1]
+Device_Table            0x20000188    0x4  Data  Gb  usb_prop.o [1]
+Disable_SPI_IRQ         0x08005415   0x1c  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+EP1_IN_Callback         0x08006c65   0x5c  Code  Gb  usb_endp.o [1]
+EP3_OUT_Callback        0x08006cc1   0x1e  Code  Gb  usb_endp.o [1]
+EPindex                 0x20000efb    0x1  Data  Gb  usb_init.o [1]
+EXTI15_10_IRQHandler    0x08006e1d    0x4  Code  Gb  stm32l1xx_it.o [1]
+EXTI9_5_IRQHandler      0x08004a77   0x24  Code  Gb  push_button.o [1]
+EXTI_ClearFlag          0x08005eb9    0x6  Code  Gb  stm32l1xx_exti.o [1]
+EXTI_ClearITPendingBit  0x08005ecf    0x6  Code  Gb  stm32l1xx_exti.o [1]
+EXTI_GetITStatus        0x08005ebf   0x10  Code  Gb  stm32l1xx_exti.o [1]
+EXTI_Init               0x08005e51   0x68  Code  Gb  stm32l1xx_exti.o [1]
+Enable_SPI_IRQ          0x08005431   0x1c  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+FLASH_SLEEPPowerDownCmd
+                        0x08004cd9   0x16  Code  Gb  stm32l1xx_flash.o [1]
+GAP_ConnectionComplete_CB
+                        0x08003f8b   0x62  Code  Gb  BLE_Chat_main.o [1]
+GAP_DisconnectionComplete_CB
+                        0x08003fed   0x54  Code  Gb  BLE_Chat_main.o [1]
+GPIO_Init               0x08005b15   0x60  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_PinAFConfig        0x08005b95   0x28  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_ReadInputDataBit   0x08005b75    0xe  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_ToggleBits         0x08005b8d    0x8  Code  Gb  stm32l1xx_gpio.o [1]
+GPIO_WriteBit           0x08005b83    0xa  Code  Gb  stm32l1xx_gpio.o [1]
+GetEPRxAddr             0x08003b5f   0x14  Code  Gb  usb_regs.o [1]
+GetEPRxCount            0x08003bbf   0x16  Code  Gb  usb_regs.o [1]
+GetEPTxAddr             0x08003b4b   0x14  Code  Gb  usb_regs.o [1]
+Get_SerialNum           0x080047c3   0x86  Code  Gb  hw_config.o [1]
+HCI_Event_CB            0x0800413d  0x132  Code  Gb  BLE_Chat_main.o [1]
+HCI_Init                0x08004d89   0x56  Code  Gb  hci.o [1]
+HCI_Input               0x08004ddf   0xba  Code  Gb  hci.o [1]
+HCI_Isr                 0x08004f0d   0x5e  Code  Gb  hci.o [1]
+HCI_Process             0x08004e99   0x74  Code  Gb  hci.o [1]
+Hal_Write_Serial        0x0800651d   0x3c  Code  Gb  hal.o [1]
+Handle_USBAsynchXfer    0x08004717   0x92  Code  Gb  hw_config.o [1]
+HardFault_Handler       0x08006e0b    0x2  Code  Gb  stm32l1xx_it.o [1]
+IO_Receive_Data         0x20000ee0    0x4  Data  Lc  SDK_EVAL_Io.o [1]
+In0_Process             0x08003785   0x78  Code  Gb  usb_core.o [1]
+Init_GPIOs              0x0800465b   0x66  Code  Gb  hw_config.o [1]
+LoadInt                 0x0800635d   0x4c  Code  Lc  xprintfsmall_nomb.o [3]
+Make_Connection         0x08003ea1   0xea  Code  Gb  BLE_Chat_main.o [1]
+MemManage_Handler       0x08006e0d    0x2  Code  Gb  stm32l1xx_it.o [1]
+NMI_Handler             0x08006e09    0x2  Code  Gb  stm32l1xx_it.o [1]
+NOP_Process             0x080039c1    0x2  Code  Gb  usb_core.o [1]
+NVIC_Init               0x080044e3   0x5c  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                        0x080044d9    0xa  Code  Gb  misc.o [1]
+NVIC_SetVectorTable     0x0800453f    0xc  Code  Gb  misc.o [1]
+NoData_Setup0           0x08003433  0x104  Code  Lc  usb_core.o [1]
+Osal_MemCpy             0x080064fb    0xc  Code  Gb  osal.o [1]
+Osal_MemSet             0x08006507   0x14  Code  Gb  osal.o [1]
+Out0_Process            0x080037fd   0xe8  Code  Gb  usb_core.o [1]
+PMAToUserBufferCopy     0x08003ca1   0x4e  Code  Gb  usb_mem.o [1]
+PWR_FastWakeUpCmd       0x080048fb    0x6  Code  Gb  stm32l1xx_pwr.o [1]
+PWR_PVDCmd              0x080048f5    0x6  Code  Gb  stm32l1xx_pwr.o [1]
+PWR_UltraLowPowerCmd    0x08004901    0x6  Code  Gb  stm32l1xx_pwr.o [1]
+PendSV_Handler          0x08006e17    0x2  Code  Gb  stm32l1xx_it.o [1]
+PowerOn                 0x080068e5   0x26  Code  Gb  usb_pwr.o [1]
+RCC_AHBPeriphClockCmd   0x08005d29   0x12  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x08005d4d   0x12  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x08005d3b   0x12  Code  Gb  stm32l1xx_rcc.o [1]
+RCC_Configuration       0x08004631   0x2a  Code  Gb  hw_config.o [1]
+RXCharHandle            0x20000ed4    0x2  Data  Gb  gatt_db.o [1]
+Region$$Table$$Base     0x08006da0          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08006dc4          --   Gb  - Linker created -
+Request                 0x20000efc    0x1  Data  Gb  usb_prop.o [1]
+SOF_Callback            0x08006cdf   0x1e  Code  Gb  usb_endp.o [1]
+SPI_Cmd                 0x08006591   0x14  Code  Gb  stm32l1xx_spi.o [1]
+SPI_Configure_Platform  0x080050bd  0x16e  Code  Lc  SDK_EVAL_Spi_Driver.o [1]
+SPI_I2S_GetFlagStatus   0x080065ad    0xe  Code  Gb  stm32l1xx_spi.o [1]
+SPI_I2S_ReceiveData     0x080065a5    0x4  Code  Gb  stm32l1xx_spi.o [1]
+SPI_I2S_SendData        0x080065a9    0x4  Code  Gb  stm32l1xx_spi.o [1]
+SPI_Init                0x08006559   0x38  Code  Gb  stm32l1xx_spi.o [1]
+SVC_Handler             0x08006e13    0x2  Code  Gb  stm32l1xx_it.o [1]
+SYSCFG_EXTILineConfig   0x08005d81   0x24  Code  Gb  stm32l1xx_syscfg.o [1]
+SYSCFG_USBPuCmd         0x08005d6d   0x14  Code  Gb  stm32l1xx_syscfg.o [1]
+SaveRState              0x20000eec    0x2  Data  Gb  usb_int.o [1]
+SaveTState              0x20000eee    0x2  Data  Gb  usb_int.o [1]
+SdkEvalGetVersion       0x08004623    0x6  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalIdentification   0x08004569   0xba  Code  Gb  SDK_EVAL_Config.o [1]
+SdkEvalSPI_Irq_Pin      0x0800522b   0x12  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+SdkEvalSpiInit          0x0800523d  0x18a  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
+SdkEval_IO_Config       0x08004d41   0x16  Code  Gb  SDK_EVAL_Io.o [1]
+SdkEval_IO_Receive_Data
+                        0x08004d5b    0x6  Code  Gb  SDK_EVAL_Io.o [1]
+SdkEval_IO_Send_Data    0x08004d57    0x4  Code  Gb  SDK_EVAL_Io.o [1]
+SetBTABLE               0x080039f1    0xe  Code  Gb  usb_regs.o [1]
+SetDeviceAddress        0x080038e5   0x94  Code  Gb  usb_core.o [1]
+SetEPRxAddr             0x08003b35   0x16  Code  Gb  usb_regs.o [1]
+SetEPRxCount            0x08003b85   0x3a  Code  Gb  usb_regs.o [1]
+SetEPRxStatus           0x08003a47   0x30  Code  Gb  usb_regs.o [1]
+SetEPRxValid            0x08003a97   0x20  Code  Gb  usb_regs.o [1]
+SetEPTxAddr             0x08003b1b   0x1a  Code  Gb  usb_regs.o [1]
+SetEPTxCount            0x08003b73   0x12  Code  Gb  usb_regs.o [1]
+SetEPTxStatus           0x08003a17   0x30  Code  Gb  usb_regs.o [1]
+SetEPTxValid            0x08003a77   0x20  Code  Gb  usb_regs.o [1]
+SetEPType               0x080039ff   0x18  Code  Gb  usb_regs.o [1]
+Set_USBClock            0x080046c1    0xa  Code  Gb  hw_config.o [1]
+Setup0_Process          0x080036f1   0x94  Code  Gb  usb_core.o [1]
+Standard_ClearFeature   0x08003213   0xd8  Code  Gb  usb_core.o [1]
+Standard_GetConfiguration
+                        0x080030f5   0x22  Code  Gb  usb_core.o [1]
+Standard_GetDescriptorData
+                        0x08003365   0x1a  Code  Gb  usb_core.o [1]
+Standard_GetInterface   0x08003117   0x22  Code  Gb  usb_core.o [1]
+Standard_GetStatus      0x08003181   0x92  Code  Gb  usb_core.o [1]
+Standard_SetEndPointFeature
+                        0x080032eb   0x7a  Code  Gb  usb_core.o [1]
+Standard_SetInterface   0x08003139   0x48  Code  Gb  usb_core.o [1]
+StatusInfo              0x20000ee4    0x4  Data  Gb  usb_core.o [1]
+String_Descriptor       0x200000e8   0x20  Data  Gb  usb_prop.o [1]
+SysTick_CLKSourceConfig
+                        0x08005f59   0x14  Code  Gb  stm32l1xx_systick.o [1]
+SysTick_CounterCmd      0x08005f73   0x26  Code  Gb  stm32l1xx_systick.o [1]
+SysTick_Handler         0x08004cf5    0xa  Code  Gb  clock.o [1]
+SysTick_ITConfig        0x08005f99   0x14  Code  Gb  stm32l1xx_systick.o [1]
+SysTick_SetReload       0x08005f6d    0x6  Code  Gb  stm32l1xx_systick.o [1]
+SystemInit              0x08006a9d   0xfc  Code  Gb  system_stm32l1xx.o [1]
+TIM2_IRQHandler         0x08004bad   0x4e  Code  Gb  timer.o [1]
+TIM3_IRQHandler         0x08004701   0x16  Code  Gb  hw_config.o [1]
+TIM4_IRQHandler         0x08004bfb   0x24  Code  Gb  timer.o [1]
+TIM6_IRQHandler         0x08004c1f   0x2c  Code  Gb  timer.o [1]
+TIM7_IRQHandler         0x08004c4b   0x26  Code  Gb  timer.o [1]
+TIM_ClearFlag           0x08005e31    0x6  Code  Gb  stm32l1xx_tim.o [1]
+TIM_ClearITPendingBit   0x08005e4b    0x6  Code  Gb  stm32l1xx_tim.o [1]
+TIM_Cmd                 0x08005e0d   0x14  Code  Gb  stm32l1xx_tim.o [1]
+TIM_GetITStatus         0x08005e37   0x14  Code  Gb  stm32l1xx_tim.o [1]
+TIM_ITConfig            0x08005e21   0x10  Code  Gb  stm32l1xx_tim.o [1]
+TIM_TimeBaseInit        0x08005dad   0x4a  Code  Gb  stm32l1xx_tim.o [1]
+TXCharHandle            0x20000ed2    0x2  Data  Gb  gatt_db.o [1]
+Timer_Expired           0x08005c9f   0x18  Code  Gb  gp_timer.o [1]
+Timer_Set               0x08005c91    0xe  Code  Gb  gp_timer.o [1]
+USART_Rx_Buffer         0x20000190  0x7d0  Data  Gb  hw_config.o [1]
+USART_Rx_length         0x20000968    0x4  Data  Gb  hw_config.o [1]
+USART_Rx_ptr_in         0x20000960    0x4  Data  Gb  hw_config.o [1]
+USART_Rx_ptr_out        0x20000964    0x4  Data  Gb  hw_config.o [1]
+USB_Cable_Config        0x080046f9    0x8  Code  Gb  hw_config.o [1]
+USB_Init                0x08005fb5   0x20  Code  Gb  usb_init.o [1]
+USB_Interrupts_Config   0x080046cb   0x2e  Code  Gb  hw_config.o [1]
+USB_Istr                0x08006d19   0x60  Code  Gb  usb_istr.o [1]
+USB_LP_IRQHandler       0x08006e19    0x4  Code  Gb  stm32l1xx_it.o [1]
+USB_Rx_Buffer           0x20000e38   0x40  Data  Gb  usb_endp.o [1]
+USB_SIL_Init            0x08006915   0x14  Code  Gb  usb_sil.o [1]
+USB_SIL_Read            0x08006931   0x24  Code  Gb  usb_sil.o [1]
+USB_Send_Data           0x080047a9   0x1a  Code  Gb  hw_config.o [1]
+USB_Tx_State            0x2000018c    0x1  Data  Gb  hw_config.o [1]
+UsageFault_Handler      0x08006e11    0x2  Code  Gb  stm32l1xx_it.o [1]
+UserToPMABufferCopy     0x08003c19   0x88  Code  Gb  usb_mem.o [1]
+User_Process            0x08004045   0xf8  Code  Gb  BLE_Chat_main.o [1]
+User_Standard_Requests  0x200000c4   0x24  Data  Gb  usb_prop.o [1]
+Virtual_Com_Port_ConfigDescriptor
+                        0x08006bc0   0x44  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_Data_Setup
+                        0x080067e3   0x60  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_DeviceDescriptor
+                        0x08006bac   0x14  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_GetConfigDescriptor
+                        0x08006867    0x6  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_GetDeviceDescriptor
+                        0x08006861    0x6  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_GetLineCoding
+                        0x08006895   0x12  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_GetStringDescriptor
+                        0x0800686d   0x18  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_Get_Interface_Setting
+                        0x08006885    0xe  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_NoData_Setup
+                        0x08006843   0x1e  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_Reset  0x080066ef   0xda  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_SetConfiguration
+                        0x080067c9    0xe  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_SetDeviceAddress
+                        0x080067d7    0x8  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_SetLineCoding
+                        0x080068a9   0x12  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_Status_In
+                        0x080067df    0x2  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_Status_Out
+                        0x080067e1    0x2  Code  Gb  usb_prop.o [1]
+Virtual_Com_Port_StringLangID
+                        0x08006c04    0x4  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_StringProduct
+                        0x08006c30   0x34  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_StringSerial
+                        0x20000108   0x1c  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_StringVendor
+                        0x08006c08   0x28  Data  Gb  usb_desc.o [1]
+Virtual_Com_Port_init   0x080066cd   0x22  Code  Gb  usb_prop.o [1]
+_LitobSmallNoMb         0x080063a9   0xce  Code  Lc  xprintfsmall_nomb.o [3]
+_PrintfSmallNoMb        0x08005fd5  0x382  Code  Gb  xprintfsmall_nomb.o [3]
+_Prout                  0x08006e21   0x16  Code  Gb  xprout.o [3]
+_PutcharsSmallNoMb      0x08006477   0x2e  Code  Lc  xprintfsmall_nomb.o [3]
+__aeabi_memset          0x08006665         Code  Gb  ABImemset.o [4]
+__cmain                 0x08006dc5         Code  Gb  cmain.o [4]
+__exit                  0x08006df5   0x14  Code  Gb  exit.o [5]
+__iar_Memchr            0x0800660d         Code  Gb  memchr.o [4]
+__iar_Memset            0x08006665         Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x0800666d         Code  Gb  ABImemset.o [4]
+__iar_Strchr            0x080065bd         Code  Gb  strchr.o [4]
+__iar_copy_init3        0x080039c3   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08006d79   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x08006e49         Code  Gb  cstartup_M.o [4]
+__iar_unaligned___aeabi_memcpy
+                        0x08005ee1         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x08005f01         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy8
+                        0x08005f01         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x08003bf7   0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08006ddf    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08003000         Data  Gb  startup_stm32l1xx_md.o [1]
+_call_main              0x08006dd1         Code  Gb  cmain.o [4]
+_exit                   0x08006de9         Code  Gb  cexit.o [4]
+_main                   0x08006ddb         Code  Gb  cmain.o [4]
+aci_gap_create_connection
+                        0x08005a8d   0x86  Code  Gb  bluenrg_gap_aci.o [1]
+aci_gap_init            0x08005959   0x6c  Code  Gb  bluenrg_gap_aci.o [1]
+aci_gap_set_auth_requirement
+                        0x080059c5   0x74  Code  Gb  bluenrg_gap_aci.o [1]
+aci_gap_start_general_discovery_proc
+                        0x08005a39   0x54  Code  Gb  bluenrg_gap_aci.o [1]
+aci_gatt_disc_charac_by_uuid
+                        0x080057f9   0x82  Code  Gb  bluenrg_gatt_aci.o [1]
+aci_gatt_init           0x080057bf   0x3a  Code  Gb  bluenrg_gatt_aci.o [1]
+aci_gatt_write_charac_descriptor
+                        0x0800587b   0x7c  Code  Gb  bluenrg_gatt_aci.o [1]
+aci_gatt_write_without_response
+                        0x080058f7   0x62  Code  Gb  bluenrg_gatt_aci.o [1]
+aci_hal_set_tx_power_level
+                        0x08005777   0x48  Code  Gb  bluenrg_hal_aci.o [1]
+aci_hal_write_config_data
+                        0x08005715   0x62  Code  Gb  bluenrg_hal_aci.o [1]
+app_flags               0x20000164    0x4  Data  Gb  BLE_Chat_main.o [1]
+bDeviceState            0x20000ef4    0x4  Data  Gb  usb_pwr.o [1]
+bIntPackSOF             0x20000ef0    0x1  Data  Gb  usb_istr.o [1]
+buttonOK                0x20000edc    0x4  Data  Gb  push_button.o [1]
+chatServHandle          0x20000ed0    0x2  Data  Gb  gatt_db.o [1]
+cmd                     0x20000c38  0x200  Data  Lc  chat.o [1]
+connection_handle       0x2000015c    0x2  Data  Gb  BLE_Chat_main.o [1]
+count                   0x20000ed8    0x4  Data  Lc  clock.o [1]
+enableTimerInterrupt    0x08004b69   0x44  Code  Gb  timer.o [1]
+exit                    0x08006de3    0x4  Code  Gb  exit.o [3]
+flag_connection_complete
+                        0x2000016c    0x4  Data  Gb  BLE_Chat_main.o [1]
+flag_scan_complete      0x20000168    0x4  Data  Gb  BLE_Chat_main.o [1]
+hciReadPacketBuffer     0x2000098c  0x2a8  Data  Lc  hci.o [1]
+hciReadPktPool          0x2000097c    0x8  Data  Gb  hci.o [1]
+hciReadPktRxQueue       0x20000984    0x8  Data  Gb  hci.o [1]
+hci_buffer              0x20000974    0x4  Data  Lc  hci.o [1]
+hci_pckt_len            0x20000970    0x2  Data  Lc  hci.o [1]
+hci_send_req            0x08004f7f  0x12e  Code  Gb  hci.o [1]
+initButton              0x08004a51   0x26  Code  Gb  push_button.o [1]
+initDevices             0x08004c85   0x3e  Code  Gb  slave_devices.o [1]
+initLED                 0x08004915   0x8e  Code  Gb  led.o [1]
+initTimer               0x08004aa5   0x8c  Code  Gb  timer.o [1]
+linecoding              0x20000170    0x8  Data  Gb  usb_prop.o [1]
+list_init_head          0x080064ad    0x6  Code  Gb  list.o [1]
+list_insert_head        0x080064c1    0xe  Code  Gb  list.o [1]
+list_insert_tail        0x080064cf    0xe  Code  Gb  list.o [1]
+list_is_empty           0x080064b3    0xe  Code  Gb  list.o [1]
+list_remove_head        0x080064dd   0x1e  Code  Gb  list.o [1]
+main                    0x08003cf1  0x1b0  Code  Gb  BLE_Chat_main.o [1]
+memchr                  0x0800660d         Code  Gb  memchr.o [4]
+new_hci_event           0x08004f6b   0x14  Code  Gb  hci.o [1]
+new_packet              0x2000096e    0x1  Data  Lc  hci.o [1]
+pEpInt_IN               0x20000124   0x1c  Data  Gb  usb_istr.o [1]
+pEpInt_OUT              0x20000140   0x1c  Data  Gb  usb_istr.o [1]
+pInformation            0x20000ec4    0x4  Data  Gb  usb_init.o [1]
+pProperty               0x20000ec8    0x4  Data  Gb  usb_init.o [1]
+pUser_Standard_Requests
+                        0x20000ecc    0x4  Data  Gb  usb_init.o [1]
+packet_complete_callback
+                        0x20000978    0x4  Data  Lc  hci.o [1]
+printf                  0x08004d65   0x24  Code  Gb  printf.o [3]
+processInputData        0x08005bbd   0xc0  Code  Gb  chat.o [1]
+putchar                 0x08004849   0x74  Code  Gb  hw_config.o [1]
+readPacketListFull      0x2000096c    0x1  Data  Gb  hci.o [1]
+rx_handle               0x20000160    0x2  Data  Gb  BLE_Chat_main.o [1]
+s_SdkEvalVersion        0x20000ef9    0x1  Data  Lc  SDK_EVAL_Config.o [1]
+s_SpiCsPin              0x20000060    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiCsPinVersion       0x080056b0    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiCsPort             0x2000005c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiCsPortVersion      0x2000001c    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqClk             0x20000084    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqClkVersion      0x080056e0    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqExtiLine        0x20000090    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqExtiLineVersion
+                        0x080056e8    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqIrqn            0x20000005    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqIrqnVersion     0x080056f8    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPin             0x2000008c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPinSource       0x20000004    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPinSourceVersion
+                        0x080056f4    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPinVersion      0x080056d8    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPort            0x20000088    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPortSource      0x20000003    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPortSourceVersion
+                        0x080056f0    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiIrqPortVersion     0x20000050    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoAF             0x20000001    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoAFVersion      0x20000008    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPin            0x20000078    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPinSource      0x2000000e    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPinSourceVersion
+                        0x20000040    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPinVersion     0x080056c8    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPort           0x20000074    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMisoPortVersion    0x20000038    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiAF             0x20000000    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiAFVersion      0x20000006    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPin            0x20000070    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPinSource      0x2000000c    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPinSourceVersion
+                        0x20000034    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPinVersion     0x080056c0    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPort           0x2000006c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiMosiPortVersion    0x2000002c    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+s_SpiPort               0x20000058    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiPortVersion        0x20000014    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiRstPin             0x20000068    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiRstPinVersion      0x080056b8    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiRstPort            0x20000064    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiRstPortVersion     0x20000024    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkAF             0x20000002    0x1  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkAFVersion      0x2000000a    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPin            0x20000080    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPinSource      0x20000010    0x2  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPinSourceVersion
+                        0x2000004c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPinVersion     0x080056d0    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPort           0x2000007c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
+s_SpiSclkPortVersion    0x20000044    0x8  Data  Gb  SDK_EVAL_Spi_Driver.o [1]
+slave1                  0x20000e90    0xc  Data  Gb  slave_devices.o [1]
+slave1_addr             0x08004cc8    0x8  Data  Gb  slave_devices.o [1]
+slave2                  0x20000e9c    0xc  Data  Gb  slave_devices.o [1]
+slave2_addr             0x08004cd0    0x8  Data  Gb  slave_devices.o [1]
+slaves                  0x20000e78   0x18  Data  Gb  slave_devices.o [1]
+startTimer              0x08004b31   0x36  Code  Gb  timer.o [1]
+strchr                  0x080065bd         Code  Gb  strchr.o [4]
+strlen                  0x080065d5         Code  Gb  strlen.o [4]
+turnLED                 0x080049a5   0x9e  Code  Gb  led.o [1]
+tx_handle               0x2000015e    0x2  Data  Gb  BLE_Chat_main.o [1]
+user_timer_expired      0x20000ef8    0x1  Data  Gb  hw_config.o [1]
+wInterrupt_Mask         0x20000ed6    0x2  Data  Gb  usb_init.o [1]
+wIstr                   0x20000ef2    0x2  Data  Gb  usb_istr.o [1]
+
+
+[1] = C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  15 884 bytes of readonly  code memory
+     620 bytes of readonly  data memory
+   6 909 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

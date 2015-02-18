@@ -1,0 +1,1315 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:39:30
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_cal.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_cal.c"
+#        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\otgd_fs_cal.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\otgd_fs_cal.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\otgd_fs_cal.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : otgd_fs_cal.c
+      3          * Author             : STMicroelectronics
+      4          * Version            : V3.3.0
+      5          * Date               : 21-March-2011
+      6          * Description        : OTG FS Device Core Access Layer interface.
+      7          ********************************************************************************
+      8          * THE PRESENT SOFTWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH SOFTWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #ifdef STM32F10X_CL
+     17          
+     18          /* Includes ------------------------------------------------------------------*/
+     19          #include "otgd_fs_cal.h"
+     20          #include "usb_conf.h"
+     21          #include "otgd_fs_regs.h"
+     22          
+     23          /* Private typedef -----------------------------------------------------------*/
+     24          /* Private define ------------------------------------------------------------*/
+     25          /* Private macro -------------------------------------------------------------*/
+     26          /* Private variables ---------------------------------------------------------*/
+     27          
+     28          USB_OTG_CORE_REGS     USB_OTG_FS_regs;
+     29          
+     30          /* Private function prototypes -----------------------------------------------*/
+     31          static USB_OTG_Status OTGD_FS_SetDeviceMode(void);
+     32          static USB_OTG_Status OTGD_FS_CoreReset(void);
+     33          
+     34          extern uint32_t STM32_PCD_OTG_ISR_Handler (void);
+     35          
+     36          /******************************************************************************/
+     37          /*                           Common Core Layer                                */
+     38          /******************************************************************************/
+     39          
+     40          /*******************************************************************************
+     41          * Function Name  : OTGD_FS_WritePacket
+     42          * Description    : Writes a packet into the Tx FIFO associated with the EP
+     43          * Input          : None
+     44          * Output         : None
+     45          * Return         : Status
+     46          *******************************************************************************/
+     47          USB_OTG_Status OTGD_FS_WritePacket(uint8_t *src, uint8_t ep_num, uint16_t bytes)
+     48          {
+     49            USB_OTG_Status status = USB_OTG_OK;
+     50            uint32_t dword_count = 0 , i = 0;
+     51            __IO uint32_t *fifo;
+     52          
+     53            /* Find the DWORD length, padded by extra bytes as necessary if MPS
+     54             * is not a multiple of DWORD */
+     55            dword_count =  (bytes + 3) / 4;
+     56          
+     57            fifo = USB_OTG_FS_regs.FIFO[ep_num];
+     58          
+     59            for (i = 0; i < dword_count; i++, src += 4)
+     60            {
+     61              USB_OTG_WRITE_REG32( fifo, *((__packed uint32_t *)src) );
+     62            }
+     63          
+     64            return status;
+     65          }
+     66          /*******************************************************************************
+     67          * Function Name  : OTGD_FS_ReadPacket
+     68          * Description    : Reads a packet from the Rx FIFO
+     69          * Input          : None
+     70          * Output         : None
+     71          * Return         : status
+     72          *******************************************************************************/
+     73          void* OTGD_FS_ReadPacket(uint8_t *dest, uint16_t bytes)
+     74          {
+     75            uint32_t i = 0;
+     76            uint32_t word_count = (bytes + 3) / 4;
+     77          
+     78            __IO uint32_t *fifo = USB_OTG_FS_regs.FIFO[0];
+     79            uint32_t *data_buff = (uint32_t *)dest;
+     80          
+     81            for (i = 0; i < word_count; i++, data_buff++)
+     82            {
+     83              *data_buff = USB_OTG_READ_REG32(fifo);
+     84            }
+     85          
+     86            /* Return the buffer pointer because if the transfer is composed of several packets,
+     87               the data of the next packet must be stored following the previous packet's data         */
+     88            return ((void *)data_buff);
+     89          }
+     90          
+     91          /*******************************************************************************
+     92          * Function Name  : OTGD_FS_SetAddress
+     93          * Description    : Initialize core registers addresses.
+     94          * Input          : BaseAddress
+     95          * Output         : None
+     96          * Return         : status
+     97          *******************************************************************************/
+     98          USB_OTG_Status OTGD_FS_SetAddress(uint32_t BaseAddress)
+     99          {
+    100            uint32_t i = 0;
+    101            USB_OTG_Status status = USB_OTG_OK;
+    102            USB_OTG_FS_regs.GREGS = (USB_OTG_GREGS *)(BaseAddress +\
+    103                                     USB_OTG_CORE_GLOBAL_REGS_OFFSET);
+    104          
+    105            USB_OTG_FS_regs.DEV    =  (USB_OTG_DEV  *)  (BaseAddress +\
+    106                                     USB_OTG_DEV_GLOBAL_REG_OFFSET);
+    107          
+    108            for (i = 0; i < NUM_TX_FIFOS; i++)
+    109            {
+    110              USB_OTG_FS_regs.DINEPS[i]  = (USB_OTG_DINEPS *)  (BaseAddress + \
+    111                            USB_OTG_DEV_IN_EP_REG_OFFSET + (i * USB_OTG_EP_REG_OFFSET));
+    112              
+    113              USB_OTG_FS_regs.DOUTEPS[i] = (USB_OTG_DOUTEPS *) (BaseAddress + \
+    114                           USB_OTG_DEV_OUT_EP_REG_OFFSET + (i * USB_OTG_EP_REG_OFFSET));
+    115            }
+    116          
+    117            for (i = 0; i < NUM_TX_FIFOS; i++)
+    118            {
+    119              USB_OTG_FS_regs.FIFO[i] = (uint32_t *)(BaseAddress + \
+    120                              USB_OTG_DATA_FIFO_OFFSET + (i * USB_OTG_DATA_FIFO_SIZE));
+    121            }
+    122          
+    123            USB_OTG_FS_regs.PCGCCTL = (uint32_t *)(BaseAddress + USB_OTG_PCGCCTL_OFFSET);
+    124          
+    125            return status;
+    126          }
+    127          /*******************************************************************************
+    128          * Function Name  : OTGD_FS_CoreInit
+    129          * Description    : Initialize the USB_OTG controller registers and prepares the core
+    130                             for device mode or host mode operation.
+    131          * Input          : None
+    132          * Output         : None
+    133          * Return         : Status
+    134          *******************************************************************************/
+    135          USB_OTG_Status OTGD_FS_CoreInit(void)
+    136          {
+    137            USB_OTG_Status status = USB_OTG_OK;
+    138            USB_OTG_GUSBCFG_TypeDef usbcfg;
+    139            USB_OTG_GCCFG_TypeDef    gccfg;
+    140           
+    141            usbcfg.d32 = 0;
+    142            gccfg.d32  = 0;
+    143            
+    144            usbcfg.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GUSBCFG);
+    145            usbcfg.b.physel = 1;
+    146            USB_OTG_WRITE_REG32 (&USB_OTG_FS_regs.GREGS->GUSBCFG, usbcfg.d32);
+    147          
+    148            /* init and configure the phy */
+    149            gccfg.d32 = 0;
+    150            gccfg.b.vbussensingB = 1;
+    151            gccfg.b.pwdn = 1;
+    152            USB_OTG_WRITE_REG32 (&USB_OTG_FS_regs.GREGS->GCCFG, gccfg.d32);
+    153            mDELAY(50);
+    154          
+    155            /* Reset after a PHY select and set Host mode */
+    156            OTGD_FS_CoreReset();
+    157          
+    158            /* Set Device Mode */
+    159            OTGD_FS_SetDeviceMode();
+    160          
+    161            return status;
+    162          }
+    163          
+    164          /*******************************************************************************
+    165          * Function Name  : OTGD_FS_CoreReset
+    166          * Description    : Soft reset of the core
+    167          * Input          : None
+    168          * Output         : None
+    169          * Return         : Status
+    170          *******************************************************************************/
+    171          static USB_OTG_Status OTGD_FS_CoreReset(void)
+    172          {
+    173            USB_OTG_Status status = USB_OTG_OK;
+    174            __IO USB_OTG_GRSTCTL_TypeDef greset;
+    175            uint32_t timeout = 0;
+    176          
+    177            greset.d32 = 0;
+    178            
+    179            /* Wait for AHB master IDLE state. */
+    180            do
+    181            {
+    182              uDELAY(5);
+    183              greset.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GRSTCTL);
+    184              if (++timeout > USB_OTG_TIMEOUT)
+    185              {
+    186                return USB_OTG_OK;
+    187              }
+    188            }
+    189            while (greset.b.ahbidle == 0);
+    190          
+    191            /* Core Soft Reset */
+    192            timeout = 0;
+    193            greset.b.csftrst = 1;
+    194            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.GREGS->GRSTCTL, greset.d32 );
+    195            
+    196            do
+    197            {
+    198              greset.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GRSTCTL);
+    199              if (++timeout > USB_OTG_TIMEOUT)
+    200              {
+    201                break;
+    202              }
+    203            }
+    204            while (greset.b.csftrst == 1);
+    205          
+    206            /* Wait for 3 PHY Clocks*/
+    207            uDELAY(5);
+    208            return status;
+    209          }
+    210          
+    211          /*******************************************************************************
+    212          * Function Name  : OTGD_FS_EnableGlobalInt
+    213          * Description    : Enables the controller's Global Int in the AHB Config reg
+    214          * Input          : None
+    215          * Output         : None
+    216          * Return         : Status
+    217          *******************************************************************************/
+    218          USB_OTG_Status OTGD_FS_EnableGlobalInt(void)
+    219          {
+    220            USB_OTG_Status status = USB_OTG_OK;
+    221            USB_OTG_GAHBCFG_TypeDef  ahbcfg;
+    222          
+    223            ahbcfg.d32 = 0;
+    224            
+    225            ahbcfg.b.gintmsk = 1; /* Enable interrupts */
+    226            USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.GREGS->GAHBCFG, 0, ahbcfg.d32);
+    227            return status;
+    228          }
+    229          
+    230          /*******************************************************************************
+    231          * Function Name  : OTGD_FS_DisableGlobalInt
+    232          * Description    : Disables the controller's Global Int in the AHB Config reg
+    233          * Input          : None
+    234          * Output         : None
+    235          * Return         : Status
+    236          *******************************************************************************/
+    237          USB_OTG_Status OTGD_FS_DisableGlobalInt(void)
+    238          {
+    239            USB_OTG_Status status = USB_OTG_OK;
+    240            USB_OTG_GAHBCFG_TypeDef ahbcfg;
+    241          
+    242            ahbcfg.d32 = 0;
+    243            ahbcfg.b.gintmsk = 1; /* Enable interrupts */
+    244            USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.GREGS->GAHBCFG, ahbcfg.d32, 0);
+    245            return status;
+    246          }
+    247          
+    248          /*******************************************************************************
+    249          * Function Name  : OTGD_FS_FlushTxFifo
+    250          * Description    : Flush a Tx FIFO
+    251          * Input          : FIFO num
+    252          * Output         : None
+    253          * Return         : status
+    254          *******************************************************************************/
+    255          USB_OTG_Status OTGD_FS_FlushTxFifo (uint32_t num )
+    256          {
+    257          
+    258            USB_OTG_Status status = USB_OTG_OK;
+    259            __IO USB_OTG_GRSTCTL_TypeDef greset;
+    260            uint32_t timeout = 0;
+    261          
+    262            greset.d32 = 0;
+    263              
+    264            greset.b.txfflsh = 1;
+    265            greset.b.txfnum  = num;
+    266            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->GRSTCTL, greset.d32 );
+    267          
+    268            do
+    269            {
+    270              greset.d32 = USB_OTG_READ_REG32( &USB_OTG_FS_regs.GREGS->GRSTCTL);
+    271              if (++timeout > USB_OTG_TIMEOUT)
+    272              {
+    273                break;
+    274              }
+    275            }
+    276            while (greset.b.txfflsh == 1);
+    277          
+    278            /* Wait for 3 PHY Clocks*/
+    279            uDELAY(5);
+    280          
+    281            return status;
+    282          }
+    283          
+    284          /*******************************************************************************
+    285          * Function Name  : OTGD_FS_FlushRxFifo
+    286          * Description    : Flush a Rx FIFO
+    287          * Input          : None
+    288          * Output         : None
+    289          * Return         : status
+    290          *******************************************************************************/
+    291          USB_OTG_Status OTGD_FS_FlushRxFifo( void )
+    292          {
+    293            USB_OTG_Status status = USB_OTG_OK;
+    294            __IO USB_OTG_GRSTCTL_TypeDef greset;
+    295            uint32_t timeout = 0;
+    296          
+    297            greset.d32 = 0;
+    298            
+    299            greset.b.rxfflsh = 1;
+    300            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->GRSTCTL, greset.d32 );
+    301          
+    302            do
+    303            {
+    304              greset.d32 = USB_OTG_READ_REG32( &USB_OTG_FS_regs.GREGS->GRSTCTL);
+    305              if (++timeout > USB_OTG_TIMEOUT)
+    306              {
+    307                break;
+    308              }
+    309            }
+    310            while (greset.b.rxfflsh == 1);
+    311          
+    312            /* Wait for 3 PHY Clocks*/
+    313            uDELAY(5);
+    314          
+    315            return status;
+    316          }
+    317          
+    318          /*******************************************************************************
+    319          * Function Name  : OTGD_FS_SetDeviceMode
+    320          * Description    : Set device mode
+    321          * Input          : None
+    322          * Output         : None
+    323          * Return         : Status
+    324          *******************************************************************************/
+    325          USB_OTG_Status OTGD_FS_SetDeviceMode(void)
+    326          {
+    327          
+    328            USB_OTG_Status status = USB_OTG_OK;
+    329            USB_OTG_GUSBCFG_TypeDef usbcfg ;
+    330            
+    331            usbcfg.d32 = 0;
+    332          
+    333            usbcfg.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GUSBCFG);
+    334          
+    335            usbcfg.b.force_dev = 1;
+    336          
+    337            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.GREGS->GUSBCFG, usbcfg.d32);
+    338          
+    339            mDELAY(50);
+    340          
+    341            return status;
+    342          }
+    343          /*******************************************************************************
+    344          * Function Name  : IsDeviceMode
+    345          * Description    : check device mode
+    346          * Input          : None
+    347          * Output         : None
+    348          * Return         : current mode
+    349          *******************************************************************************/
+    350          uint32_t USBD_FS_IsDeviceMode(void)
+    351          {
+    352            return ((USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GINTSTS ) & 0x1) == 0 );
+    353          }
+    354          
+    355          /*******************************************************************************
+    356          * Function Name  : OTGD_FS_ReadCoreItr
+    357          * Description    : returns the Core Interrupt register
+    358          * Input          : None
+    359          * Output         : None
+    360          * Return         : None
+    361          *******************************************************************************/
+    362          uint32_t OTGD_FS_ReadCoreItr(void)
+    363          {
+    364            uint32_t v = 0;
+    365          
+    366            v = USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GINTSTS);
+    367            v &= USB_OTG_READ_REG32(&USB_OTG_FS_regs.GREGS->GINTMSK);
+    368          
+    369            return v;
+    370          }
+    371          
+    372          /*******************************************************************************
+    373          * Function Name  : OTGD_FS_ReadOtgItr
+    374          * Description    : returns the USB_OTG Interrupt register
+    375          * Input          : None
+    376          * Output         : None
+    377          * Return         : None
+    378          *******************************************************************************/
+    379          uint32_t OTGD_FS_ReadOtgItr (void)
+    380          {
+    381            return (USB_OTG_READ_REG32 (&USB_OTG_FS_regs.GREGS->GOTGINT));
+    382          }
+    383          
+    384          /******************************************************************************/
+    385          /*                           PCD Core Layer                                   */
+    386          /******************************************************************************/
+    387          
+    388          /*******************************************************************************
+    389          * Function Name  : InitDevSpeed
+    390          * Description    : Initializes the DevSpd field of the DCFG register depending
+    391                             on the PHY type and the enumeration speed of the device.
+    392          * Input          : None
+    393          * Output         : None
+    394          * Return         : None
+    395          *******************************************************************************/
+    396          static void InitDevSpeed(void)
+    397          {
+    398            USB_OTG_DCFG_TypeDef  dcfg;
+    399          
+    400            dcfg.d32 = 0;
+    401            
+    402            dcfg.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DCFG);
+    403            dcfg.b.devspd = 0x3;  /* Full speed PHY */
+    404            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DEV->DCFG, dcfg.d32);
+    405          }
+    406          /*******************************************************************************
+    407          * Function Name  : OTGD_FS_CoreInitDev
+    408          * Description    : Initialize the USB_OTG controller registers for device mode
+    409          * Input          : None
+    410          * Output         : None
+    411          * Return         : Status
+    412          *******************************************************************************/
+    413          USB_OTG_Status OTGD_FS_CoreInitDev (void)
+    414          {
+    415            USB_OTG_Status status = USB_OTG_OK;
+    416            USB_OTG_DEPCTLx_TypeDef  depctl;
+    417            USB_OTG_DCFG_TypeDef   dcfg;
+    418            USB_OTG_FIFOSIZ_TypeDef txfifosize0;
+    419            USB_OTG_FIFOSIZ_TypeDef txfifosize;
+    420            uint32_t i = 0;
+    421            
+    422            depctl.d32 = 0;
+    423            dcfg.d32 = 0;
+    424            txfifosize0.d32 = 0;
+    425            txfifosize.d32 = 0;
+    426            
+    427            /* Set device speed */
+    428            InitDevSpeed ();
+    429          
+    430            /* Restart the Phy Clock */
+    431            USB_OTG_WRITE_REG32(USB_OTG_FS_regs.PCGCCTL, 0);
+    432          
+    433            /* Device configuration register */
+    434            dcfg.d32 = USB_OTG_READ_REG32( &USB_OTG_FS_regs.DEV->DCFG);
+    435            dcfg.b.perfrint = DCFG_FRAME_INTERVAL_80;
+    436            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DEV->DCFG, dcfg.d32 );
+    437            
+    438            /* set Rx FIFO size */
+    439            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->GRXFSIZ, RX_FIFO_SIZE);
+    440          
+    441            /* EP0 TX*/
+    442            txfifosize0.b.depth     = TX0_FIFO_SIZE;
+    443            txfifosize0.b.startaddr = RX_FIFO_SIZE;
+    444            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->DIEPTXF0, txfifosize0.d32 );
+    445          
+    446            
+    447            /* EP1 TX*/
+    448            txfifosize.b.startaddr = txfifosize0.b.startaddr + txfifosize0.b.depth;
+    449            txfifosize.b.depth = TX1_FIFO_SIZE;
+    450            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->DIEPTXFx[0], txfifosize.d32 );
+    451          
+    452              
+    453            /* EP2 TX*/
+    454            txfifosize.b.startaddr += txfifosize.b.depth;
+    455            txfifosize.b.depth = TX2_FIFO_SIZE;
+    456            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->DIEPTXFx[1], txfifosize.d32 );
+    457          
+    458            
+    459            /* EP3 TX*/  
+    460            txfifosize.b.startaddr += txfifosize.b.depth;
+    461            txfifosize.b.depth = TX3_FIFO_SIZE;
+    462            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->DIEPTXFx[2], txfifosize.d32 );
+    463          
+    464            
+    465            /* Flush the FIFOs */
+    466            OTGD_FS_FlushTxFifo(0x10); /* all Tx FIFOs */
+    467            OTGD_FS_FlushRxFifo();
+    468          
+    469            /* Clear all pending Device Interrupts */
+    470            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DEV->DIEPMSK, 0 );
+    471            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DEV->DOEPMSK, 0 );
+    472            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DEV->DAINT, 0xFFFFFFFF );
+    473            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DEV->DAINTMSK, 0 );
+    474          
+    475            for (i = 0; i < NUM_TX_FIFOS; i++)
+    476            {
+    477              depctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DINEPS[i]->DIEPCTLx);
+    478              if (depctl.b.epena)
+    479              {
+    480                depctl.d32 = 0;
+    481                depctl.b.epdis = 1;
+    482                depctl.b.snak = 1;
+    483              }
+    484              else
+    485              {
+    486                depctl.d32 = 0;
+    487              }
+    488          
+    489              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DINEPS[i]->DIEPCTLx, depctl.d32);
+    490          
+    491          
+    492              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DINEPS[i]->DIEPTSIZx, 0);
+    493              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DINEPS[i]->DIEPINTx, 0xFF);
+    494            }
+    495          
+    496            for (i = 0; i < 1/* NUM_OUT_EPS*/; i++)
+    497            {
+    498              depctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DOUTEPS[i]->DOEPCTLx);
+    499              if (depctl.b.epena)
+    500              {
+    501                depctl.d32 = 0;
+    502                depctl.b.epdis = 1;
+    503                depctl.b.snak = 1;
+    504              }
+    505              else
+    506              {
+    507                depctl.d32 = 0;
+    508              }
+    509          
+    510              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DOUTEPS[i]->DOEPCTLx, depctl.d32);
+    511          
+    512              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DOUTEPS[i]->DOEPTSIZx, 0);
+    513              USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.DOUTEPS[i]->DOEPINTx, 0xFF);
+    514            }
+    515            
+    516            OTGD_FS_EnableDevInt();
+    517          
+    518            return status;
+    519          }
+    520          /*******************************************************************************
+    521          * Function Name  : OTGD_FS_EnableDevInt
+    522          * Description    : Enables the Device mode interrupts
+    523          * Input          : None
+    524          * Output         : None
+    525          * Return         : status
+    526          *******************************************************************************/
+    527          USB_OTG_Status OTGD_FS_EnableDevInt(void)
+    528          {
+    529          
+    530            USB_OTG_Status status = USB_OTG_OK;
+    531            USB_OTG_GINTMSK_TypeDef intr_mask;
+    532            
+    533            intr_mask.d32 = 0;
+    534          
+    535            /* Disable all interrupts. */
+    536            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->GINTMSK, 0);
+    537          
+    538            /* Clear any pending interrupts */
+    539            USB_OTG_WRITE_REG32( &USB_OTG_FS_regs.GREGS->GINTSTS, 0xFFFFFFFF);
+    540          
+    541            /* Enable the defined interrupts in  Device mode */
+    542          #ifdef INTR_SOFINTR
+    543            intr_mask.b.sofintr = 1;
+    544          #endif /* INTR_SOFINTR */
+    545          #ifdef INTR_RXSTSQLVL
+    546            intr_mask.b.rxstsqlvl = 1;
+    547          #endif /* INTR_RXSTSQLVL */
+    548          #ifdef INTR_GINNAKEFF
+    549            intr_mask.b.ginnakeff = 1;
+    550          #endif /* INTR_GINNAKEFF */
+    551          #ifdef INTR_GOUTNAKEFF
+    552            intr_mask.b.goutnakeff = 1;
+    553          #endif /* INTR_GOUTNAKEFF */
+    554          #ifdef INTR_ERLYSUSPEND
+    555            intr_mask.b.erlysuspend = 1;
+    556          #endif /* INTR_ERLYSUSPEND */
+    557          #ifdef INTR_USBSUSPEND
+    558            intr_mask.b.usbsuspend = 1;
+    559          #endif /* INTR_USBSUSPEND */
+    560          #ifdef INTR_USBRESET
+    561            intr_mask.b.usbreset = 1;
+    562          #endif /* INTR_USBRESET */
+    563          #ifdef INTR_ENUMDONE
+    564            intr_mask.b.enumdone = 1;
+    565          #endif /* INTR_ENUMDONE */
+    566          #ifdef INTR_ISOOUTDROP
+    567            intr_mask.b.isooutdrop = 1;
+    568          #endif /* INTR_ISOOUTDROP */
+    569          #ifdef INTR_EOPFRAME
+    570            intr_mask.b.eopframe = 1;
+    571          #endif /* INTR_EOPFRAME */
+    572          #ifdef INTR_INEPINTR
+    573            intr_mask.b.inepintr = 1;
+    574          #endif /* INTR_INEPINTR */
+    575          #ifdef INTR_OUTEPINTR
+    576            intr_mask.b.outepintr = 1;
+    577          #endif /* INTR_OUTEPINTR */
+    578          #ifdef INTR_INCOMPLISOIN
+    579            intr_mask.b.incomplisoin = 1;
+    580          #endif /* INTR_INCOMPLISOIN */
+    581          #ifdef INTR_INCOMPLISOOUT
+    582            intr_mask.b.incomplisoout = 1;
+    583          #endif /* INTR_INCOMPLISOOUT */
+    584          #ifdef INTR_DISCONNECT
+    585            intr_mask.b.disconnect = 1;
+    586          #endif /* INTR_DISCONNECT */
+    587          #ifdef INTR_WKUPINTR
+    588            intr_mask.b.wkupintr = 1;
+    589          #endif /* INTR_WKUPINTR */
+    590          
+    591            USB_OTG_MODIFY_REG32( &USB_OTG_FS_regs.GREGS->GINTMSK, intr_mask.d32, intr_mask.d32);
+    592            return status;
+    593            
+    594          }
+    595          /*******************************************************************************
+    596          * Function Name  : OTGD_FS_EP0Activate
+    597          * Description    : enables EP0 OUT to receive SETUP packets and configures EP0
+    598                             IN for transmitting packets
+    599          * Input          : None
+    600          * Output         : None
+    601          * Return         : status
+    602          *******************************************************************************/
+    603          USB_OTG_Status  OTGD_FS_EP0Activate(void)
+    604          {
+    605            USB_OTG_Status          status = USB_OTG_OK;
+    606            USB_OTG_DEPCTLx_TypeDef diepctl;
+    607            USB_OTG_DCTL_TypeDef    dctl;
+    608          
+    609            diepctl.d32 = 0;
+    610            dctl.d32 = 0;
+    611            
+    612            diepctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DINEPS[0]->DIEPCTLx);
+    613            diepctl.b.mps = DEP0CTL_MPS_64;
+    614            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DINEPS[0]->DIEPCTLx, diepctl.d32);
+    615          
+    616            dctl.b.cgnpinnak = 1;
+    617            USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.DEV->DCTL, dctl.d32, dctl.d32);
+    618            
+    619            return status;
+    620          }
+    621          /*******************************************************************************
+    622          * Function Name  : OTGD_FS_EPActivate
+    623          * Description    : Activates an EP
+    624          * Input          : ep
+    625          * Output         : None
+    626          * Return         : num_in_ep
+    627          *******************************************************************************/
+    628          USB_OTG_Status OTGD_FS_EPActivate(USB_OTG_EP *ep)
+    629          {
+    630          
+    631            USB_OTG_Status status = USB_OTG_OK;
+    632            USB_OTG_DEPCTLx_TypeDef depctl;
+    633            USB_OTG_DAINT_TypeDef   daintmsk;
+    634            __IO uint32_t *addr;
+    635          
+    636          
+    637            depctl.d32 = 0;
+    638            daintmsk.d32 = 0;
+    639            
+    640            /* Read DEPCTLn register */
+    641            if (ep->is_in == 1)
+    642            {
+    643              addr = &USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx;
+    644              daintmsk.ep.in = 1 << ep->num;
+    645            }
+    646            else
+    647            {
+    648              addr = &USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx;
+    649              daintmsk.ep.out = 1 << ep->num;
+    650            }
+    651          
+    652            /* If the EP is already active don't change the EP Control
+    653             * register. */
+    654            depctl.d32 = USB_OTG_READ_REG32(addr);
+    655            if (!depctl.b.usbactep)
+    656            {
+    657              depctl.b.mps    = ep->maxpacket;
+    658              depctl.b.eptype = ep->type;
+    659              depctl.b.txfnum = ep->tx_fifo_num;
+    660              depctl.b.setd0pid = 1;
+    661              depctl.b.usbactep = 1;
+    662              USB_OTG_WRITE_REG32(addr, depctl.d32);
+    663            }
+    664          
+    665            /* Enable the Interrupt for this EP */
+    666            USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.DEV->DAINTMSK, 0, daintmsk.d32);
+    667            return status;
+    668          }
+    669          
+    670          /*******************************************************************************
+    671          * Function Name  : OTGD_FS_EPDeactivate
+    672          * Description    : Deactivates an EP
+    673          * Input          : ep
+    674          * Output         : None
+    675          * Return         : num_in_ep
+    676          *******************************************************************************/
+    677          USB_OTG_Status OTGD_FS_EPDeactivate(USB_OTG_EP *ep)
+    678          {
+    679          
+    680            USB_OTG_Status status = USB_OTG_OK;
+    681            USB_OTG_DEPCTLx_TypeDef depctl;
+    682            __IO uint32_t *addr;
+    683            USB_OTG_DAINT_TypeDef daintmsk;
+    684          
+    685            depctl.d32 = 0;
+    686            daintmsk.d32 = 0;
+    687            
+    688            /* Read DEPCTLn register */
+    689            if (ep->is_in == 1)
+    690            {
+    691              addr = &USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx;
+    692              daintmsk.ep.in = 1 << ep->num;
+    693            }
+    694            else
+    695            {
+    696              addr = &USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx;
+    697              daintmsk.ep.out = 1 << ep->num;
+    698            }
+    699          
+    700            depctl.b.usbactep = 0;
+    701            USB_OTG_WRITE_REG32(addr, depctl.d32);
+    702          
+    703            /* Disable the Interrupt for this EP */
+    704            USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.DEV->DAINTMSK, daintmsk.d32, 0);
+    705            return status;
+    706          }
+    707          
+    708          /*******************************************************************************
+    709          * Function Name  : OTGD_FS_EPStartXfer
+    710          * Description    : Handle the setup for data xfer for an EP and starts the xfer
+    711          * Input          : None
+    712          * Output         : None
+    713          * Return         : status
+    714          *******************************************************************************/
+    715          USB_OTG_Status OTGD_FS_EPStartXfer(USB_OTG_EP *ep)
+    716          {
+    717            USB_OTG_DSTS_TypeDef dsts;  
+    718            USB_OTG_Status status = USB_OTG_OK;
+    719            __IO USB_OTG_DEPCTLx_TypeDef depctl;
+    720            OTG_FS_DEPTSIZx_TypeDef deptsiz;
+    721          
+    722            depctl.d32 = 0;
+    723            deptsiz.d32 = 0;
+    724            
+    725            /* IN endpoint */
+    726            if (ep->is_in == 1)
+    727            {
+    728          
+    729              depctl.d32  = USB_OTG_READ_REG32(&(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx));
+    730              deptsiz.d32 = USB_OTG_READ_REG32(&(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPTSIZx));
+    731          
+    732              /* Zero Length Packet? */
+    733              if (ep->xfer_len == 0)
+    734              {
+    735                deptsiz.b.xfersize = 0;
+    736                deptsiz.b.pktcnt = 1;
+    737          
+    738              }
+    739              else
+    740              {
+    741                /* Program the transfer size and packet count
+    742                 * as follows: xfersize = N * maxpacket +
+    743                 * short_packet pktcnt = N + (short_packet
+    744                 * exist ? 1 : 0)
+    745                 */
+    746                deptsiz.b.xfersize = ep->xfer_len;
+    747                deptsiz.b.pktcnt = (ep->xfer_len - 1 + ep->maxpacket) / ep->maxpacket;
+    748                
+    749                if (ep->type == EP_TYPE_ISOC)
+    750                {
+    751                  deptsiz.b.mcount = 1;
+    752                }      
+    753              }
+    754              USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DINEPS[ep->num]->DIEPTSIZx, deptsiz.d32);
+    755          
+    756              if (ep->type != EP_TYPE_ISOC)
+    757              {
+    758                /* Enable the Tx FIFO Empty Interrupt for this EP */
+    759                uint32_t fifoemptymsk = 0;
+    760                fifoemptymsk = 1 << ep->num;
+    761                USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.DEV->DIEPEMPMSK, 0, fifoemptymsk);
+    762              }
+    763             
+    764              /* EP enable, IN data in FIFO */
+    765              depctl.b.cnak = 1;
+    766              depctl.b.epena = 1;
+    767              
+    768              if (ep->type == EP_TYPE_ISOC)
+    769              {
+    770                dsts.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DSTS);
+    771                
+    772                if (((dsts.b.soffn)&0x1)==0)
+    773                {
+    774                  depctl.b.setoddfrm=1;
+    775                }
+    776                else
+    777                {
+    778                  depctl.b.setd0pid=1;
+    779                }
+    780              }  
+    781              
+    782              USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx, depctl.d32); 
+    783              
+    784              if (ep->type == EP_TYPE_ISOC)
+    785              {
+    786                /*write buffer in TXFIFO*/
+    787                /* user should ensure that ep->xfer_len <= ep->maxpacket */
+    788                OTGD_FS_WritePacket(ep->xfer_buff, ep->num, ep->xfer_len);    
+    789              }
+    790            }
+    791            else
+    792            {
+    793              /* OUT endpoint */
+    794              depctl.d32  = USB_OTG_READ_REG32(&(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx));
+    795              deptsiz.d32 = USB_OTG_READ_REG32(&(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPTSIZx));
+    796          
+    797              /* Program the transfer size and packet count as follows:
+    798               * pktcnt = N
+    799               * xfersize = N * maxpacket
+    800               */
+    801              if (ep->xfer_len == 0)
+    802              {
+    803                deptsiz.b.xfersize = ep->maxpacket;
+    804                deptsiz.b.pktcnt = 1;
+    805              }
+    806              else
+    807              {
+    808                deptsiz.b.pktcnt = (ep->xfer_len + (ep->maxpacket - 1)) / ep->maxpacket;
+    809                deptsiz.b.xfersize = deptsiz.b.pktcnt * ep->maxpacket;
+    810              }
+    811              USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPTSIZx, deptsiz.d32);
+    812          
+    813              if (ep->type == EP_TYPE_ISOC)
+    814              {
+    815          
+    816                if (ep->even_odd_frame)
+    817                {
+    818                  depctl.b.setoddfrm = 1;
+    819                }
+    820                else
+    821                {
+    822                  depctl.b.setd0pid = 1;
+    823                }
+    824              }
+    825          
+    826              /* EP enable */
+    827              depctl.b.cnak = 1;
+    828              depctl.b.epena = 1;
+    829          
+    830              USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx, depctl.d32);
+    831          
+    832            }
+    833            return status;
+    834          }
+    835          
+    836          /*******************************************************************************
+    837          * Function Name  : OTGD_FS_EP0StartXfer
+    838          * Description    : Handle the setup for a data xfer for EP0 and starts the xfer
+    839          * Input          : None
+    840          * Output         : None
+    841          * Return         : status
+    842          *******************************************************************************/
+    843          USB_OTG_Status OTGD_FS_EP0StartXfer(USB_OTG_EP *ep)
+    844          {
+    845          
+    846            USB_OTG_Status                    status = USB_OTG_OK;
+    847            uint32_t                          fifoemptymsk = 0;
+    848            USB_OTG_DEPCTLx_TypeDef           depctl;
+    849            OTG_FS_DEPTSIZx_TypeDef           deptsiz;
+    850            USB_OTG_DINEPS                    *in_regs ;
+    851          
+    852            depctl.d32 = 0;
+    853            deptsiz.d32 = 0;
+    854            
+    855            /* IN endpoint */
+    856            if (ep->is_in == 1)
+    857            {
+    858              in_regs = USB_OTG_FS_regs.DINEPS[0];
+    859              depctl.d32  = USB_OTG_READ_REG32(&in_regs->DIEPCTLx);
+    860              deptsiz.d32 = USB_OTG_READ_REG32(&in_regs->DIEPTSIZx);
+    861          
+    862              /* Zero Length Packet? */
+    863              if (ep->xfer_len == 0)
+    864              {
+    865                deptsiz.b.xfersize = 0;
+    866                deptsiz.b.pktcnt = 1;
+    867              }
+    868              else
+    869              {
+    870                if (ep->xfer_len > ep->maxpacket)
+    871                {
+    872                  ep->xfer_len = ep->maxpacket;
+    873                  deptsiz.b.xfersize = ep->maxpacket;
+    874                }
+    875                else
+    876                {
+    877                  deptsiz.b.xfersize = ep->xfer_len;
+    878                }
+    879                deptsiz.b.pktcnt = 1;
+    880          
+    881              }
+    882              USB_OTG_WRITE_REG32(&in_regs->DIEPTSIZx, deptsiz.d32);
+    883          
+    884              /* EP enable, IN data in FIFO */
+    885              depctl.b.cnak = 1;
+    886              depctl.b.epena = 1;
+    887              USB_OTG_WRITE_REG32(&in_regs->DIEPCTLx, depctl.d32);
+    888          
+    889              /* Enable the Tx FIFO Empty Interrupt for this EP */
+    890              if (ep->xfer_len > 0)
+    891              {
+    892                fifoemptymsk |= 1 << ep->num;
+    893                USB_OTG_MODIFY_REG32(&USB_OTG_FS_regs.DEV->DIEPEMPMSK, 0, fifoemptymsk);
+    894              }
+    895            }
+    896            else
+    897            {
+    898              /* OUT endpoint */
+    899              depctl.d32  = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DOUTEPS[0]->DOEPCTLx);
+    900              deptsiz.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DOUTEPS[0]->DOEPTSIZx);
+    901          
+    902              /* Program the transfer size and packet count as follows:
+    903               * xfersize = N * (maxpacket + 4 - (maxpacket % 4))
+    904               * pktcnt = N           */
+    905              if (ep->xfer_len == 0)
+    906              {
+    907                deptsiz.b.xfersize = ep->maxpacket;
+    908                deptsiz.b.pktcnt = 1;
+    909              }
+    910              else
+    911              {
+    912                deptsiz.b.pktcnt = (ep->xfer_len + (ep->maxpacket - 1)) / ep->maxpacket;
+    913                deptsiz.b.xfersize = deptsiz.b.pktcnt * ep->maxpacket;
+    914              }
+    915          
+    916              USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DOUTEPS[0]->DOEPTSIZx, deptsiz.d32);
+    917          
+    918              /* EP enable */
+    919              depctl.b.cnak = 1;
+    920              depctl.b.epena = 1;
+    921              USB_OTG_WRITE_REG32 (&(USB_OTG_FS_regs.DOUTEPS[0]->DOEPCTLx), depctl.d32);
+    922            }
+    923            return status;
+    924          }
+    925          /*******************************************************************************
+    926          * Function Name  : OTGD_FS_EPSetStall
+    927          * Description    : Set the EP STALL
+    928          * Input          : None
+    929          * Output         : None
+    930          * Return         : Status
+    931          *******************************************************************************/
+    932          USB_OTG_Status OTGD_FS_EPSetStall(USB_OTG_EP *ep)
+    933          {
+    934            USB_OTG_Status status = USB_OTG_OK;
+    935            USB_OTG_DEPCTLx_TypeDef depctl; 
+    936            __IO uint32_t *depctl_addr;
+    937          
+    938            depctl.d32 = 0;
+    939            
+    940            
+    941            if (ep->is_in == 1)
+    942            {
+    943              depctl_addr = &(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx);
+    944              depctl.d32 = USB_OTG_READ_REG32(depctl_addr);
+    945          
+    946              /* set the disable and stall bits */
+    947              if (depctl.b.epena)
+    948              {
+    949                depctl.b.epdis = 1;
+    950              }
+    951              depctl.b.stall = 1;
+    952              USB_OTG_WRITE_REG32(depctl_addr, depctl.d32);
+    953            }
+    954            else
+    955            {
+    956              depctl_addr = &(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx);
+    957              depctl.d32 = USB_OTG_READ_REG32(depctl_addr);
+    958          
+    959              /* set the stall bit */
+    960              depctl.b.stall = 1;
+    961              USB_OTG_WRITE_REG32(depctl_addr, depctl.d32);
+    962            }
+    963            return status;
+    964          }
+    965          
+    966          /*******************************************************************************
+    967          * Function Name  : OTGD_FS_EPClearStall
+    968          * Description    : Clear the EP STALL
+    969          * Input          : None
+    970          * Output         : None
+    971          * Return         : Status
+    972          *******************************************************************************/
+    973          USB_OTG_Status OTGD_FS_EPClearStall(USB_OTG_EP *ep)
+    974          {
+    975            USB_OTG_Status status = USB_OTG_OK;
+    976            USB_OTG_DEPCTLx_TypeDef depctl;
+    977            __IO uint32_t *depctl_addr;
+    978          
+    979            
+    980            depctl.d32 = 0;
+    981            
+    982            if (ep->is_in == 1)
+    983            {
+    984              depctl_addr = &(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx);
+    985            }
+    986            else
+    987            {
+    988              depctl_addr = &(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx);
+    989            }
+    990          
+    991            
+    992            depctl.d32 = USB_OTG_READ_REG32(depctl_addr);
+    993             
+    994            /* clear the stall bits */
+    995            depctl.b.stall = 0;
+    996          
+    997            if (ep->type == EP_TYPE_INTR || ep->type == EP_TYPE_BULK) 
+    998            {
+    999              depctl.b.setd0pid = 1; /* DATA0 */
+   1000            }
+   1001          
+   1002            USB_OTG_WRITE_REG32(depctl_addr, depctl.d32);
+   1003            return status;
+   1004          }
+   1005          
+   1006          /*******************************************************************************
+   1007          * Function Name  : OTGD_FS_ReadDevAllOutEp_itr
+   1008          * Description    : returns the OUT endpoint interrupt bits
+   1009          * Input          : None
+   1010          * Output         : None
+   1011          * Return         : None
+   1012          *******************************************************************************/
+   1013          uint32_t OTGD_FS_ReadDevAllOutEp_itr(void)
+   1014          {
+   1015            uint32_t v = 0;
+   1016            
+   1017            v  = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DAINT);
+   1018            v &= USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DAINTMSK);
+   1019            return ((v & 0xffff0000) >> 16);
+   1020          }
+   1021          
+   1022          /*******************************************************************************
+   1023          * Function Name  : OTGD_FS_ReadDevOutEP_itr
+   1024          * Description    : returns the Device OUT EP Interrupt register
+   1025          * Input          : None
+   1026          * Output         : None
+   1027          * Return         : None
+   1028          *******************************************************************************/
+   1029          uint32_t OTGD_FS_ReadDevOutEP_itr(USB_OTG_EP *ep)
+   1030          {
+   1031            uint32_t v = 0;
+   1032            
+   1033            v  = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPINTx);
+   1034            v &= USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DOEPMSK);
+   1035            return v;
+   1036          }
+   1037          /*******************************************************************************
+   1038          * Function Name  : OTGD_FS_ReadDevAllInEPItr
+   1039          * Description    : Get int status register
+   1040          * Input          : None
+   1041          * Output         : None
+   1042          * Return         : None
+   1043          *******************************************************************************/
+   1044          uint32_t OTGD_FS_ReadDevAllInEPItr(void)
+   1045          {
+   1046            uint32_t v = 0;
+   1047            
+   1048            v = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DAINT);
+   1049            v &= USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DAINTMSK);
+   1050            return (v & 0xffff);
+   1051          }
+   1052          
+   1053          /*******************************************************************************
+   1054          * Function Name  : OTGD_FS_GetEPStatus
+   1055          * Description    : returns the EP Status 
+   1056          * Input          : - ep: pointer to the EP structure
+   1057          * Output         : None
+   1058          * Return         : status: DEV_EP_TX_STALL, DEV_EP_TX_VALID, DEV_EP_TX_NAK, 
+   1059          *                  DEV_EP_RX_STALL, DEV_EP_RX_VALID or DEV_EP_RX_NAK,
+   1060          *******************************************************************************/
+   1061          uint32_t OTGD_FS_GetEPStatus(USB_OTG_EP *ep)
+   1062          {
+   1063            USB_OTG_DEPCTLx_TypeDef depctl;
+   1064            __IO uint32_t *depctl_addr;
+   1065            uint32_t Status = 0;
+   1066            
+   1067            depctl.d32 = 0;
+   1068          
+   1069            if (ep->is_in == 1)
+   1070            {
+   1071              depctl_addr = &(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx);
+   1072            }
+   1073            else
+   1074            {
+   1075              depctl_addr = &(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx);
+   1076            }
+   1077          
+   1078            depctl.d32 = USB_OTG_READ_REG32(depctl_addr);
+   1079          
+   1080            /* Process for IN endpoint */
+   1081            if (ep->is_in == 1)
+   1082            {
+   1083              if (depctl.b.stall == 1)  
+   1084                Status = DEV_EP_TX_STALL;
+   1085              else if (depctl.b.naksts == 1)
+   1086                Status = DEV_EP_TX_NAK;
+   1087              else 
+   1088                Status = DEV_EP_TX_VALID; 
+   1089            } 
+   1090            /* Process for OUT endpoint */
+   1091            else 
+   1092            {
+   1093              if (depctl.b.stall == 1)  
+   1094                Status = DEV_EP_RX_STALL;
+   1095              else if (depctl.b.naksts == 1)
+   1096                Status = DEV_EP_RX_NAK;
+   1097              else 
+   1098                Status = DEV_EP_RX_VALID; 
+   1099            }
+   1100            
+   1101            /* Return the current status */
+   1102            return Status;
+   1103          }
+   1104          
+   1105          /*******************************************************************************
+   1106          * Function Name  : OTGD_FS_SetEPStatus
+   1107          * Description    : Sets the EP Status 
+   1108          * Input          : - ep: pointer to the EP structure
+   1109          *                  - Status: new status to be set
+   1110          * Output         : None
+   1111          * Return         : None
+   1112          *******************************************************************************/
+   1113          void OTGD_FS_SetEPStatus(USB_OTG_EP *ep, uint32_t Status)
+   1114          {
+   1115            USB_OTG_DEPCTLx_TypeDef depctl;
+   1116            __IO uint32_t *depctl_addr;
+   1117          
+   1118            depctl.d32 = 0;
+   1119            
+   1120            
+   1121            if (ep->is_in == 1)
+   1122            {
+   1123              depctl_addr = &(USB_OTG_FS_regs.DINEPS[ep->num]->DIEPCTLx);
+   1124            }
+   1125            else
+   1126            {
+   1127              depctl_addr = &(USB_OTG_FS_regs.DOUTEPS[ep->num]->DOEPCTLx);
+   1128            }
+   1129          
+   1130            depctl.d32 = USB_OTG_READ_REG32(depctl_addr);
+   1131          
+   1132            /* Process for IN endpoint */
+   1133            if (ep->is_in == 1)
+   1134            {
+   1135              if (Status == DEV_EP_TX_STALL)  
+   1136              {
+   1137                OTGD_FS_EPSetStall(ep); return;
+   1138              }
+   1139              else if (Status == DEV_EP_TX_NAK)
+   1140                depctl.b.snak = 1;
+   1141              else if (Status == DEV_EP_TX_VALID)
+   1142              {
+   1143                if (depctl.b.stall == 1)
+   1144                {  
+   1145                  ep->even_odd_frame = 0;
+   1146                  OTGD_FS_EPClearStall(ep);
+   1147                  return;
+   1148                }      
+   1149                depctl.b.cnak = 1;
+   1150                depctl.b.usbactep = 1; 
+   1151                depctl.b.epena = 1;
+   1152              }
+   1153              else if (Status == DEV_EP_TX_DIS)
+   1154                depctl.b.usbactep = 0;
+   1155            } 
+   1156            else /* Process for OUT endpoint */
+   1157            {
+   1158              if (Status == DEV_EP_RX_STALL)  {
+   1159                depctl.b.stall = 1;
+   1160              }
+   1161              else if (Status == DEV_EP_RX_NAK)
+   1162                depctl.b.snak = 1;
+   1163              else if (Status == DEV_EP_RX_VALID)
+   1164              {
+   1165                if (depctl.b.stall == 1)
+   1166                {  
+   1167                  ep->even_odd_frame = 0;
+   1168                  OTGD_FS_EPClearStall(ep);
+   1169                  return;
+   1170                }  
+   1171                depctl.b.cnak = 1;
+   1172                depctl.b.usbactep = 1;    
+   1173                depctl.b.epena = 1;
+   1174              }
+   1175              else if (Status == DEV_EP_RX_DIS)
+   1176              {
+   1177                depctl.b.usbactep = 0;    
+   1178              }
+   1179            }
+   1180          
+   1181            USB_OTG_WRITE_REG32(depctl_addr, depctl.d32); 
+   1182          }
+   1183          
+   1184          /*******************************************************************************
+   1185          * Function Name  : OTGD_FS_SetRemoteWakeup
+   1186          * Description    : Enable Remote wakeup signaling
+   1187          * Input          : None
+   1188          * Output         : None
+   1189          * Return         : status
+   1190          *******************************************************************************/
+   1191          void OTGD_FS_SetRemoteWakeup()
+   1192          {
+   1193            USB_OTG_DCTL_TypeDef devctl;
+   1194            
+   1195            devctl.d32 = 0;
+   1196            
+   1197            devctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DCTL);
+   1198            
+   1199            /* Enable the Remote Wakeup signal */
+   1200            devctl.b.rmtwkupsig = 1;
+   1201            
+   1202            USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DEV->DCTL, devctl.d32);
+   1203          }
+   1204          
+   1205          /*******************************************************************************
+   1206          * Function Name  : OTGD_FS_ResetRemoteWakeup
+   1207          * Description    : Disable Remote wakeup signaling
+   1208          * Input          : None
+   1209          * Output         : None
+   1210          * Return         : status
+   1211          *******************************************************************************/
+   1212          void OTGD_FS_ResetRemoteWakeup()
+   1213          {
+   1214           USB_OTG_DCTL_TypeDef devctl;
+   1215          
+   1216           
+   1217           devctl.d32 = 0;
+   1218           
+   1219           devctl.d32 = USB_OTG_READ_REG32(&USB_OTG_FS_regs.DEV->DCTL);
+   1220           
+   1221           /* Disable the Remote Wakeup signal */
+   1222           devctl.b.rmtwkupsig = 0;
+   1223           
+   1224           USB_OTG_WRITE_REG32(&USB_OTG_FS_regs.DEV->DCTL, devctl.d32);
+   1225          }
+   1226          #endif /* STM32F10X_CL */
+   1227          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

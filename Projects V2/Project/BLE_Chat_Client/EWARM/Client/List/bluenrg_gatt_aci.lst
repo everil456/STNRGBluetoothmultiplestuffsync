@@ -1,0 +1,1726 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:00
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gatt_aci.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gatt_aci.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\bluenrg_gatt_aci.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\bluenrg_gatt_aci.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_gatt_aci.c
+      1          /******************** (C) COPYRIGHT 2014 STMicroelectronics ********************
+      2          * File Name          : bluenrg_gatt_aci.c
+      3          * Author             : AMS - AAS
+      4          * Version            : V1.0.0
+      5          * Date               : 26-Jun-2014
+      6          * Description        : File with GATT commands for BlueNRG FW6.3.
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #include "hal_types.h"
+     17          #include "osal.h"
+     18          #include "ble_status.h"
+     19          #include "hal.h"
+     20          #include "osal.h"
+     21          #include "hci_const.h"
+     22          #include "bluenrg_aci_const.h"
+     23          #include "bluenrg_gatt_aci.h"
+     24          #include "gatt_server.h"
+     25          #include "gap.h"
+     26          
+     27          #define MIN(a,b)            ((a) < (b) )? (a) : (b)
+     28          #define MAX(a,b)            ((a) > (b) )? (a) : (b)
+     29          
+     30          
+     31          tBleStatus aci_gatt_init(void)
+     32          {
+     33            struct hci_request rq;
+     34            uint8_t status;
+     35          
+     36            Osal_MemSet(&rq, 0, sizeof(rq));
+     37            rq.ogf = OGF_VENDOR_CMD;
+     38            rq.ocf = OCF_GATT_INIT;
+     39            rq.rparam = &status;
+     40            rq.rlen = 1;
+     41          
+     42            if (hci_send_req(&rq, FALSE) < 0)
+     43              return BLE_STATUS_TIMEOUT;
+     44          
+     45            return status;
+     46          }
+     47          
+     48          tBleStatus aci_gatt_add_serv(uint8_t service_uuid_type, const uint8_t* service_uuid, uint8_t service_type, uint8_t max_attr_records, uint16_t *serviceHandle)
+     49          {
+     50            struct hci_request rq;
+     51            gatt_add_serv_rp resp;    
+     52            uint8_t buffer[19];
+     53            uint8_t uuid_len;
+     54            uint8_t indx = 0;
+     55              
+     56            buffer[indx] = service_uuid_type;
+     57            indx++;
+     58              
+     59            if(service_uuid_type == UUID_TYPE_16){
+     60              uuid_len = 2;
+     61            }
+     62            else {
+     63              uuid_len = 16;
+     64            }        
+     65            Osal_MemCpy(buffer + indx, service_uuid, uuid_len);
+     66            indx +=  uuid_len;
+     67              
+     68            buffer[indx] = service_type;
+     69            indx++;
+     70              
+     71            buffer[indx] = max_attr_records;
+     72            indx++;
+     73              
+     74              
+     75            Osal_MemSet(&resp, 0, sizeof(resp));
+     76          
+     77            Osal_MemSet(&rq, 0, sizeof(rq));
+     78            rq.ogf = OGF_VENDOR_CMD;
+     79            rq.ocf = OCF_GATT_ADD_SERV;
+     80            rq.cparam = (void *)buffer;
+     81            rq.clen = indx;
+     82            rq.rparam = &resp;
+     83            rq.rlen = GATT_ADD_SERV_RP_SIZE;
+     84          
+     85            if (hci_send_req(&rq, FALSE) < 0)
+     86              return BLE_STATUS_TIMEOUT;
+     87          
+     88            if (resp.status) {
+     89              return resp.status;
+     90            }
+     91              
+     92            *serviceHandle = btohs(resp.handle);
+     93          
+     94            return 0;
+     95          }
+     96          
+     97          tBleStatus aci_gatt_include_service(uint16_t service_handle, uint16_t included_start_handle,
+     98          				    uint16_t included_end_handle, uint8_t included_uuid_type,
+     99          				    const uint8_t* included_uuid, uint16_t *included_handle)
+    100          {
+    101            struct hci_request rq;
+    102            gatt_include_serv_rp resp;    
+    103            uint8_t buffer[23];
+    104            uint8_t uuid_len;
+    105            uint8_t indx = 0;
+    106          
+    107            service_handle = htobs(service_handle);
+    108            Osal_MemCpy(buffer, &service_handle, 2);
+    109            indx += 2;
+    110              
+    111            included_start_handle = htobs(included_start_handle);
+    112            Osal_MemCpy(buffer+indx, &included_start_handle, 2);
+    113            indx += 2;
+    114          
+    115            included_end_handle = htobs(included_end_handle);
+    116            Osal_MemCpy(buffer+indx, &included_end_handle, 2);
+    117            indx += 2;
+    118          
+    119            if(included_uuid_type == UUID_TYPE_16){
+    120              uuid_len = 2;
+    121            } else {
+    122              uuid_len = 16;
+    123            }        
+    124          
+    125            buffer[indx] = included_uuid_type;
+    126            indx++;
+    127          
+    128            Osal_MemCpy(buffer + indx, included_uuid, uuid_len);
+    129            indx += uuid_len;
+    130              
+    131            Osal_MemSet(&resp, 0, sizeof(resp));
+    132          
+    133            Osal_MemSet(&rq, 0, sizeof(rq));
+    134            rq.ogf = OGF_VENDOR_CMD;
+    135            rq.ocf = OCF_GATT_INCLUDE_SERV;
+    136            rq.cparam = (void *)buffer;
+    137            rq.clen = indx;
+    138            rq.rparam = &resp;
+    139            rq.rlen = GATT_INCLUDE_SERV_RP_SIZE;
+    140          
+    141            if (hci_send_req(&rq, FALSE) < 0)
+    142              return BLE_STATUS_TIMEOUT;
+    143          
+    144            if (resp.status) {
+    145              return resp.status;
+    146            }
+    147              
+    148            *included_handle = btohs(resp.handle);
+    149          
+    150            return 0;
+    151          }
+    152          
+    153          tBleStatus aci_gatt_add_char(uint16_t serviceHandle,
+    154          			     uint8_t charUuidType,
+    155          			     const uint8_t* charUuid, 
+    156          			     uint8_t charValueLen, 
+    157          			     uint8_t charProperties,
+    158          			     uint8_t secPermissions,
+    159          			     uint8_t gattEvtMask,
+    160          			     uint8_t encryKeySize,
+    161          			     uint8_t isVariable,
+    162          			     uint16_t* charHandle)                     
+    163          {
+    164            struct hci_request rq;
+    165            gatt_add_serv_rp resp;
+    166            uint8_t buffer[25];
+    167            uint8_t uuid_len;
+    168            uint8_t indx = 0;
+    169              
+    170            serviceHandle = htobs(serviceHandle);
+    171            Osal_MemCpy(buffer + indx, &serviceHandle, 2);
+    172            indx += 2;
+    173              
+    174            buffer[indx] = charUuidType;
+    175            indx++;
+    176              
+    177            if(charUuidType == UUID_TYPE_16){
+    178              uuid_len = 2;
+    179            }
+    180            else {
+    181              uuid_len = 16;
+    182            }        
+    183            Osal_MemCpy(buffer + indx, charUuid, uuid_len);
+    184            indx +=  uuid_len;
+    185              
+    186            buffer[indx] = charValueLen;
+    187            indx++;
+    188              
+    189            buffer[indx] = charProperties;
+    190            indx++;
+    191              
+    192            buffer[indx] = secPermissions;
+    193            indx++;
+    194              
+    195            buffer[indx] = gattEvtMask;
+    196            indx++;
+    197              
+    198            buffer[indx] = encryKeySize;
+    199            indx++;
+    200              
+    201            buffer[indx] = isVariable;
+    202            indx++;
+    203              
+    204            Osal_MemSet(&resp, 0, sizeof(resp));
+    205          
+    206            Osal_MemSet(&rq, 0, sizeof(rq));
+    207            rq.ogf = OGF_VENDOR_CMD;
+    208            rq.ocf = OCF_GATT_ADD_CHAR;
+    209            rq.cparam = (void *)buffer;
+    210            rq.clen = indx;
+    211            rq.rparam = &resp;
+    212            rq.rlen = GATT_ADD_CHAR_RP_SIZE;
+    213          
+    214            if (hci_send_req(&rq, FALSE) < 0)
+    215              return BLE_STATUS_TIMEOUT;
+    216          
+    217            if (resp.status) {
+    218              return resp.status;
+    219            }
+    220              
+    221            *charHandle = btohs(resp.handle);
+    222          
+    223            return 0;
+    224          }
+    225          
+    226          tBleStatus aci_gatt_add_char_desc(uint16_t serviceHandle,
+    227                                            uint16_t charHandle,
+    228                                            uint8_t descUuidType,
+    229                                            const uint8_t* uuid, 
+    230                                            uint8_t descValueMaxLen,
+    231                                            uint8_t descValueLen,
+    232                                            const void* descValue, 
+    233                                            uint8_t secPermissions,
+    234                                            uint8_t accPermissions,
+    235                                            uint8_t gattEvtMask,
+    236                                            uint8_t encryKeySize,
+    237                                            uint8_t isVariable,
+    238                                            uint16_t* descHandle)                     
+    239          {
+    240            struct hci_request rq;
+    241            gatt_add_char_desc_rp resp;
+    242            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    243            uint8_t uuid_len;
+    244            uint8_t indx = 0;
+    245              
+    246            serviceHandle = htobs(serviceHandle);
+    247            Osal_MemCpy(buffer + indx, &serviceHandle, 2);
+    248            indx += 2;
+    249              
+    250            charHandle = htobs(charHandle);
+    251            Osal_MemCpy(buffer + indx, &charHandle, 2);
+    252            indx += 2;
+    253              
+    254            buffer[indx] = descUuidType;
+    255            indx++;
+    256              
+    257            if(descUuidType == UUID_TYPE_16){
+    258              uuid_len = 2;
+    259            }
+    260            else {
+    261              uuid_len = 16;
+    262            }        
+    263            Osal_MemCpy(buffer + indx, uuid, uuid_len);
+    264            indx +=  uuid_len;
+    265              
+    266            buffer[indx] = descValueMaxLen;
+    267            indx++;
+    268              
+    269            buffer[indx] = descValueLen;
+    270            indx++;
+    271          
+    272            if ((descValueLen+indx+5) > HCI_MAX_PACKET_SIZE)
+    273              return BLE_STATUS_INVALID_PARAMS;
+    274            
+    275            Osal_MemCpy(buffer + indx, descValue, descValueLen);
+    276            indx += descValueLen;
+    277              
+    278            buffer[indx] = secPermissions;
+    279            indx++;
+    280              
+    281            buffer[indx] = accPermissions;
+    282            indx++;
+    283              
+    284            buffer[indx] = gattEvtMask;
+    285            indx++;
+    286              
+    287            buffer[indx] = encryKeySize;
+    288            indx++;
+    289              
+    290            buffer[indx] = isVariable;
+    291            indx++;
+    292              
+    293            Osal_MemSet(&resp, 0, sizeof(resp));
+    294          
+    295            Osal_MemSet(&rq, 0, sizeof(rq));
+    296            rq.ogf = OGF_VENDOR_CMD;
+    297            rq.ocf = OCF_GATT_ADD_CHAR_DESC;
+    298            rq.cparam = (void *)buffer;
+    299            rq.clen = indx;
+    300            rq.rparam = &resp;
+    301            rq.rlen = GATT_ADD_CHAR_DESC_RP_SIZE;
+    302          
+    303            if (hci_send_req(&rq, FALSE) < 0)
+    304              return BLE_STATUS_TIMEOUT;
+    305          
+    306            if (resp.status) {
+    307              return resp.status;
+    308            }
+    309              
+    310            *descHandle = btohs(resp.handle);
+    311          
+    312            return 0;
+    313          }
+    314          
+    315          
+    316          tBleStatus aci_gatt_update_char_value(uint16_t servHandle, 
+    317          				      uint16_t charHandle,
+    318          				      uint8_t charValOffset,
+    319          				      uint8_t charValueLen,   
+    320          				      const uint8_t *charValue)
+    321          {
+    322            struct hci_request rq;
+    323            uint8_t status;
+    324            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    325            uint8_t indx = 0;
+    326              
+    327            if ((charValueLen+6) > HCI_MAX_PACKET_SIZE)
+    328              return BLE_STATUS_INVALID_PARAMS;
+    329          
+    330            servHandle = htobs(servHandle);
+    331            Osal_MemCpy(buffer + indx, &servHandle, 2);
+    332            indx += 2;
+    333              
+    334            charHandle = htobs(charHandle);
+    335            Osal_MemCpy(buffer + indx, &charHandle, 2);
+    336            indx += 2;
+    337              
+    338            buffer[indx] = charValOffset;
+    339            indx++;
+    340              
+    341            buffer[indx] = charValueLen;
+    342            indx++;
+    343                  
+    344            Osal_MemCpy(buffer + indx, charValue, charValueLen);
+    345            indx +=  charValueLen;
+    346          
+    347            Osal_MemSet(&rq, 0, sizeof(rq));
+    348            rq.ogf = OGF_VENDOR_CMD;
+    349            rq.ocf = OCF_GATT_UPD_CHAR_VAL;
+    350            rq.cparam = (void *)buffer;
+    351            rq.clen = indx;
+    352            rq.rparam = &status;
+    353            rq.rlen = 1;
+    354          
+    355            if (hci_send_req(&rq, FALSE) < 0)
+    356              return BLE_STATUS_TIMEOUT;
+    357          
+    358            if (status) {
+    359              return status;
+    360            }
+    361          
+    362            return 0;
+    363          }
+    364          
+    365          tBleStatus aci_gatt_del_char(uint16_t servHandle, uint16_t charHandle)
+    366          {
+    367            struct hci_request rq;
+    368            uint8_t status;
+    369            gatt_del_char_cp cp;
+    370          
+    371            cp.service_handle = htobs(servHandle);
+    372            cp.char_handle = htobs(charHandle);
+    373          
+    374            Osal_MemSet(&rq, 0, sizeof(rq));
+    375            rq.ogf = OGF_VENDOR_CMD;
+    376            rq.ocf = OCF_GATT_DEL_CHAR;
+    377            rq.cparam = &cp;
+    378            rq.clen = GATT_DEL_CHAR_CP_SIZE;
+    379            rq.rparam = &status;
+    380            rq.rlen = 1;
+    381          
+    382            if (hci_send_req(&rq, FALSE) < 0)
+    383              return BLE_STATUS_TIMEOUT;
+    384          
+    385            return status;
+    386          }
+    387                                                
+    388          tBleStatus aci_gatt_del_service(uint16_t servHandle)
+    389          {
+    390            struct hci_request rq;
+    391            uint8_t status;
+    392            gatt_del_serv_cp cp;
+    393          
+    394            cp.service_handle = htobs(servHandle);
+    395          
+    396            Osal_MemSet(&rq, 0, sizeof(rq));
+    397            rq.ogf = OGF_VENDOR_CMD;
+    398            rq.ocf = OCF_GATT_DEL_SERV;
+    399            rq.cparam = &cp;
+    400            rq.clen = GATT_DEL_SERV_CP_SIZE;
+    401            rq.rparam = &status;
+    402            rq.rlen = 1;
+    403          
+    404            if (hci_send_req(&rq, FALSE) < 0)
+    405              return BLE_STATUS_TIMEOUT;
+    406          
+    407            return status;
+    408          }
+    409          
+    410          tBleStatus aci_gatt_del_include_service(uint16_t servHandle, uint16_t includeServHandle)
+    411          {
+    412            struct hci_request rq;
+    413            uint8_t status;
+    414            gatt_del_inc_serv_cp cp;
+    415          
+    416            cp.service_handle = htobs(servHandle);
+    417            cp.inc_serv_handle = htobs(includeServHandle);
+    418          
+    419            Osal_MemSet(&rq, 0, sizeof(rq));
+    420            rq.ogf = OGF_VENDOR_CMD;
+    421            rq.ocf = OCF_GATT_DEL_INC_SERV;
+    422            rq.cparam = &cp;
+    423            rq.clen = GATT_DEL_INC_SERV_CP_SIZE;
+    424            rq.rparam = &status;
+    425            rq.rlen = 1;
+    426          
+    427            if (hci_send_req(&rq, FALSE) < 0)
+    428              return BLE_STATUS_TIMEOUT;
+    429          
+    430            return status;
+    431          }
+    432          
+    433          tBleStatus aci_gatt_set_event_mask(uint32_t event_mask)
+    434          {
+    435            struct hci_request rq;
+    436            uint8_t status;
+    437            gatt_set_evt_mask_cp cp;
+    438          
+    439            cp.evt_mask = htobs(event_mask);
+    440          
+    441            Osal_MemSet(&rq, 0, sizeof(rq));
+    442            rq.ogf = OGF_VENDOR_CMD;
+    443            rq.ocf = OCF_GATT_SET_EVT_MASK;
+    444            rq.cparam = &cp;
+    445            rq.clen = GATT_SET_EVT_MASK_CP_SIZE;
+    446            rq.rparam = &status;
+    447            rq.rlen = 1;
+    448          
+    449            if (hci_send_req(&rq, FALSE) < 0)
+    450              return BLE_STATUS_TIMEOUT;
+    451          
+    452            return status;
+    453          }
+    454            
+    455          tBleStatus aci_gatt_exchange_configuration(uint16_t conn_handle)
+    456          {
+    457            struct hci_request rq;
+    458            uint8_t status;
+    459            gatt_exchange_config_cp cp;
+    460          
+    461            cp.conn_handle = htobs(conn_handle);
+    462          
+    463            Osal_MemSet(&rq, 0, sizeof(rq));
+    464            rq.ogf = OGF_VENDOR_CMD;
+    465            rq.ocf = OCF_GATT_EXCHANGE_CONFIG;
+    466            rq.cparam = &cp;
+    467            rq.clen = GATT_EXCHANGE_CONFIG_CP_SIZE;
+    468            rq.event = EVT_CMD_STATUS; 
+    469            rq.rparam = &status;
+    470            rq.rlen = 1;
+    471          
+    472            if (hci_send_req(&rq, FALSE) < 0)
+    473              return BLE_STATUS_TIMEOUT;
+    474          
+    475            return status;
+    476          }
+    477            
+    478          tBleStatus aci_att_find_information_req(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle)
+    479          {
+    480            struct hci_request rq;
+    481            uint8_t status;
+    482            att_find_info_req_cp cp;
+    483          
+    484            cp.conn_handle = htobs(conn_handle);
+    485            cp.start_handle = htobs(start_handle);
+    486            cp.end_handle = htobs(end_handle);
+    487          
+    488            Osal_MemSet(&rq, 0, sizeof(rq));
+    489            rq.ogf = OGF_VENDOR_CMD;
+    490            rq.ocf = OCF_ATT_FIND_INFO_REQ;
+    491            rq.cparam = &cp;
+    492            rq.clen = ATT_FIND_INFO_REQ_CP_SIZE;
+    493            rq.rparam = &status;
+    494            rq.rlen = 1;
+    495          
+    496            if (hci_send_req(&rq, FALSE) < 0)
+    497              return BLE_STATUS_TIMEOUT;
+    498          
+    499            return status;
+    500          }
+    501          
+    502          tBleStatus aci_att_find_by_type_value_req(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle,
+    503                                                    uint8_t* uuid, uint8_t attr_val_len, uint8_t* attr_val)
+    504          {
+    505            struct hci_request rq;
+    506            uint8_t status;
+    507            att_find_by_type_value_req_cp cp;
+    508            
+    509            if(attr_val_len > sizeof(cp.attr_val))
+    510              return BLE_STATUS_INVALID_PARAMS;
+    511          
+    512            cp.conn_handle = htobs(conn_handle);
+    513            cp.start_handle = htobs(start_handle);
+    514            cp.end_handle = htobs(end_handle);
+    515            Osal_MemCpy(cp.uuid, uuid, 2);
+    516            cp.attr_val_len = attr_val_len;
+    517            Osal_MemCpy(cp.attr_val, attr_val, attr_val_len);
+    518          
+    519            Osal_MemSet(&rq, 0, sizeof(rq));
+    520            rq.ogf = OGF_VENDOR_CMD;
+    521            rq.ocf = OCF_ATT_FIND_BY_TYPE_VALUE_REQ;
+    522            rq.cparam = &cp;
+    523            rq.clen = ATT_FIND_BY_TYPE_VALUE_REQ_CP_SIZE + attr_val_len;
+    524            rq.rparam = &status;
+    525            rq.rlen = 1;
+    526          
+    527            if (hci_send_req(&rq, FALSE) < 0)
+    528              return BLE_STATUS_TIMEOUT;
+    529          
+    530            return status;
+    531          }
+    532          
+    533          tBleStatus aci_att_read_by_type_req(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle,
+    534                                              uint8_t  uuid_type, uint8_t* uuid)
+    535          {
+    536            struct hci_request rq;
+    537            uint8_t status;
+    538            att_read_by_type_req_cp cp;
+    539            uint8_t uuid_len;
+    540            
+    541            if(uuid_type == UUID_TYPE_16){
+    542              uuid_len = 2;
+    543            }
+    544            else{
+    545              uuid_len = 16;
+    546            }
+    547          
+    548            cp.conn_handle = htobs(conn_handle);
+    549            cp.start_handle = htobs(start_handle);
+    550            cp.end_handle = htobs(end_handle);
+    551            cp.uuid_type = uuid_type;
+    552            Osal_MemCpy(cp.uuid, uuid, uuid_len);
+    553          
+    554            Osal_MemSet(&rq, 0, sizeof(rq));
+    555            rq.ogf = OGF_VENDOR_CMD;
+    556            rq.ocf = OCF_ATT_READ_BY_TYPE_REQ;
+    557            rq.cparam = &cp;
+    558            rq.clen = ATT_READ_BY_TYPE_REQ_CP_SIZE + uuid_len;
+    559            rq.rparam = &status;
+    560            rq.rlen = 1;
+    561          
+    562            if (hci_send_req(&rq, FALSE) < 0)
+    563              return BLE_STATUS_TIMEOUT;
+    564          
+    565            return status;
+    566          }
+    567          
+    568          tBleStatus aci_att_read_by_group_type_req(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle,
+    569                                              uint8_t  uuid_type, uint8_t* uuid)
+    570          {
+    571            struct hci_request rq;
+    572            uint8_t status;
+    573            att_read_by_group_type_req_cp cp;
+    574            uint8_t uuid_len;
+    575            
+    576            if(uuid_type == UUID_TYPE_16){
+    577              uuid_len = 2;
+    578            }
+    579            else{
+    580              uuid_len = 16;
+    581            }
+    582          
+    583            cp.conn_handle = htobs(conn_handle);
+    584            cp.start_handle = htobs(start_handle);
+    585            cp.end_handle = htobs(end_handle);
+    586            cp.uuid_type = uuid_type;
+    587            Osal_MemCpy(cp.uuid, uuid, uuid_len);
+    588          
+    589            Osal_MemSet(&rq, 0, sizeof(rq));
+    590            rq.ogf = OGF_VENDOR_CMD;
+    591            rq.ocf = OCF_ATT_READ_BY_GROUP_TYPE_REQ;
+    592            rq.cparam = &cp;
+    593            rq.clen = ATT_READ_BY_GROUP_TYPE_REQ_CP_SIZE + uuid_len;
+    594            rq.rparam = &status;
+    595            rq.rlen = 1;
+    596          
+    597            if (hci_send_req(&rq, FALSE) < 0)
+    598              return BLE_STATUS_TIMEOUT;
+    599          
+    600            return status;
+    601          }
+    602          
+    603          tBleStatus aci_att_prepare_write_req(uint16_t conn_handle, uint16_t attr_handle, uint16_t value_offset,
+    604                                              uint8_t  attr_val_len, uint8_t* attr_val)
+    605          {
+    606            struct hci_request rq;
+    607            uint8_t status;
+    608            att_prepare_write_req_cp cp;
+    609            
+    610            if(attr_val_len > sizeof(cp.attr_val))
+    611              return BLE_STATUS_INVALID_PARAMS;
+    612          
+    613            cp.conn_handle = htobs(conn_handle);
+    614            cp.attr_handle = htobs(attr_handle);
+    615            cp.value_offset = htobs(value_offset);
+    616            cp.attr_val_len = attr_val_len;
+    617            Osal_MemCpy(cp.attr_val, attr_val, attr_val_len);
+    618          
+    619            Osal_MemSet(&rq, 0, sizeof(rq));
+    620            rq.ogf = OGF_VENDOR_CMD;
+    621            rq.ocf = OCF_ATT_PREPARE_WRITE_REQ;
+    622            rq.cparam = &cp;
+    623            rq.clen = ATT_PREPARE_WRITE_REQ_CP_SIZE + attr_val_len;
+    624            rq.rparam = &status;
+    625            rq.rlen = 1;
+    626          
+    627            if (hci_send_req(&rq, FALSE) < 0)
+    628              return BLE_STATUS_TIMEOUT;
+    629          
+    630            return status;
+    631          }
+    632          
+    633          tBleStatus aci_att_execute_write_req(uint16_t conn_handle, uint8_t execute)
+    634          {
+    635            struct hci_request rq;
+    636            uint8_t status;
+    637            att_execute_write_req_cp cp;
+    638          
+    639            cp.conn_handle = htobs(conn_handle);
+    640            cp.execute = execute;
+    641          
+    642            Osal_MemSet(&rq, 0, sizeof(rq));
+    643            rq.ogf = OGF_VENDOR_CMD;
+    644            rq.ocf = OCF_ATT_EXECUTE_WRITE_REQ;
+    645            rq.cparam = &cp;
+    646            rq.clen = ATT_EXECUTE_WRITE_REQ_CP_SIZE;
+    647            rq.rparam = &status;
+    648            rq.rlen = 1;
+    649          
+    650            if (hci_send_req(&rq, FALSE) < 0)
+    651              return BLE_STATUS_TIMEOUT;
+    652          
+    653            return status;
+    654          }
+    655          
+    656          tBleStatus aci_gatt_disc_all_prim_services(uint16_t conn_handle)
+    657          {
+    658            struct hci_request rq;
+    659            uint8_t status;
+    660            gatt_disc_all_prim_services_cp cp;
+    661          
+    662            cp.conn_handle = htobs(conn_handle);
+    663          
+    664            Osal_MemSet(&rq, 0, sizeof(rq));
+    665            rq.ogf = OGF_VENDOR_CMD;
+    666            rq.ocf = OCF_GATT_DISC_ALL_PRIM_SERVICES;
+    667            rq.cparam = &cp;
+    668            rq.clen = GATT_DISC_ALL_PRIM_SERVICES_CP_SIZE;
+    669            rq.event = EVT_CMD_STATUS;
+    670            rq.rparam = &status;
+    671            rq.rlen = 1;
+    672          
+    673            if (hci_send_req(&rq, FALSE) < 0)
+    674              return BLE_STATUS_TIMEOUT;
+    675          
+    676            return status;
+    677          }
+    678          
+    679          tBleStatus aci_gatt_disc_prim_service_by_uuid(uint16_t conn_handle, uint8_t uuid_type, uint8_t* uuid)
+    680          {
+    681            struct hci_request rq;
+    682            uint8_t status;
+    683            gatt_disc_prim_service_by_uuid_cp cp;
+    684            uint8_t uuid_len;
+    685            
+    686            if(uuid_type == UUID_TYPE_16){
+    687              uuid_len = 2;
+    688            }
+    689            else{
+    690              uuid_len = 16;
+    691            }
+    692          
+    693            cp.conn_handle = htobs(conn_handle);
+    694            cp.uuid_type = uuid_type;
+    695            Osal_MemCpy(cp.uuid, uuid, uuid_len);
+    696          
+    697            Osal_MemSet(&rq, 0, sizeof(rq));
+    698            rq.ogf = OGF_VENDOR_CMD;
+    699            rq.ocf = OCF_GATT_DISC_PRIM_SERVICE_BY_UUID;
+    700            rq.cparam = &cp;
+    701            rq.clen = GATT_DISC_PRIM_SERVICE_BY_UUID_CP_SIZE + uuid_len;
+    702            rq.event = EVT_CMD_STATUS;
+    703            rq.rparam = &status;
+    704            rq.rlen = 1;
+    705          
+    706            if (hci_send_req(&rq, FALSE) < 0)
+    707              return BLE_STATUS_TIMEOUT;
+    708          
+    709            return status;
+    710          }
+    711          
+    712          tBleStatus aci_gatt_find_included_services(uint16_t conn_handle, uint16_t start_service_handle, 
+    713          					   uint16_t end_service_handle)
+    714          {
+    715            struct hci_request rq;
+    716            uint8_t status;
+    717            gatt_find_included_services_cp cp;
+    718          
+    719            cp.conn_handle = htobs(conn_handle);
+    720            cp.start_handle = htobs(start_service_handle);
+    721            cp.end_handle = htobs(end_service_handle);
+    722          
+    723            Osal_MemSet(&rq, 0, sizeof(rq));
+    724            rq.ogf = OGF_VENDOR_CMD;
+    725            rq.ocf = OCF_GATT_FIND_INCLUDED_SERVICES;
+    726            rq.cparam = &cp;
+    727            rq.clen = GATT_FIND_INCLUDED_SERVICES_CP_SIZE;
+    728            rq.event = EVT_CMD_STATUS;
+    729            rq.rparam = &status;
+    730            rq.rlen = 1;
+    731          
+    732            if (hci_send_req(&rq, FALSE) < 0)
+    733              return BLE_STATUS_TIMEOUT;
+    734          
+    735            return status;
+    736          }
+    737          
+    738          tBleStatus aci_gatt_disc_all_charac_of_serv(uint16_t conn_handle, uint16_t start_attr_handle, 
+    739          					    uint16_t end_attr_handle)
+    740          {
+    741            struct hci_request rq;
+    742            uint8_t status;
+    743            gatt_disc_all_charac_of_serv_cp cp;
+    744          
+    745            cp.conn_handle = htobs(conn_handle);
+    746            cp.start_attr_handle = htobs(start_attr_handle);
+    747            cp.end_attr_handle = htobs(end_attr_handle);
+    748          
+    749            Osal_MemSet(&rq, 0, sizeof(rq));
+    750            rq.ogf = OGF_VENDOR_CMD;
+    751            rq.ocf = OCF_GATT_DISC_ALL_CHARAC_OF_SERV;
+    752            rq.cparam = &cp;
+    753            rq.clen = GATT_DISC_ALL_CHARAC_OF_SERV_CP_SIZE;
+    754            rq.event = EVT_CMD_STATUS;
+    755            rq.rparam = &status;
+    756            rq.rlen = 1;
+    757          
+    758            if (hci_send_req(&rq, FALSE) < 0)
+    759              return BLE_STATUS_TIMEOUT;
+    760          
+    761            return status;
+    762          }
+    763          
+    764          tBleStatus aci_gatt_disc_charac_by_uuid(uint16_t conn_handle, uint16_t start_handle,
+    765          				                     uint16_t end_handle, uint8_t charUuidType,
+    766                                                               const uint8_t* charUuid)
+    767          {
+    768            struct hci_request rq;
+    769            uint8_t status;
+    770            
+    771            uint8_t buffer[23];
+    772            uint8_t uuid_len;
+    773            uint8_t indx = 0;
+    774              
+    775            conn_handle = htobs(conn_handle);
+    776            Osal_MemCpy(buffer + indx, &conn_handle, 2);
+    777            indx += 2;
+    778              
+    779            start_handle = htobs(start_handle);
+    780            Osal_MemCpy(buffer + indx, &start_handle, 2);
+    781            indx += 2;
+    782            
+    783            end_handle = htobs(end_handle);
+    784            Osal_MemCpy(buffer + indx, &end_handle, 2);
+    785            indx += 2;
+    786            
+    787            buffer[indx] = charUuidType;
+    788            indx++;
+    789              
+    790            if(charUuidType == 0x01){
+    791              uuid_len = 2;
+    792            }
+    793            else {
+    794              uuid_len = 16;
+    795            }        
+    796            Osal_MemCpy(buffer + indx, charUuid, uuid_len);
+    797            indx +=  uuid_len;
+    798          
+    799            Osal_MemSet(&rq, 0, sizeof(rq));
+    800            rq.ogf = OGF_VENDOR_CMD;
+    801            rq.ocf = OCF_GATT_DISC_CHARAC_BY_UUID;
+    802            rq.cparam = (void *)buffer;
+    803            rq.clen = indx;
+    804            rq.event = EVT_CMD_STATUS;
+    805            rq.rparam = &status;
+    806            rq.rlen = 1;
+    807          
+    808            if (hci_send_req(&rq, FALSE) < 0)
+    809              return BLE_STATUS_TIMEOUT;
+    810          
+    811            return status;
+    812          }
+    813          
+    814          tBleStatus aci_gatt_disc_all_charac_descriptors(uint16_t conn_handle, uint16_t char_val_handle, 
+    815          						uint16_t char_end_handle)
+    816          {
+    817            struct hci_request rq;
+    818            uint8_t status;
+    819            gatt_disc_all_charac_descriptors_cp cp;
+    820          
+    821            cp.conn_handle = htobs(conn_handle);
+    822            cp.char_val_handle = htobs(char_val_handle);
+    823            cp.char_end_handle = htobs(char_end_handle);
+    824          
+    825            Osal_MemSet(&rq, 0, sizeof(rq));
+    826            rq.ogf = OGF_VENDOR_CMD;
+    827            rq.ocf = OCF_GATT_DISC_ALL_CHARAC_DESCRIPTORS;
+    828            rq.cparam = &cp;
+    829            rq.clen = GATT_DISC_ALL_CHARAC_DESCRIPTORS_CP_SIZE;
+    830            rq.event = EVT_CMD_STATUS;
+    831            rq.rparam = &status;
+    832            rq.rlen = 1;
+    833          
+    834            if (hci_send_req(&rq, FALSE) < 0)
+    835              return BLE_STATUS_TIMEOUT;
+    836          
+    837            return status;
+    838          }
+    839          
+    840          tBleStatus aci_gatt_read_charac_val(uint16_t conn_handle, uint16_t attr_handle)
+    841          {
+    842            struct hci_request rq;
+    843            uint8_t status;
+    844            gatt_read_charac_val_cp cp;
+    845          
+    846            cp.conn_handle = htobs(conn_handle);
+    847            cp.attr_handle = htobs(attr_handle);
+    848          
+    849            Osal_MemSet(&rq, 0, sizeof(rq));
+    850            rq.ogf = OGF_VENDOR_CMD;
+    851            rq.ocf = OCF_GATT_READ_CHARAC_VAL;
+    852            rq.cparam = &cp;
+    853            rq.clen = GATT_READ_CHARAC_VAL_CP_SIZE;
+    854            rq.event = EVT_CMD_STATUS;
+    855            rq.rparam = &status;
+    856            rq.rlen = 1;
+    857          
+    858            if (hci_send_req(&rq, FALSE) < 0)
+    859              return BLE_STATUS_TIMEOUT;
+    860            
+    861            return status;
+    862          }
+    863          
+    864          tBleStatus aci_gatt_read_using_charac_uuid(uint16_t conn_handle, uint16_t start_handle, uint16_t end_handle,
+    865                                              uint8_t  uuid_type, uint8_t* uuid)
+    866          {
+    867            struct hci_request rq;
+    868            uint8_t status;
+    869            gatt_read_using_charac_uuid_cp cp;
+    870            uint8_t uuid_len;
+    871            
+    872            if(uuid_type == UUID_TYPE_16){
+    873              uuid_len = 2;
+    874            }
+    875            else{
+    876              uuid_len = 16;
+    877            }
+    878          
+    879            cp.conn_handle = htobs(conn_handle);
+    880            cp.start_handle = htobs(start_handle);
+    881            cp.end_handle = htobs(end_handle);
+    882            cp.uuid_type = uuid_type;
+    883            Osal_MemCpy(cp.uuid, uuid, uuid_len);
+    884          
+    885            Osal_MemSet(&rq, 0, sizeof(rq));
+    886            rq.ogf = OGF_VENDOR_CMD;
+    887            rq.ocf = OCF_GATT_READ_USING_CHARAC_UUID;
+    888            rq.cparam = &cp;
+    889            rq.clen = GATT_READ_USING_CHARAC_UUID_CP_SIZE + uuid_len;
+    890            rq.rparam = &status;
+    891            rq.rlen = 1;
+    892          
+    893            if (hci_send_req(&rq, FALSE) < 0)
+    894              return BLE_STATUS_TIMEOUT;
+    895          
+    896            return status;
+    897          }
+    898          
+    899          tBleStatus aci_gatt_read_long_charac_val(uint16_t conn_handle, uint16_t attr_handle, 
+    900          					 uint16_t val_offset)
+    901          {
+    902            struct hci_request rq;
+    903            uint8_t status;
+    904            gatt_read_long_charac_val_cp cp;
+    905          
+    906            cp.conn_handle = htobs(conn_handle);
+    907            cp.attr_handle = htobs(attr_handle);
+    908            cp.val_offset = htobs(val_offset);
+    909          
+    910            Osal_MemSet(&rq, 0, sizeof(rq));
+    911            rq.ogf = OGF_VENDOR_CMD;
+    912            rq.ocf = OCF_GATT_READ_LONG_CHARAC_VAL;
+    913            rq.cparam = &cp;
+    914            rq.clen = GATT_READ_LONG_CHARAC_VAL_CP_SIZE;
+    915            rq.event = EVT_CMD_STATUS;
+    916            rq.rparam = &status;
+    917            rq.rlen = 1;
+    918          
+    919            if (hci_send_req(&rq, FALSE) < 0)
+    920              return BLE_STATUS_TIMEOUT;
+    921          
+    922            return status;
+    923          }
+    924          
+    925          tBleStatus aci_gatt_read_multiple_charac_val(uint16_t conn_handle, uint8_t num_handles, 
+    926                                                       uint8_t* set_of_handles)
+    927          {
+    928            struct hci_request rq;
+    929            uint8_t status;
+    930            gatt_read_multiple_charac_val_cp cp;
+    931            
+    932            if(num_handles*2 > sizeof(cp.set_of_handles))
+    933              return BLE_STATUS_INVALID_PARAMS;
+    934          
+    935            cp.conn_handle = htobs(conn_handle);
+    936            cp.num_handles = htobs(num_handles);
+    937            Osal_MemCpy(cp.set_of_handles, set_of_handles, 2*num_handles);
+    938          
+    939            Osal_MemSet(&rq, 0, sizeof(rq));
+    940            rq.ogf = OGF_VENDOR_CMD;
+    941            rq.ocf = OCF_GATT_READ_MULTIPLE_CHARAC_VAL;
+    942            rq.cparam = &cp;
+    943            rq.clen = GATT_READ_MULTIPLE_CHARAC_VAL_CP_SIZE + 2*num_handles;
+    944            rq.event = EVT_CMD_STATUS;
+    945            rq.rparam = &status;
+    946            rq.rlen = 1;
+    947          
+    948            if (hci_send_req(&rq, FALSE) < 0)
+    949              return BLE_STATUS_TIMEOUT;
+    950          
+    951            return status;
+    952          }
+    953          
+    954          
+    955          
+    956          tBleStatus aci_gatt_write_charac_value(uint16_t conn_handle, uint16_t attr_handle, 
+    957          				       uint8_t value_len, uint8_t *attr_value)
+    958          {
+    959            struct hci_request rq;
+    960            uint8_t status;
+    961            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    962            uint8_t indx = 0;
+    963              
+    964            if ((value_len+5) > HCI_MAX_PACKET_SIZE)
+    965              return BLE_STATUS_INVALID_PARAMS;
+    966          
+    967            conn_handle = htobs(conn_handle);
+    968            Osal_MemCpy(buffer + indx, &conn_handle, 2);
+    969            indx += 2;
+    970              
+    971            attr_handle = htobs(attr_handle);
+    972            Osal_MemCpy(buffer + indx, &attr_handle, 2);
+    973            indx += 2;
+    974          
+    975            buffer[indx] = value_len;
+    976            indx++;
+    977                  
+    978            Osal_MemCpy(buffer + indx, attr_value, value_len);
+    979            indx +=  value_len;
+    980          
+    981            Osal_MemSet(&rq, 0, sizeof(rq));
+    982            rq.ogf = OGF_VENDOR_CMD;
+    983            rq.ocf = OCF_GATT_WRITE_CHAR_VALUE;
+    984            rq.cparam = (void *)buffer;
+    985            rq.clen = indx;
+    986            rq.event = EVT_CMD_STATUS;
+    987            rq.rparam = &status;
+    988            rq.rlen = 1;
+    989          
+    990            if (hci_send_req(&rq, FALSE) < 0)
+    991              return BLE_STATUS_TIMEOUT;
+    992          
+    993            return status;
+    994          }
+    995          
+    996          tBleStatus aci_gatt_write_long_charac_val(uint16_t conn_handle, uint16_t attr_handle,
+    997                                                    uint16_t val_offset, uint8_t val_len, uint8_t* attr_val)
+    998          {
+    999            struct hci_request rq;
+   1000            uint8_t status;
+   1001            gatt_write_long_charac_val_cp cp;
+   1002            
+   1003            if(val_len > sizeof(cp.attr_val))
+   1004              return BLE_STATUS_INVALID_PARAMS;
+   1005          
+   1006            cp.conn_handle = htobs(conn_handle);
+   1007            cp.attr_handle = htobs(attr_handle);
+   1008            cp.val_offset = htobs(val_offset);
+   1009            cp.val_len = val_len;
+   1010            Osal_MemCpy(cp.attr_val, attr_val, val_len);
+   1011          
+   1012            Osal_MemSet(&rq, 0, sizeof(rq));
+   1013            rq.ogf = OGF_VENDOR_CMD;
+   1014            rq.ocf = OCF_GATT_WRITE_LONG_CHARAC_VAL;
+   1015            rq.cparam = &cp;
+   1016            rq.clen = GATT_WRITE_LONG_CHARAC_VAL_CP_SIZE + val_len;
+   1017            rq.event = EVT_CMD_STATUS;
+   1018            rq.rparam = &status;
+   1019            rq.rlen = 1;
+   1020          
+   1021            if (hci_send_req(&rq, FALSE) < 0)
+   1022              return BLE_STATUS_TIMEOUT;
+   1023          
+   1024            return status;
+   1025          }
+   1026          
+   1027          tBleStatus aci_gatt_write_charac_reliable(uint16_t conn_handle, uint16_t attr_handle,
+   1028                                                    uint16_t val_offset, uint8_t val_len, uint8_t* attr_val)
+   1029          {
+   1030            struct hci_request rq;
+   1031            uint8_t status;
+   1032            gatt_write_charac_reliable_cp cp;
+   1033            
+   1034            if(val_len > sizeof(cp.attr_val))
+   1035              return BLE_STATUS_INVALID_PARAMS;
+   1036          
+   1037            cp.conn_handle = htobs(conn_handle);
+   1038            cp.attr_handle = htobs(attr_handle);
+   1039            cp.val_offset = htobs(val_offset);
+   1040            cp.val_len = val_len;
+   1041            Osal_MemCpy(cp.attr_val, attr_val, val_len);
+   1042          
+   1043            Osal_MemSet(&rq, 0, sizeof(rq));
+   1044            rq.ogf = OGF_VENDOR_CMD;
+   1045            rq.ocf = OCF_GATT_WRITE_CHARAC_RELIABLE;
+   1046            rq.cparam = &cp;
+   1047            rq.clen = GATT_WRITE_CHARAC_RELIABLE_CP_SIZE + val_len;
+   1048            rq.event = EVT_CMD_STATUS;
+   1049            rq.rparam = &status;
+   1050            rq.rlen = 1;
+   1051          
+   1052            if (hci_send_req(&rq, FALSE) < 0)
+   1053              return BLE_STATUS_TIMEOUT;
+   1054          
+   1055            return status;
+   1056          }
+   1057          
+   1058          tBleStatus aci_gatt_write_long_charac_desc(uint16_t conn_handle, uint16_t attr_handle,
+   1059                                                    uint16_t val_offset, uint8_t val_len, uint8_t* attr_val)
+   1060          {
+   1061            struct hci_request rq;
+   1062            uint8_t status;
+   1063            gatt_write_charac_reliable_cp cp;
+   1064            
+   1065            if(val_len > sizeof(cp.attr_val))
+   1066              return BLE_STATUS_INVALID_PARAMS;
+   1067          
+   1068            cp.conn_handle = htobs(conn_handle);
+   1069            cp.attr_handle = htobs(attr_handle);
+   1070            cp.val_offset = htobs(val_offset);
+   1071            cp.val_len = val_len;
+   1072            Osal_MemCpy(cp.attr_val, attr_val, val_len);
+   1073          
+   1074            Osal_MemSet(&rq, 0, sizeof(rq));
+   1075            rq.ogf = OGF_VENDOR_CMD;
+   1076            rq.ocf = OCF_GATT_WRITE_LONG_CHARAC_DESC;
+   1077            rq.cparam = &cp;
+   1078            rq.clen = GATT_WRITE_LONG_CHARAC_DESC_CP_SIZE + val_len;
+   1079            rq.event = EVT_CMD_STATUS;
+   1080            rq.rparam = &status;
+   1081            rq.rlen = 1;
+   1082          
+   1083            if (hci_send_req(&rq, FALSE) < 0)
+   1084              return BLE_STATUS_TIMEOUT;
+   1085          
+   1086            return status;
+   1087          }
+   1088          
+   1089          tBleStatus aci_gatt_read_long_charac_desc(uint16_t conn_handle, uint16_t attr_handle,
+   1090                                                    uint16_t val_offset)
+   1091          {
+   1092            struct hci_request rq;
+   1093            uint8_t status;
+   1094            gatt_read_long_charac_desc_cp cp;
+   1095          
+   1096            cp.conn_handle = htobs(conn_handle);
+   1097            cp.attr_handle = htobs(attr_handle);
+   1098            cp.val_offset = htobs(val_offset);
+   1099          
+   1100            Osal_MemSet(&rq, 0, sizeof(rq));
+   1101            rq.ogf = OGF_VENDOR_CMD;
+   1102            rq.ocf = OCF_GATT_READ_LONG_CHARAC_DESC;
+   1103            rq.cparam = &cp;
+   1104            rq.clen = GATT_READ_LONG_CHARAC_DESC_CP_SIZE;
+   1105            rq.event = EVT_CMD_STATUS;
+   1106            rq.rparam = &status;
+   1107            rq.rlen = 1;
+   1108          
+   1109            if (hci_send_req(&rq, FALSE) < 0)
+   1110              return BLE_STATUS_TIMEOUT;
+   1111          
+   1112            return status;
+   1113          }
+   1114          
+   1115          tBleStatus aci_gatt_write_charac_descriptor(uint16_t conn_handle, uint16_t attr_handle, 
+   1116          					   uint8_t value_len, uint8_t *attr_value)
+   1117          {
+   1118            struct hci_request rq;
+   1119            uint8_t status;
+   1120            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+   1121            uint8_t indx = 0;
+   1122              
+   1123            if ((value_len+5) > HCI_MAX_PACKET_SIZE)
+   1124              return BLE_STATUS_INVALID_PARAMS;
+   1125          
+   1126            conn_handle = htobs(conn_handle);
+   1127            Osal_MemCpy(buffer + indx, &conn_handle, 2);
+   1128            indx += 2;
+   1129              
+   1130            attr_handle = htobs(attr_handle);
+   1131            Osal_MemCpy(buffer + indx, &attr_handle, 2);
+   1132            indx += 2;
+   1133          
+   1134            buffer[indx] = value_len;
+   1135            indx++;
+   1136                  
+   1137            Osal_MemCpy(buffer + indx, attr_value, value_len);
+   1138            indx +=  value_len;
+   1139          
+   1140            Osal_MemSet(&rq, 0, sizeof(rq));
+   1141            rq.ogf = OGF_VENDOR_CMD;
+   1142            rq.ocf = OCF_GATT_WRITE_CHAR_DESCRIPTOR;
+   1143            rq.cparam = (void *)buffer;
+   1144            rq.clen = indx;
+   1145            rq.event = EVT_CMD_STATUS; 
+   1146            rq.rparam = &status;
+   1147            rq.rlen = 1;
+   1148          
+   1149            if (hci_send_req(&rq, FALSE) < 0)
+   1150              return BLE_STATUS_TIMEOUT;
+   1151          
+   1152            return status;
+   1153          }
+   1154          
+   1155          tBleStatus aci_gatt_read_charac_desc(uint16_t conn_handle, uint16_t attr_handle)
+   1156          {
+   1157            struct hci_request rq;
+   1158            uint8_t status;
+   1159            gatt_read_long_charac_desc_cp cp;
+   1160          
+   1161            cp.conn_handle = htobs(conn_handle);
+   1162            cp.attr_handle = htobs(attr_handle);
+   1163          
+   1164            Osal_MemSet(&rq, 0, sizeof(rq));
+   1165            rq.ogf = OGF_VENDOR_CMD;
+   1166            rq.ocf = OCF_GATT_READ_CHAR_DESCRIPTOR;
+   1167            rq.cparam = &cp;
+   1168            rq.clen = GATT_READ_CHAR_DESCRIPTOR_CP_SIZE;
+   1169            rq.event = EVT_CMD_STATUS;
+   1170            rq.rparam = &status;
+   1171            rq.rlen = 1;
+   1172          
+   1173            if (hci_send_req(&rq, FALSE) < 0)
+   1174              return BLE_STATUS_TIMEOUT;
+   1175          
+   1176            return status;
+   1177          }
+   1178          
+   1179          tBleStatus aci_gatt_write_without_response(uint16_t conn_handle, uint16_t attr_handle,
+   1180                                                        uint8_t val_len, const uint8_t* attr_val)
+   1181          {
+   1182            struct hci_request rq;
+   1183            uint8_t status;
+   1184            gatt_write_without_resp_cp cp;
+   1185            
+   1186            if(val_len > sizeof(cp.attr_val))
+   1187              return BLE_STATUS_INVALID_PARAMS;
+   1188          
+   1189            cp.conn_handle = htobs(conn_handle);
+   1190            cp.attr_handle = htobs(attr_handle);
+   1191            cp.val_len = val_len;
+   1192            Osal_MemCpy(cp.attr_val, attr_val, val_len);
+   1193          
+   1194            Osal_MemSet(&rq, 0, sizeof(rq));
+   1195            rq.ogf = OGF_VENDOR_CMD;
+   1196            rq.ocf = OCF_GATT_WRITE_WITHOUT_RESPONSE;
+   1197            rq.cparam = &cp;
+   1198            rq.clen = GATT_WRITE_WITHOUT_RESPONSE_CP_SIZE + val_len; 
+   1199            rq.rparam = &status;
+   1200            rq.rlen = 1;
+   1201          
+   1202            if (hci_send_req(&rq, FALSE) < 0)
+   1203              return BLE_STATUS_TIMEOUT;
+   1204          
+   1205            return status;
+   1206          }
+   1207          
+   1208          tBleStatus aci_gatt_signed_write_without_resp(uint16_t conn_handle, uint16_t attr_handle,
+   1209                                                        uint8_t val_len, uint8_t* attr_val)
+   1210          {
+   1211            struct hci_request rq;
+   1212            uint8_t status;
+   1213            gatt_signed_write_without_resp_cp cp;
+   1214            
+   1215            if(val_len > sizeof(cp.attr_val))
+   1216              return BLE_STATUS_INVALID_PARAMS;
+   1217          
+   1218            cp.conn_handle = htobs(conn_handle);
+   1219            cp.attr_handle = htobs(attr_handle);
+   1220            cp.val_len = val_len;
+   1221            Osal_MemCpy(cp.attr_val, attr_val, val_len);
+   1222          
+   1223            Osal_MemSet(&rq, 0, sizeof(rq));
+   1224            rq.ogf = OGF_VENDOR_CMD;
+   1225            rq.ocf = OCF_GATT_SIGNED_WRITE_WITHOUT_RESPONSE;
+   1226            rq.cparam = &cp;
+   1227            rq.clen = GATT_SIGNED_WRITE_WITHOUT_RESPONSE_CP_SIZE + val_len;
+   1228            rq.rparam = &status;
+   1229            rq.rlen = 1;
+   1230          
+   1231            if (hci_send_req(&rq, FALSE) < 0)
+   1232              return BLE_STATUS_TIMEOUT;
+   1233          
+   1234            return status;
+   1235          }
+   1236          
+   1237          tBleStatus aci_gatt_confirm_indication(uint16_t conn_handle)
+   1238          {
+   1239            struct hci_request rq;
+   1240            uint8_t status;
+   1241            gatt_confirm_indication_cp cp;
+   1242          
+   1243            cp.conn_handle = htobs(conn_handle);
+   1244            
+   1245            Osal_MemSet(&rq, 0, sizeof(rq));
+   1246            rq.ogf = OGF_VENDOR_CMD;
+   1247            rq.ocf = OCF_GATT_CONFIRM_INDICATION;
+   1248            rq.cparam = &cp;
+   1249            rq.clen = GATT_CONFIRM_INDICATION_CP_SIZE;
+   1250            rq.rparam = &status;
+   1251            rq.rlen = 1;
+   1252          
+   1253            if (hci_send_req(&rq, FALSE) < 0)
+   1254              return BLE_STATUS_TIMEOUT;
+   1255            
+   1256            return status;
+   1257          }
+   1258          
+   1259          tBleStatus aci_gatt_write_response(uint16_t conn_handle,
+   1260                                             uint16_t attr_handle,
+   1261                                             uint8_t write_status,
+   1262                                             uint8_t err_code,
+   1263                                             uint8_t att_val_len,
+   1264                                             uint8_t *att_val)
+   1265          {
+   1266            struct hci_request rq;
+   1267            uint8_t status;
+   1268            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+   1269            uint8_t indx = 0;
+   1270            
+   1271            if ((att_val_len+7) > HCI_MAX_PACKET_SIZE)
+   1272              return BLE_STATUS_INVALID_PARAMS;
+   1273          
+   1274            conn_handle = htobs(conn_handle);  
+   1275            Osal_MemCpy(buffer + indx, &conn_handle, 2);
+   1276            indx += 2;
+   1277              
+   1278            attr_handle = htobs(attr_handle);
+   1279            Osal_MemCpy(buffer + indx, &attr_handle, 2);
+   1280            indx += 2;
+   1281              
+   1282            buffer[indx] = write_status;
+   1283            indx += 1;
+   1284              
+   1285            buffer[indx] = err_code;
+   1286            indx += 1;
+   1287              
+   1288            buffer[indx] = att_val_len;
+   1289            indx += 1;
+   1290              
+   1291            Osal_MemCpy(buffer + indx, att_val, att_val_len);
+   1292            indx += att_val_len;
+   1293          
+   1294            Osal_MemSet(&rq, 0, sizeof(rq));
+   1295            rq.ogf = OGF_VENDOR_CMD;
+   1296            rq.ocf = OCF_GATT_WRITE_RESPONSE;
+   1297            rq.cparam = (void *)buffer;
+   1298            rq.clen = indx;
+   1299            rq.rparam = &status;
+   1300            rq.rlen = 1;
+   1301          
+   1302            if (hci_send_req(&rq, FALSE) < 0)
+   1303              return BLE_STATUS_TIMEOUT;
+   1304          
+   1305            if (status) {
+   1306              return status;
+   1307            }
+   1308          
+   1309            return 0;
+   1310          }
+   1311          
+   1312          tBleStatus aci_gatt_allow_read(uint16_t conn_handle)
+   1313          {
+   1314              struct hci_request rq;
+   1315              gatt_allow_read_cp cp;
+   1316              uint8_t status;
+   1317              
+   1318              cp.conn_handle = htobs(conn_handle);
+   1319          
+   1320              Osal_MemSet(&rq, 0, sizeof(rq));
+   1321              rq.ogf = OGF_VENDOR_CMD;
+   1322              rq.ocf = OCF_GATT_ALLOW_READ;
+   1323              rq.cparam = &cp;
+   1324              rq.clen = GATT_ALLOW_READ_CP_SIZE;
+   1325              rq.rparam = &status;
+   1326              rq.rlen = 1;
+   1327          
+   1328              if (hci_send_req(&rq, FALSE) < 0)
+   1329                return BLE_STATUS_TIMEOUT;
+   1330          
+   1331              return status;
+   1332          }
+   1333          
+   1334          tBleStatus aci_gatt_set_security_permission(uint16_t service_handle, uint16_t attr_handle,
+   1335                                                      uint8_t security_permission)
+   1336          {
+   1337              struct hci_request rq;
+   1338              gatt_set_security_permission_cp cp;
+   1339              uint8_t status;
+   1340              
+   1341              cp.service_handle = htobs(service_handle);
+   1342              cp.attr_handle = htobs(attr_handle);
+   1343              cp.security_permission = security_permission;
+   1344          
+   1345              Osal_MemSet(&rq, 0, sizeof(rq));
+   1346              rq.ogf = OGF_VENDOR_CMD;
+   1347              rq.ocf = OCF_GATT_SET_SECURITY_PERMISSION;
+   1348              rq.cparam = &cp;
+   1349              rq.clen = GATT_GATT_SET_SECURITY_PERMISSION_CP_SIZE;
+   1350              rq.rparam = &status;
+   1351              rq.rlen = 1;
+   1352          
+   1353              if (hci_send_req(&rq, FALSE) < 0)
+   1354                return BLE_STATUS_TIMEOUT;
+   1355          
+   1356              return status;
+   1357          }
+   1358          
+   1359          tBleStatus aci_gatt_set_desc_value(uint16_t servHandle, 
+   1360          				   uint16_t charHandle,
+   1361          				   uint16_t charDescHandle,
+   1362          				   uint16_t charDescValOffset,
+   1363          				   uint8_t charDescValueLen,   
+   1364          				   const uint8_t *charDescValue)
+   1365          {
+   1366            struct hci_request rq;
+   1367            uint8_t status;
+   1368            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+   1369            uint8_t indx = 0;
+   1370              
+   1371            if ((charDescValueLen+9) > HCI_MAX_PACKET_SIZE)
+   1372              return BLE_STATUS_INVALID_PARAMS;
+   1373          
+   1374            servHandle = htobs(servHandle);
+   1375            Osal_MemCpy(buffer + indx, &servHandle, 2);
+   1376            indx += 2;
+   1377              
+   1378            charHandle = htobs(charHandle);
+   1379            Osal_MemCpy(buffer + indx, &charHandle, 2);
+   1380            indx += 2;
+   1381              
+   1382            charDescHandle = htobs(charDescHandle);
+   1383            Osal_MemCpy(buffer + indx, &charDescHandle, 2);
+   1384            indx += 2;
+   1385              
+   1386            Osal_MemCpy(buffer + indx, &charDescValOffset, 2);
+   1387            indx += 2;
+   1388              
+   1389            buffer[indx] = charDescValueLen;
+   1390            indx++;
+   1391                  
+   1392            Osal_MemCpy(buffer + indx, charDescValue, charDescValueLen);
+   1393            indx +=  charDescValueLen;
+   1394          
+   1395            Osal_MemSet(&rq, 0, sizeof(rq));
+   1396            rq.ogf = OGF_VENDOR_CMD;
+   1397            rq.ocf = OCF_GATT_SET_DESC_VAL;
+   1398            rq.cparam = (void *)buffer;
+   1399            rq.clen = indx;
+   1400            rq.rparam = &status;
+   1401            rq.rlen = 1;
+   1402          
+   1403            if (hci_send_req(&rq, FALSE) < 0)
+   1404              return BLE_STATUS_TIMEOUT;
+   1405          
+   1406            return status;
+   1407          }
+   1408          
+   1409          tBleStatus aci_gatt_read_handle_value(uint16_t attr_handle, uint16_t data_len, uint16_t *data_len_out_p, uint8_t *data)
+   1410          {
+   1411            struct hci_request rq;
+   1412            gatt_read_handle_val_cp cp;
+   1413          
+   1414            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+   1415           
+   1416            if ((data_len+2) > HCI_MAX_PACKET_SIZE)
+   1417              return BLE_STATUS_INVALID_PARAMS;
+   1418          
+   1419            cp.attr_handle = htobs(attr_handle);
+   1420          
+   1421            Osal_MemSet(&rq, 0, sizeof(rq));
+   1422            rq.ogf = OGF_VENDOR_CMD;
+   1423            rq.ocf = OCF_GATT_READ_HANDLE_VALUE;
+   1424            rq.cparam = &cp;
+   1425            rq.clen = GATT_READ_HANDLE_VALUE_CP_SIZE;
+   1426            rq.rparam = buffer;
+   1427            rq.rlen = data_len+2;
+   1428          
+   1429            if (hci_send_req(&rq, FALSE) < 0)
+   1430              return BLE_STATUS_TIMEOUT;
+   1431          
+   1432            *data_len_out_p = LE_TO_HOST_16(buffer+2);
+   1433          
+   1434            Osal_MemCpy(data, buffer + 2, MIN(data_len, *data_len_out_p));
+   1435          
+   1436            return buffer[0]; 
+   1437          }
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      40   aci_att_execute_write_req
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   aci_att_find_by_type_value_req
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+      40   aci_att_find_information_req
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      64   aci_att_prepare_write_req
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+      64   aci_att_read_by_group_type_req
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+      64   aci_att_read_by_type_req
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+      80   aci_gatt_add_char
+        80   -> Osal_MemCpy
+        80   -> Osal_MemSet
+        80   -> hci_send_req
+     184   aci_gatt_add_char_desc
+       184   -> Osal_MemCpy
+       184   -> Osal_MemSet
+       184   -> hci_send_req
+      64   aci_gatt_add_serv
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+      40   aci_gatt_allow_read
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_confirm_indication
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_del_char
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_del_include_service
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_del_service
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_disc_all_charac_descriptors
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_disc_all_charac_of_serv
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_disc_all_prim_services
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      72   aci_gatt_disc_charac_by_uuid
+        72   -> Osal_MemCpy
+        72   -> Osal_MemSet
+        72   -> hci_send_req
+      56   aci_gatt_disc_prim_service_by_uuid
+        56   -> Osal_MemCpy
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      40   aci_gatt_exchange_configuration
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_find_included_services
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      80   aci_gatt_include_service
+        80   -> Osal_MemCpy
+        80   -> Osal_MemSet
+        80   -> hci_send_req
+      32   aci_gatt_init
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      40   aci_gatt_read_charac_desc
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_read_charac_val
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+     176   aci_gatt_read_handle_value
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+      40   aci_gatt_read_long_charac_desc
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_read_long_charac_val
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+     168   aci_gatt_read_multiple_charac_val
+       168   -> Osal_MemCpy
+       168   -> Osal_MemSet
+       168   -> hci_send_req
+      64   aci_gatt_read_using_charac_uuid
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+     184   aci_gatt_set_desc_value
+       184   -> Osal_MemCpy
+       184   -> Osal_MemSet
+       184   -> hci_send_req
+      40   aci_gatt_set_event_mask
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_gatt_set_security_permission
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      56   aci_gatt_signed_write_without_resp
+        56   -> Osal_MemCpy
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+     176   aci_gatt_update_char_value
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+     176   aci_gatt_write_charac_descriptor
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+     168   aci_gatt_write_charac_reliable
+       168   -> Osal_MemCpy
+       168   -> Osal_MemSet
+       168   -> hci_send_req
+     176   aci_gatt_write_charac_value
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+     168   aci_gatt_write_long_charac_desc
+       168   -> Osal_MemCpy
+       168   -> Osal_MemSet
+       168   -> hci_send_req
+     168   aci_gatt_write_long_charac_val
+       168   -> Osal_MemCpy
+       168   -> Osal_MemSet
+       168   -> hci_send_req
+     184   aci_gatt_write_response
+       184   -> Osal_MemCpy
+       184   -> Osal_MemSet
+       184   -> hci_send_req
+      64   aci_gatt_write_without_response
+        64   -> Osal_MemCpy
+        64   -> Osal_MemSet
+        64   -> hci_send_req
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      74  aci_att_execute_write_req
+     118  aci_att_find_by_type_value_req
+      78  aci_att_find_information_req
+     104  aci_att_prepare_write_req
+     102  aci_att_read_by_group_type_req
+     102  aci_att_read_by_type_req
+     178  aci_gatt_add_char
+     228  aci_gatt_add_char_desc
+     132  aci_gatt_add_serv
+      70  aci_gatt_allow_read
+      70  aci_gatt_confirm_indication
+      74  aci_gatt_del_char
+      74  aci_gatt_del_include_service
+      70  aci_gatt_del_service
+      82  aci_gatt_disc_all_charac_descriptors
+      82  aci_gatt_disc_all_charac_of_serv
+      74  aci_gatt_disc_all_prim_services
+     130  aci_gatt_disc_charac_by_uuid
+     100  aci_gatt_disc_prim_service_by_uuid
+      74  aci_gatt_exchange_configuration
+      82  aci_gatt_find_included_services
+     150  aci_gatt_include_service
+      58  aci_gatt_init
+      78  aci_gatt_read_charac_desc
+      78  aci_gatt_read_charac_val
+     118  aci_gatt_read_handle_value
+      82  aci_gatt_read_long_charac_desc
+      82  aci_gatt_read_long_charac_val
+     102  aci_gatt_read_multiple_charac_val
+     102  aci_gatt_read_using_charac_uuid
+     144  aci_gatt_set_desc_value
+      68  aci_gatt_set_event_mask
+      78  aci_gatt_set_security_permission
+      98  aci_gatt_signed_write_without_resp
+     124  aci_gatt_update_char_value
+     124  aci_gatt_write_charac_descriptor
+     108  aci_gatt_write_charac_reliable
+     124  aci_gatt_write_charac_value
+     108  aci_gatt_write_long_charac_desc
+     108  aci_gatt_write_long_charac_val
+     130  aci_gatt_write_response
+      98  aci_gatt_write_without_response
+
+ 
+ 4 260 bytes in section .text
+ 
+ 4 260 bytes of CODE memory
+
+Errors: none
+Warnings: none

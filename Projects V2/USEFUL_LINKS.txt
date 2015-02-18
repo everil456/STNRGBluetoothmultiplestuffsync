@@ -1,0 +1,14 @@
+Describes how to get bluenrg gui to work and basics of how the code gets the boards to communicate:
+http://www.st.com/st-web-ui/static/active/en/resource/technical/document/user_manual/DM00099259.pdf
+
+Discussion of potential reasons why code isn't working:
+https://my.st.com/public/STe2ecommunities/interface/Lists/Low%20Power%20RF%20Solutions/Flat.aspx?RootFolder=https%3a%2f%2fmy%2est%2ecom%2fpublic%2fSTe2ecommunities%2finterface%2fLists%2fLow%20Power%20RF%20Solutions%2fBlueNRG%20multislaves&FolderCTID=0x01200200770978C69A1141439FE559EB459D7580008F23D8A934F45B4FB64D6201532EFD99&currentviews=164#{8D6DFC61-3074-49F9-8C27-C85E4A9D75DE}
+
+Good explanation of what GATT/GAP/etc. are:
+http://www.eetimes.com/document.asp?doc_id=1278966
+
+Explanation of what profiles/services/characteristics/etc. are as well as master/slave/client/server:
+http://mbientlab.com/blog/bluetooth-low-energy-introduction/
+
+More thorough explanation of code:
+http://www.st.com/st-web-ui/static/active/jp/resource/technical/document/programming_manual/DM00141271.pdf

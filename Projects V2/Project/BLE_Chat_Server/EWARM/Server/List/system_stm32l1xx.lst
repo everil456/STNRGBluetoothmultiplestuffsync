@@ -1,0 +1,708 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:40:00
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\src\system_stm32l1xx.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\src\system_stm32l1xx.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\system_stm32l1xx.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\system_stm32l1xx.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Project\BLE_Chat_Server\src\system_stm32l1xx.c
+      1          /**
+      2            ******************************************************************************
+      3            * @file    system_stm32l1xx.c
+      4            * @author  MCD Application Team
+      5            * @version V1.0.0
+      6            * @date    11-February-2014
+      7            * @brief   CMSIS Cortex-M3 Device Peripheral Access Layer System Source File.
+      8            *          This file contains the system clock configuration for STM32L1xx Ultra
+      9            *          Low Power devices and is customized for use with stm32f152_nucleo Kit. 
+     10            *          The STM32F152 is configured to run at 32 MHz, following the three  
+     11            *          configuration below:
+     12            *            - PLL_SOURCE_HSI   (default)     : HSI (~16MHz) used to clock the PLL, and
+     13            *                                               the PLL is used as system clock source.
+     14            *            - PLL_SOURCE_HSE                 : HSE (8MHz) used to clock the PLL, and 
+     15            *                                               the PLL is used as system clock source.
+     16            *            - PLL_SOURCE_HSE_BYPASS          : HSE bypassed with an external clock 
+     17            *                                              (8MHz, coming from ST-Link) used to clock
+     18            *                                              the PLL, and the PLL is used as system
+     19            *                                              clock source.             
+     20            * 1.  This file provides two functions and one global variable to be called from 
+     21            *     user application:
+     22            *      - SystemInit(): Setups the system clock (System clock source, PLL Multiplier
+     23            *                      and Divider factors, AHB/APBx prescalers and Flash settings),                      
+     24            *                      This function is called at startup just after reset and 
+     25            *                      before branch to main program. This call is made inside
+     26            *                      the "startup_stm32l1xx_xx.s" file.
+     27            *                        
+     28            *      - SystemCoreClock variable: Contains the core clock (HCLK), it can be used
+     29            *                                  by the user application to setup the SysTick 
+     30            *                                  timer or configure other parameters.
+     31            *                                     
+     32            *      - SystemCoreClockUpdate(): Updates the variable SystemCoreClock and must
+     33            *                                 be called whenever the core clock is changed
+     34            *                                 during program execution.   
+     35            *      
+     36            * 2. After each device reset the MSI (2.1 MHz Range) is used as system clock source.
+     37            *    Then SystemInit() function is called, in "startup_stm32l1xx_xx.s" file, to
+     38            *    configure the system clock before to branch to main program.    
+     39            *    
+     40            * 3. If the system clock source selected by user fails to startup, the SystemInit()
+     41            *    function will do nothing and MSI still used as system clock source. User can 
+     42            *    add some code to deal with this issue inside the SetSysClock() function.
+     43            * 
+     44            * 4. The default value of HSE crystal is set to 8MHz, refer to "HSE_VALUE" define
+     45            *    in "stm32l1xx.h" file. When HSE is used as system clock source, directly or
+     46            *    through PLL, and you are using different crystal you have to adapt the HSE
+     47            *    value to your own configuration.
+     48            * 
+     49            ******************************************************************************
+     50            * @attention
+     51            *
+     52            * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+     53            *
+     54            * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+     55            * You may not use this file except in compliance with the License.
+     56            * You may obtain a copy of the License at:
+     57            *
+     58            *        http://www.st.com/software_license_agreement_liberty_v2
+     59            *
+     60            * Unless required by applicable law or agreed to in writing, software 
+     61            * distributed under the License is distributed on an "AS IS" BASIS, 
+     62            * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     63            * See the License for the specific language governing permissions and
+     64            * limitations under the License.
+     65            *
+     66            ******************************************************************************
+     67            */
+     68          
+     69          /** @addtogroup CMSIS
+     70            * @{
+     71            */
+     72          
+     73          /** @addtogroup stm32l1xx_system
+     74            * @{
+     75            */  
+     76            
+     77          /** @addtogroup STM32L1xx_System_Private_Includes
+     78            * @{
+     79            */
+     80          
+     81          #include "stm32l1xx.h"
+     82          
+     83          /**
+     84            * @}
+     85            */
+     86          
+     87          /** @addtogroup STM32L1xx_System_Private_TypesDefinitions
+     88            * @{
+     89            */
+     90          
+     91          /**
+     92            * @}
+     93            */
+     94          
+     95          /** @addtogroup STM32L1xx_System_Private_Defines
+     96            * @{
+     97            */
+     98            
+     99          /*!< Uncomment the following line if you need to relocate your vector Table in
+    100               Internal SRAM. */ 
+    101          /* #define VECT_TAB_SRAM */
+    102          #define VECT_TAB_OFFSET  0x0 /*!< Vector Table base offset field. 
+    103                                            This value must be a multiple of 0x200. */
+    104          
+    105          /* Select the PLL clock source */
+    106          
+    107          #ifndef SYSCLK_MSI
+    108          #define PLL_SOURCE_HSI        /* HSI (~16MHz) used to clock the PLL, and the PLL is used as system clock source*/
+    109          //#define PLL_SOURCE_HSE        /* HSE (8MHz) used to clock the PLL, and the PLL is used as system clock source */
+    110          //#define PLL_SOURCE_HSE_BYPASS   /* HSE bypassed with an external clock (8MHz, coming from ST-Link) used to clock
+    111          //                                   the PLL, and the PLL is used as system clock source */
+    112          #else
+    113          #define SYSCLK_FREQ_MSI_4MHz      4000000
+    114          #endif  /*  SYSCLK_MSI */
+    115          
+    116          
+    117          
+    118          /**
+    119            * @}
+    120            */
+    121          
+    122          
+    123          /** @addtogroup STM32L1xx_System_Private_Macros
+    124            * @{
+    125            */
+    126          
+    127          /**
+    128            * @}
+    129            */
+    130          
+    131          /** @addtogroup STM32L1xx_System_Private_Variables
+    132            * @{
+    133            */
+    134          uint32_t SystemCoreClock    = 32000000;
+    135          __I uint8_t PLLMulTable[9] = {3, 4, 6, 8, 12, 16, 24, 32, 48};
+    136          __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    137          
+    138          /**
+    139            * @}
+    140            */
+    141          
+    142          /** @addtogroup STM32L1xx_System_Private_FunctionPrototypes
+    143            * @{
+    144            */
+    145          
+    146          static void SetSysClock(void);
+    147          
+    148          #ifdef SYSCLK_MSI
+    149          static void SetSysClockToMSI(void);
+    150          #endif 
+    151          
+    152          /**
+    153            * @}
+    154            */
+    155          
+    156          /** @addtogroup STM32L1xx_System_Private_Functions
+    157            * @{
+    158            */
+    159          
+    160          /**
+    161            * @brief  Setup the microcontroller system.
+    162            *         Initialize the Embedded Flash Interface, the PLL and update the 
+    163            *         SystemCoreClock variable.
+    164            * @param  None
+    165            * @retval None
+    166            */
+    167          void SystemInit (void)
+    168          {
+    169            /*!< Set MSION bit */
+    170            RCC->CR |= (uint32_t)0x00000100;
+    171          
+    172            /*!< Reset SW[1:0], HPRE[3:0], PPRE1[2:0], PPRE2[2:0], MCOSEL[2:0] and MCOPRE[2:0] bits */
+    173            RCC->CFGR &= (uint32_t)0x88FFC00C;
+    174            
+    175            /*!< Reset HSION, HSEON, CSSON and PLLON bits */
+    176            RCC->CR &= (uint32_t)0xEEFEFFFE;
+    177          
+    178            /*!< Reset HSEBYP bit */
+    179            RCC->CR &= (uint32_t)0xFFFBFFFF;
+    180          
+    181            /*!< Reset PLLSRC, PLLMUL[3:0] and PLLDIV[1:0] bits */
+    182            RCC->CFGR &= (uint32_t)0xFF02FFFF;
+    183          
+    184            /*!< Disable all interrupts */
+    185            RCC->CIR = 0x00000000;
+    186              
+    187            /* Configure the System clock frequency, AHB/APBx prescalers and Flash settings */
+    188            SetSysClock();
+    189          
+    190          #ifdef VECT_TAB_SRAM
+    191            SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM. */
+    192          #else
+    193            SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH. */
+    194          #endif
+    195          }
+    196          
+    197          /**
+    198            * @brief  Update SystemCoreClock according to Clock Register Values
+    199            *         The SystemCoreClock variable contains the core clock (HCLK), it can
+    200            *         be used by the user application to setup the SysTick timer or configure
+    201            *         other parameters.
+    202            *           
+    203            * @note   Each time the core clock (HCLK) changes, this function must be called
+    204            *         to update SystemCoreClock variable value. Otherwise, any configuration
+    205            *         based on this variable will be incorrect.         
+    206            *     
+    207            * @note   - The system frequency computed by this function is not the real 
+    208            *           frequency in the chip. It is calculated based on the predefined 
+    209            *           constant and the selected clock source:
+    210            *             
+    211            *           - If SYSCLK source is MSI, SystemCoreClock will contain the MSI 
+    212            *             value as defined by the MSI range.
+    213            *                                   
+    214            *           - If SYSCLK source is HSI, SystemCoreClock will contain the HSI_VALUE(*)
+    215            *                                              
+    216            *           - If SYSCLK source is HSE, SystemCoreClock will contain the HSE_VALUE(**)
+    217            *                          
+    218            *           - If SYSCLK source is PLL, SystemCoreClock will contain the HSE_VALUE(**)
+    219            *             or HSI_VALUE(*) multiplied/divided by the PLL factors.
+    220            *         
+    221            *         (*) HSI_VALUE is a constant defined in stm32l1xx.h file (default value
+    222            *             16 MHz) but the real value may vary depending on the variations
+    223            *             in voltage and temperature.   
+    224            *    
+    225            *         (**) HSE_VALUE is a constant defined in stm32l1xx.h file (default value
+    226            *              8 MHz), user has to ensure that HSE_VALUE is same as the real
+    227            *              frequency of the crystal used. Otherwise, this function may
+    228            *              have wrong result.
+    229            *                
+    230            *         - The result of this function could be not correct when using fractional
+    231            *           value for HSE crystal.
+    232            * @param  None
+    233            * @retval None
+    234            */
+    235          void SystemCoreClockUpdate (void)
+    236          {
+    237            uint32_t tmp = 0, pllmul = 0, plldiv = 0, pllsource = 0, msirange = 0;
+    238          
+    239            /* Get SYSCLK source -------------------------------------------------------*/
+    240            tmp = RCC->CFGR & RCC_CFGR_SWS;
+    241            
+    242            switch (tmp)
+    243            {
+    244              case 0x00:  /* MSI used as system clock */
+    245                msirange = (RCC->ICSCR & RCC_ICSCR_MSIRANGE) >> 13;
+    246                SystemCoreClock = (32768 * (1 << (msirange + 1)));
+    247                break;
+    248              case 0x04:  /* HSI used as system clock */
+    249                SystemCoreClock = HSI_VALUE;
+    250                break;
+    251              case 0x08:  /* HSE used as system clock */
+    252                SystemCoreClock = HSE_VALUE;
+    253                break;
+    254              case 0x0C:  /* PLL used as system clock */
+    255                /* Get PLL clock source and multiplication factor ----------------------*/
+    256                pllmul = RCC->CFGR & RCC_CFGR_PLLMUL;
+    257                plldiv = RCC->CFGR & RCC_CFGR_PLLDIV;
+    258                pllmul = PLLMulTable[(pllmul >> 18)];
+    259                plldiv = (plldiv >> 22) + 1;
+    260                
+    261                pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
+    262          
+    263                if (pllsource == 0x00)
+    264                {
+    265                  /* HSI oscillator clock selected as PLL clock entry */
+    266                  SystemCoreClock = (((HSI_VALUE) * pllmul) / plldiv);
+    267                }
+    268                else
+    269                {
+    270                  /* HSE selected as PLL clock entry */
+    271                  SystemCoreClock = (((HSE_VALUE) * pllmul) / plldiv);
+    272                }
+    273                break;
+    274              default: /* MSI used as system clock */
+    275                msirange = (RCC->ICSCR & RCC_ICSCR_MSIRANGE) >> 13;
+    276                SystemCoreClock = (32768 * (1 << (msirange + 1)));
+    277                break;
+    278            }
+    279            /* Compute HCLK clock frequency --------------------------------------------*/
+    280            /* Get HCLK prescaler */
+    281            tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+    282            /* HCLK clock frequency */
+    283            SystemCoreClock >>= tmp;
+    284          }
+    285          
+    286          /**
+    287            * @brief  Configures the System clock frequency, AHB/APBx prescalers and Flash 
+    288            *         settings.
+    289            * @note   This function should be called only once the RCC clock configuration  
+    290            *         is reset to the default reset state (done in SystemInit() function).
+    291            * @param  None
+    292            * @retval None
+    293            */
+    294          static void SetSysClock(void)
+    295          {
+    296          #ifdef SYSCLK_MSI
+    297            SetSysClockToMSI();
+    298          #else
+    299          
+    300            __IO uint32_t StartUpCounter = 0, HSIStatus = 0, HSEStatus = 0;
+    301            
+    302            /* SYSCLK, HCLK, PCLK2 and PCLK1 configuration ---------------------------*/
+    303            
+    304          #ifdef PLL_SOURCE_HSI  
+    305          
+    306              /* Enable HSI */
+    307            RCC->CR |= ((uint32_t)RCC_CR_HSION);
+    308             
+    309             /* Wait till HSI is ready and if Time out is reached exit */
+    310            do
+    311            {
+    312              HSIStatus = RCC->CR & RCC_CR_HSIRDY;
+    313            } while((HSIStatus == 0) && (StartUpCounter != HSI_STARTUP_TIMEOUT));
+    314          
+    315            if ((RCC->CR & RCC_CR_HSIRDY) != RESET)
+    316            {
+    317              HSIStatus = (uint32_t)0x01;
+    318            }
+    319            else
+    320            {
+    321              HSIStatus = (uint32_t)0x00;
+    322            }
+    323              
+    324            if (HSIStatus == (uint32_t)0x01)
+    325            {
+    326              /*  PLL configuration: PLLCLK = (HSI * 6)/3 = 32 MHz */
+    327            RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMUL |RCC_CFGR_PLLDIV));
+    328            RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSI | RCC_CFGR_PLLMUL4 | RCC_CFGR_PLLDIV2 );
+    329            }
+    330            
+    331                else
+    332            {
+    333              /* If HSI fails to start-up, the application will have wrong clock
+    334              configuration. User can add here some code to deal with this error */
+    335            }
+    336            
+    337          #else /* PLL_SOURCE_HSE_BYPASS or PLL_SOURCE_HSE */  
+    338            
+    339            /* Enable HSE */    
+    340            RCC->CR |= ((uint32_t)RCC_CR_HSEON);
+    341          #ifdef PLL_SOURCE_HSE_BYPASS
+    342            RCC->CR |= ((uint32_t)RCC_CR_HSEBYP);
+    343          #endif   /* PLL_SOURCE_HSE_BYPASS */
+    344            
+    345            /* Wait till HSE is ready and if Time out is reached exit */
+    346            do
+    347            {
+    348              HSEStatus = RCC->CR & RCC_CR_HSERDY;
+    349              StartUpCounter++;
+    350            } while((HSEStatus == 0) && (StartUpCounter != HSE_STARTUP_TIMEOUT));
+    351            
+    352            if ((RCC->CR & RCC_CR_HSERDY) != RESET)
+    353            {
+    354              HSEStatus = (uint32_t)0x01;
+    355            }
+    356            else
+    357            {
+    358              HSEStatus = (uint32_t)0x00;
+    359            }
+    360            
+    361            if (HSEStatus == (uint32_t)0x01)
+    362            {
+    363              
+    364              /*  PLL configuration PLLCLK = (HSE * 8)/2 = 32 MHz */
+    365              RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMUL |
+    366                                                  RCC_CFGR_PLLDIV));
+    367              RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSE | RCC_CFGR_PLLMUL8 | RCC_CFGR_PLLDIV2);
+    368              
+    369            }
+    370            
+    371                else
+    372            {
+    373              /* If HSE fails to start-up, the application will have wrong clock
+    374              configuration. User can add here some code to deal with this error */
+    375            }
+    376          
+    377            
+    378          #endif /*PLL_SOURCE_HSI*/
+    379            
+    380              /* Enable 64-bit access */
+    381            FLASH->ACR |= FLASH_ACR_ACC64;
+    382            
+    383            /* Enable Prefetch Buffer */
+    384            FLASH->ACR |= FLASH_ACR_PRFTEN;
+    385            
+    386            /* Flash 1 wait state */
+    387            FLASH->ACR |= FLASH_ACR_LATENCY;
+    388            
+    389            /* Power enable */
+    390            RCC->APB1ENR |= RCC_APB1ENR_PWREN;
+    391            
+    392            /* Select the Voltage Range 1 (1.8 V) */
+    393            PWR->CR = PWR_CR_VOS_0;
+    394            
+    395            /* Wait Until the Voltage Regulator is ready */
+    396            while((PWR->CSR & PWR_CSR_VOSF) != RESET)
+    397            {
+    398            }
+    399            
+    400            /* HCLK = SYSCLK /1*/
+    401            RCC->CFGR |= (uint32_t)RCC_CFGR_HPRE_DIV1;
+    402            
+    403            /* PCLK2 = HCLK /1*/
+    404            RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE2_DIV1;
+    405            
+    406            /* PCLK1 = HCLK /1*/
+    407            RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV1;
+    408            
+    409          #ifdef SYSCLK_FREQ_HSI_32MHz /* new code */
+    410              
+    411            /*  PLL configuration */
+    412            RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_PLLSRC | RCC_CFGR_PLLMUL |
+    413                                                  RCC_CFGR_PLLDIV));
+    414            RCC->CFGR |= (uint32_t)(RCC_CFGR_PLLSRC_HSI | RCC_CFGR_PLLMUL6 | RCC_CFGR_PLLDIV3);
+    415          
+    416            /* Enable PLL */
+    417            RCC->CR |= RCC_CR_PLLON;
+    418          
+    419            /* Wait till PLL is ready */
+    420            while((RCC->CR & RCC_CR_PLLRDY) == 0)
+    421            {
+    422            }
+    423                  
+    424            /* Select PLL as system clock source */
+    425            RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+    426            RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
+    427          
+    428            /* Wait till PLL is used as system clock source */
+    429            while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+    430            {
+    431            }    
+    432              
+    433          #else /* original code */
+    434          
+    435            /* Enable PLL */
+    436            RCC->CR |= RCC_CR_PLLON;
+    437            
+    438            /* Wait till PLL is ready */
+    439            while((RCC->CR & RCC_CR_PLLRDY) == 0)
+    440            {
+    441            }
+    442            
+    443            /* Select PLL as system clock source */
+    444            RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+    445            RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
+    446            
+    447            /* Wait till PLL is used as system clock source */
+    448            while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+    449            {
+    450            }
+    451          #endif /* #ifdef SYSCLK_FREQ_HSI_32MHz */
+    452          
+    453          #endif /* #ifdef SYSCLK_MSI */
+    454          }
+    455          
+    456          #ifdef SYSCLK_MSI 
+    457          
+    458          /**
+    459            * @brief  Selects MSI as System clock source and configure HCLK, PCLK2
+    460            *         and PCLK1 prescalers.
+    461            * @note   This function should be used only after reset.
+    462            * @param  None
+    463            * @retval None
+    464            */
+    465          static void SetSysClockToMSI(void)
+    466          {
+    467            __IO uint32_t StartUpCounter = 0, MSIStatus = 0;
+    468            
+    469            /* SYSCLK, HCLK, PCLK2 and PCLK1 configuration ---------------------------*/    
+    470            /* Enable MSI */    
+    471            RCC->CR |= ((uint32_t)RCC_CR_MSION);
+    472           
+    473            /* Wait till MSI is ready and if Time out is reached exit */
+    474            do
+    475            {
+    476              MSIStatus = RCC->CR & RCC_CR_MSIRDY;
+    477              StartUpCounter++;  
+    478            } while((MSIStatus == 0) && (StartUpCounter != HSE_STARTUP_TIMEOUT));
+    479          
+    480            if ((RCC->CR & RCC_CR_MSIRDY) != RESET)
+    481            {
+    482              MSIStatus = (uint32_t)0x01;
+    483            }
+    484            else
+    485            {
+    486              MSIStatus = (uint32_t)0x00;
+    487            }  
+    488            
+    489            if (MSIStatus == (uint32_t)0x01)
+    490            { 
+    491          #ifdef SYSCLK_MSI
+    492          #ifdef SYSCLK_FREQ_MSI_4MHz
+    493              /* Enable 64-bit access */
+    494              FLASH->ACR |= FLASH_ACR_ACC64;
+    495              
+    496              /* Enable Prefetch Buffer */
+    497              FLASH->ACR |= FLASH_ACR_PRFTEN;    
+    498          
+    499              /* Flash 1 wait state */
+    500              FLASH->ACR |= FLASH_ACR_LATENCY; 
+    501          #else
+    502              /* Flash 0 wait state */
+    503              FLASH->ACR &= ~FLASH_ACR_LATENCY;
+    504              
+    505              /* Disable Prefetch Buffer */
+    506              FLASH->ACR &= ~FLASH_ACR_PRFTEN;    
+    507          
+    508              /* Disable 64-bit access */
+    509              FLASH->ACR &= ~FLASH_ACR_ACC64;
+    510          #endif
+    511          #endif
+    512              /* Enable the PWR APB1 Clock */
+    513              RCC->APB1ENR |= RCC_APB1ENR_PWREN;
+    514            
+    515              /* Select the Voltage Range 3 (1.2V) */
+    516              PWR->CR = PWR_CR_VOS;
+    517            
+    518              /* Wait Until the Voltage Regulator is ready */
+    519              while((PWR->CSR & PWR_CSR_VOSF) != RESET)
+    520              {
+    521              }
+    522              
+    523              /* HCLK = SYSCLK */
+    524              RCC->CFGR |= (uint32_t)RCC_CFGR_HPRE_DIV1;
+    525                
+    526              /* PCLK2 = HCLK */
+    527              RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE2_DIV1;
+    528              
+    529              /* PCLK1 = HCLK */
+    530              RCC->CFGR |= (uint32_t)RCC_CFGR_PPRE1_DIV1;
+    531          
+    532          #ifdef SYSCLK_MSI
+    533            #ifdef SYSCLK_FREQ_MSI_64KHz
+    534              /* Set MSI clock range */
+    535              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));
+    536              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_0;   
+    537            #elif defined SYSCLK_FREQ_MSI_128KHz
+    538              /* Set MSI clock range */
+    539              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));
+    540              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_1; 
+    541            #elif defined SYSCLK_FREQ_MSI_256KHz
+    542              /* Set MSI clock range */
+    543              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));    
+    544              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_2;
+    545            #elif defined SYSCLK_FREQ_MSI_512KHz
+    546              /* Set MSI clock range */
+    547              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));
+    548              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_3;
+    549            #elif defined SYSCLK_FREQ_MSI_1MHz
+    550              /* Set MSI clock range */
+    551              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));
+    552              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_4;
+    553            #elif defined SYSCLK_FREQ_MSI_2MHz
+    554              /* Set MSI clock range */
+    555              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));    
+    556              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_5;
+    557            #elif defined SYSCLK_FREQ_MSI_4MHz     
+    558              /* Set MSI clock range */
+    559              RCC->ICSCR &= (uint32_t)((uint32_t)~(RCC_ICSCR_MSIRANGE));    
+    560              RCC->ICSCR |= (uint32_t)RCC_ICSCR_MSIRANGE_6;
+    561            #endif
+    562          #endif    
+    563              
+    564              /* Select MSI as system clock source */
+    565              RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+    566              RCC->CFGR |= (uint32_t)RCC_CFGR_SW_MSI;    
+    567          
+    568              /* Wait till MSI is used as system clock source */
+    569              while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)0x00)
+    570              {
+    571              }
+    572            }
+    573            else
+    574            { 
+    575              /* If MSI fails to start-up, the application will have wrong clock 
+    576                 configuration. User can add here some code to deal with this error */    
+    577            }
+    578          }
+    579          #endif /* SYSCLK_MSI */
+    580          
+    581          
+    582          /**
+    583            * @}
+    584            */
+    585          
+    586          /**
+    587            * @}
+    588            */
+    589          
+    590          /**
+    591            * @}
+    592            */
+    593          
+    594          /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   SystemCoreClockUpdate
+      12   SystemInit
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable1_5
+       4  ??DataTable1_6
+       4  ??DataTable1_7
+       4  ??DataTable1_8
+      32  SystemCoreClock
+          PLLMulTable
+          AHBPrescTable
+     116  SystemCoreClockUpdate
+     252  SystemInit
+
+ 
+  32 bytes in section .data
+ 404 bytes in section .text
+ 
+ 404 bytes of CODE memory
+  32 bytes of DATA memory
+
+Errors: none
+Warnings: none

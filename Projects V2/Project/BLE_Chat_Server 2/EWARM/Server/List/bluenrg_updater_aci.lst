@@ -1,0 +1,424 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        08/Feb/2015  13:39:16
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_updater_aci.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Bluetooth
+#        LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_updater_aci.c" -D
+#        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\bluenrg_updater_aci.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\bluenrg_updater_aci.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\Bluetooth LE\SimpleBlueNRG_HCI\hci\controller\bluenrg_updater_aci.c
+      1          /******************** (C) COPYRIGHT 2013 STMicroelectronics ********************
+      2          * File Name          : bluenrg_hci.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 4-Oct-2013
+      6          * Description        : File with HCI commands for BlueNRG FW6.0 and above.
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          #include "hal_types.h"
+     17          #include "osal.h"
+     18          #include "ble_status.h"
+     19          #include "hal.h"
+     20          #include "osal.h"
+     21          #include "hci_const.h"
+     22          #include "bluenrg_aci_const.h"
+     23          #include "bluenrg_updater_aci.h"
+     24          
+     25          #define MIN(a,b)            ((a) < (b) )? (a) : (b)
+     26          #define MAX(a,b)            ((a) > (b) )? (a) : (b)
+     27          
+     28          tBleStatus aci_updater_start(void)
+     29          {
+     30            struct hci_request rq;
+     31            uint8_t status;
+     32          
+     33            Osal_MemSet(&rq, 0, sizeof(rq));
+     34            rq.ogf = OGF_VENDOR_CMD;
+     35            rq.ocf = OCF_UPDATER_START;
+     36            rq.rparam = &status;
+     37            rq.rlen = 1;
+     38          
+     39            if (hci_send_req(&rq, FALSE) < 0)
+     40              return BLE_STATUS_TIMEOUT;
+     41          
+     42            return status;  
+     43          }
+     44          
+     45          tBleStatus aci_updater_reboot(void)
+     46          {
+     47            struct hci_request rq;
+     48            uint8_t status;
+     49          
+     50            Osal_MemSet(&rq, 0, sizeof(rq));
+     51            rq.ogf = OGF_VENDOR_CMD;
+     52            rq.ocf = OCF_UPDATER_REBOOT;
+     53            rq.rparam = &status;
+     54            rq.rlen = 1;
+     55          
+     56            if (hci_send_req(&rq, FALSE) < 0)
+     57              return BLE_STATUS_TIMEOUT;
+     58          
+     59            return status;  
+     60          }
+     61          
+     62          tBleStatus aci_get_updater_version(uint8_t *version)
+     63          {
+     64            struct hci_request rq;
+     65            get_updater_version_rp resp;
+     66          
+     67            Osal_MemSet(&resp, 0, sizeof(resp));
+     68          
+     69            Osal_MemSet(&rq, 0, sizeof(rq));
+     70            rq.ogf = OGF_VENDOR_CMD;
+     71            rq.ocf = OCF_GET_UPDATER_VERSION;
+     72            rq.rparam = &resp;
+     73            rq.rlen = GET_UPDATER_VERSION_RP_SIZE;
+     74          
+     75            if (hci_send_req(&rq, FALSE) < 0)
+     76              return BLE_STATUS_TIMEOUT;
+     77              
+     78            *version = resp.version;
+     79          
+     80            return resp.status;
+     81          }
+     82          
+     83          tBleStatus aci_get_updater_buffer_size(uint8_t *buffer_size)
+     84          {
+     85            struct hci_request rq;
+     86            get_updater_bufsize_rp resp;
+     87          
+     88            Osal_MemSet(&resp, 0, sizeof(resp));
+     89          
+     90            Osal_MemSet(&rq, 0, sizeof(rq));
+     91            rq.ogf = OGF_VENDOR_CMD;
+     92            rq.ocf = OCF_GET_UPDATER_BUFSIZE;
+     93            rq.rparam = &resp;
+     94            rq.rlen = GET_UPDATER_BUFSIZE_RP_SIZE;
+     95          
+     96            if (hci_send_req(&rq, FALSE) < 0)
+     97              return BLE_STATUS_TIMEOUT;
+     98              
+     99            *buffer_size = resp.buffer_size;
+    100          
+    101            return resp.status;
+    102          }
+    103          
+    104          tBleStatus aci_erase_blue_flag(void)
+    105          {
+    106            struct hci_request rq;
+    107            uint8_t status;
+    108          
+    109            Osal_MemSet(&rq, 0, sizeof(rq));
+    110            rq.ogf = OGF_VENDOR_CMD;
+    111            rq.ocf = OCF_UPDATER_ERASE_BLUE_FLAG;
+    112            rq.rparam = &status;
+    113            rq.rlen = 1;
+    114          
+    115            if (hci_send_req(&rq, FALSE) < 0)
+    116              return BLE_STATUS_TIMEOUT;
+    117          
+    118            return status;  
+    119          }
+    120          
+    121          tBleStatus aci_reset_blue_flag(void)
+    122          {
+    123            struct hci_request rq;
+    124            uint8_t status;
+    125          
+    126            Osal_MemSet(&rq, 0, sizeof(rq));
+    127            rq.ogf = OGF_VENDOR_CMD;
+    128            rq.ocf = OCF_UPDATER_RESET_BLUE_FLAG;
+    129            rq.rparam = &status;
+    130            rq.rlen = 1;
+    131          
+    132            if (hci_send_req(&rq, FALSE) < 0)
+    133              return BLE_STATUS_TIMEOUT;
+    134          
+    135            return status;  
+    136          }
+    137          
+    138          tBleStatus aci_updater_erase_sector(uint32_t address)
+    139          {
+    140            struct hci_request rq;
+    141            updater_erase_sector_cp cp;    
+    142            uint8_t status;
+    143              
+    144            cp.address = htobl(address);
+    145          
+    146            Osal_MemSet(&rq, 0, sizeof(rq));
+    147            rq.ogf = OGF_VENDOR_CMD;
+    148            rq.ocf = OCF_UPDATER_ERASE_SECTOR;
+    149            rq.cparam = &cp;
+    150            rq.clen = UPDATER_ERASE_SECTOR_CP_SIZE;
+    151            rq.rparam = &status;
+    152            rq.rlen = 1;
+    153          
+    154            if (hci_send_req(&rq, FALSE) < 0)
+    155              return BLE_STATUS_TIMEOUT;
+    156          
+    157            return status;
+    158          }
+    159          
+    160          tBleStatus aci_updater_program_data_block(uint32_t address, 
+    161          				   uint16_t len,
+    162          				   const uint8_t *data)
+    163          {
+    164            struct hci_request rq;
+    165            uint8_t status;
+    166            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    167            uint8_t indx = 0;
+    168              
+    169            if((len+6) > HCI_MAX_PACKET_SIZE)
+    170              return BLE_STATUS_INVALID_PARAMS;
+    171              
+    172            address = htobl(address);
+    173            Osal_MemCpy(buffer + indx, &address, 4);
+    174            indx += 4;
+    175              
+    176            len = htobs(len);
+    177            Osal_MemCpy(buffer + indx, &len, 2);
+    178            indx += 2;
+    179                  
+    180            Osal_MemCpy(buffer + indx, data, len);
+    181            indx +=  len;
+    182          
+    183            Osal_MemSet(&rq, 0, sizeof(rq));
+    184            rq.ogf = OGF_VENDOR_CMD;
+    185            rq.ocf = OCF_UPDATER_PROG_DATA_BLOCK;
+    186            rq.cparam = (void *)buffer;
+    187            rq.clen = indx;
+    188            rq.rparam = &status;
+    189            rq.rlen = 1;
+    190          
+    191            if (hci_send_req(&rq, FALSE) < 0)
+    192              return BLE_STATUS_TIMEOUT;
+    193              
+    194            return status;
+    195          }
+    196          
+    197          tBleStatus aci_updater_read_data_block(uint32_t address,
+    198          				uint16_t data_len,
+    199          				uint8_t *data)
+    200          {
+    201            struct hci_request rq;
+    202            updater_read_data_block_cp cp;
+    203            uint8_t buffer[HCI_MAX_PACKET_SIZE];
+    204              
+    205            if((data_len+1) > HCI_MAX_PACKET_SIZE)
+    206              return BLE_STATUS_INVALID_PARAMS;
+    207              
+    208            cp.address = htobl(address);
+    209            cp.data_len = htobs(data_len);
+    210          
+    211            Osal_MemSet(&rq, 0, sizeof(rq));
+    212            rq.ogf = OGF_VENDOR_CMD;
+    213            rq.ocf = OCF_UPDATER_READ_DATA_BLOCK;
+    214            rq.cparam = &cp;
+    215            rq.clen = UPDATER_READ_DATA_BLOCK_CP_SIZE;
+    216            rq.rparam = buffer;
+    217            rq.rlen = data_len + 1;
+    218          
+    219            if (hci_send_req(&rq, FALSE) < 0)
+    220              return BLE_STATUS_TIMEOUT;
+    221              
+    222            // First byte is status
+    223            Osal_MemCpy(data, buffer+1, data_len);
+    224          
+    225            return buffer[0];
+    226          }
+    227          
+    228          tBleStatus aci_updater_calc_crc(uint32_t address,
+    229                                   uint8_t num_sectors,
+    230                                   uint32_t *crc)
+    231          {
+    232            struct hci_request rq;
+    233            updater_calc_crc_cp cp;
+    234            updater_calc_crc_rp resp;
+    235              
+    236            Osal_MemSet(&resp, 0, sizeof(resp));
+    237              
+    238            cp.address = htobl(address);
+    239            cp.num_sectors = num_sectors;
+    240          
+    241            Osal_MemSet(&rq, 0, sizeof(rq));
+    242            rq.ogf = OGF_VENDOR_CMD;
+    243            rq.ocf = OCF_UPDATER_CALC_CRC;
+    244            rq.cparam = &cp;
+    245            rq.clen = UPDATER_CALC_CRC_CP_SIZE;
+    246            rq.rparam = &resp;
+    247            rq.rlen = UPDATER_CALC_CRC_RP_SIZE;
+    248          
+    249            if (hci_send_req(&rq, FALSE) < 0)
+    250              return BLE_STATUS_TIMEOUT;
+    251              
+    252            *crc = btohl(resp.crc);
+    253              
+    254            return resp.status;
+    255          }
+    256          
+    257          tBleStatus aci_updater_hw_version(uint8_t *version)
+    258          {
+    259            struct hci_request rq;
+    260            updater_hw_version_rp resp;
+    261          
+    262            Osal_MemSet(&resp, 0, sizeof(resp));
+    263          
+    264            Osal_MemSet(&rq, 0, sizeof(rq));
+    265            rq.ogf = OGF_VENDOR_CMD;
+    266            rq.ocf = OCF_UPDATER_HW_VERSION;
+    267            rq.rparam = &resp;
+    268            rq.rlen = UPDATER_HW_VERSION_RP_SIZE;
+    269          
+    270            if (hci_send_req(&rq, FALSE) < 0)
+    271              return BLE_STATUS_TIMEOUT;
+    272              
+    273            *version = resp.version;
+    274          
+    275            return resp.status;
+    276          }
+    277          
+    278          
+    279          
+    280          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      32   aci_erase_blue_flag
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      40   aci_get_updater_buffer_size
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_get_updater_version
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      32   aci_reset_blue_flag
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      56   aci_updater_calc_crc
+        56   -> Osal_MemSet
+        56   -> hci_send_req
+      40   aci_updater_erase_sector
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+      40   aci_updater_hw_version
+        40   -> Osal_MemSet
+        40   -> hci_send_req
+     176   aci_updater_program_data_block
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+     176   aci_updater_read_data_block
+       176   -> Osal_MemCpy
+       176   -> Osal_MemSet
+       176   -> hci_send_req
+      32   aci_updater_reboot
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+      32   aci_updater_start
+        32   -> Osal_MemSet
+        32   -> hci_send_req
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      56  aci_erase_blue_flag
+      74  aci_get_updater_buffer_size
+      74  aci_get_updater_version
+      56  aci_reset_blue_flag
+      92  aci_updater_calc_crc
+      66  aci_updater_erase_sector
+      74  aci_updater_hw_version
+     116  aci_updater_program_data_block
+      96  aci_updater_read_data_block
+      56  aci_updater_reboot
+      56  aci_updater_start
+
+ 
+ 816 bytes in section .text
+ 
+ 816 bytes of CODE memory
+
+Errors: none
+Warnings: none

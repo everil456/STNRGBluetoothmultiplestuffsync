@@ -1,0 +1,1275 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:49:06
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c"
+#        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\usb_core.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj\usb_core.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\src\usb_core.c
+      1          /******************** (C) COPYRIGHT 2011 STMicroelectronics ********************
+      2          * File Name          : usb_core.c
+      3          * Author             : MCD Application Team
+      4          * Version            : V3.3.0
+      5          * Date               : 21-March-2011
+      6          * Description        : Standard protocol processing (USB v2.0)
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /* Includes ------------------------------------------------------------------*/
+     17          #include "usb_lib.h"
+     18          /* Private typedef -----------------------------------------------------------*/
+     19          /* Private define ------------------------------------------------------------*/
+     20          #define ValBit(VAR,Place)    (VAR & (1 << Place))
+     21          #define SetBit(VAR,Place)    (VAR |= (1 << Place))
+     22          #define ClrBit(VAR,Place)    (VAR &= ((1 << Place) ^ 255))
+     23          
+     24          #ifdef STM32F10X_CL
+     25           #define Send0LengthData()  {PCD_EP_Write (0, 0, 0) ; vSetEPTxStatus(EP_TX_VALID);}
+     26          #else
+     27          #define Send0LengthData() { _SetEPTxCount(ENDP0, 0); \
+     28              vSetEPTxStatus(EP_TX_VALID); \
+     29            }
+     30          #endif /* STM32F10X_CL */
+     31          
+     32          #define vSetEPRxStatus(st) (SaveRState = st)
+     33          #define vSetEPTxStatus(st) (SaveTState = st)
+     34          
+     35          #define USB_StatusIn() Send0LengthData()
+     36          #define USB_StatusOut() vSetEPRxStatus(EP_RX_VALID)
+     37          
+     38          #define StatusInfo0 StatusInfo.bw.bb1 /* Reverse bb0 & bb1 */
+     39          #define StatusInfo1 StatusInfo.bw.bb0
+     40          
+     41          /* Private macro -------------------------------------------------------------*/
+     42          /* Private variables ---------------------------------------------------------*/
+     43          uint16_t_uint8_t StatusInfo;
+     44          
+     45          bool Data_Mul_MaxPacketSize = FALSE;
+     46          /* Private function prototypes -----------------------------------------------*/
+     47          static void DataStageOut(void);
+     48          static void DataStageIn(void);
+     49          static void NoData_Setup0(void);
+     50          static void Data_Setup0(void);
+     51          /* Private functions ---------------------------------------------------------*/
+     52          
+     53          /*******************************************************************************
+     54          * Function Name  : Standard_GetConfiguration.
+     55          * Description    : Return the current configuration variable address.
+     56          * Input          : Length - How many bytes are needed.
+     57          * Output         : None.
+     58          * Return         : Return 1 , if the request is invalid when "Length" is 0.
+     59          *                  Return "Buffer" if the "Length" is not 0.
+     60          *******************************************************************************/
+     61          uint8_t *Standard_GetConfiguration(uint16_t Length)
+     62          {
+     63            if (Length == 0)
+     64            {
+     65              pInformation->Ctrl_Info.Usb_wLength =
+     66                sizeof(pInformation->Current_Configuration);
+     67              return 0;
+     68            }
+     69            pUser_Standard_Requests->User_GetConfiguration();
+     70            return (uint8_t *)&pInformation->Current_Configuration;
+     71          }
+     72          
+     73          /*******************************************************************************
+     74          * Function Name  : Standard_SetConfiguration.
+     75          * Description    : This routine is called to set the configuration value
+     76          *                  Then each class should configure device itself.
+     77          * Input          : None.
+     78          * Output         : None.
+     79          * Return         : Return USB_SUCCESS, if the request is performed.
+     80          *                  Return USB_UNSUPPORT, if the request is invalid.
+     81          *******************************************************************************/
+     82          RESULT Standard_SetConfiguration(void)
+     83          {
+     84          
+     85            if ((pInformation->USBwValue0 <=
+     86                Device_Table.Total_Configuration) && (pInformation->USBwValue1 == 0)
+     87                && (pInformation->USBwIndex == 0)) /*call Back usb spec 2.0*/
+     88            {
+     89              pInformation->Current_Configuration = pInformation->USBwValue0;
+     90              pUser_Standard_Requests->User_SetConfiguration();
+     91              return USB_SUCCESS;
+     92            }
+     93            else
+     94            {
+     95              return USB_UNSUPPORT;
+     96            }
+     97          }
+     98          
+     99          /*******************************************************************************
+    100          * Function Name  : Standard_GetInterface.
+    101          * Description    : Return the Alternate Setting of the current interface.
+    102          * Input          : Length - How many bytes are needed.
+    103          * Output         : None.
+    104          * Return         : Return 0, if the request is invalid when "Length" is 0.
+    105          *                  Return "Buffer" if the "Length" is not 0.
+    106          *******************************************************************************/
+    107          uint8_t *Standard_GetInterface(uint16_t Length)
+    108          {
+    109            if (Length == 0)
+    110            {
+    111              pInformation->Ctrl_Info.Usb_wLength =
+    112                sizeof(pInformation->Current_AlternateSetting);
+    113              return 0;
+    114            }
+    115            pUser_Standard_Requests->User_GetInterface();
+    116            return (uint8_t *)&pInformation->Current_AlternateSetting;
+    117          }
+    118          
+    119          /*******************************************************************************
+    120          * Function Name  : Standard_SetInterface.
+    121          * Description    : This routine is called to set the interface.
+    122          *                  Then each class should configure the interface them self.
+    123          * Input          : None.
+    124          * Output         : None.
+    125          * Return         : - Return USB_SUCCESS, if the request is performed.
+    126          *                  - Return USB_UNSUPPORT, if the request is invalid.
+    127          *******************************************************************************/
+    128          RESULT Standard_SetInterface(void)
+    129          {
+    130            RESULT Re;
+    131            /*Test if the specified Interface and Alternate Setting are supported by
+    132              the application Firmware*/
+    133            Re = (*pProperty->Class_Get_Interface_Setting)(pInformation->USBwIndex0, pInformation->USBwValue0);
+    134          
+    135            if (pInformation->Current_Configuration != 0)
+    136            {
+    137              if ((Re != USB_SUCCESS) || (pInformation->USBwIndex1 != 0)
+    138                  || (pInformation->USBwValue1 != 0))
+    139              {
+    140                return  USB_UNSUPPORT;
+    141              }
+    142              else if (Re == USB_SUCCESS)
+    143              {
+    144                pUser_Standard_Requests->User_SetInterface();
+    145                pInformation->Current_Interface = pInformation->USBwIndex0;
+    146                pInformation->Current_AlternateSetting = pInformation->USBwValue0;
+    147                return USB_SUCCESS;
+    148              }
+    149          
+    150            }
+    151          
+    152            return USB_UNSUPPORT;
+    153          }
+    154          
+    155          /*******************************************************************************
+    156          * Function Name  : Standard_GetStatus.
+    157          * Description    : Copy the device request data to "StatusInfo buffer".
+    158          * Input          : - Length - How many bytes are needed.
+    159          * Output         : None.
+    160          * Return         : Return 0, if the request is at end of data block,
+    161          *                  or is invalid when "Length" is 0.
+    162          *******************************************************************************/
+    163          uint8_t *Standard_GetStatus(uint16_t Length)
+    164          {
+    165            if (Length == 0)
+    166            {
+    167              pInformation->Ctrl_Info.Usb_wLength = 2;
+    168              return 0;
+    169            }
+    170          
+    171            /* Reset Status Information */
+    172            StatusInfo.w = 0;
+    173          
+    174            if (Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    175            {
+    176              /*Get Device Status */
+    177              uint8_t Feature = pInformation->Current_Feature;
+    178          
+    179              /* Remote Wakeup enabled */
+    180              if (ValBit(Feature, 5))
+    181              {
+    182                SetBit(StatusInfo0, 1);
+    183              }
+    184              else
+    185              {
+    186                ClrBit(StatusInfo0, 1);
+    187              }      
+    188          
+    189              /* Bus-powered */
+    190              if (ValBit(Feature, 6))
+    191              {
+    192                SetBit(StatusInfo0, 0);
+    193              }
+    194              else /* Self-powered */
+    195              {
+    196                ClrBit(StatusInfo0, 0);
+    197              }
+    198            }
+    199            /*Interface Status*/
+    200            else if (Type_Recipient == (STANDARD_REQUEST | INTERFACE_RECIPIENT))
+    201            {
+    202              return (uint8_t *)&StatusInfo;
+    203            }
+    204            /*Get EndPoint Status*/
+    205            else if (Type_Recipient == (STANDARD_REQUEST | ENDPOINT_RECIPIENT))
+    206            {
+    207              uint8_t Related_Endpoint;
+    208              uint8_t wIndex0 = pInformation->USBwIndex0;
+    209          
+    210              Related_Endpoint = (wIndex0 & 0x0f);
+    211              if (ValBit(wIndex0, 7))
+    212              {
+    213                /* IN endpoint */
+    214                if (_GetTxStallStatus(Related_Endpoint))
+    215                {
+    216                  SetBit(StatusInfo0, 0); /* IN Endpoint stalled */
+    217                }
+    218              }
+    219              else
+    220              {
+    221                /* OUT endpoint */
+    222                if (_GetRxStallStatus(Related_Endpoint))
+    223                {
+    224                  SetBit(StatusInfo0, 0); /* OUT Endpoint stalled */
+    225                }
+    226              }
+    227          
+    228            }
+    229            else
+    230            {
+    231              return NULL;
+    232            }
+    233            pUser_Standard_Requests->User_GetStatus();
+    234            return (uint8_t *)&StatusInfo;
+    235          }
+    236          
+    237          /*******************************************************************************
+    238          * Function Name  : Standard_ClearFeature.
+    239          * Description    : Clear or disable a specific feature.
+    240          * Input          : None.
+    241          * Output         : None.
+    242          * Return         : - Return USB_SUCCESS, if the request is performed.
+    243          *                  - Return USB_UNSUPPORT, if the request is invalid.
+    244          *******************************************************************************/
+    245          RESULT Standard_ClearFeature(void)
+    246          {
+    247            uint32_t     Type_Rec = Type_Recipient;
+    248            uint32_t     Status;
+    249          
+    250          
+    251            if (Type_Rec == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    252            {/*Device Clear Feature*/
+    253              ClrBit(pInformation->Current_Feature, 5);
+    254              return USB_SUCCESS;
+    255            }
+    256            else if (Type_Rec == (STANDARD_REQUEST | ENDPOINT_RECIPIENT))
+    257            {/*EndPoint Clear Feature*/
+    258              DEVICE* pDev;
+    259              uint32_t Related_Endpoint;
+    260              uint32_t wIndex0;
+    261              uint32_t rEP;
+    262          
+    263              if ((pInformation->USBwValue != ENDPOINT_STALL)
+    264                  || (pInformation->USBwIndex1 != 0))
+    265              {
+    266                return USB_UNSUPPORT;
+    267              }
+    268          
+    269              pDev = &Device_Table;
+    270              wIndex0 = pInformation->USBwIndex0;
+    271              rEP = wIndex0 & ~0x80;
+    272              Related_Endpoint = ENDP0 + rEP;
+    273          
+    274              if (ValBit(pInformation->USBwIndex0, 7))
+    275              {
+    276                /*Get Status of endpoint & stall the request if the related_ENdpoint
+    277                is Disabled*/
+    278                Status = _GetEPTxStatus(Related_Endpoint);
+    279              }
+    280              else
+    281              {
+    282                Status = _GetEPRxStatus(Related_Endpoint);
+    283              }
+    284          
+    285              if ((rEP >= pDev->Total_Endpoint) || (Status == 0)
+    286                  || (pInformation->Current_Configuration == 0))
+    287              {
+    288                return USB_UNSUPPORT;
+    289              }
+    290          
+    291          
+    292              if (wIndex0 & 0x80)
+    293              {
+    294                /* IN endpoint */
+    295                if (_GetTxStallStatus(Related_Endpoint ))
+    296                {
+    297                #ifndef STM32F10X_CL
+    298                  ClearDTOG_TX(Related_Endpoint);
+    299                #endif /* STM32F10X_CL */
+    300                  SetEPTxStatus(Related_Endpoint, EP_TX_VALID);
+    301                }
+    302              }
+    303              else
+    304              {
+    305                /* OUT endpoint */
+    306                if (_GetRxStallStatus(Related_Endpoint))
+    307                {
+    308                  if (Related_Endpoint == ENDP0)
+    309                  {
+    310                    /* After clear the STALL, enable the default endpoint receiver */
+    311                    SetEPRxCount(Related_Endpoint, Device_Property.MaxPacketSize);
+    312                    _SetEPRxStatus(Related_Endpoint, EP_RX_VALID);
+    313                  }
+    314                  else
+    315                  {
+    316                  #ifndef STM32F10X_CL
+    317                    ClearDTOG_RX(Related_Endpoint);
+    318                  #endif /* STM32F10X_CL */
+    319                    _SetEPRxStatus(Related_Endpoint, EP_RX_VALID);
+    320                  }
+    321                }
+    322              }
+    323              pUser_Standard_Requests->User_ClearFeature();
+    324              return USB_SUCCESS;
+    325            }
+    326          
+    327            return USB_UNSUPPORT;
+    328          }
+    329          
+    330          /*******************************************************************************
+    331          * Function Name  : Standard_SetEndPointFeature
+    332          * Description    : Set or enable a specific feature of EndPoint
+    333          * Input          : None.
+    334          * Output         : None.
+    335          * Return         : - Return USB_SUCCESS, if the request is performed.
+    336          *                  - Return USB_UNSUPPORT, if the request is invalid.
+    337          *******************************************************************************/
+    338          RESULT Standard_SetEndPointFeature(void)
+    339          {
+    340            uint32_t    wIndex0;
+    341            uint32_t    Related_Endpoint;
+    342            uint32_t    rEP;
+    343            uint32_t    Status;
+    344          
+    345            wIndex0 = pInformation->USBwIndex0;
+    346            rEP = wIndex0 & ~0x80;
+    347            Related_Endpoint = ENDP0 + rEP;
+    348          
+    349            if (ValBit(pInformation->USBwIndex0, 7))
+    350            {
+    351              /* get Status of endpoint & stall the request if the related_ENdpoint
+    352              is Disabled*/
+    353              Status = _GetEPTxStatus(Related_Endpoint);
+    354            }
+    355            else
+    356            {
+    357              Status = _GetEPRxStatus(Related_Endpoint);
+    358            }
+    359          
+    360            if (Related_Endpoint >= Device_Table.Total_Endpoint
+    361                || pInformation->USBwValue != 0 || Status == 0
+    362                || pInformation->Current_Configuration == 0)
+    363            {
+    364              return USB_UNSUPPORT;
+    365            }
+    366            else
+    367            {
+    368              if (wIndex0 & 0x80)
+    369              {
+    370                /* IN endpoint */
+    371                _SetEPTxStatus(Related_Endpoint, EP_TX_STALL);
+    372              }
+    373          
+    374              else
+    375              {
+    376                /* OUT endpoint */
+    377                _SetEPRxStatus(Related_Endpoint, EP_RX_STALL);
+    378              }
+    379            }
+    380            pUser_Standard_Requests->User_SetEndPointFeature();
+    381            return USB_SUCCESS;
+    382          }
+    383          
+    384          /*******************************************************************************
+    385          * Function Name  : Standard_SetDeviceFeature.
+    386          * Description    : Set or enable a specific feature of Device.
+    387          * Input          : None.
+    388          * Output         : None.
+    389          * Return         : - Return USB_SUCCESS, if the request is performed.
+    390          *                  - Return USB_UNSUPPORT, if the request is invalid.
+    391          *******************************************************************************/
+    392          RESULT Standard_SetDeviceFeature(void)
+    393          {
+    394            SetBit(pInformation->Current_Feature, 5);
+    395            pUser_Standard_Requests->User_SetDeviceFeature();
+    396            return USB_SUCCESS;
+    397          }
+    398          
+    399          /*******************************************************************************
+    400          * Function Name  : Standard_GetDescriptorData.
+    401          * Description    : Standard_GetDescriptorData is used for descriptors transfer.
+    402          *                : This routine is used for the descriptors resident in Flash
+    403          *                  or RAM
+    404          *                  pDesc can be in either Flash or RAM
+    405          *                  The purpose of this routine is to have a versatile way to
+    406          *                  response descriptors request. It allows user to generate
+    407          *                  certain descriptors with software or read descriptors from
+    408          *                  external storage part by part.
+    409          * Input          : - Length - Length of the data in this transfer.
+    410          *                  - pDesc - A pointer points to descriptor struct.
+    411          *                  The structure gives the initial address of the descriptor and
+    412          *                  its original size.
+    413          * Output         : None.
+    414          * Return         : Address of a part of the descriptor pointed by the Usb_
+    415          *                  wOffset The buffer pointed by this address contains at least
+    416          *                  Length bytes.
+    417          *******************************************************************************/
+    418          uint8_t *Standard_GetDescriptorData(uint16_t Length, ONE_DESCRIPTOR *pDesc)
+    419          {
+    420            uint32_t  wOffset;
+    421          
+    422            wOffset = pInformation->Ctrl_Info.Usb_wOffset;
+    423            if (Length == 0)
+    424            {
+    425              pInformation->Ctrl_Info.Usb_wLength = pDesc->Descriptor_Size - wOffset;
+    426              return 0;
+    427            }
+    428          
+    429            return pDesc->Descriptor + wOffset;
+    430          }
+    431          
+    432          /*******************************************************************************
+    433          * Function Name  : DataStageOut.
+    434          * Description    : Data stage of a Control Write Transfer.
+    435          * Input          : None.
+    436          * Output         : None.
+    437          * Return         : None.
+    438          *******************************************************************************/
+    439          void DataStageOut(void)
+    440          {
+    441            ENDPOINT_INFO *pEPinfo = &pInformation->Ctrl_Info;
+    442            uint32_t save_rLength;
+    443          
+    444            save_rLength = pEPinfo->Usb_rLength;
+    445          
+    446            if (pEPinfo->CopyData && save_rLength)
+    447            {
+    448              uint8_t *Buffer;
+    449              uint32_t Length;
+    450          
+    451              Length = pEPinfo->PacketSize;
+    452              if (Length > save_rLength)
+    453              {
+    454                Length = save_rLength;
+    455              }
+    456          
+    457              Buffer = (*pEPinfo->CopyData)(Length);
+    458              pEPinfo->Usb_rLength -= Length;
+    459              pEPinfo->Usb_rOffset += Length;
+    460          
+    461            #ifdef STM32F10X_CL  
+    462              PCD_EP_Read(ENDP0, Buffer, Length); 
+    463            #else  
+    464              PMAToUserBufferCopy(Buffer, GetEPRxAddr(ENDP0), Length);
+    465            #endif  /* STM32F10X_CL */
+    466            }
+    467          
+    468            if (pEPinfo->Usb_rLength != 0)
+    469            {
+    470              vSetEPRxStatus(EP_RX_VALID);/* re-enable for next data reception */
+    471              SetEPTxCount(ENDP0, 0);
+    472              vSetEPTxStatus(EP_TX_VALID);/* Expect the host to abort the data OUT stage */
+    473            }
+    474            /* Set the next State*/
+    475            if (pEPinfo->Usb_rLength >= pEPinfo->PacketSize)
+    476            {
+    477              pInformation->ControlState = OUT_DATA;
+    478            }
+    479            else
+    480            {
+    481              if (pEPinfo->Usb_rLength > 0)
+    482              {
+    483                pInformation->ControlState = LAST_OUT_DATA;
+    484              }
+    485              else if (pEPinfo->Usb_rLength == 0)
+    486              {
+    487                pInformation->ControlState = WAIT_STATUS_IN;
+    488                USB_StatusIn();
+    489              }
+    490            }
+    491          }
+    492          
+    493          /*******************************************************************************
+    494          * Function Name  : DataStageIn.
+    495          * Description    : Data stage of a Control Read Transfer.
+    496          * Input          : None.
+    497          * Output         : None.
+    498          * Return         : None.
+    499          *******************************************************************************/
+    500          void DataStageIn(void)
+    501          {
+    502            ENDPOINT_INFO *pEPinfo = &pInformation->Ctrl_Info;
+    503            uint32_t save_wLength = pEPinfo->Usb_wLength;
+    504            uint32_t ControlState = pInformation->ControlState;
+    505          
+    506            uint8_t *DataBuffer;
+    507            uint32_t Length;
+    508          
+    509            if ((save_wLength == 0) && (ControlState == LAST_IN_DATA))
+    510            {
+    511              if(Data_Mul_MaxPacketSize == TRUE)
+    512              {
+    513                /* No more data to send and empty packet */
+    514                Send0LengthData();
+    515                ControlState = LAST_IN_DATA;
+    516                Data_Mul_MaxPacketSize = FALSE;
+    517              }
+    518              else 
+    519              {
+    520                /* No more data to send so STALL the TX Status*/
+    521                ControlState = WAIT_STATUS_OUT;
+    522          
+    523              #ifdef STM32F10X_CL      
+    524                PCD_EP_Read (ENDP0, 0, 0);
+    525              #endif  /* STM32F10X_CL */ 
+    526              
+    527              #ifndef STM32F10X_CL 
+    528                vSetEPTxStatus(EP_TX_STALL);
+    529              #endif  /* STM32F10X_CL */ 
+    530              }
+    531              
+    532              goto Expect_Status_Out;
+    533            }
+    534          
+    535            Length = pEPinfo->PacketSize;
+    536            ControlState = (save_wLength <= Length) ? LAST_IN_DATA : IN_DATA;
+    537          
+    538            if (Length > save_wLength)
+    539            {
+    540              Length = save_wLength;
+    541            }
+    542          
+    543            DataBuffer = (*pEPinfo->CopyData)(Length);
+    544          
+    545          #ifdef STM32F10X_CL
+    546            PCD_EP_Write (ENDP0, DataBuffer, Length);
+    547          #else   
+    548            UserToPMABufferCopy(DataBuffer, GetEPTxAddr(ENDP0), Length);
+    549          #endif /* STM32F10X_CL */ 
+    550          
+    551            SetEPTxCount(ENDP0, Length);
+    552          
+    553            pEPinfo->Usb_wLength -= Length;
+    554            pEPinfo->Usb_wOffset += Length;
+    555            vSetEPTxStatus(EP_TX_VALID);
+    556          
+    557            USB_StatusOut();/* Expect the host to abort the data IN stage */
+    558          
+    559          Expect_Status_Out:
+    560            pInformation->ControlState = ControlState;
+    561          }
+    562          
+    563          /*******************************************************************************
+    564          * Function Name  : NoData_Setup0.
+    565          * Description    : Proceed the processing of setup request without data stage.
+    566          * Input          : None.
+    567          * Output         : None.
+    568          * Return         : None.
+    569          *******************************************************************************/
+    570          void NoData_Setup0(void)
+    571          {
+    572            RESULT Result = USB_UNSUPPORT;
+    573            uint32_t RequestNo = pInformation->USBbRequest;
+    574            uint32_t ControlState;
+    575          
+    576            if (Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    577            {
+    578              /* Device Request*/
+    579              /* SET_CONFIGURATION*/
+    580              if (RequestNo == SET_CONFIGURATION)
+    581              {
+    582                Result = Standard_SetConfiguration();
+    583              }
+    584          
+    585              /*SET ADDRESS*/
+    586              else if (RequestNo == SET_ADDRESS)
+    587              {
+    588                if ((pInformation->USBwValue0 > 127) || (pInformation->USBwValue1 != 0)
+    589                    || (pInformation->USBwIndex != 0)
+    590                    || (pInformation->Current_Configuration != 0))
+    591                  /* Device Address should be 127 or less*/
+    592                {
+    593                  ControlState = STALLED;
+    594                  goto exit_NoData_Setup0;
+    595                }
+    596                else
+    597                {
+    598                  Result = USB_SUCCESS;
+    599          
+    600                #ifdef STM32F10X_CL
+    601                   SetDeviceAddress(pInformation->USBwValue0);
+    602                #endif  /* STM32F10X_CL */
+    603                }
+    604              }
+    605              /*SET FEATURE for Device*/
+    606              else if (RequestNo == SET_FEATURE)
+    607              {
+    608                if ((pInformation->USBwValue0 == DEVICE_REMOTE_WAKEUP) \
+    609                    && (pInformation->USBwIndex == 0))
+    610                {
+    611                  Result = Standard_SetDeviceFeature();
+    612                }
+    613                else
+    614                {
+    615                  Result = USB_UNSUPPORT;
+    616                }
+    617              }
+    618              /*Clear FEATURE for Device */
+    619              else if (RequestNo == CLEAR_FEATURE)
+    620              {
+    621                if (pInformation->USBwValue0 == DEVICE_REMOTE_WAKEUP
+    622                    && pInformation->USBwIndex == 0
+    623                    && ValBit(pInformation->Current_Feature, 5))
+    624                {
+    625                  Result = Standard_ClearFeature();
+    626                }
+    627                else
+    628                {
+    629                  Result = USB_UNSUPPORT;
+    630                }
+    631              }
+    632          
+    633            }
+    634          
+    635            /* Interface Request*/
+    636            else if (Type_Recipient == (STANDARD_REQUEST | INTERFACE_RECIPIENT))
+    637            {
+    638              /*SET INTERFACE*/
+    639              if (RequestNo == SET_INTERFACE)
+    640              {
+    641                Result = Standard_SetInterface();
+    642              }
+    643            }
+    644          
+    645            /* EndPoint Request*/
+    646            else if (Type_Recipient == (STANDARD_REQUEST | ENDPOINT_RECIPIENT))
+    647            {
+    648              /*CLEAR FEATURE for EndPoint*/
+    649              if (RequestNo == CLEAR_FEATURE)
+    650              {
+    651                Result = Standard_ClearFeature();
+    652              }
+    653              /* SET FEATURE for EndPoint*/
+    654              else if (RequestNo == SET_FEATURE)
+    655              {
+    656                Result = Standard_SetEndPointFeature();
+    657              }
+    658            }
+    659            else
+    660            {
+    661              Result = USB_UNSUPPORT;
+    662            }
+    663          
+    664          
+    665            if (Result != USB_SUCCESS)
+    666            {
+    667              Result = (*pProperty->Class_NoData_Setup)(RequestNo);
+    668              if (Result == USB_NOT_READY)
+    669              {
+    670                ControlState = PAUSE;
+    671                goto exit_NoData_Setup0;
+    672              }
+    673            }
+    674          
+    675            if (Result != USB_SUCCESS)
+    676            {
+    677              ControlState = STALLED;
+    678              goto exit_NoData_Setup0;
+    679            }
+    680          
+    681            ControlState = WAIT_STATUS_IN;/* After no data stage SETUP */
+    682          
+    683            USB_StatusIn();
+    684          
+    685          exit_NoData_Setup0:
+    686            pInformation->ControlState = ControlState;
+    687            return;
+    688          }
+    689          
+    690          /*******************************************************************************
+    691          * Function Name  : Data_Setup0.
+    692          * Description    : Proceed the processing of setup request with data stage.
+    693          * Input          : None.
+    694          * Output         : None.
+    695          * Return         : None.
+    696          *******************************************************************************/
+    697          void Data_Setup0(void)
+    698          {
+    699            uint8_t *(*CopyRoutine)(uint16_t);
+    700            RESULT Result;
+    701            uint32_t Request_No = pInformation->USBbRequest;
+    702          
+    703            uint32_t Related_Endpoint, Reserved;
+    704            uint32_t wOffset, Status;
+    705          
+    706          
+    707          
+    708            CopyRoutine = NULL;
+    709            wOffset = 0;
+    710          
+    711            /*GET DESCRIPTOR*/
+    712            if (Request_No == GET_DESCRIPTOR)
+    713            {
+    714              if (Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    715              {
+    716                uint8_t wValue1 = pInformation->USBwValue1;
+    717                if (wValue1 == DEVICE_DESCRIPTOR)
+    718                {
+    719                  CopyRoutine = pProperty->GetDeviceDescriptor;
+    720                }
+    721                else if (wValue1 == CONFIG_DESCRIPTOR)
+    722                {
+    723                  CopyRoutine = pProperty->GetConfigDescriptor;
+    724                }
+    725                else if (wValue1 == STRING_DESCRIPTOR)
+    726                {
+    727                  CopyRoutine = pProperty->GetStringDescriptor;
+    728                }  /* End of GET_DESCRIPTOR */
+    729              }
+    730            }
+    731          
+    732            /*GET STATUS*/
+    733            else if ((Request_No == GET_STATUS) && (pInformation->USBwValue == 0)
+    734                     && (pInformation->USBwLength == 0x0002)
+    735                     && (pInformation->USBwIndex1 == 0))
+    736            {
+    737              /* GET STATUS for Device*/
+    738              if ((Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    739                  && (pInformation->USBwIndex == 0))
+    740              {
+    741                CopyRoutine = Standard_GetStatus;
+    742              }
+    743          
+    744              /* GET STATUS for Interface*/
+    745              else if (Type_Recipient == (STANDARD_REQUEST | INTERFACE_RECIPIENT))
+    746              {
+    747                if (((*pProperty->Class_Get_Interface_Setting)(pInformation->USBwIndex0, 0) == USB_SUCCESS)
+    748                    && (pInformation->Current_Configuration != 0))
+    749                {
+    750                  CopyRoutine = Standard_GetStatus;
+    751                }
+    752              }
+    753          
+    754              /* GET STATUS for EndPoint*/
+    755              else if (Type_Recipient == (STANDARD_REQUEST | ENDPOINT_RECIPIENT))
+    756              {
+    757                Related_Endpoint = (pInformation->USBwIndex0 & 0x0f);
+    758                Reserved = pInformation->USBwIndex0 & 0x70;
+    759          
+    760                if (ValBit(pInformation->USBwIndex0, 7))
+    761                {
+    762                  /*Get Status of endpoint & stall the request if the related_ENdpoint
+    763                  is Disabled*/
+    764                  Status = _GetEPTxStatus(Related_Endpoint);
+    765                }
+    766                else
+    767                {
+    768                  Status = _GetEPRxStatus(Related_Endpoint);
+    769                }
+    770          
+    771                if ((Related_Endpoint < Device_Table.Total_Endpoint) && (Reserved == 0)
+    772                    && (Status != 0))
+    773                {
+    774                  CopyRoutine = Standard_GetStatus;
+    775                }
+    776              }
+    777          
+    778            }
+    779          
+    780            /*GET CONFIGURATION*/
+    781            else if (Request_No == GET_CONFIGURATION)
+    782            {
+    783              if (Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT))
+    784              {
+    785                CopyRoutine = Standard_GetConfiguration;
+    786              }
+    787            }
+    788            /*GET INTERFACE*/
+    789            else if (Request_No == GET_INTERFACE)
+    790            {
+    791              if ((Type_Recipient == (STANDARD_REQUEST | INTERFACE_RECIPIENT))
+    792                  && (pInformation->Current_Configuration != 0) && (pInformation->USBwValue == 0)
+    793                  && (pInformation->USBwIndex1 == 0) && (pInformation->USBwLength == 0x0001)
+    794                  && ((*pProperty->Class_Get_Interface_Setting)(pInformation->USBwIndex0, 0) == USB_SUCCESS))
+    795              {
+    796                CopyRoutine = Standard_GetInterface;
+    797              }
+    798          
+    799            }
+    800            
+    801            if (CopyRoutine)
+    802            {
+    803              pInformation->Ctrl_Info.Usb_wOffset = wOffset;
+    804              pInformation->Ctrl_Info.CopyData = CopyRoutine;
+    805              /* sb in the original the cast to word was directly */
+    806              /* now the cast is made step by step */
+    807              (*CopyRoutine)(0);
+    808              Result = USB_SUCCESS;
+    809            }
+    810            else
+    811            {
+    812              Result = (*pProperty->Class_Data_Setup)(pInformation->USBbRequest);
+    813              if (Result == USB_NOT_READY)
+    814              {
+    815                pInformation->ControlState = PAUSE;
+    816                return;
+    817              }
+    818            }
+    819          
+    820            if (pInformation->Ctrl_Info.Usb_wLength == 0xFFFF)
+    821            {
+    822              /* Data is not ready, wait it */
+    823              pInformation->ControlState = PAUSE;
+    824              return;
+    825            }
+    826            if ((Result == USB_UNSUPPORT) || (pInformation->Ctrl_Info.Usb_wLength == 0))
+    827            {
+    828              /* Unsupported request */
+    829              pInformation->ControlState = STALLED;
+    830              return;
+    831            }
+    832          
+    833          
+    834            if (ValBit(pInformation->USBbmRequestType, 7))
+    835            {
+    836              /* Device ==> Host */
+    837              __IO uint32_t wLength = pInformation->USBwLength;
+    838               
+    839              /* Restrict the data length to be the one host asks for */
+    840              if (pInformation->Ctrl_Info.Usb_wLength > wLength)
+    841              {
+    842                pInformation->Ctrl_Info.Usb_wLength = wLength;
+    843              }
+    844              
+    845              else if (pInformation->Ctrl_Info.Usb_wLength < pInformation->USBwLength)
+    846              {
+    847                if (pInformation->Ctrl_Info.Usb_wLength < pProperty->MaxPacketSize)
+    848                {
+    849                  Data_Mul_MaxPacketSize = FALSE;
+    850                }
+    851                else if ((pInformation->Ctrl_Info.Usb_wLength % pProperty->MaxPacketSize) == 0)
+    852                {
+    853                  Data_Mul_MaxPacketSize = TRUE;
+    854                }
+    855              }   
+    856          
+    857              pInformation->Ctrl_Info.PacketSize = pProperty->MaxPacketSize;
+    858              DataStageIn();
+    859            }
+    860            else
+    861            {
+    862              pInformation->ControlState = OUT_DATA;
+    863              vSetEPRxStatus(EP_RX_VALID); /* enable for next data reception */
+    864            }
+    865          
+    866            return;
+    867          }
+    868          
+    869          /*******************************************************************************
+    870          * Function Name  : Setup0_Process
+    871          * Description    : Get the device request data and dispatch to individual process.
+    872          * Input          : None.
+    873          * Output         : None.
+    874          * Return         : Post0_Process.
+    875          *******************************************************************************/
+    876          uint8_t Setup0_Process(void)
+    877          {
+    878          
+    879            union
+    880            {
+    881              uint8_t* b;
+    882              uint16_t* w;
+    883            } pBuf;
+    884          
+    885          #ifdef STM32F10X_CL
+    886            USB_OTG_EP *ep;
+    887            uint16_t offset = 0;
+    888           
+    889            ep = PCD_GetOutEP(ENDP0);
+    890            pBuf.b = ep->xfer_buff;
+    891          #else  
+    892            uint16_t offset = 1;
+    893            
+    894            pBuf.b = PMAAddr + (uint8_t *)(_GetEPRxAddr(ENDP0) * 2); /* *2 for 32 bits addr */
+    895          #endif /* STM32F10X_CL */
+    896          
+    897            if (pInformation->ControlState != PAUSE)
+    898            {
+    899              pInformation->USBbmRequestType = *pBuf.b++; /* bmRequestType */
+    900              pInformation->USBbRequest = *pBuf.b++; /* bRequest */
+    901              pBuf.w += offset;  /* word not accessed because of 32 bits addressing */
+    902              pInformation->USBwValue = ByteSwap(*pBuf.w++); /* wValue */
+    903              pBuf.w += offset;  /* word not accessed because of 32 bits addressing */
+    904              pInformation->USBwIndex  = ByteSwap(*pBuf.w++); /* wIndex */
+    905              pBuf.w += offset;  /* word not accessed because of 32 bits addressing */
+    906              pInformation->USBwLength = *pBuf.w; /* wLength */
+    907            }
+    908          
+    909            pInformation->ControlState = SETTING_UP;
+    910            if (pInformation->USBwLength == 0)
+    911            {
+    912              /* Setup with no data stage */
+    913              NoData_Setup0();
+    914            }
+    915            else
+    916            {
+    917              /* Setup with data stage */
+    918              Data_Setup0();
+    919            }
+    920            return Post0_Process();
+    921          }
+    922          
+    923          /*******************************************************************************
+    924          * Function Name  : In0_Process
+    925          * Description    : Process the IN token on all default endpoint.
+    926          * Input          : None.
+    927          * Output         : None.
+    928          * Return         : Post0_Process.
+    929          *******************************************************************************/
+    930          uint8_t In0_Process(void)
+    931          {
+    932            uint32_t ControlState = pInformation->ControlState;
+    933          
+    934            if ((ControlState == IN_DATA) || (ControlState == LAST_IN_DATA))
+    935            {
+    936              DataStageIn();
+    937              /* ControlState may be changed outside the function */
+    938              ControlState = pInformation->ControlState;
+    939            }
+    940          
+    941            else if (ControlState == WAIT_STATUS_IN)
+    942            {
+    943              if ((pInformation->USBbRequest == SET_ADDRESS) &&
+    944                  (Type_Recipient == (STANDARD_REQUEST | DEVICE_RECIPIENT)))
+    945              {
+    946                SetDeviceAddress(pInformation->USBwValue0);
+    947                pUser_Standard_Requests->User_SetDeviceAddress();
+    948              }
+    949              (*pProperty->Process_Status_IN)();
+    950              ControlState = STALLED;
+    951            }
+    952          
+    953            else
+    954            {
+    955              ControlState = STALLED;
+    956            }
+    957          
+    958            pInformation->ControlState = ControlState;
+    959          
+    960            return Post0_Process();
+    961          }
+    962          
+    963          /*******************************************************************************
+    964          * Function Name  : Out0_Process
+    965          * Description    : Process the OUT token on all default endpoint.
+    966          * Input          : None.
+    967          * Output         : None.
+    968          * Return         : Post0_Process.
+    969          *******************************************************************************/
+    970          uint8_t Out0_Process(void)
+    971          {
+    972            uint32_t ControlState = pInformation->ControlState;
+    973          
+    974            if ((ControlState == IN_DATA) || (ControlState == LAST_IN_DATA))
+    975            {
+    976              /* host aborts the transfer before finish */
+    977              ControlState = STALLED;
+    978            }
+    979            else if ((ControlState == OUT_DATA) || (ControlState == LAST_OUT_DATA))
+    980            {
+    981              DataStageOut();
+    982              ControlState = pInformation->ControlState; /* may be changed outside the function */
+    983            }
+    984          
+    985            else if (ControlState == WAIT_STATUS_OUT)
+    986            {
+    987              (*pProperty->Process_Status_OUT)();
+    988            #ifndef STM32F10X_CL
+    989              ControlState = STALLED;
+    990            #endif /* STM32F10X_CL */
+    991            }
+    992          
+    993          
+    994            /* Unexpect state, STALL the endpoint */
+    995            else
+    996            {
+    997              ControlState = STALLED;
+    998            }
+    999          
+   1000            pInformation->ControlState = ControlState;
+   1001          
+   1002            return Post0_Process();
+   1003          }
+   1004          
+   1005          /*******************************************************************************
+   1006          * Function Name  : Post0_Process
+   1007          * Description    : Stall the Endpoint 0 in case of error.
+   1008          * Input          : None.
+   1009          * Output         : None.
+   1010          * Return         : - 0 if the control State is in PAUSE
+   1011          *                  - 1 if not.
+   1012          *******************************************************************************/
+   1013          uint8_t Post0_Process(void)
+   1014          {
+   1015          #ifdef STM32F10X_CL  
+   1016            USB_OTG_EP *ep;
+   1017          #endif /* STM32F10X_CL */
+   1018                
+   1019            SetEPRxCount(ENDP0, Device_Property.MaxPacketSize);
+   1020          
+   1021            if (pInformation->ControlState == STALLED)
+   1022            {
+   1023              vSetEPRxStatus(EP_RX_STALL);
+   1024              vSetEPTxStatus(EP_TX_STALL);
+   1025            }
+   1026          
+   1027          #ifdef STM32F10X_CL
+   1028            else if ((pInformation->ControlState == OUT_DATA) ||
+   1029                (pInformation->ControlState == WAIT_STATUS_OUT))
+   1030            {
+   1031              ep = PCD_GetInEP(0);
+   1032              ep->is_in = 0;
+   1033              OTGD_FS_EP0StartXfer(ep);
+   1034              
+   1035              vSetEPTxStatus(EP_TX_VALID);
+   1036            }
+   1037            
+   1038            else if ((pInformation->ControlState == IN_DATA) || 
+   1039                (pInformation->ControlState == WAIT_STATUS_IN))
+   1040            {
+   1041              ep = PCD_GetInEP(0);
+   1042              ep->is_in = 1;
+   1043              OTGD_FS_EP0StartXfer(ep);    
+   1044            }  
+   1045          #endif /* STM32F10X_CL */
+   1046          
+   1047            return (pInformation->ControlState == PAUSE);
+   1048          }
+   1049          
+   1050          /*******************************************************************************
+   1051          * Function Name  : SetDeviceAddress.
+   1052          * Description    : Set the device and all the used Endpoints addresses.
+   1053          * Input          : - Val: device address.
+   1054          * Output         : None.
+   1055          * Return         : None.
+   1056          *******************************************************************************/
+   1057          void SetDeviceAddress(uint8_t Val)
+   1058          {
+   1059          #ifdef STM32F10X_CL 
+   1060            PCD_EP_SetAddress ((uint8_t)Val);
+   1061          #else 
+   1062            uint32_t i;
+   1063            uint32_t nEP = Device_Table.Total_Endpoint;
+   1064          
+   1065            /* set address in every used endpoint */
+   1066            for (i = 0; i < nEP; i++)
+   1067            {
+   1068              _SetEPAddress((uint8_t)i, (uint8_t)i);
+   1069            } /* for */
+   1070            _SetDADDR(Val | DADDR_EF); /* set device address and enable function */
+   1071          #endif  /* STM32F10X_CL */  
+   1072          }
+   1073          
+   1074          /*******************************************************************************
+   1075          * Function Name  : NOP_Process
+   1076          * Description    : No operation function.
+   1077          * Input          : None.
+   1078          * Output         : None.
+   1079          * Return         : None.
+   1080          *******************************************************************************/
+   1081          void NOP_Process(void)
+   1082          {
+   1083          }
+   1084          
+   1085          /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   DataStageIn
+        24   -- Indirect call
+        24   -> GetEPTxAddr
+        24   -> SetEPTxCount
+        24   -> UserToPMABufferCopy
+      16   Data_Setup0
+        16   -- Indirect call
+         0   -> DataStageIn
+       8   In0_Process
+         8   -- Indirect call
+         8   -> DataStageIn
+         8   -> SetDeviceAddress
+         8   -> SetEPRxCount
+       0   NOP_Process
+      16   NoData_Setup0
+        16   -- Indirect call
+        16   -> Standard_ClearFeature
+        16   -> Standard_SetEndPointFeature
+        16   -> Standard_SetInterface
+      24   Out0_Process
+        24   -- Indirect call
+        24   -> GetEPRxAddr
+        24   -> PMAToUserBufferCopy
+        24   -> SetEPRxCount
+        24   -> SetEPTxCount
+       8   Post0_Process
+         8   -> SetEPRxCount
+      16   SetDeviceAddress
+      16   Setup0_Process
+        16   -> ByteSwap
+        16   -> Data_Setup0
+        16   -> NoData_Setup0
+        16   -> SetEPRxCount
+      24   Standard_ClearFeature
+        24   -- Indirect call
+        24   -> ClearDTOG_RX
+        24   -> ClearDTOG_TX
+        24   -> SetEPRxCount
+        24   -> SetEPTxStatus
+       8   Standard_GetConfiguration
+         8   -- Indirect call
+       0   Standard_GetDescriptorData
+       8   Standard_GetInterface
+         8   -- Indirect call
+       8   Standard_GetStatus
+         8   -- Indirect call
+       8   Standard_SetConfiguration
+         8   -- Indirect call
+       8   Standard_SetDeviceFeature
+         8   -- Indirect call
+      16   Standard_SetEndPointFeature
+        16   -- Indirect call
+       8   Standard_SetInterface
+         8   -- Indirect call
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable16_10
+       4  ??DataTable16_11
+       4  ??DataTable16_12
+       4  ??DataTable16_13
+       4  ??DataTable16_14
+       4  ??DataTable16_15
+       4  ??DataTable16_16
+       4  ??DataTable16_2
+       4  ??DataTable16_3
+       4  ??DataTable16_4
+       4  ??DataTable16_5
+       4  ??DataTable16_6
+       4  ??DataTable16_7
+       4  ??DataTable16_8
+       4  ??DataTable16_9
+     180  DataStageIn
+       1  Data_Mul_MaxPacketSize
+     442  Data_Setup0
+     120  In0_Process
+       2  NOP_Process
+     260  NoData_Setup0
+     232  Out0_Process
+      54  Post0_Process
+     148  SetDeviceAddress
+     148  Setup0_Process
+     216  Standard_ClearFeature
+      34  Standard_GetConfiguration
+      26  Standard_GetDescriptorData
+      34  Standard_GetInterface
+     146  Standard_GetStatus
+      58  Standard_SetConfiguration
+      34  Standard_SetDeviceFeature
+     122  Standard_SetEndPointFeature
+      72  Standard_SetInterface
+       4  StatusInfo
+
+ 
+     5 bytes in section .bss
+ 2 396 bytes in section .text
+ 
+ 2 396 bytes of CODE memory
+     5 bytes of DATA memory
+
+Errors: none
+Warnings: none

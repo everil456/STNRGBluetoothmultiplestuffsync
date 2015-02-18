@@ -1,0 +1,1319 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.1.7746/W32 for ARM        12/Feb/2015  23:48:27
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\src\SDK_EVAL_Spi_Driver.c
+#    Command line =  
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\src\SDK_EVAL_Spi_Driver.c"
+#        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\Client\List\"
+#        --diag_suppress Pa050 -o "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\Users\Matthew\Documents\2014 -
+#        2015\Senior Project\Bluetooth code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\List\SDK_EVAL_Spi_Driver.lst
+#    Object file  =  
+#        C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth
+#        code\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\SDK_EVAL_Spi_Driver.o
+#
+###############################################################################
+
+C:\Users\Matthew\Documents\2014 - 2015\Senior Project\Bluetooth code\Projects V2\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\src\SDK_EVAL_Spi_Driver.c
+      1          /**
+      2          * @file    SDK_EVAL_SPI_Driver.c
+      3          * @author  AAS,AMS
+      4          * @version V1.0.1
+      5          * @date    March 10, 2014
+      6          * @brief   This file provides all the low level SPI API to access to BlueNRG module
+      7          * @details
+      8          *
+      9          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     10          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     11          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     12          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     13          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     14          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     15          *
+     16          * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+     17          * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE LOCATED
+     18          * IN THE ROOT DIRECTORY OF THIS FIRMWARE PACKAGE.
+     19          *
+     20          * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+     21          *
+     22          */
+     23          
+     24          /* Includes ------------------------------------------------------------------*/
+     25          #include "SDK_EVAL_Config.h"
+     26          #include "clock.h" 
+     27          #include "bluenrg_utils.h"
+     28          
+     29          /** @addtogroup SDK_EVAL_STM32L
+     30          * @{
+     31          */
+     32          
+     33          /** @addtogroup SDK_EVAL_Spi                    SDK EVAL Spi
+     34          * @brief SPI functions implementation.
+     35          * @details This file implements the BlueNRG Library SPI interface functions. 
+     36          * @{
+     37          */
+     38          
+     39          
+     40          /** @defgroup SPI_Private_TypesDefinitions
+     41          * @{
+     42          */
+     43          /* Added define for enabling BlueNRG SPI fix */
+     44          #ifdef CUT_3_1
+     45          #undef  ENABLE_SPI_FIX
+     46          #define ENABLE_SPI_FIX 0
+     47          #else
+     48          #ifndef ENABLE_SPI_FIX
+     49          #define ENABLE_SPI_FIX 1
+     50          #endif 
+     51          #endif
+     52          
+     53          /**
+     54          * @}
+     55          */
+     56          
+     57          /** @defgroup SPI_Private_Variables
+     58          * @{
+     59          */
+     60          
+     61          #ifndef USER_DEFINED_PLATFORM
+     62          
+     63          /* SPIs list */
+     64          static SPI_TypeDef* s_SpiPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_NB, SDK_EVAL_V3_SPI_PERIPH_NB};
+     65          
+     66          /* SPI CS Ports list*/
+     67          GPIO_TypeDef* s_SpiCsPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_CS_PORT, SDK_EVAL_V3_SPI_PERIPH_CS_PORT};
+     68          /* SPI CS Pins list */
+     69          static const uint32_t s_SpiCsPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_CS_PIN, SDK_EVAL_V3_SPI_PERIPH_CS_PIN};
+     70          
+     71          /* SPI Reset Ports list*/
+     72          GPIO_TypeDef* s_SpiRstPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SW_RST_GPIO_PORT, SDK_EVAL_V3_SW_RST_GPIO_PORT};
+     73          /* SPI Reset Pins list */
+     74          static const uint32_t s_SpiRstPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SW_RST_PIN, SDK_EVAL_V3_SW_RST_PIN};
+     75          
+     76          /* SPI MOSI Ports list*/
+     77          GPIO_TypeDef* s_SpiMosiPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MOSI_PORT, SDK_EVAL_V3_SPI_PERIPH_MOSI_PORT};
+     78          /* SPI MOSI Pins list */
+     79          static const uint32_t s_SpiMosiPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MOSI_PIN, SDK_EVAL_V3_SPI_PERIPH_MOSI_PIN};
+     80          
+     81          /* SPI MOSI AF Pin Source list */
+     82          static uint16_t s_SpiMosiPinSourceVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MOSI_RCC_SOURCE, SDK_EVAL_V3_SPI_PERIPH_MOSI_RCC_SOURCE};
+     83          
+     84          /* SPI MOSI AF list */
+     85          static uint8_t s_SpiMosiAFVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MOSI_AF ,SDK_EVAL_V3_SPI_PERIPH_MOSI_AF};
+     86          
+     87          /* SPI MISO Ports list*/
+     88          GPIO_TypeDef* s_SpiMisoPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MISO_PORT, SDK_EVAL_V3_SPI_PERIPH_MISO_PORT};
+     89          /* SPI MISO Pins list */
+     90          static const uint32_t s_SpiMisoPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MISO_PIN, SDK_EVAL_V3_SPI_PERIPH_MISO_PIN};
+     91          
+     92          /* SPI MISO AF Pin Source list */
+     93          static uint16_t s_SpiMisoPinSourceVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MISO_RCC_SOURCE,SDK_EVAL_V3_SPI_PERIPH_MISO_RCC_SOURCE};
+     94          
+     95          /* SPI MISO AF list */
+     96          static uint8_t s_SpiMisoAFVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_MISO_AF,SDK_EVAL_V3_SPI_PERIPH_MISO_AF};
+     97          
+     98          
+     99          /* SPI SCLK Ports list*/
+    100          GPIO_TypeDef* s_SpiSclkPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_SCLK_PORT, SDK_EVAL_V3_SPI_PERIPH_SCLK_PORT};
+    101          /* SPI SCLK Pins list */
+    102          static const uint32_t s_SpiSclkPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_SCLK_PIN, SDK_EVAL_V3_SPI_PERIPH_SCLK_PIN};
+    103          
+    104          
+    105          /* SPI SCLK AF Pin Source list */
+    106          static uint16_t s_SpiSclkPinSourceVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_SCLK_RCC_SOURCE ,SDK_EVAL_V3_SPI_PERIPH_SCLK_RCC_SOURCE};
+    107          
+    108          /* SPI SCLK AF list */
+    109          static uint8_t s_SpiSclkAFVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_SCLK_AF ,SDK_EVAL_V3_SPI_PERIPH_SCLK_AF};
+    110          
+    111          /* SPI IRQ lists */
+    112          GPIO_TypeDef* s_SpiIrqPortVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_IRQ_PORT, SDK_EVAL_VD1_SPI_PERIPH_IRQ_PORT};
+    113          
+    114          static const uint32_t s_SpiIrqPinVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_SPI_PERIPH_IRQ_PIN, SDK_EVAL_VD1_SPI_PERIPH_IRQ_PIN};
+    115          
+    116          static const uint32_t s_SpiIrqClkVersion[SDK_PLATFORMS_NUMBER]= {SDK_EVAL_V3_SPI_PERIPH_IRQ_RCC, SDK_EVAL_VD1_SPI_PERIPH_IRQ_RCC};
+    117          
+    118          static const uint32_t s_SpiIrqExtiLineVersion[SDK_PLATFORMS_NUMBER]= {SDK_EVAL_V3_EXTI_LINE, SDK_EVAL_VD1_EXTI_LINE};
+    119          
+    120          static const uint8_t s_SpiIrqPortSourceVersion[SDK_PLATFORMS_NUMBER]= {SDK_EVAL_V3_EXTI_PORT_SOURCE, SDK_EVAL_VD1_EXTI_PORT_SOURCE};
+    121          
+    122          static const uint8_t s_SpiIrqPinSourceVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_EXTI_PIN_SOURCE, SDK_EVAL_VD1_EXTI_PIN_SOURCE};
+    123          
+    124          static const IRQn_Type s_SpiIrqIrqnVersion[SDK_PLATFORMS_NUMBER] = {SDK_EVAL_V3_EXTI_IRQn, SDK_EVAL_VD1_EXTI_IRQn}; 
+    125          
+    126          /* SPI Port */
+    127          static SPI_TypeDef* s_SpiPort;
+    128          
+    129          
+    130          /* SPI CS Port */
+    131          static GPIO_TypeDef* s_SpiCsPort;
+    132          /* SPI CS Pin */
+    133          static uint32_t s_SpiCsPin;
+    134          
+    135          
+    136          /* SPI Reset Port */
+    137          static GPIO_TypeDef* s_SpiRstPort;
+    138          /* SPI Reset Pin */
+    139          static uint32_t s_SpiRstPin;
+    140          
+    141          /* SPI MOSI Port */
+    142          static GPIO_TypeDef* s_SpiMosiPort;
+    143          /* SPI MOSI Pin */
+    144          static uint32_t s_SpiMosiPin;
+    145          
+    146          /* SPI MOSI AF Pin Source */
+    147          static uint16_t s_SpiMosiPinSource;
+    148          
+    149          /* SPI MOSI AF */
+    150          static uint8_t s_SpiMosiAF;
+    151          
+    152          /* SPI MISO Port */
+    153          static GPIO_TypeDef* s_SpiMisoPort;
+    154          /* SPI MISO Pin */
+    155          static uint32_t s_SpiMisoPin;
+    156          
+    157          /* SPI MISO AF Pin Source */
+    158          static uint16_t s_SpiMisoPinSource;
+    159          
+    160          /* SPI MISO AF */
+    161          static uint8_t s_SpiMisoAF;
+    162          
+    163          /* SPI SCLK Port */
+    164          static GPIO_TypeDef* s_SpiSclkPort;
+    165          /* SPI SCLK Pin */
+    166          static uint32_t s_SpiSclkPin;
+    167          
+    168          /* SPI SCLK AF Pin Source */
+    169          static uint16_t s_SpiSclkPinSource;
+    170          
+    171          /* SPI SCLK AF */
+    172          static uint8_t s_SpiSclkAF;
+    173          
+    174          /* SPI IRQ pin, exti line, port source, pin source, irqn */
+    175          /* SPI clock */
+    176          static uint32_t s_SpiIrqClk; 
+    177          static GPIO_TypeDef* s_SpiIrqPort;
+    178          static uint32_t s_SpiIrqPin;
+    179          static uint32_t s_SpiIrqExtiLine;
+    180          static uint8_t s_SpiIrqPortSource;
+    181          static uint8_t s_SpiIrqPinSource;
+    182          static IRQn_Type s_SpiIrqIrqn;
+    183          
+    184           #endif /* #ifndef USER_DEFINED_PLATFORM */
+    185           
+    186          /**
+    187          * @}
+    188          */
+    189          
+    190          /** @defgroup SPI_Functions
+    191          * @{
+    192          */
+    193          
+    194          
+    195          /* SPI Platform Configuration Values: BlueNRG Development Kits Run-time support or simplified user defined platform support */
+    196          
+    197          /* SPI Port*/
+    198          static SPI_TypeDef* Get_SpiPort()
+    199          {
+    200          #ifdef USER_DEFINED_PLATFORM
+    201            return(SPI);
+    202          #else
+    203            return(s_SpiPort);
+    204          #endif
+    205          }
+    206          
+    207          /* SPI CS Port */
+    208          static GPIO_TypeDef* Get_SpiCsPort()
+    209          {
+    210          #ifdef USER_DEFINED_PLATFORM
+    211            return(SPI_CS_GPIO_PORT);
+    212          #else
+    213            return(s_SpiCsPort);
+    214          #endif
+    215          }
+    216          
+    217          /* SPI CS Pin */
+    218          static uint32_t Get_SpiCsPin()
+    219          {
+    220          #ifdef USER_DEFINED_PLATFORM
+    221            return(SPI_CS_GPIO_PIN);
+    222          #else
+    223            return(s_SpiCsPin);
+    224          #endif
+    225          }
+    226          
+    227          /* SPI Reset Port */
+    228          static GPIO_TypeDef* Get_SpiRstPort()
+    229          {
+    230          #ifdef USER_DEFINED_PLATFORM
+    231            return(SW_RST_GPIO_PORT);
+    232          #else
+    233            return(s_SpiRstPort);
+    234          #endif
+    235          }
+    236          
+    237          /* SPI Reset Pin */
+    238          static uint32_t Get_SpiRstPin()
+    239          {
+    240          #ifdef USER_DEFINED_PLATFORM
+    241            return(SW_RST_GPIO_PIN);
+    242          #else
+    243            return(s_SpiRstPin);
+    244          #endif
+    245          }
+    246          
+    247          /* SPI MOSI Port */
+    248          static GPIO_TypeDef* Get_SpiMosiPort()
+    249          {
+    250          #ifdef USER_DEFINED_PLATFORM
+    251            return(SPI_MOSI_GPIO_PORT);
+    252          #else
+    253            return(s_SpiMosiPort);
+    254          #endif
+    255          }
+    256          
+    257          /* SPI MOSI Pin */
+    258          static uint32_t Get_SpiMosiPin()
+    259          {
+    260          #ifdef USER_DEFINED_PLATFORM
+    261            return(SPI_MOSI_GPIO_PIN);
+    262          #else
+    263            return(s_SpiMosiPin);
+    264          #endif
+    265          }
+    266          
+    267          /* SPI MOSI AF Pin Source */
+    268          static uint16_t Get_SpiMosiPinSource()
+    269          {
+    270          #ifdef USER_DEFINED_PLATFORM
+    271            return(SPI_MOSI_GPIO_SOURCE);
+    272          #else
+    273            return(s_SpiMosiPinSource);
+    274          #endif
+    275          }
+    276          
+    277          /* SPI MOSI AF */
+    278          static uint8_t Get_SpiMosiAF()
+    279          {
+    280          #ifdef USER_DEFINED_PLATFORM
+    281            return(SPI_MOSI_GPIO_AF);
+    282          #else
+    283            return(s_SpiMosiAF);
+    284          #endif
+    285          }
+    286          
+    287          /* SPI MISO Port */
+    288          static GPIO_TypeDef* Get_SpiMisoPort()
+    289          {
+    290          #ifdef USER_DEFINED_PLATFORM
+    291            return(SPI_MISO_GPIO_PORT);
+    292          #else
+    293            return(s_SpiMisoPort);
+    294          #endif
+    295          }
+    296          
+    297          /* SPI MISO Pin */
+    298          static uint32_t Get_SpiMisoPin()
+    299          {
+    300          #ifdef USER_DEFINED_PLATFORM
+    301            return(SPI_MISO_GPIO_PIN);
+    302          #else
+    303            return(s_SpiMisoPin);
+    304          #endif
+    305          }
+    306          
+    307          /* SPI MISO AF Pin Source */
+    308          static uint16_t Get_SpiMisoPinSource()
+    309          {
+    310          #ifdef USER_DEFINED_PLATFORM
+    311            return(SPI_MISO_GPIO_SOURCE);
+    312          #else
+    313            return(s_SpiMisoPinSource);
+    314          #endif
+    315          }
+    316          
+    317          /* SPI MISO AF */
+    318          static uint8_t Get_SpiMisoAF()
+    319          {
+    320          #ifdef USER_DEFINED_PLATFORM
+    321            return(SPI_MISO_GPIO_AF);
+    322          #else
+    323            return(s_SpiMisoAF);
+    324          #endif
+    325          }
+    326          
+    327          /* SPI SCLK Port */
+    328          static GPIO_TypeDef* Get_SpiSclkPort()
+    329          {
+    330          #ifdef USER_DEFINED_PLATFORM
+    331            return(SPI_SCLK_GPIO_PORT);
+    332          #else
+    333            return(s_SpiSclkPort);
+    334          #endif
+    335          }
+    336          
+    337          /* SPI SCLK Pin */
+    338          static uint32_t Get_SpiSclkPin()
+    339          {
+    340          #ifdef USER_DEFINED_PLATFORM
+    341            return(SPI_SCLK_GPIO_PIN);
+    342          #else
+    343            return(s_SpiSclkPin);
+    344          #endif
+    345          }
+    346          
+    347          /* SPI SCLK AF Pin Source */
+    348          static uint16_t Get_SpiSclkPinSource()
+    349          {
+    350          #ifdef USER_DEFINED_PLATFORM
+    351            return(SPI_SCLK_GPIO_SOURCE);
+    352          #else
+    353            return(s_SpiSclkPinSource);
+    354          #endif
+    355          }
+    356          
+    357          /* SPI SCLK AF */
+    358          static uint8_t Get_SpiSclkAF()
+    359          {
+    360          #ifdef USER_DEFINED_PLATFORM
+    361            return(SPI_SCLK_GPIO_AF);
+    362          #else
+    363            return(s_SpiSclkAF);
+    364          #endif
+    365          }
+    366          
+    367          /* SPI IRQ pin, exti line, port source, pin source, irqn */
+    368          
+    369          /* SPI IRQ Port */
+    370          static GPIO_TypeDef* Get_SpiIrqPort()
+    371          {
+    372          #ifdef USER_DEFINED_PLATFORM
+    373            return(SPI_IRQ_GPIO_PORT);
+    374          #else
+    375            return(s_SpiIrqPort);
+    376          #endif
+    377          }
+    378          
+    379          /* SPI IRQ Pin */
+    380          static uint32_t Get_SpiIrqPin()
+    381          {
+    382          #ifdef USER_DEFINED_PLATFORM
+    383            return(SPI_IRQ_GPIO_PIN);
+    384          #else
+    385            return(s_SpiIrqPin);
+    386          #endif
+    387          }
+    388          /* SPI IRQ Exti Line */
+    389          static uint32_t Get_SpiIrqExtiLine()
+    390          {
+    391          #ifdef USER_DEFINED_PLATFORM
+    392            return(SPI_IRQ_EXTI_LINE);
+    393          #else
+    394            return(s_SpiIrqExtiLine);
+    395          #endif
+    396          }
+    397          
+    398          /* SPI IRQ Port Source */
+    399          static uint8_t Get_SpiIrqPortSource()
+    400          {
+    401          #ifdef USER_DEFINED_PLATFORM
+    402            return(SPI_IRQ_EXTI_PORT_SOURCE); 
+    403          #else
+    404            return(s_SpiIrqPortSource);
+    405          #endif
+    406          }
+    407          
+    408          /* SPI IRQ Pin Source */
+    409          static uint8_t Get_SpiIrqPinSource()
+    410          {
+    411          #ifdef USER_DEFINED_PLATFORM
+    412            return(SPI_IRQ_EXTI_PIN_SOURCE);
+    413          #else
+    414            return(s_SpiIrqPinSource);
+    415          #endif
+    416          }
+    417          
+    418          /* SPI IRQ line */
+    419          static IRQn_Type Get_SpiIrqIrqn()
+    420          {
+    421          #ifdef USER_DEFINED_PLATFORM
+    422            return(SPI_IRQ_EXTI_IRQn);
+    423          #else
+    424            return(s_SpiIrqIrqn);
+    425          #endif
+    426          }
+    427          
+    428          
+    429          /**
+    430          * @brief  Basic SPI configuration according to the selected platform 
+    431          * @param  None
+    432          * @retval status
+    433          */
+    434          static int8_t SPI_Configure_Platform(void)
+    435          {
+    436          #ifdef USER_DEFINED_PLATFORM 
+    437          
+    438            /* SPI Periph clock enable */
+    439          #ifdef SPI_CLK_APB1
+    440            RCC_APB1PeriphClockCmd(SPI_CLK_APB1, ENABLE);
+    441          #else
+    442            RCC_APB2PeriphClockCmd(SPI_CLK_APB2, ENABLE); 
+    443          #endif 
+    444              
+    445            /* Configure SPI Periph Clocks */
+    446            RCC_AHBPeriphClockCmd(SPI_CS_GPIO_CLK | SPI_MOSI_GPIO_CLK | SPI_MISO_GPIO_CLK |
+    447                                  SPI_SCLK_GPIO_CLK | SW_RST_GPIO_CLK | SPI_IRQ_GPIO_CLK, ENABLE);
+    448          
+    449          #else /* BlueNRG SPI Driver configuration for BlueNRG Development Kits platforms */
+    450          
+    451            s_SpiPort = s_SpiPortVersion[SdkEvalGetVersion()];
+    452            
+    453            s_SpiCsPort = s_SpiCsPortVersion[SdkEvalGetVersion()];
+    454            s_SpiCsPin = s_SpiCsPinVersion[SdkEvalGetVersion()];
+    455            
+    456            s_SpiRstPort = s_SpiRstPortVersion[SdkEvalGetVersion()];
+    457            s_SpiRstPin = s_SpiRstPinVersion[SdkEvalGetVersion()];
+    458          
+    459            s_SpiMosiPort = s_SpiMosiPortVersion[SdkEvalGetVersion()];
+    460            s_SpiMosiPin = s_SpiMosiPinVersion[SdkEvalGetVersion()];
+    461          
+    462            s_SpiMosiPinSource = s_SpiMosiPinSourceVersion[SdkEvalGetVersion()];
+    463            s_SpiMosiAF = s_SpiMosiAFVersion[SdkEvalGetVersion()];
+    464          
+    465            s_SpiMisoPort = s_SpiMisoPortVersion[SdkEvalGetVersion()];
+    466            s_SpiMisoPin = s_SpiMisoPinVersion[SdkEvalGetVersion()];
+    467          
+    468            s_SpiMisoPinSource = s_SpiMisoPinSourceVersion[SdkEvalGetVersion()];
+    469            s_SpiMisoAF = s_SpiMisoAFVersion[SdkEvalGetVersion()];
+    470          
+    471            s_SpiSclkPort = s_SpiSclkPortVersion[SdkEvalGetVersion()];
+    472            s_SpiSclkPin = s_SpiSclkPinVersion[SdkEvalGetVersion()];
+    473          
+    474            s_SpiSclkPinSource = s_SpiSclkPinSourceVersion[SdkEvalGetVersion()];
+    475            s_SpiSclkAF = s_SpiSclkAFVersion[SdkEvalGetVersion()];
+    476          
+    477            s_SpiIrqClk = s_SpiIrqClkVersion[SdkEvalGetVersion()];
+    478            
+    479            s_SpiIrqPort = s_SpiIrqPortVersion[SdkEvalGetVersion()];
+    480            s_SpiIrqPin = s_SpiIrqPinVersion[SdkEvalGetVersion()];
+    481            
+    482            s_SpiIrqExtiLine = s_SpiIrqExtiLineVersion[SdkEvalGetVersion()];
+    483            
+    484            s_SpiIrqPortSource = s_SpiIrqPortSourceVersion[SdkEvalGetVersion()];
+    485            s_SpiIrqPinSource = s_SpiIrqPinSourceVersion[SdkEvalGetVersion()];
+    486            
+    487            s_SpiIrqIrqn = s_SpiIrqIrqnVersion[SdkEvalGetVersion()]; 
+    488            
+    489            if((SdkEvalGetVersion() == SDK_EVAL_VERSION_3) || (SdkEvalGetVersion() == SDK_EVAL_VERSION_D1))
+    490            {
+    491              /* Enable SPI2 periph and SCLK, MOSI, MISO and CS GPIO clocks */
+    492              RCC_APB1PeriphClockCmd(SDK_EVAL_V3_SPI_PERIPH_RCC, ENABLE);     
+    493              
+    494              RCC_AHBPeriphClockCmd(SDK_EVAL_V3_SPI_PERIPH_CS_RCC | SDK_EVAL_V3_SPI_PERIPH_MOSI_RCC | SDK_EVAL_V3_SPI_PERIPH_MISO_RCC |
+    495                                    SDK_EVAL_V3_SPI_PERIPH_SCLK_RCC | SDK_EVAL_V3_SW_RST_GPIO_RCC | s_SpiIrqClk, ENABLE);
+    496            }
+    497            else
+    498            {
+    499              /* Platform is not supported */
+    500              return(-1); 
+    501            }  
+    502          
+    503          #endif /* USER_DEFINED_PLATFORM */
+    504          
+    505            return(0);
+    506          }/* end SPI_Configure_Platform() */
+    507          
+    508          /**
+    509          * @brief  Return SPI IRQ pin value
+    510          * @param  None
+    511          * @retval SPI IRQ pin value
+    512          */
+    513          uint8_t SdkEvalSPI_Irq_Pin(void) 
+    514          {
+    515            return (GPIO_ReadInputDataBit(Get_SpiIrqPort(), Get_SpiIrqPin()));
+    516          }/* end SdkEvalSPI_Irq_Pin() */
+    517          
+    518          /**
+    519          * @brief  Initializes the SPI 
+    520          * @param  xSpiMode: SPI mode - GPIO (polling) or EXTI (IRQ)
+    521          * @retval status
+    522          */
+    523          int8_t SdkEvalSpiInit(SdkEvalSpiMode xSpiMode) 
+    524          {
+    525            int8_t retValue; 
+    526            SPI_InitTypeDef SPI_InitStructure;
+    527            GPIO_InitTypeDef GPIO_InitStructure;
+    528            EXTI_InitTypeDef EXTI_InitStructure;
+    529            NVIC_InitTypeDef NVIC_InitStructure;
+    530            
+    531            /* Configure SPI initialization parameters depending on the selected 
+    532               platform: BlueNRG EVal Kits or User Defined platforms */
+    533            retValue = SPI_Configure_Platform();
+    534            if (retValue == -1)
+    535              /* BlueNRG Development Kit platfrom is not supported */
+    536              return (retValue);
+    537          
+    538            /* Configure the AF for MOSI, MISO and SCLK GPIO pins */
+    539            GPIO_PinAFConfig(Get_SpiMosiPort(), Get_SpiMosiPinSource(), Get_SpiMosiAF());
+    540            GPIO_PinAFConfig(Get_SpiMisoPort(), Get_SpiMisoPinSource(), Get_SpiMisoAF());
+    541            GPIO_PinAFConfig(Get_SpiSclkPort(), Get_SpiSclkPinSource(), Get_SpiSclkAF());
+    542          
+    543            /*!< Configure BlueNRG reset line */
+    544            GPIO_WriteBit(Get_SpiRstPort(),Get_SpiRstPin(), Bit_SET);
+    545            GPIO_InitStructure.GPIO_Pin = Get_SpiRstPin();
+    546            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    547            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
+    548            GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    549            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    550            GPIO_Init(Get_SpiRstPort(), &GPIO_InitStructure);
+    551            BlueNRG_Power_Down(); //Added to avoid spurious interrupt from the BlueNRG
+    552          
+    553            /*!< Configure SPI pins: SCLK */
+    554            GPIO_InitStructure.GPIO_Pin = Get_SpiSclkPin();
+    555            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
+    556            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+    557            GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    558            GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
+    559            GPIO_Init(Get_SpiSclkPort(), &GPIO_InitStructure);
+    560          
+    561            /*!< Configure SPI pins: MISO */
+    562            GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_DOWN;
+    563            GPIO_InitStructure.GPIO_Pin = Get_SpiMisoPin();
+    564            GPIO_Init(Get_SpiMisoPort(), &GPIO_InitStructure);
+    565          
+    566            /*!< Configure SPI pins: MOSI */
+    567            GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;
+    568            GPIO_InitStructure.GPIO_Pin = Get_SpiMosiPin();
+    569            GPIO_Init(Get_SpiMosiPort(), &GPIO_InitStructure);
+    570          
+    571            /*!< Configure SPI pins: CS pin */
+    572            GPIO_InitStructure.GPIO_Pin = Get_SpiCsPin();
+    573            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    574            GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    575            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL; 
+    576            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;
+    577              
+    578            GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_SET);
+    579              
+    580            GPIO_Init(Get_SpiCsPort(), &GPIO_InitStructure);
+    581            
+    582            /*!< Configure SPI pins: IRQ pin */
+    583            // Configuration for BlueNRG IRQ pin (5-wire SPI interface)
+    584            GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+    585            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+    586            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+    587            GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+    588            
+    589            /*!< SPI Config */
+    590            SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+    591            SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
+    592            SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
+    593            SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
+    594            SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
+    595            SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
+    596          #if SYSCLK_FREQ > 20000000
+    597            SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_4;
+    598          #else
+    599            SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2;
+    600          #endif
+    601          
+    602            SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
+    603            SPI_InitStructure.SPI_CRCPolynomial = 7;
+    604            SPI_Init(Get_SpiPort(), &SPI_InitStructure);
+    605            
+    606            SPI_Cmd(Get_SpiPort(), ENABLE); /*!< SPI enable */
+    607            
+    608            if (xSpiMode == SPI_MODE_EXTI)
+    609            {
+    610          
+    611              SYSCFG_EXTILineConfig(Get_SpiIrqPortSource(), Get_SpiIrqPinSource());
+    612           
+    613              EXTI_InitStructure.EXTI_Line = Get_SpiIrqExtiLine();
+    614              EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    615              EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+    616              EXTI_InitStructure.EXTI_LineCmd = ENABLE;    
+    617              EXTI_Init(&EXTI_InitStructure);
+    618            
+    619              EXTI_ClearFlag(Get_SpiIrqExtiLine());
+    620            
+    621              NVIC_InitStructure.NVIC_IRQChannel = Get_SpiIrqIrqn();
+    622              NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    623              NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+    624              NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    625              NVIC_Init(&NVIC_InitStructure);
+    626            }
+    627            return(0);
+    628          }/* end SdkEvalSpiInit() */
+    629          
+    630          /**
+    631            * @brief  Set GPIO pin in Hi-Z state.
+    632            * @param  GPIOx: GPIO port
+    633            *         GPIO_Pin: GPIo pin        
+    634            * @retval None
+    635            */
+    636          static void GPIO_SetHiZ(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin)
+    637          {
+    638            GPIO_InitTypeDef  GPIO_InitStructure;
+    639            
+    640            /* Configure GPIO pin as output open drain HI-Z state */
+    641            GPIO_InitStructure.GPIO_Pin = GPIO_Pin;
+    642            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    643            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
+    644            GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
+    645            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    646            GPIO_Init(GPIOx, &GPIO_InitStructure);
+    647            GPIO_WriteBit(GPIOx, GPIO_Pin, Bit_SET);
+    648          }/* end GPIO_SetHiZ() */
+    649          
+    650          #if ENABLE_SPI_FIX
+    651          /**
+    652            * @brief  Utility function for delay
+    653            * @param  None 
+    654            * @retval None
+    655            * NOTE: TODO: implement with clock-independent function.
+    656            */
+    657          static void us150Delay()
+    658          {
+    659          #if SYSCLK_FREQ == 4000000
+    660          for(volatile int i = 0; i < 35; i++)__NOP();
+    661          #elif SYSCLK_FREQ == 32000000
+    662          for(volatile int i = 0; i < 420; i++)__NOP();
+    663          #else
+    664          #error Implement delay function.
+    665          #endif    
+    666          }
+    667          #endif /* end ENABLE_SPI_FIX */
+    668          
+    669          /**
+    670            * @brief  Disable SPI
+    671            * @param  None
+    672            * @retval None
+    673            */
+    674          void SdkEvalSpiDisable(void)
+    675          {
+    676            EXTI_InitTypeDef  EXTI_InitStructure;
+    677            
+    678          #ifdef USER_DEFINED_PLATFORM 
+    679          
+    680            /* SPI Periph clock enable */
+    681          #ifdef SPI_CLK_APB1
+    682            RCC_APB1PeriphClockCmd(SPI_CLK_APB1, DISABLE);
+    683          #else
+    684            RCC_APB2PeriphClockCmd(SPI_CLK_APB2, DISABLE);
+    685          #endif 
+    686              
+    687          #else /* BlueNRG SPI Driver configuration for BlueNRG Development Kits platforms */
+    688          
+    689            if((SdkEvalGetVersion() == SDK_EVAL_VERSION_3) || (SdkEvalGetVersion() == SDK_EVAL_VERSION_D1))
+    690            {
+    691              /*!< SPI Periph clock disable */
+    692              RCC_APB1PeriphClockCmd(SDK_EVAL_V3_SPI_PERIPH_RCC, DISABLE);  
+    693            }
+    694            
+    695          #endif
+    696          
+    697            SPI_Cmd(Get_SpiPort(), DISABLE); /*!< SPI disable */ 
+    698            
+    699            /* Configure pins as output open drain HI-Z state */
+    700            GPIO_SetHiZ(Get_SpiSclkPort(), Get_SpiSclkPin());
+    701            GPIO_SetHiZ(Get_SpiMosiPort(), Get_SpiMosiPin());
+    702            GPIO_SetHiZ(Get_SpiMisoPort(), Get_SpiMisoPin());
+    703            GPIO_SetHiZ(Get_SpiCsPort(), Get_SpiCsPin());
+    704            
+    705            /* TO be done: only when EXTI_MODE is done at init time ? */
+    706            EXTI_InitStructure.EXTI_Line = Get_SpiIrqExtiLine();
+    707            EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+    708            EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
+    709            EXTI_InitStructure.EXTI_LineCmd = DISABLE;
+    710            EXTI_Init(&EXTI_InitStructure);
+    711          }/* end SdkEvalSpiDisable() */
+    712          
+    713          /**
+    714            * @brief  Reset the BlueNRG
+    715            * @param  None
+    716            * @retval None
+    717            */
+    718          void BlueNRG_RST(void)
+    719          {   
+    720            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_RESET);
+    721            /* 5 ms delay */
+    722            Clock_Wait(5);
+    723            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_SET);
+    724            Clock_Wait(5);  
+    725          }/* end BlueNRG_RST() */
+    726          
+    727          /**
+    728            * @brief  Power down the BlueNRG (reset).
+    729            * @param  None
+    730            * @retval None
+    731            */
+    732          void BlueNRG_Power_Down(void)
+    733          {
+    734            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_RESET);  
+    735          
+    736          }/* end BlueNRG_Power_Down() */
+    737          
+    738          /**
+    739            * @brief  Power up the BlueNRG (release reset).
+    740            * @param  None
+    741            * @retval None
+    742            */
+    743          void BlueNRG_Power_Up(void)
+    744          {
+    745            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_SET);
+    746            Clock_Wait(5);
+    747          }/* end BlueNRG_Power_Up() */
+    748          
+    749          /**
+    750            * @brief  Reports if the BlueNRG has data for the host micro.
+    751            * @param  None
+    752            * @retval TRUE if data are present, FALSE otherwise
+    753            */
+    754          uint8_t BlueNRG_DataPresent(void)
+    755          {
+    756            if (GPIO_ReadInputDataBit(Get_SpiIrqPort(), Get_SpiIrqPin()) == SET)
+    757                return TRUE;
+    758            else  
+    759                return FALSE;
+    760          } /* end BlueNRG_DataPresent() */
+    761          
+    762          /**
+    763          * @brief  Disable SPI IRQ
+    764          * @param  None
+    765          * @retval None
+    766          */
+    767          void Disable_SPI_IRQ(void)
+    768          {  
+    769            NVIC_DisableIRQ(Get_SpiIrqIrqn());
+    770          }/* end Disable_SPI_IRQ() */
+    771          
+    772          /**
+    773          * @brief  Enable SPI IRQ
+    774          * @param  None
+    775          * @retval None
+    776          */
+    777          void Enable_SPI_IRQ(void)
+    778          {  
+    779            NVIC_EnableIRQ(Get_SpiIrqIrqn());
+    780          }/* end Enable_SPI_IRQ() */
+    781          
+    782          /**
+    783          * @brief  Clear Pending SPI IRQ
+    784          * @param  None
+    785          * @retval None
+    786          */
+    787          void Clear_SPI_IRQ(void)
+    788          {
+    789              NVIC_ClearPendingIRQ(Get_SpiIrqIrqn());    
+    790          }/* end Clear_SPI_IRQ() */
+    791          
+    792          /**
+    793          * @brief  Clear Exti line for SPI IRQ
+    794          * @param  None
+    795          * @retval None
+    796          */
+    797          void Clear_SPI_EXTI_Flag()
+    798          {
+    799            EXTI_ClearFlag(Get_SpiIrqExtiLine());
+    800          }/* end Clear_SPI_EXTI_Flag() */
+    801          
+    802          int32_t BlueNRG_SPI_Write_Raw(uint8_t* data1, uint8_t Nb_bytes1)
+    803          {  
+    804              uint32_t i;
+    805              int32_t result = 0;
+    806              
+    807              unsigned char header_master[5] = {0x0a, 0x00, 0x00, 0x00, 0x00};
+    808              unsigned char header_slave[5]  = {0xaa, 0x00, 0x00, 0x00, 0x00};
+    809              
+    810              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_RESET);
+    811              
+    812              for (i = 0; i < 5; i++)
+    813              { 
+    814                  SPI_I2S_SendData(Get_SpiPort(), header_master[i]); 
+    815                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+    816                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+    817                  header_slave[i] = SPI_I2S_ReceiveData(Get_SpiPort());
+    818              }
+    819              
+    820              if (header_slave[0] == 0x02) {
+    821                  // SPI is ready
+    822                  if (header_slave[1] >= Nb_bytes1) {
+    823                      //  Buffer is big enough
+    824                      for (i = 0; i < Nb_bytes1; i++) { 
+    825                          SPI_I2S_SendData(Get_SpiPort(), *(data1 + i)); 
+    826                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+    827                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+    828                          SPI_I2S_ReceiveData(Get_SpiPort());
+    829                      }
+    830                  } else {
+    831                      // Buffer is too small
+    832                      result = -2;
+    833                  }
+    834              } else {
+    835                  // SPI is not ready
+    836                  result = -1;
+    837              }
+    838              
+    839              // Release CS line.
+    840              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_SET);
+    841              
+    842              return result;
+    843          }
+    844          
+    845          void BlueNRG_BootloaderPatch(void)
+    846          {
+    847            GPIO_InitTypeDef  GPIO_InitStructure;
+    848            uint8_t param_write[14]={0x01, 0x27, 0xFC, 0x0A, 0x98, 0x03, 0x01, 0x10, 0x04, 0x00, 0x00, 0x34, 0x5B, 0x00};
+    849            
+    850            BlueNRG_HW_Bootloader();
+    851            if (isHWBootloader_Patched())
+    852              return;
+    853          
+    854            Disable_SPI_IRQ();
+    855            
+    856            GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+    857            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    858            GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
+    859            GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    860            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    861            GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+    862            GPIO_WriteBit(Get_SpiIrqPort(), Get_SpiIrqPin(), Bit_SET);
+    863            
+    864            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_RESET);
+    865            /* 5 ms delay */
+    866            Clock_Wait(5);
+    867            GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_SET); 
+    868           
+    869            while (BlueNRG_SPI_Write_Raw(param_write, sizeof(param_write)) != 0); 
+    870          
+    871            Clock_Wait(5);
+    872          
+    873            /* Restore port configuration. */    
+    874            GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+    875            GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+    876            GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+    877            GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+    878            
+    879            Enable_SPI_IRQ();
+    880          }
+    881          
+    882          /**
+    883            * @brief  Activate internal bootloader using pin.
+    884            * @param  None
+    885            * @retval None
+    886            */
+    887          void BlueNRG_HW_Bootloader(void)
+    888          {
+    889              GPIO_InitTypeDef  GPIO_InitStructure;
+    890              
+    891              Disable_SPI_IRQ();
+    892              
+    893              GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+    894              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+    895              GPIO_InitStructure.GPIO_Speed = GPIO_Speed_400KHz;
+    896              GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+    897              GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    898              GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+    899              GPIO_WriteBit(Get_SpiIrqPort(), Get_SpiIrqPin(), Bit_SET);
+    900                
+    901              GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_RESET);
+    902              /* 5 ms delay */
+    903              Clock_Wait(5);
+    904              GPIO_WriteBit(Get_SpiRstPort(), Get_SpiRstPin(), Bit_SET);
+    905          
+    906              Clock_Wait(5);
+    907              
+    908              /* Restore port configuration. */    
+    909              GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+    910              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+    911              GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+    912              GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+    913              
+    914              Enable_SPI_IRQ();
+    915          }
+    916          
+    917          /**
+    918          * @brief  Read from BlueNRG SPI buffer and store data into local buffer 
+    919          * @param  buffer:    buffer where data from SPI are stored
+    920          *         buff_size: buffer size
+    921          * @retval number of read bytes
+    922          */
+    923          int32_t BlueNRG_SPI_Read_All(uint8_t *buffer, uint8_t buff_size)
+    924          {
+    925              uint16_t byte_count;
+    926              uint8_t i = 0;
+    927              uint8_t len = 0;
+    928              
+    929              
+    930              uint8_t header_master[5] = {0x0b, 0x00, 0x00, 0x00, 0x00};
+    931              uint8_t header_slave[5];
+    932              
+    933              __disable_irq();
+    934              
+    935              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_RESET);
+    936              
+    937              /* Read the header */
+    938              for (i = 0; i < 5; i++)
+    939              { 
+    940                  SPI_I2S_SendData(Get_SpiPort(), header_master[i]); 
+    941                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+    942                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+    943                  header_slave[i] = SPI_I2S_ReceiveData(Get_SpiPort());
+    944              }
+    945              
+    946              if (header_slave[0] == 0x02) {
+    947                  // device is ready
+    948                  
+    949                  byte_count = (header_slave[4]<<8)|header_slave[3];
+    950                  
+    951                  if (byte_count > 0) {
+    952                      
+    953                      // avoid to read more data that size of the buffer
+    954                      if (byte_count > buff_size)
+    955                          byte_count = buff_size;
+    956                      
+    957                      for (len = 0; len < byte_count; len++)
+    958                      { 
+    959                          SPI_I2S_SendData(Get_SpiPort(), 0xFF); 
+    960                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+    961                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+    962                          buffer[len] = SPI_I2S_ReceiveData(Get_SpiPort());
+    963                      }
+    964                  }    
+    965              }
+    966              
+    967              // Release CS line.
+    968              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_SET);
+    969              
+    970              __enable_irq();
+    971              
+    972              return len;
+    973              
+    974          }/* end BlueNRG_SPI_Read_All() */
+    975          
+    976          
+    977          /**
+    978          * @brief  Write data from local buffer to SPI
+    979          * @param  data1:    first data buffer to be written
+    980          *         data2:    second data buffer to be written
+    981          *         Nb_bytes1: size of first data buffer to be written
+    982          *         Nb_bytes2: size of second data buffer to be written
+    983          * @retval number of read bytes
+    984          */
+    985          int32_t BlueNRG_SPI_Write(uint8_t* data1, uint8_t* data2, uint8_t Nb_bytes1, uint8_t Nb_bytes2)
+    986          {  
+    987              uint32_t i;
+    988              int32_t result = 0;
+    989              
+    990              unsigned char header_master[5] = {0x0a, 0x00, 0x00, 0x00, 0x00};
+    991              unsigned char header_slave[5]  = {0xaa, 0x00, 0x00, 0x00, 0x00};
+    992              
+    993              Disable_SPI_IRQ();
+    994              
+    995          #if ENABLE_SPI_FIX
+    996              GPIO_InitTypeDef  GPIO_InitStructure;
+    997              
+    998              /* Pull IRQ high */
+    999              GPIO_InitStructure.GPIO_Pin = Get_SpiIrqPin();
+   1000              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+   1001              GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+   1002              GPIO_InitStructure.GPIO_Speed = GPIO_Speed_40MHz;    
+   1003              GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+   1004              GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+   1005              GPIO_WriteBit(Get_SpiIrqPort(), Get_SpiIrqPin(), Bit_SET);
+   1006              /* Assert CS line after at least 112us */
+   1007              us150Delay();    
+   1008          #endif
+   1009              
+   1010              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_RESET);
+   1011              
+   1012              for (i = 0; i < 5; i++)
+   1013              { 
+   1014                  SPI_I2S_SendData(Get_SpiPort(), header_master[i]); 
+   1015                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+   1016                  while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+   1017                  header_slave[i] = SPI_I2S_ReceiveData(Get_SpiPort());
+   1018              }
+   1019              
+   1020          #if ENABLE_SPI_FIX
+   1021              /* IRQ input again */
+   1022              GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
+   1023              GPIO_Init(Get_SpiIrqPort(), &GPIO_InitStructure);
+   1024          #endif
+   1025              
+   1026              if (header_slave[0] == 0x02) {
+   1027                  // SPI is ready
+   1028                  if (header_slave[1] >= (Nb_bytes1+Nb_bytes2)) {
+   1029                      //  Buffer is big enough
+   1030                      for (i = 0; i < Nb_bytes1; i++) { 
+   1031                          SPI_I2S_SendData(Get_SpiPort(), *(data1 + i)); 
+   1032                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+   1033                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+   1034                          SPI_I2S_ReceiveData(Get_SpiPort());
+   1035                      }
+   1036                      for (i = 0; i < Nb_bytes2; i++) { 
+   1037                          SPI_I2S_SendData(Get_SpiPort(), *(data2 + i)); 
+   1038                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_TXE) == RESET);
+   1039                          while(SPI_I2S_GetFlagStatus(Get_SpiPort(), SPI_I2S_FLAG_RXNE) == RESET);
+   1040                          SPI_I2S_ReceiveData(Get_SpiPort());
+   1041                      }
+   1042                  } else {
+   1043                      // Buffer is too small
+   1044                      result = -2;
+   1045                  }
+   1046              } else {
+   1047                  // SPI is not ready
+   1048                  result = -1;
+   1049              }
+   1050              
+   1051              // Release CS line.
+   1052              GPIO_WriteBit(Get_SpiCsPort(), Get_SpiCsPin(), Bit_SET);
+   1053              
+   1054              Enable_SPI_IRQ();
+   1055              
+   1056              return result;
+   1057          }/* end BlueNRG_SPI_Write() */
+   1058          
+   1059          /**
+   1060          * @}
+   1061          */
+   1062          
+   1063          
+   1064          /**
+   1065          * @}
+   1066          */
+   1067          
+   1068          
+   1069          /**
+   1070          * @}
+   1071          */
+   1072          
+   1073          
+   1074          
+   1075          /******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      80   BlueNRG_BootloaderPatch
+        80   -> BlueNRG_HW_Bootloader
+        80   -> Clock_Wait
+        80   -> GPIO_Init
+        80   -> GPIO_WriteBit
+        80   -> SPI_I2S_GetFlagStatus
+        80   -> SPI_I2S_ReceiveData
+        80   -> SPI_I2S_SendData
+        80   -> isHWBootloader_Patched
+       8   BlueNRG_DataPresent
+         8   -> GPIO_ReadInputDataBit
+      24   BlueNRG_HW_Bootloader
+        24   -> Clock_Wait
+        24   -> GPIO_Init
+        24   -> GPIO_WriteBit
+       0   BlueNRG_Power_Down
+         0   -> GPIO_WriteBit
+       8   BlueNRG_Power_Up
+         0   -> Clock_Wait
+         8   -> GPIO_WriteBit
+       8   BlueNRG_RST
+         0   -> Clock_Wait
+         8   -> Clock_Wait
+         8   -> GPIO_WriteBit
+      48   BlueNRG_SPI_Read_All
+        48   -> GPIO_WriteBit
+        48   -> SPI_I2S_GetFlagStatus
+        48   -> SPI_I2S_ReceiveData
+        48   -> SPI_I2S_SendData
+      72   BlueNRG_SPI_Write
+        72   -> GPIO_Init
+        72   -> GPIO_WriteBit
+        72   -> SPI_I2S_GetFlagStatus
+        72   -> SPI_I2S_ReceiveData
+        72   -> SPI_I2S_SendData
+      48   BlueNRG_SPI_Write_Raw
+        48   -> GPIO_WriteBit
+        48   -> SPI_I2S_GetFlagStatus
+        48   -> SPI_I2S_ReceiveData
+        48   -> SPI_I2S_SendData
+       0   Clear_SPI_EXTI_Flag
+         0   -> EXTI_ClearFlag
+       0   Clear_SPI_IRQ
+       0   Disable_SPI_IRQ
+       0   Enable_SPI_IRQ
+       8   SPI_Configure_Platform
+         8   -> RCC_AHBPeriphClockCmd
+         8   -> RCC_APB1PeriphClockCmd
+         8   -> SdkEvalGetVersion
+       0   SdkEvalSPI_Irq_Pin
+         0   -> GPIO_ReadInputDataBit
+      56   SdkEvalSpiDisable
+        56   -> EXTI_Init
+        56   -> GPIO_Init
+        56   -> GPIO_WriteBit
+        56   -> RCC_APB1PeriphClockCmd
+        56   -> SPI_Cmd
+        56   -> SdkEvalGetVersion
+      56   SdkEvalSpiInit
+        56   -> EXTI_ClearFlag
+        56   -> EXTI_Init
+        56   -> GPIO_Init
+        56   -> GPIO_PinAFConfig
+        56   -> GPIO_WriteBit
+        56   -> NVIC_Init
+        56   -> SPI_Cmd
+        56   -> SPI_Configure_Platform
+        56   -> SPI_Init
+        56   -> SYSCFG_EXTILineConfig
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable33
+       4  ??DataTable33_1
+       4  ??DataTable33_2
+       4  ??DataTable33_3
+       8  ?_0
+       8  ?_1
+      16  ?_2
+       8  ?_3
+       8  ?_4
+       8  ?_5
+     408  BlueNRG_BootloaderPatch
+      32  BlueNRG_DataPresent
+     162  BlueNRG_HW_Bootloader
+      16  BlueNRG_Power_Down
+      32  BlueNRG_Power_Up
+      46  BlueNRG_RST
+     198  BlueNRG_SPI_Read_All
+     386  BlueNRG_SPI_Write
+     204  BlueNRG_SPI_Write_Raw
+      12  Clear_SPI_EXTI_Flag
+      28  Clear_SPI_IRQ
+      28  Disable_SPI_IRQ
+      28  Enable_SPI_IRQ
+     366  SPI_Configure_Platform
+      18  SdkEvalSPI_Irq_Pin
+     276  SdkEvalSpiDisable
+     394  SdkEvalSpiInit
+       8  s_SpiCsPinVersion
+       8  s_SpiIrqClkVersion
+       8  s_SpiIrqExtiLineVersion
+       2  s_SpiIrqIrqnVersion
+       2  s_SpiIrqPinSourceVersion
+       8  s_SpiIrqPinVersion
+       2  s_SpiIrqPortSourceVersion
+       8  s_SpiMisoPinVersion
+     148  s_SpiMosiAF
+          s_SpiMisoAF
+          s_SpiSclkAF
+          s_SpiIrqPortSource
+          s_SpiIrqPinSource
+          s_SpiIrqIrqn
+          s_SpiMosiAFVersion
+          s_SpiMisoAFVersion
+          s_SpiSclkAFVersion
+          s_SpiMosiPinSource
+          s_SpiMisoPinSource
+          s_SpiSclkPinSource
+          s_SpiPortVersion
+          s_SpiCsPortVersion
+          s_SpiRstPortVersion
+          s_SpiMosiPortVersion
+          s_SpiMosiPinSourceVersion
+          s_SpiMisoPortVersion
+          s_SpiMisoPinSourceVersion
+          s_SpiSclkPortVersion
+          s_SpiSclkPinSourceVersion
+          s_SpiIrqPortVersion
+          s_SpiPort
+          s_SpiCsPort
+          s_SpiCsPin
+          s_SpiRstPort
+          s_SpiRstPin
+          s_SpiMosiPort
+          s_SpiMosiPin
+          s_SpiMisoPort
+          s_SpiMisoPin
+          s_SpiSclkPort
+          s_SpiSclkPin
+          s_SpiIrqClk
+          s_SpiIrqPort
+          s_SpiIrqPin
+          s_SpiIrqExtiLine
+       8  s_SpiMosiPinVersion
+       8  s_SpiRstPinVersion
+       8  s_SpiSclkPinVersion
+
+ 
+   148 bytes in section .data
+ 2 776 bytes in section .text
+ 
+ 2 776 bytes of CODE memory
+   148 bytes of DATA memory
+
+Errors: none
+Warnings: none
