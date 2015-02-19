@@ -4,7 +4,7 @@
 * Version            : V1.0.1
 * Date               : 10-February-2014
 * Description        : BlueNRG main file for Chat demo
-********************************************************************************
+*********************************************************************************
 * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
 * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
 * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
