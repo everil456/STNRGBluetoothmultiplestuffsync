@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include "link_layer.h"
 
+#define numSlaves       2       //Total number of slave devices
+
 /* Device struct definition*/
 typedef struct
 { 
@@ -13,15 +15,9 @@ typedef struct
   uint16_t rx_handle;
 }sDevice;
 
-/* Slave Devices */
-extern sDevice slave1,slave2;
 
-/* Slave device addresses */
-extern const tBDAddr slave1_addr;
-extern const tBDAddr slave2_addr;
-
-extern const int num_slaves;
-extern sDevice slaves[2];
+/* Slave device array */
+extern sDevice slaves[numSlaves];
 
 /* Methods */
 void initDevices(void);

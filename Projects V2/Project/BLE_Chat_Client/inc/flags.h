@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include "link_layer.h"
+#include "slave_devices.h"
 /* Device struct definition*/
 typedef struct
 { 
@@ -20,11 +21,15 @@ typedef struct
   uint8_t end_read_RX_char_handle;
  }Flags;
 
+
+/* Device flags array */
+extern Flags arrayFlags[numSlaves];
+
 /* Function Declarations */
 int flagIsSet(uint8_t flag);
 void changeFlag(int state,uint8_t *flag);
 
-void initFlags(uint8_t size);
+void initFlags(void);
 
 
 #endif

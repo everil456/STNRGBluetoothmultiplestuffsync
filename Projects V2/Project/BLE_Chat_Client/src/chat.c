@@ -11,6 +11,7 @@
 #include "gp_timer.h"
 #include "bluenrg_aci.h"
 #include "SDK_EVAL_Io.h"
+#include "slave_devices.h"
 
 
 #define MIN(a,b)            ((a) < (b) )? (a) : (b) 
@@ -65,7 +66,19 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
 #if SERVER                      
                     while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES){
 #elif CLIENT
-                    while(aci_gatt_write_without_response(connection_handle, rx_handle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
+                    uint16_t connHandle = slaves[0].connection_handle;
+                    uint16_t rxHandle = slaves[0].rx_handle;
+                    for(int i = 0; i < numSlaves; i++)
+                    {
+                      if(cmd[0] == (char)(((int)'0')+i) && i < numSlaves)
+                      {
+                        connHandle = slaves[i].connection_handle;
+                        rxHandle = slaves[i].rx_handle;
+                        break;
+                      }
+                    }
+                    
+                      while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
 #else
 #error "Define SERVER or CLIENT"
 #endif

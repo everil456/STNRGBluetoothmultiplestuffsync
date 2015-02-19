@@ -1,84 +1,119 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Feb/2015  12:12:21
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Feb/2015  16:30:58
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\src\flags.c
 #    Command line =  
-#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\src\flags.c" -D USE_STDPERIPH_DRIVER -D
 #        STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D ENABLE_USB -D
 #        ENABLE_USB_PRINTF -D CLIENT=1 -lcN "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\Projects
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\" --diag_suppress Pa050
-#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
 #        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
 #        (x86)\IAR Systems\Embedded Workbench
 #        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\Projects V2\Project\BLE_Chat_Client\EWARM\..\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
 #        LE\SimpleBlueNRG_HCI\" -I "C:\School\2014 Fall\ECE 4900\Bluetooth
-#        Code\Projects V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
+#        Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
 #        LE\SimpleBlueNRG_HCI\includes\" -I "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\Projects
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
-#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
 #        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
 #        Workbench 7.0\arm\CMSIS\Include\"
 #    List file    =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\flags.lst
 #    Object file  =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\flags.o
 #
 ###############################################################################
 
-C:\School\2014 Fall\ECE 4900\Bluetooth Code\Projects V2\Project\BLE_Chat_Client\src\flags.c
+C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Chat_Client\src\flags.c
       1          #include "flags.h"
-      2          #include <stdio.h>
-      3          
-      4          int flagIsSet(uint8_t flag)
-      5          {
-      6            int ret = flag && 1;
-      7            return ret;
-      8          }
-      9          
-     10          
-     11          void changeFlag(int state,uint8_t *flag)
-     12          {
-     13            *flag = state;
-     14          }
-     15          
-     16          void initFlags(uint8_t size)
-     17          {
-     18            extern Flags arrayFlags[size];
-     19          }
+      2          #include "slave_devices.h"
+      3          #include <stdio.h>
+      4          #include <string.h>
+      5          
+      6          Flags arrayFlags[numSlaves];
+      7          
+      8          int flagIsSet(uint8_t flag)
+      9          {
+     10            int ret = flag && 1;
+     11            return ret;
+     12          }
+     13          
+     14          
+     15          void changeFlag(int state,uint8_t *flag)
+     16          {
+     17            *flag = state;
+     18          }
+     19          
+     20          void initFlags(void)
+     21          {
+     22            memset(&arrayFlags, 0, sizeof(arrayFlags));
+     23            for(int i = 0; i < numSlaves; i++)
+     24              arrayFlags[i].set_connectable = 1;
+     25          }
 
-Errors: 1
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   changeFlag
+       0   flagIsSet
+       8   initFlags
+         8   -> __aeabi_memclr4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+      20  arrayFlags
+       4  changeFlag
+      10  flagIsSet
+      20  initFlags
+
+ 
+ 20 bytes in section .bss
+ 38 bytes in section .text
+ 
+ 38 bytes of CODE memory
+ 20 bytes of DATA memory
+
+Errors: none
 Warnings: none

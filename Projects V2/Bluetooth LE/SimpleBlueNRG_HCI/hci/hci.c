@@ -23,6 +23,7 @@
 #include "hci_const.h"
 #include "gp_timer.h"
 #include "low_power.h"
+#include <stdio.h>
 
 #if BLE_CONFIG_DBG_ENABLE
 #define PRINTF(...) printf(__VA_ARGS__)
@@ -187,7 +188,7 @@ void HCI_Process(void)
     readPacketListFull = FALSE;
   }
   
-  Enable_SPI_IRQ();    
+  Enable_SPI_IRQ();
 }
 
 BOOL HCI_Queue_Empty(void)

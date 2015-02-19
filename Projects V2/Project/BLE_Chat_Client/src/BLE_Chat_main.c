@@ -161,6 +161,7 @@ NOTES:
 #include "slave_devices.h"
 #include "flags.h"
 #include <stdio.h>
+#include <string.h>
 
 #include "SDK_EVAL_Config.h"
 
@@ -199,6 +200,7 @@ struct timer l2cap_req_timer;                                   //Timer used whe
 //volatile int numConnected = 0;
 volatile int flag_scan_complete = 0;
 volatile int flag_connection_complete = 0;
+volatile int index = 0;
 
 /** 
   * @brief  Handle of TX,RX  Characteristics.
@@ -359,6 +361,7 @@ int main(void)
 /****************************** Main Execution Loop ***************************/
     while(1)
     { 
+        //printf("main\r\n");
         HCI_Process();          //Process any transmission,reception,etc.
         User_Process();         //Update connections and get characteristic handles if needed
         
@@ -391,36 +394,41 @@ void Make_Connection(void)
 #if CLIENT
     
     /* Start general discovery procedure */
-    ret = aci_gap_start_general_discovery_proc(0x4000, 0x4000,PUBLIC_ADDR, 0x00);       //Scan for devices
-    if (ret != 0){
-          PRINTF("Error while starting general discovery.\r\n");
-          Clock_Wait(100);        
-          }
-    //Wait for procedure to complete
-    while(!flag_scan_complete)
+    if(0)
     {
-      HCI_Process();    //Continue to process incoming data. The EVT_BLUE_GAP_PROCEDURE_COMPLETE event occurs when scanning is complete
+      ret = aci_gap_start_general_discovery_proc(0x4000, 0x4000,PUBLIC_ADDR, 0x00);       //Scan for devices
+      if (ret != 0){
+            PRINTF("Error while starting general discovery.\r\n");
+            Clock_Wait(100);        
+            }
+      //Wait for procedure to complete
+      while(!flag_scan_complete)
+      {
+        //printf("case1\r\n");
+        HCI_Process();    //Continue to process incoming data. The EVT_BLUE_GAP_PROCEDURE_COMPLETE event occurs when scanning is complete
+      }
+      Clock_Wait(100);
     }
-    Clock_Wait(100);
     
     /* Connect to first device */
-    int NumOfSlaves = sizeof(slaves)/sizeof(sDevice);
+    //int NumOfSlaves = sizeof(slaves)/sizeof(sDevice);
    
-    for (int device = 0; device < NumOfSlaves; device++)
-    {
-        tBDAddr address = slaves[device].bdaddr;
-        ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, address, PUBLIC_ADDR, 0x0020, 0x0020, 0, 0x0064, 0 , 0x03e8);
-        printf("ret: %0x\r\n",ret);
+    //for (int device = 0; device < NumOfSlaves; device++)
+    //{
+        //tBDAddr address;
+        //memcpy(address,slaves[device].bdaddr,sizeof(tBDAddr));
+        ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, slaves[index].bdaddr, PUBLIC_ADDR, 0x0020, 0x0020, 0, 0x0064, 0 , 0x03e8);
         if (ret != 0){
-            PRINTF("Error while starting connection to server %d.\n", device);
+            PRINTF("Error while starting connection to server %d.\n", index);
             Clock_Wait(100);
         }
         while(!flag_connection_complete)
         {
+         // printf("case 2\r\n");
             HCI_Process();    //EVT_LE_META_EVENT event triggered when connection is complete
         }
         flag_connection_complete = 0;
-    }
+    //}
     //Wait for connection to complete
 
 #else
@@ -447,7 +455,15 @@ void Make_Connection(void)
 void GAP_ConnectionComplete_CB(uint8_t addr[6], uint16_t handle)
 {    
     APP_FLAG_SET(CONNECTED);    //Change flag to indicate that the device is connected
-    connection_handle = handle; //Store the connection handle
+    for(int i = 0; i < numSlaves; i++)
+    {
+      if(slaves[i].bdaddr[0] == addr[0])
+      {
+        slaves[i].connection_handle = handle; //Store the connection handle
+        printf("device %d connection handle: %x", i, handle);
+        break;
+      }
+    }
     
     //Turn on Connection LED
     turnLED(3,ON);      //Turn on blue LED to indicate that device is connected
@@ -523,25 +539,29 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
         
     }
 #elif CLIENT    //When the client receives a notafication (message) from the server
-    
-    if(attr_handle == tx_handle+1){     //If the notification is from the TX attribute...
-      printf("received: ");
-      for(int i = 0; i < attr_len; i++) //Print out the received message
-        printf("%c",attr_value[i]);
-      printf("\r\n");
+    for(int i = 0; i < numSlaves; i++)
+    {
+      if(attr_handle == slaves[i].tx_handle+1){     //If the notification is from the TX attribute...
+        printf("received %d: ",i);
+        for(int i = 0; i < attr_len; i++) //Print out the received message
+          printf("%c",attr_value[i]);
+        printf("\r\n");
+        break;
+      }
     }
 #endif
 }
 
 void User_Process(void)
 {
-    if(APP_FLAG(SET_CONNECTABLE)){
+    if(arrayFlags[index].set_connectable){
         Make_Connection();      //If devices need to be connected, connect them
-        APP_FLAG_CLEAR(SET_CONNECTABLE);        //Update connection flag status
+        changeFlag(CLEAR, &arrayFlags[index].set_connectable);        //Update connection flag status
     }
 
 #if REQUEST_CONN_PARAM_UPDATE    
     if(APP_FLAG(CONNECTED) && !APP_FLAG(L2CAP_PARAM_UPD_SENT) && Timer_Expired(&l2cap_req_timer)){
+        printf("got here\r\n");
         aci_l2cap_connection_parameter_update_request(connection_handle, 8, 16, 0, 600);
         APP_FLAG_SET(L2CAP_PARAM_UPD_SENT);
     }
@@ -552,71 +572,57 @@ void User_Process(void)
     
     
     /* Start TX handle Characteristic discovery if not yet done */
-    if (APP_FLAG(CONNECTED) && !APP_FLAG(END_READ_TX_CHAR_HANDLE))
+    if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_TX_char_handle)
     {
-      if (!APP_FLAG(START_READ_TX_CHAR_HANDLE))
+      if (!arrayFlags[index].start_read_TX_char_handle)
       {
         /* Discovery TX characteristic handle by UUID 128 bits */
         
          const uint8_t charUuid128_TX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe1,0xf2,0x73,0xd9};
          
-         aci_gatt_disc_charac_by_uuid(connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
+         aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
                                                    charUuid128_TX);
-         APP_FLAG_SET(START_READ_TX_CHAR_HANDLE);
+         changeFlag(SET, &arrayFlags[index].start_read_TX_char_handle);
       }
     }
     /* Start RX handle Characteristic discovery if not yet done */
-    else if (APP_FLAG(CONNECTED) && !APP_FLAG(END_READ_RX_CHAR_HANDLE))
+    else if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_RX_char_handle)
     {
+      //printf("Haven't finished reading RX handle");
       /* Discovery RX characteristic handle by UUID 128 bits */
-      if (!APP_FLAG(START_READ_RX_CHAR_HANDLE))
+      if (!arrayFlags[index].start_read_RX_char_handle)
       {
         /* Discovery TX characteristic handle by UUID 128 bits */
-        
+        //printf("attempting to read RX handle\r\n");
          const uint8_t charUuid128_RX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe2,0xf2,0x73,0xd9};
-         aci_gatt_disc_charac_by_uuid(connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
+         aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
                                                    charUuid128_RX);
-         APP_FLAG_SET(START_READ_RX_CHAR_HANDLE);
+         changeFlag(SET, &arrayFlags[index].start_read_RX_char_handle);
        }
     }
     
-    if(APP_FLAG(CONNECTED) && APP_FLAG(END_READ_TX_CHAR_HANDLE) && APP_FLAG(END_READ_RX_CHAR_HANDLE) && !APP_FLAG(NOTIFICATIONS_ENABLED)){
+    if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && !arrayFlags[index].notifications_enabled){
         uint8_t client_char_conf_data[] = {0x01, 0x00}; // Enable notifications
         struct timer t;
         Timer_Set(&t, CLOCK_SECOND*10);
         
-        while(aci_gatt_write_charac_descriptor(connection_handle, tx_handle+2, 2, client_char_conf_data)==BLE_STATUS_NOT_ALLOWED){ //TX_HANDLE;
+        while(aci_gatt_write_charac_descriptor(slaves[index].connection_handle, slaves[index].tx_handle+2, 2, client_char_conf_data)==BLE_STATUS_NOT_ALLOWED){ //TX_HANDLE;
             // Radio is busy.
             if(Timer_Expired(&t)) break;
         }
-        APP_FLAG_SET(NOTIFICATIONS_ENABLED);
+        changeFlag(SET, &arrayFlags[index].notifications_enabled);
       }
-    else if(APP_FLAG(CONNECTED) && APP_FLAG(END_READ_TX_CHAR_HANDLE) && APP_FLAG(END_READ_RX_CHAR_HANDLE) && APP_FLAG(NOTIFICATIONS_ENABLED)){
-      //numConnected += 1;
-      //if(numConnected !=2)
-      //{
-        //APP_FLAG_CLEAR(CONNECTED);
-        /* Make the device connectable again. */
-        /*APP_FLAG_SET(SET_CONNECTABLE);
-        APP_FLAG_CLEAR(NOTIFICATIONS_ENABLED);
-        
-        APP_FLAG_CLEAR(START_READ_TX_CHAR_HANDLE);
-        APP_FLAG_CLEAR(END_READ_TX_CHAR_HANDLE);
-        APP_FLAG_CLEAR(START_READ_RX_CHAR_HANDLE); 
-        APP_FLAG_CLEAR(END_READ_RX_CHAR_HANDLE);
-      }*/
-      /*uint8_t data_buffer[] = {0x48,0x45,0x4c,0x4c,0x4f,0x0d};
-      uint16_t Nb_bytes = 6;
-      processInputData(data_buffer, Nb_bytes);
-      Clock_Wait(10000);*/
-      }
-   
+    else if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && arrayFlags[index].notifications_enabled){
+        int numdevices = sizeof(slaves)/sizeof(sDevice);
+        if(index < numdevices - 1)
+          index++;        
+    }
 #endif
     
     
 #if THROUGHPUT_TEST && SERVER   //Used for throughput testing
     
-    
+    printf("Throughput test\r\n");
     static uint8_t test_done = FALSE;
     
     if(APP_FLAG(CONNECTED) && !test_done && APP_FLAG(NOTIFICATIONS_ENABLED)){
@@ -721,15 +727,15 @@ void HCI_Event_CB(void *pckt)   //This function is called when ACI events occur 
                 {
                     evt_gatt_disc_read_char_by_uuid_resp *resp = (void*)blue_evt->data;
                     
-                    if (APP_FLAG(START_READ_TX_CHAR_HANDLE) && !APP_FLAG(END_READ_TX_CHAR_HANDLE))
+                    if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
                     {
-                      tx_handle = resp->attr_handle;
-                      PRINTF("TX Char Handle %04X\n\r", tx_handle);
+                      slaves[index].tx_handle = resp->attr_handle;
+                      PRINTF("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
                     }
-                    else if (APP_FLAG(START_READ_RX_CHAR_HANDLE) && !APP_FLAG(END_READ_RX_CHAR_HANDLE))
+                    else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
                     {
-                      rx_handle = resp->attr_handle;
-                      PRINTF("RX Char Handle %04X\n\r", rx_handle);
+                      slaves[index].rx_handle = resp->attr_handle;
+                      PRINTF("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
                     }
                 }
                 break;  
@@ -739,13 +745,14 @@ void HCI_Event_CB(void *pckt)   //This function is called when ACI events occur 
                   /* Wait for gatt procedure complete event trigger related to Discovery Charac by UUID */
                   //evt_gatt_procedure_complete *pr = (void*)blue_evt->data;
                   
-                  if (APP_FLAG(START_READ_TX_CHAR_HANDLE) && !APP_FLAG(END_READ_TX_CHAR_HANDLE))
+                  if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
                   {
-                    APP_FLAG_SET(END_READ_TX_CHAR_HANDLE);
+                    changeFlag(SET, &arrayFlags[index].end_read_TX_char_handle);
+                    //printf("tried to set TX flag\r\nTX flag is %d\r\n",arrayFlags[index].end_read_TX_char_handle);
                   }
-                  else if (APP_FLAG(START_READ_RX_CHAR_HANDLE) && !APP_FLAG(END_READ_RX_CHAR_HANDLE))
+                  else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
                   {
-                    APP_FLAG_SET(END_READ_RX_CHAR_HANDLE);
+                    changeFlag(SET, &arrayFlags[index].end_read_RX_char_handle);
                   }
                 }
                 break;
