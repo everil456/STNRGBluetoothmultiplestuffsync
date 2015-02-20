@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        20/Feb/2015  13:59:27
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        20/Feb/2015  14:09:42
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -139,58 +139,61 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
      75                                  break;
      76                                }
      77                              }
-     78                              
-     79                                while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
-     80          #else
-     81          #error "Define SERVER or CLIENT"
-     82          #endif
-     83                                  // Radio is busy (buffer full).
-     84                                  if(Timer_Expired(&t))
-     85                                      break;
-     86                              }                    
-     87                              j += len;            
-     88                          }
-     89                      }
-     90                      end = 0;
-     91                  }
-     92                  else{
+     78                              for(int index=0;index<numSlaves; index++){
+     79                                printf("sending to %d\r\n",index);
+     80                                while(aci_gatt_write_without_response(slaves[index].connection_handle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
+     81          #else
+     82          #error "Define SERVER or CLIENT"
+     83          #endif
+     84                                  // Radio is busy (buffer full).
+     85                                  if(Timer_Expired(&t))
+     86                                      break;
+     87                              }
+     88                              }                    
+     89                              j += len;            
+     90                          }
+     91                      }
+     92                      end = 0;
      93                  }
-     94              }
-     95          }
+     94                  else{
+     95                  }
+     96              }
+     97          }
 
    Maximum stack usage in bytes:
 
    .cstack Function
    ------- --------
-      48   processInputData
-        48   -> SdkEval_IO_Send_Data
-        48   -> Timer_Expired
-        48   -> Timer_Set
-        48   -> aci_gatt_write_without_response
-        48   -> printf
+      56   processInputData
+        56   -> SdkEval_IO_Send_Data
+        56   -> Timer_Expired
+        56   -> Timer_Set
+        56   -> aci_gatt_write_without_response
+        56   -> printf
 
 
    Section sizes:
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable1
-       4  ??DataTable1_1
-       4  ??DataTable1_2
-       4  ??DataTable1_3
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
        4  ?_0
+      16  ?_1
      516  end
           cmd
-     224  processInputData
+     248  processInputData
 
  
  516 bytes in section .bss
    4 bytes in section .rodata
- 240 bytes in section .text
+ 280 bytes in section .text
  
- 240 bytes of CODE  memory
+ 280 bytes of CODE  memory
    4 bytes of CONST memory
  516 bytes of DATA  memory
 
 Errors: none
-Warnings: none
+Warnings: 1

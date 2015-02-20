@@ -75,14 +75,16 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
                         break;
                       }
                     }
-                    
-                      while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
+                    for(int index=0;index<numSlaves; index++){
+                      printf("sending to %d\r\n",index);
+                      while(aci_gatt_write_without_response(slaves[index].connection_handle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
 #else
 #error "Define SERVER or CLIENT"
 #endif
                         // Radio is busy (buffer full).
                         if(Timer_Expired(&t))
                             break;
+                    }
                     }                    
                     j += len;            
                 }
