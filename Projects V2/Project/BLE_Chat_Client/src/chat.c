@@ -63,9 +63,7 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
                     struct timer t;
                     Timer_Set(&t, CLOCK_SECOND*10);
                     
-#if SERVER                      
-                    while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES){
-#elif CLIENT
+#if CLIENT
                     uint16_t connHandle = slaves[0].connection_handle;
                     uint16_t rxHandle = slaves[0].rx_handle;
                     for(int i = 0; i < numSlaves; i++)

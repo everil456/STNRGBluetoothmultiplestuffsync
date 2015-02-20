@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Feb/2015  17:27:35
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        20/Feb/2015  13:59:27
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -127,38 +127,36 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
      63                              struct timer t;
      64                              Timer_Set(&t, CLOCK_SECOND*10);
      65                              
-     66          #if SERVER                      
-     67                              while(aci_gatt_update_char_value(chatServHandle,TXCharHandle,0,len,(uint8_t *)cmd+j)==BLE_STATUS_INSUFFICIENT_RESOURCES){
-     68          #elif CLIENT
-     69                              uint16_t connHandle = slaves[0].connection_handle;
-     70                              uint16_t rxHandle = slaves[0].rx_handle;
-     71                              for(int i = 0; i < numSlaves; i++)
-     72                              {
-     73                                if(cmd[0] == (char)(((int)'0')+i) && i < numSlaves)
-     74                                {
-     75                                  connHandle = slaves[i].connection_handle;
-     76                                  rxHandle = slaves[i].rx_handle;
-     77                                  break;
-     78                                }
-     79                              }
-     80                              
-     81                                while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
-     82          #else
-     83          #error "Define SERVER or CLIENT"
-     84          #endif
-     85                                  // Radio is busy (buffer full).
-     86                                  if(Timer_Expired(&t))
-     87                                      break;
-     88                              }                    
-     89                              j += len;            
-     90                          }
-     91                      }
-     92                      end = 0;
+     66          #if CLIENT
+     67                              uint16_t connHandle = slaves[0].connection_handle;
+     68                              uint16_t rxHandle = slaves[0].rx_handle;
+     69                              for(int i = 0; i < numSlaves; i++)
+     70                              {
+     71                                if(cmd[0] == (char)(((int)'0')+i) && i < numSlaves)
+     72                                {
+     73                                  connHandle = slaves[i].connection_handle;
+     74                                  rxHandle = slaves[i].rx_handle;
+     75                                  break;
+     76                                }
+     77                              }
+     78                              
+     79                                while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
+     80          #else
+     81          #error "Define SERVER or CLIENT"
+     82          #endif
+     83                                  // Radio is busy (buffer full).
+     84                                  if(Timer_Expired(&t))
+     85                                      break;
+     86                              }                    
+     87                              j += len;            
+     88                          }
+     89                      }
+     90                      end = 0;
+     91                  }
+     92                  else{
      93                  }
-     94                  else{
-     95                  }
-     96              }
-     97          }
+     94              }
+     95          }
 
    Maximum stack usage in bytes:
 

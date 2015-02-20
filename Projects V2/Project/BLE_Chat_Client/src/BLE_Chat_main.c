@@ -415,6 +415,7 @@ void Make_Connection(void)
    
     //for (int device = 0; device < NumOfSlaves; device++)
     //{
+      //printf("connecting to %d\r\n", device);
         //tBDAddr address;
         //memcpy(address,slaves[device].bdaddr,sizeof(tBDAddr));
         ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, slaves[index].bdaddr, PUBLIC_ADDR, 0x0020, 0x0020, 0, 0x0064, 0 , 0x03e8);
@@ -460,7 +461,7 @@ void GAP_ConnectionComplete_CB(uint8_t addr[6], uint16_t handle)
       if(slaves[i].bdaddr[0] == addr[0])
       {
         slaves[i].connection_handle = handle; //Store the connection handle
-        printf("device %d connection handle: %x", i, handle);
+        printf("device %d connection handle: %x\r\n", i, handle);
         break;
       }
     }
