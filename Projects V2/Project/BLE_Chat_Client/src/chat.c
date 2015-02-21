@@ -63,10 +63,34 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
                     struct timer t;
                     Timer_Set(&t, CLOCK_SECOND*10);
                     
-#if CLIENT
                     uint16_t connHandle = slaves[0].connection_handle;
                     uint16_t rxHandle = slaves[0].rx_handle;
-                    for(int i = 0; i < numSlaves; i++)
+
+                     if((cmd[0] == '0')||(cmd[0] == '1') || (cmd[0] == '2') || (cmd[0] == '3') || (cmd[0] == '4') || (cmd[0] == '5') || (cmd[0] == '6') || (cmd[0] == '7'))
+                     {
+                    for(int index = 0; index < numSlaves; index++)
+                    {
+                      if(cmd[0] == (char)(((int)'0')+index) && index < numSlaves)
+                      {
+                        connHandle = slaves[index].connection_handle;
+                        rxHandle = slaves[index].rx_handle;
+                        break;
+                      }
+                    }
+                    //for(int index=0;index<numSlaves; index++){
+                     // printf("sending to %d\r\n",index);
+                     while(aci_gatt_write_without_response(connHandle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
+                        
+                        // Radio is busy (buffer full).
+                        if(Timer_Expired(&t))
+                            break;
+                    }
+                   // }
+                     }
+                    ////////////////////////////////////////
+                    else{
+                      //////////////////////////////////
+                     for(int i = 0; i < numSlaves; i++)
                     {
                       if(cmd[0] == (char)(((int)'0')+i) && i < numSlaves)
                       {
@@ -78,14 +102,16 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
                     for(int index=0;index<numSlaves; index++){
                       printf("sending to %d\r\n",index);
                       while(aci_gatt_write_without_response(slaves[index].connection_handle, rxHandle+1, len, (uint8_t *)cmd+j)==BLE_STATUS_NOT_ALLOWED){
-#else
-#error "Define SERVER or CLIENT"
-#endif
+
+
                         // Radio is busy (buffer full).
                         if(Timer_Expired(&t))
                             break;
                     }
-                    }                    
+                    }
+                      
+                    }
+                    ///////////////////////////////////////////////
                     j += len;            
                 }
             }
