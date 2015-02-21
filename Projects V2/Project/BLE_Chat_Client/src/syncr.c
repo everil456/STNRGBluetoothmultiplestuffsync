@@ -5,7 +5,8 @@
 
 //variables
 uint n = 20; //number to divide offset error by before adding it to offfsetp
-uint32_t tolerance = 800; // 800 at 8 MHz = 100 us, tolerance to call a value good
+uint32_t tolerance = 300; // 800 at 8 MHz = 100 us, tolerance to call a value good
+uint n2 = 4; //number to divide offset error by before adding it to offfsetp
 uint32_t tolerance2 = 24000000; // 3 seconds, we need to reset offsetp
 
 /*vocabulary
@@ -58,12 +59,22 @@ if (((offseti - offsetp) < tolerance)&((offseti - offsetp) > - tolerance))
 uint32_t offsetp = offsetp + (offseti - offsetp)/n; 
 }
 
-//offsetp needs to be initialized, so offseti is not close to offsetp or offsetp + overflow val.
-if (((offseti - offsetp) > tolerance2)||((offseti - offsetp) < - tolerance2)) 
+// if offseti is semi close to offsetp
+elseif (((offseti - offsetp) < tolerance2)&((offseti - offsetp) > - tolerance2)) 
+{
+uint32_t offsetp = offsetp + (offseti - offsetp)/n2; 
+}
+
+//offsetp needs to be initialized
+elseif (offsetp == 0) 
 {
 uint32_t offsetp = offseti; 
 }
 
+else
+{
+  PRINTF("Error: offseti not within 100us of offsetp.\n");//throw an error "Error: offseti not within 100us of offsetp, then print the difference betwerrn them, they are "____" apart.
+}
 
 /*offsetp for offset permanent, 
 or offfset pervaisive, offseti for offset instantaneous, or offset momentary */
