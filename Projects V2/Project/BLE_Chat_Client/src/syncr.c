@@ -3,12 +3,6 @@
 #include <stm32l1xx_systick.h>
 #include <stm32l1xx_type.h>
 
-//variables
-uint n = 20; //number to divide offset error by before adding it to offfsetp
-uint32_t tolerance = 300; // 800 at 8 MHz = 100 us, tolerance to call a value good
-uint n2 = 4; //number to divide offset error by before adding it to offfsetp
-uint32_t tolerance2 = 24000000; // 3 seconds, we need to reset offsetp
-
 /*vocabulary
 bs = base station
 hh = hand held device
@@ -21,26 +15,26 @@ bstimep = clock value on base station, accessed with getTime() function
 hhtimep = clocktime on the handheld device
 offseti = momentary offset between bstimei and hhtimei. 
 offsetp = the assumed real offset between the bstimep and the hhtimep
-
 */
+//*** we need to initialize offsetp to 0 somewhere that happens only once on startup or reset.
 //for bs, comment out in hh ss code
 //***on event, do this
 {
-  bstimei = getTime();
+  bstimei = get_time();
   //***send bstimei to ss
   //message to ss that has bstimei count and variable name
 }
 
 //set bstimep and hhtimep on bs
 {
-  bstimep = getTime();
+  bstimep = get_time();
   hhtimep = bstimep + offsetp;
 }
 
 //for hh, comment out in bs ss code
 //***on event, do this
 {
-  hhtimei = getTime();
+  hhtimei = get_time();
   //***send hhtimei to ss
   //message to ss that has hhtimei count and variable name
 }
@@ -52,29 +46,7 @@ offsetp = the assumed real offset between the bstimep and the hhtimep
   and if that is close, then do the calculation and update offsetp*/
   
 uint32_t offseti = bstimei - hhtimei; 
-
-// if offseti is very close to offsetp
-if (((offseti - offsetp) < tolerance)&((offseti - offsetp) > - tolerance)) 
-{
-uint32_t offsetp = offsetp + (offseti - offsetp)/n; 
-}
-
-// if offseti is semi close to offsetp
-elseif (((offseti - offsetp) < tolerance2)&((offseti - offsetp) > - tolerance2)) 
-{
-uint32_t offsetp = offsetp + (offseti - offsetp)/n2; 
-}
-
-//offsetp needs to be initialized
-elseif (offsetp == 0) 
-{
-uint32_t offsetp = offseti; 
-}
-
-else
-{
-  PRINTF("Error: offseti not within 100us of offsetp.\n");//throw an error "Error: offseti not within 100us of offsetp, then print the difference betwerrn them, they are "____" apart.
-}
+uint32_t offsetp = update_offsetp(offsetp,offseti);//this function prints, so if you dont like it, comment out the printing inside the function
 
 /*offsetp for offset permanent, 
 or offfset pervaisive, offseti for offset instantaneous, or offset momentary */
@@ -82,23 +54,44 @@ or offfset pervaisive, offseti for offset instantaneous, or offset momentary */
 }
 
 // functions
-uint32_t getTime()
+uint32_t get_time()
 {
   u32 timei = SysTick_GetCounter(); // timei for instantaneous time
   uint32_t ret = (uint32_t)timei;    
   return(ret);
 }
 
-/*******************************************************************************
-* Function Name  : SysTick_GetCounter
-* Description    : Gets SysTick counter value.
-* Input          : None
-* Output         : None
-* Return         : SysTick current value
-*******************************************************************************/
-/*
-u32 SysTick_GetCounter(void)
+uint32_t update_offsetp(offsetp,offseti)
 {
-  return(SysTick->VAL);
+  //variables
+uint n = 10; //number to divide offset error by before adding it to offfsetp
+uint32_t tolerance = 200; // 800 at 8 MHz = 100 us, tolerance to call a value good
+uint n2 = 4; //number to divide offset error by before adding it to offfsetp
+uint32_t tolerance2 = 24000000; // 3 seconds, we need to reset offsetp
+// if offseti is very close to offsetp
+if (((offseti - offsetp) < tolerance)&((offseti - offsetp) > - tolerance)) 
+{
+  uint32_t offsetp = offsetp + (offseti - offsetp)/n; 
+  PRINTF("offsetp: %10d\n\r",offsetp);
+  return offsetp;
 }
-*/
+// if offseti is semi close to offsetp
+elseif (((offseti - offsetp) < tolerance2)&((offseti - offsetp) > - tolerance2)) 
+{
+  uint32_t offsetp = offsetp + (offseti - offsetp)/n2; 
+  return offsetp;
+}
+//offsetp needs to be initialized
+elseif (offsetp == 0) 
+{
+  uint32_t offsetp = offseti; 
+  return offsetp;
+}
+// Error
+else
+{
+  PRINTF("Error: offseti not within %10d clock ticks of offsetp.\n\r  offseti: %10d\n\r",tolerance2,offseti);
+  return offsetp;
+}
+}
+  

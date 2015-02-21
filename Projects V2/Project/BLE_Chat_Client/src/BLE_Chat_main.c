@@ -234,7 +234,7 @@ int main(void)
     NVIC_SetVectorTable(NVIC_VectTab_FLASH, VECTOR_TABLE_BASE_ADDRESS); //Set the Nested Vector Interrupt Controller table bass address
     
     /* Identify BlueNRG platform */
-    SdkEvalIdentification();    //Figure out whaat BlueNRG platform is being used
+    SdkEvalIdentification();    //Figure out what BlueNRG platform is being used
 
     RCC_Configuration();        //Configure the Reset and Clock Control (definition located in hw_config.h)
     

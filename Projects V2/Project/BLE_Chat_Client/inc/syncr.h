@@ -5,7 +5,7 @@
 #include "link_layer.h"
 
 /* Function Declarations */
-uint32_t getTime();
-
+uint32_t get_time();
+uint32_t update_offsetp();
 
 #endif
