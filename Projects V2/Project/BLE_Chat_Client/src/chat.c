@@ -90,12 +90,12 @@ void processInputData(uint8_t* data_buffer, uint16_t Nb_bytes)  //Used to send m
                     ////////////////////////////////////////
                     else{
                       //////////////////////////////////
-                     for(int i = 0; i < numSlaves; i++)
+                     for(int index = 0; index < numSlaves; index++)
                     {
-                      if(cmd[0] == (char)(((int)'0')+i) && i < numSlaves)
+                      if(cmd[0] == (char)(((int)'0')+index) && index < numSlaves)
                       {
-                        connHandle = slaves[i].connection_handle;
-                        rxHandle = slaves[i].rx_handle;
+                        connHandle = slaves[index].connection_handle;
+                        rxHandle = slaves[index].rx_handle;
                         break;
                       }
                     }

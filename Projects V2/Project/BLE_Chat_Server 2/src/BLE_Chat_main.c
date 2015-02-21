@@ -159,6 +159,7 @@ NOTES:
 #include "push_button.h"
 #include "timer.h"
 #include <stdio.h>
+#include "syncr.h"
 
 #include "SDK_EVAL_Config.h"
 

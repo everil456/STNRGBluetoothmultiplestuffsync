@@ -162,6 +162,8 @@ NOTES:
 #include "flags.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include "syncr.h"
 
 #include "SDK_EVAL_Config.h"
 
@@ -201,6 +203,9 @@ struct timer l2cap_req_timer;                                   //Timer used whe
 volatile int flag_scan_complete = 0;
 volatile int flag_connection_complete = 0;
 volatile int index = 0;
+volatile uint32_t bstimei = 0;
+volatile uint32_t hhtimei = 0;
+extern uint32_t offsetp = 0;
 
 /** 
   * @brief  Handle of TX,RX  Characteristics.
@@ -214,6 +219,7 @@ uint16_t rx_handle;     //Unique RX characteristic handle
 /* Private function prototypes -----------------------------------------------*/
 void Make_Connection(void);     //Used to make BLE connections
 void User_Process(void);        //Used to get characteristic handles and enable notifications
+void send_times();              // Check times and send them to syncr if both are set
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -410,14 +416,7 @@ void Make_Connection(void)
       Clock_Wait(100);
     }
     
-    /* Connect to first device */
-    //int NumOfSlaves = sizeof(slaves)/sizeof(sDevice);
    
-    //for (int device = 0; device < NumOfSlaves; device++)
-    //{
-      //printf("connecting to %d\r\n", device);
-        //tBDAddr address;
-        //memcpy(address,slaves[device].bdaddr,sizeof(tBDAddr));
         ret = aci_gap_create_connection(0x4000, 0x4000, PUBLIC_ADDR, slaves[index].bdaddr, PUBLIC_ADDR, 0x0020, 0x0020, 0, 0x0064, 0 , 0x03e8);
         if (ret != 0){
             PRINTF("Error while starting connection to server %d.\n", index);
@@ -425,13 +424,11 @@ void Make_Connection(void)
         }
         while(!flag_connection_complete)
         {
-         // printf("case 2\r\n");
+         
             HCI_Process();    //EVT_LE_META_EVENT event triggered when connection is complete
         }
         flag_connection_complete = 0;
-    //}
-    //Wait for connection to complete
-
+ 
 #else
     
     const char local_name[] = {AD_TYPE_COMPLETE_LOCAL_NAME,'B','l','u','e','N','R','G','_','C','h','a','t'};    //Name server advertises
@@ -544,6 +541,58 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
     {
       if(attr_handle == slaves[i].tx_handle+1){     //If the notification is from the TX attribute...
         printf("received %d: ",i);
+        
+        if(attr_value[0] == 'B'){
+          if(attr_value[1] == 'T'){
+            char array[40];
+            int index = 2;
+            int j = 0;
+            
+            while(attr_value[index] != '\n'){
+              array[j] = attr_value[index];
+              j++;
+              index++;
+            }
+              bstimei = s2i(array);
+              send_times();
+            
+          }
+            else if(attr_value[1] == 'E'){
+              char array[40];
+              array[0] = '1';
+              for(int index = 1; index <attr_len; index++){
+                  array[index] = attr_value[index];
+                  
+              }
+                processInputData(array, attr_len);
+          }
+        }
+        else if (attr_value[0] == 'H'){
+            if(attr_value[1] == 'T'){
+            char array[40];
+            int index = 2;
+            int j = 0;
+            
+            while(attr_value[index] != '\n'){
+              array[j] = attr_value[index];
+              j++;
+              index++;
+            }
+              hhtimei = s2i(array);
+              send_times(bstimei, hhtimei);
+            
+          }
+            else if(attr_value[1] == 'E'){
+              char array[40];
+              array[0] = '0';
+              for(int index = 1; index <attr_len; index++){
+                  array[index] = attr_value[index];
+                  
+              }
+                processInputData(array, attr_len);
+            
+          }
+        }  
         for(int i = 0; i < attr_len; i++) //Print out the received message
           printf("%c",attr_value[i]);
         printf("\r\n");
@@ -551,6 +600,40 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
       }
     }
 #endif
+}
+
+
+void send_times(){
+  
+  if((bstimei != 0) && (hhtimei != 0)){
+    
+    offsetp = calculate( bstimei,  hhtimei);
+    
+    bstimei = 0;
+    hhtimei = 0;
+    
+    
+    char number[33];
+    sprintf(number, "%d", offsetp);
+    char messageB[36];
+    char messageH[36];
+    messageB[0] = '0';
+    messageH[0] = '1';
+    messageB[1] = 'O';
+    messageH[1] = 'O';
+    int j = 2;
+    for(int index = 0; index < 33; index++){
+      messageB[j] = number[index];
+      messageH[j] = number[index];
+      j++;
+    }
+    processInputData(messageB, 36);
+    processInputData(messageH, 36);
+    
+    
+  } 
+  
+  
 }
 
 void User_Process(void)

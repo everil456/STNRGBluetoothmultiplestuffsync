@@ -1,79 +1,67 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        20/Feb/2015  18:53:30
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        21/Feb/2015  11:58:04
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        E:\Matthew\Git\Senior Project\STNRGBluetoothmultiplestuffsync\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c
 #    Command line =  
-#        "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c"
 #        -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
-#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
-#        "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\" --diag_suppress Pa050
-#        -o "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
-#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
-#        E:\Matthew\Arm\arm\INC\c\DLib_Config_Normal.h -I
-#        "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
-#        V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\" -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        LE\SimpleBlueNRG_HCI\" -I "C:\School\2014 Fall\ECE 4900\Bluetooth
+#        Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\includes\" -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
-#        "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
-#        -I "E:\Matthew\Git\Senior
-#        Project\STNRGBluetoothmultiplestuffsync\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
-#        -Ohs --use_c++_inline -I E:\Matthew\Arm\arm\CMSIS\Include\
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
 #    List file    =  
-#        E:\Matthew\Git\Senior Project\STNRGBluetoothmultiplestuffsync\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\stm32l1xx_pwr.lst
 #    Object file  =  
-#        E:\Matthew\Git\Senior Project\STNRGBluetoothmultiplestuffsync\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\stm32l1xx_pwr.o
 #
 ###############################################################################
 
-E:\Matthew\Git\Senior Project\STNRGBluetoothmultiplestuffsync\Projects V2\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c
+C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\src\stm32l1xx_pwr.c
       1          /**
       2            ******************************************************************************
       3            * @file    stm32l1xx_pwr.c

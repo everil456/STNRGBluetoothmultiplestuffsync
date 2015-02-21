@@ -857,6 +857,9 @@
       <name>$PROJ_DIR$\..\src\stm32l1xx_it.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\src\syncr.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\src\timer.c</name>
     </file>
     <file>
