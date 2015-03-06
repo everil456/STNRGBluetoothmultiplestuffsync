@@ -7,6 +7,7 @@
 #include "app_state.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "syncr.h"
 
 
 #ifndef DEBUG
@@ -30,6 +31,8 @@
 	}while(0)
 
 uint16_t chatServHandle, TXCharHandle, RXCharHandle;
+/*  User Function where serial received data should be processed */
+void processInputData(uint8_t * rx_data, uint16_t data_size);
 
 /*******************************************************************************
 * Function Name  : Add_Chat_Service
@@ -90,8 +93,24 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             uint32_t time = atoi(number);
             //need to store offset somewhere. Rex where do you want it?
           }
-          else if(att_data[1] == 'T'){
-            //get systick counter stuff here
+          else if(att_data[1] == 'T'){            
+            uint32_t hhtime = hhtimei();
+            char message_t[8];
+            char number[5];
+            message_t[0] = 'H';
+            message_t[1] = 'T';
+            sprintf(number, "%d", hhtime);
+            int p = 0;
+            for(int q = 2; q < 6; q++){
+              message_t[q] = number[p];
+              p++;
+            }
+            message_t[6] = '\n';
+            message_t[7] = '\0';
+            Clock_Wait(500);
+            processInputData(message_t, 8);
+            
+            
           }
           else if(att_data[1] == 'E'){
             char number[4];
