@@ -613,22 +613,27 @@ void send_times(){
     hhtimei = 0;
     
     
-    char number[33];
+    char number[6];
     sprintf(number, "%d", offsetp);
-    char messageB[36];
-    char messageH[36];
+    char messageB[8];
+    char messageH[8];
     messageB[0] = '0';
     messageH[0] = '1';
     messageB[1] = 'O';
     messageH[1] = 'O';
     int j = 2;
-    for(int index = 0; index < 33; index++){
+    for(int index = 0; index < 4; index++){
       messageB[j] = number[index];
       messageH[j] = number[index];
       j++;
     }
-    processInputData(messageB, 36);
-    processInputData(messageH, 36);
+    messageB[6] = '\n';
+    messageH[6] = '\n';
+    messageB[7] = '\0';
+    messageH[7] = '\0';
+    processInputData(messageB, 8);
+    processInputData(messageH, 8);
+    
     
     
   } 

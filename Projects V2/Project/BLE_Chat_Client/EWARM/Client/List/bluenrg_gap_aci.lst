@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        21/Feb/2015  11:57:40
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        06/Mar/2015  09:03:42
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1172,7 +1172,7 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Bluetooth LE\S
      116  aci_gap_set_auth_requirement
       72  aci_gap_set_author_requirement
       86  aci_gap_set_direct_connectable
-     196  aci_gap_set_discoverable
+     194  aci_gap_set_discoverable
       68  aci_gap_set_io_capability
      198  aci_gap_set_limited_discoverable
       68  aci_gap_set_non_connectable
@@ -1180,20 +1180,20 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Bluetooth LE\S
       72  aci_gap_set_undirected_connectable
       80  aci_gap_slave_security_request
      224  aci_gap_start_auto_conn_establish_proc
-     106  aci_gap_start_connection_update
+     102  aci_gap_start_connection_update
      106  aci_gap_start_general_conn_establish_proc
       84  aci_gap_start_general_discovery_proc
       84  aci_gap_start_limited_discovery_proc
      134  aci_gap_start_name_discovery_proc
-     120  aci_gap_start_selective_conn_establish_proc
+     122  aci_gap_start_selective_conn_establish_proc
       76  aci_gap_terminate
       64  aci_gap_terminate_gap_procedure
       90  aci_gap_update_adv_data
 
  
- 3 034 bytes in section .text
+ 3 030 bytes in section .text
  
- 3 034 bytes of CODE memory
+ 3 030 bytes of CODE memory
 
 Errors: none
 Warnings: none

@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        21/Feb/2015  12:01:20
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        06/Mar/2015  09:03:41
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -677,275 +677,280 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
     613              hhtimei = 0;
     614              
     615              
-    616              char number[33];
+    616              char number[6];
     617              sprintf(number, "%d", offsetp);
-    618              char messageB[36];
-    619              char messageH[36];
+    618              char messageB[8];
+    619              char messageH[8];
     620              messageB[0] = '0';
     621              messageH[0] = '1';
     622              messageB[1] = 'O';
     623              messageH[1] = 'O';
     624              int j = 2;
-    625              for(int index = 0; index < 33; index++){
+    625              for(int index = 0; index < 4; index++){
     626                messageB[j] = number[index];
     627                messageH[j] = number[index];
     628                j++;
     629              }
-    630              processInputData(messageB, 36);
-    631              processInputData(messageH, 36);
-    632              
-    633              
-    634            } 
-    635            
-    636            
-    637          }
-    638          
-    639          void User_Process(void)
-    640          {
-    641              if(arrayFlags[index].set_connectable){
-    642                  Make_Connection();      //If devices need to be connected, connect them
-    643                  changeFlag(CLEAR, &arrayFlags[index].set_connectable);        //Update connection flag status
-    644              }
-    645          
-    646          #if REQUEST_CONN_PARAM_UPDATE    
-    647              if(APP_FLAG(CONNECTED) && !APP_FLAG(L2CAP_PARAM_UPD_SENT) && Timer_Expired(&l2cap_req_timer)){
-    648                  printf("got here\r\n");
-    649                  aci_l2cap_connection_parameter_update_request(connection_handle, 8, 16, 0, 600);
-    650                  APP_FLAG_SET(L2CAP_PARAM_UPD_SENT);
-    651              }
-    652          #endif
-    653              
-    654          #if CLIENT      //Each loop the flags are checked to see what needs to be done
-    655                          //Things such as discovering the TX/RX characteristic handles and enabling notifications are done
-    656              
-    657              
-    658              /* Start TX handle Characteristic discovery if not yet done */
-    659              if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_TX_char_handle)
-    660              {
-    661                if (!arrayFlags[index].start_read_TX_char_handle)
-    662                {
-    663                  /* Discovery TX characteristic handle by UUID 128 bits */
-    664                  
-    665                   const uint8_t charUuid128_TX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe1,0xf2,0x73,0xd9};
-    666                   
-    667                   aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
-    668                                                             charUuid128_TX);
-    669                   changeFlag(SET, &arrayFlags[index].start_read_TX_char_handle);
-    670                }
-    671              }
-    672              /* Start RX handle Characteristic discovery if not yet done */
-    673              else if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_RX_char_handle)
-    674              {
-    675                //printf("Haven't finished reading RX handle");
-    676                /* Discovery RX characteristic handle by UUID 128 bits */
-    677                if (!arrayFlags[index].start_read_RX_char_handle)
-    678                {
-    679                  /* Discovery TX characteristic handle by UUID 128 bits */
-    680                  //printf("attempting to read RX handle\r\n");
-    681                   const uint8_t charUuid128_RX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe2,0xf2,0x73,0xd9};
-    682                   aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
-    683                                                             charUuid128_RX);
-    684                   changeFlag(SET, &arrayFlags[index].start_read_RX_char_handle);
-    685                 }
-    686              }
-    687              
-    688              if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && !arrayFlags[index].notifications_enabled){
-    689                  uint8_t client_char_conf_data[] = {0x01, 0x00}; // Enable notifications
-    690                  struct timer t;
-    691                  Timer_Set(&t, CLOCK_SECOND*10);
-    692                  
-    693                  while(aci_gatt_write_charac_descriptor(slaves[index].connection_handle, slaves[index].tx_handle+2, 2, client_char_conf_data)==BLE_STATUS_NOT_ALLOWED){ //TX_HANDLE;
-    694                      // Radio is busy.
-    695                      if(Timer_Expired(&t)) break;
-    696                  }
-    697                  changeFlag(SET, &arrayFlags[index].notifications_enabled);
-    698                }
-    699              else if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && arrayFlags[index].notifications_enabled){
-    700                  int numdevices = sizeof(slaves)/sizeof(sDevice);
-    701                  if(index < numdevices - 1)
-    702                    index++;        
-    703              }
-    704          #endif
-    705              
-    706              
-    707          #if THROUGHPUT_TEST && SERVER   //Used for throughput testing
-    708              
-    709              printf("Throughput test\r\n");
-    710              static uint8_t test_done = FALSE;
+    630              messageB[6] = '\n';
+    631              messageH[6] = '\n';
+    632              messageB[7] = '\0';
+    633              messageH[7] = '\0';
+    634              processInputData(messageB, 8);
+    635              processInputData(messageH, 8);
+    636              
+    637              
+    638              
+    639            } 
+    640            
+    641            
+    642          }
+    643          
+    644          void User_Process(void)
+    645          {
+    646              if(arrayFlags[index].set_connectable){
+    647                  Make_Connection();      //If devices need to be connected, connect them
+    648                  changeFlag(CLEAR, &arrayFlags[index].set_connectable);        //Update connection flag status
+    649              }
+    650          
+    651          #if REQUEST_CONN_PARAM_UPDATE    
+    652              if(APP_FLAG(CONNECTED) && !APP_FLAG(L2CAP_PARAM_UPD_SENT) && Timer_Expired(&l2cap_req_timer)){
+    653                  printf("got here\r\n");
+    654                  aci_l2cap_connection_parameter_update_request(connection_handle, 8, 16, 0, 600);
+    655                  APP_FLAG_SET(L2CAP_PARAM_UPD_SENT);
+    656              }
+    657          #endif
+    658              
+    659          #if CLIENT      //Each loop the flags are checked to see what needs to be done
+    660                          //Things such as discovering the TX/RX characteristic handles and enabling notifications are done
+    661              
+    662              
+    663              /* Start TX handle Characteristic discovery if not yet done */
+    664              if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_TX_char_handle)
+    665              {
+    666                if (!arrayFlags[index].start_read_TX_char_handle)
+    667                {
+    668                  /* Discovery TX characteristic handle by UUID 128 bits */
+    669                  
+    670                   const uint8_t charUuid128_TX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe1,0xf2,0x73,0xd9};
+    671                   
+    672                   aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
+    673                                                             charUuid128_TX);
+    674                   changeFlag(SET, &arrayFlags[index].start_read_TX_char_handle);
+    675                }
+    676              }
+    677              /* Start RX handle Characteristic discovery if not yet done */
+    678              else if (APP_FLAG(CONNECTED) && !arrayFlags[index].end_read_RX_char_handle)
+    679              {
+    680                //printf("Haven't finished reading RX handle");
+    681                /* Discovery RX characteristic handle by UUID 128 bits */
+    682                if (!arrayFlags[index].start_read_RX_char_handle)
+    683                {
+    684                  /* Discovery TX characteristic handle by UUID 128 bits */
+    685                  //printf("attempting to read RX handle\r\n");
+    686                   const uint8_t charUuid128_RX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe2,0xf2,0x73,0xd9};
+    687                   aci_gatt_disc_charac_by_uuid(slaves[index].connection_handle, 0x0001, 0xFFFF,UUID_TYPE_128,
+    688                                                             charUuid128_RX);
+    689                   changeFlag(SET, &arrayFlags[index].start_read_RX_char_handle);
+    690                 }
+    691              }
+    692              
+    693              if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && !arrayFlags[index].notifications_enabled){
+    694                  uint8_t client_char_conf_data[] = {0x01, 0x00}; // Enable notifications
+    695                  struct timer t;
+    696                  Timer_Set(&t, CLOCK_SECOND*10);
+    697                  
+    698                  while(aci_gatt_write_charac_descriptor(slaves[index].connection_handle, slaves[index].tx_handle+2, 2, client_char_conf_data)==BLE_STATUS_NOT_ALLOWED){ //TX_HANDLE;
+    699                      // Radio is busy.
+    700                      if(Timer_Expired(&t)) break;
+    701                  }
+    702                  changeFlag(SET, &arrayFlags[index].notifications_enabled);
+    703                }
+    704              else if(APP_FLAG(CONNECTED) && arrayFlags[index].end_read_TX_char_handle && arrayFlags[index].end_read_RX_char_handle && arrayFlags[index].notifications_enabled){
+    705                  int numdevices = sizeof(slaves)/sizeof(sDevice);
+    706                  if(index < numdevices - 1)
+    707                    index++;        
+    708              }
+    709          #endif
+    710              
     711              
-    712              if(APP_FLAG(CONNECTED) && !test_done && APP_FLAG(NOTIFICATIONS_ENABLED)){
+    712          #if THROUGHPUT_TEST && SERVER   //Used for throughput testing
     713              
-    714                  uint8_t data[20] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J'};
-    715                  
-    716                  static tClockTime time, time2;
-    717                  time = Clock_Time();
-    718                  
-    719                  for(int i = 0; i < NUM_PACKETS; i++){
-    720                      
-    721                      struct timer t;
-    722                      Timer_Set(&t, CLOCK_SECOND*10);
-    723                                      
-    724                      while(aci_gatt_update_char_value(chatServHandle, TXCharHandle, 0, 20, data)==BLE_STATUS_INSUFFICIENT_RESOURCES)
-    725                      {
-    726                        // Radio is busy (buffer full).
-    727                        if(Timer_Expired(&t))
-    728                            break;
-    729                      }
-    730                  
-    731                  }
-    732                  
-    733                  time2 = Clock_Time();
-    734                  tClockTime diff = time2-time;
-    735                  printf("\n%d packets. Elapsed time: %d ms. App throughput: %.2f kbps.\n\r", NUM_PACKETS, diff, (float)NUM_PACKETS*20*8/diff);
-    736                  
-    737                  test_done = TRUE;
-    738              }
-    739          #endif
-    740              
-    741          }
-    742          
-    743          /**
-    744            * @brief  This function is called whenever there is an ACI event to be processed.
-    745            * @note   Inside this function each event must be identified and correctly
-    746            *         parsed.
-    747            * @param  pckt  Pointer to the ACI packet
-    748            * @retval None
-    749            */
-    750          void HCI_Event_CB(void *pckt)   //This function is called when ACI events occur (such as when a connection is complete)
-    751          {
-    752              hci_uart_pckt *hci_pckt = pckt;
-    753              hci_event_pckt *event_pckt = (hci_event_pckt*)hci_pckt->data;
-    754              
-    755              if(hci_pckt->type != HCI_EVENT_PKT)
-    756                  return;
-    757              
-    758              switch(event_pckt->evt){
-    759                  
-    760              case EVT_DISCONN_COMPLETE:
-    761                  {
-    762                      GAP_DisconnectionComplete_CB();
-    763                  }
-    764                  break;
-    765                  
-    766              case EVT_LE_META_EVENT:
-    767                  {
-    768                      evt_le_meta_event *evt = (void *)event_pckt->data;
-    769                      
-    770                      switch(evt->subevent){
-    771                      case EVT_LE_CONN_COMPLETE:
-    772                          {
-    773                              evt_le_connection_complete *cc = (void *)evt->data;
-    774                              GAP_ConnectionComplete_CB(cc->peer_bdaddr, cc->handle);
-    775                          }
-    776                          break;
-    777                      }
-    778                  }
-    779                  break;
-    780                  
-    781              case EVT_VENDOR:
-    782                  {
-    783                      evt_blue_aci *blue_evt = (void*)event_pckt->data;
-    784                      switch(blue_evt->ecode){
-    785                          
-    786                      case EVT_BLUE_GATT_ATTRIBUTE_MODIFIED:
-    787                          {
-    788                              evt_gatt_attr_modified *evt = (evt_gatt_attr_modified*)blue_evt->data;
-    789                              Attribute_Modified_CB(evt->attr_handle, evt->data_length, evt->att_data);                    
-    790                          }
-    791                          break;
-    792                      case EVT_BLUE_GATT_NOTIFICATION:
-    793                          {
-    794                              evt_gatt_attr_notification *evt = (evt_gatt_attr_notification*)blue_evt->data;
-    795                              GATT_Notification_CB(evt->attr_handle, evt->event_data_length - 2, evt->attr_value);
-    796                          }
-    797                          break;
-    798                       case EVT_BLUE_L2CAP_CONN_UPD_RESP:
-    799                          {
-    800                              evt_l2cap_conn_upd_resp *resp = (void*)blue_evt->data;
-    801                              if(resp->result){
-    802                                  PRINTF("> Connection parameters rejected.\n");
-    803                              }
-    804                              else{
-    805                                  PRINTF("> Connection parameters accepted.\n");
-    806                              }
-    807                          }
-    808                          break;
-    809          #ifdef CLIENT            
-    810                        case EVT_BLUE_GATT_DISC_READ_CHAR_BY_UUID_RESP:
-    811                          {
-    812                              evt_gatt_disc_read_char_by_uuid_resp *resp = (void*)blue_evt->data;
-    813                              
-    814                              if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
-    815                              {
-    816                                slaves[index].tx_handle = resp->attr_handle;
-    817                                PRINTF("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
-    818                              }
-    819                              else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
+    714              printf("Throughput test\r\n");
+    715              static uint8_t test_done = FALSE;
+    716              
+    717              if(APP_FLAG(CONNECTED) && !test_done && APP_FLAG(NOTIFICATIONS_ENABLED)){
+    718              
+    719                  uint8_t data[20] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J'};
+    720                  
+    721                  static tClockTime time, time2;
+    722                  time = Clock_Time();
+    723                  
+    724                  for(int i = 0; i < NUM_PACKETS; i++){
+    725                      
+    726                      struct timer t;
+    727                      Timer_Set(&t, CLOCK_SECOND*10);
+    728                                      
+    729                      while(aci_gatt_update_char_value(chatServHandle, TXCharHandle, 0, 20, data)==BLE_STATUS_INSUFFICIENT_RESOURCES)
+    730                      {
+    731                        // Radio is busy (buffer full).
+    732                        if(Timer_Expired(&t))
+    733                            break;
+    734                      }
+    735                  
+    736                  }
+    737                  
+    738                  time2 = Clock_Time();
+    739                  tClockTime diff = time2-time;
+    740                  printf("\n%d packets. Elapsed time: %d ms. App throughput: %.2f kbps.\n\r", NUM_PACKETS, diff, (float)NUM_PACKETS*20*8/diff);
+    741                  
+    742                  test_done = TRUE;
+    743              }
+    744          #endif
+    745              
+    746          }
+    747          
+    748          /**
+    749            * @brief  This function is called whenever there is an ACI event to be processed.
+    750            * @note   Inside this function each event must be identified and correctly
+    751            *         parsed.
+    752            * @param  pckt  Pointer to the ACI packet
+    753            * @retval None
+    754            */
+    755          void HCI_Event_CB(void *pckt)   //This function is called when ACI events occur (such as when a connection is complete)
+    756          {
+    757              hci_uart_pckt *hci_pckt = pckt;
+    758              hci_event_pckt *event_pckt = (hci_event_pckt*)hci_pckt->data;
+    759              
+    760              if(hci_pckt->type != HCI_EVENT_PKT)
+    761                  return;
+    762              
+    763              switch(event_pckt->evt){
+    764                  
+    765              case EVT_DISCONN_COMPLETE:
+    766                  {
+    767                      GAP_DisconnectionComplete_CB();
+    768                  }
+    769                  break;
+    770                  
+    771              case EVT_LE_META_EVENT:
+    772                  {
+    773                      evt_le_meta_event *evt = (void *)event_pckt->data;
+    774                      
+    775                      switch(evt->subevent){
+    776                      case EVT_LE_CONN_COMPLETE:
+    777                          {
+    778                              evt_le_connection_complete *cc = (void *)evt->data;
+    779                              GAP_ConnectionComplete_CB(cc->peer_bdaddr, cc->handle);
+    780                          }
+    781                          break;
+    782                      }
+    783                  }
+    784                  break;
+    785                  
+    786              case EVT_VENDOR:
+    787                  {
+    788                      evt_blue_aci *blue_evt = (void*)event_pckt->data;
+    789                      switch(blue_evt->ecode){
+    790                          
+    791                      case EVT_BLUE_GATT_ATTRIBUTE_MODIFIED:
+    792                          {
+    793                              evt_gatt_attr_modified *evt = (evt_gatt_attr_modified*)blue_evt->data;
+    794                              Attribute_Modified_CB(evt->attr_handle, evt->data_length, evt->att_data);                    
+    795                          }
+    796                          break;
+    797                      case EVT_BLUE_GATT_NOTIFICATION:
+    798                          {
+    799                              evt_gatt_attr_notification *evt = (evt_gatt_attr_notification*)blue_evt->data;
+    800                              GATT_Notification_CB(evt->attr_handle, evt->event_data_length - 2, evt->attr_value);
+    801                          }
+    802                          break;
+    803                       case EVT_BLUE_L2CAP_CONN_UPD_RESP:
+    804                          {
+    805                              evt_l2cap_conn_upd_resp *resp = (void*)blue_evt->data;
+    806                              if(resp->result){
+    807                                  PRINTF("> Connection parameters rejected.\n");
+    808                              }
+    809                              else{
+    810                                  PRINTF("> Connection parameters accepted.\n");
+    811                              }
+    812                          }
+    813                          break;
+    814          #ifdef CLIENT            
+    815                        case EVT_BLUE_GATT_DISC_READ_CHAR_BY_UUID_RESP:
+    816                          {
+    817                              evt_gatt_disc_read_char_by_uuid_resp *resp = (void*)blue_evt->data;
+    818                              
+    819                              if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
     820                              {
-    821                                slaves[index].rx_handle = resp->attr_handle;
-    822                                PRINTF("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
+    821                                slaves[index].tx_handle = resp->attr_handle;
+    822                                PRINTF("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
     823                              }
-    824                          }
-    825                          break;  
-    826                          
-    827                          case EVT_BLUE_GATT_PROCEDURE_COMPLETE:
-    828                          {
-    829                            /* Wait for gatt procedure complete event trigger related to Discovery Charac by UUID */
-    830                            //evt_gatt_procedure_complete *pr = (void*)blue_evt->data;
-    831                            
-    832                            if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
-    833                            {
-    834                              changeFlag(SET, &arrayFlags[index].end_read_TX_char_handle);
-    835                              //printf("tried to set TX flag\r\nTX flag is %d\r\n",arrayFlags[index].end_read_TX_char_handle);
-    836                            }
-    837                            else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
+    824                              else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
+    825                              {
+    826                                slaves[index].rx_handle = resp->attr_handle;
+    827                                PRINTF("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
+    828                              }
+    829                          }
+    830                          break;  
+    831                          
+    832                          case EVT_BLUE_GATT_PROCEDURE_COMPLETE:
+    833                          {
+    834                            /* Wait for gatt procedure complete event trigger related to Discovery Charac by UUID */
+    835                            //evt_gatt_procedure_complete *pr = (void*)blue_evt->data;
+    836                            
+    837                            if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
     838                            {
-    839                              changeFlag(SET, &arrayFlags[index].end_read_RX_char_handle);
-    840                            }
-    841                          }
-    842                          break;
-    843                          
-    844                          case EVT_BLUE_GAP_PROCEDURE_COMPLETE:
-    845                          {
-    846                            flag_scan_complete = 1;
-    847                          }
-    848                          break;
-    849          #endif         
-    850                      }
-    851                  }
-    852                  break;
-    853              }
-    854              
-    855          }
-    856          
-    857          
-    858          #ifdef USE_FULL_ASSERT
-    859          /*******************************************************************************
-    860          * Function Name  : assert_failed
-    861          * Description    : Reports the name of the source file and the source line number
-    862          *                  where the assert_param error has occurred.
-    863          * Input          : - file: pointer to the source file name
-    864          *                  - line: assert_param error line source number
-    865          * Output         : None
-    866          * Return         : None
-    867          *******************************************************************************/
-    868          void assert_failed(uint8_t* file, uint32_t line)
-    869          {
-    870              /* User can add his own implementation to report the file name and line number,
-    871              ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
-    872              
-    873              /* Infinite loop */
-    874              while (1)
-    875              {
-    876                printf("\r\nFailed\r\n");
-    877                Clock_Wait(10000);
-    878              }
-    879          }
-    880          #endif
-    881          
-    882          /******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE****/
-    883          /** \endcond
-    884           */
+    839                              changeFlag(SET, &arrayFlags[index].end_read_TX_char_handle);
+    840                              //printf("tried to set TX flag\r\nTX flag is %d\r\n",arrayFlags[index].end_read_TX_char_handle);
+    841                            }
+    842                            else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
+    843                            {
+    844                              changeFlag(SET, &arrayFlags[index].end_read_RX_char_handle);
+    845                            }
+    846                          }
+    847                          break;
+    848                          
+    849                          case EVT_BLUE_GAP_PROCEDURE_COMPLETE:
+    850                          {
+    851                            flag_scan_complete = 1;
+    852                          }
+    853                          break;
+    854          #endif         
+    855                      }
+    856                  }
+    857                  break;
+    858              }
+    859              
+    860          }
+    861          
+    862          
+    863          #ifdef USE_FULL_ASSERT
+    864          /*******************************************************************************
+    865          * Function Name  : assert_failed
+    866          * Description    : Reports the name of the source file and the source line number
+    867          *                  where the assert_param error has occurred.
+    868          * Input          : - file: pointer to the source file name
+    869          *                  - line: assert_param error line source number
+    870          * Output         : None
+    871          * Return         : None
+    872          *******************************************************************************/
+    873          void assert_failed(uint8_t* file, uint32_t line)
+    874          {
+    875              /* User can add his own implementation to report the file name and line number,
+    876              ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+    877              
+    878              /* Infinite loop */
+    879              while (1)
+    880              {
+    881                printf("\r\nFailed\r\n");
+    882                Clock_Wait(10000);
+    883              }
+    884          }
+    885          #endif
+    886          
+    887          /******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE****/
+    888          /** \endcond
+    889           */
 
    Maximum stack usage in bytes:
 
@@ -1015,10 +1020,10 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
         32   -> printf
         32   -> processInputData
         32   -> startTimer
-     120   send_times
-       120   -> calculate
-       120   -> processInputData
-       120   -> sprintf
+      32   send_times
+        32   -> calculate
+        32   -> processInputData
+        32   -> sprintf
 
 
    Section sizes:
@@ -1082,16 +1087,16 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
        8  l2cap_req_timer
      432  main
        2  rx_handle
-     146  send_times
+     132  send_times
        2  tx_handle
 
  
     26 bytes in section .bss
     16 bytes in section .data
     14 bytes in section .rodata
- 2 661 bytes in section .text
+ 2 647 bytes in section .text
  
- 2 661 bytes of CODE  memory
+ 2 647 bytes of CODE  memory
     14 bytes of CONST memory
     42 bytes of DATA  memory
 
