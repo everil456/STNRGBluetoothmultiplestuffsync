@@ -320,7 +320,7 @@ int main(void)
                                        NULL,
                                        7,
                                        16,
-                                       USE_FIXED_PIN_FOR_PAIRING,       //*************************************
+                                       USE_FIXED_PIN_FOR_PAIRING,       
                                        123456,
                                        BONDING);
     PRINTF("BLE Stack Initialized.\r\n");*/

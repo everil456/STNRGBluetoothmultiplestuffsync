@@ -6,6 +6,7 @@
 #include "bluenrg_aci_const.h"
 #include "app_state.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 #ifndef DEBUG
@@ -78,6 +79,32 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
         for(int i = 0; i < data_length; i++)
           printf("%c", att_data[i]);
         printf("\r\n");
+        if(att_data[0] == '1'){
+          if(att_data[1] == 'O'){
+            char number[4];
+            int p = 0;
+            for(int q = 2; q < 6; q++){
+              number[p] = att_data[q];
+              p++;
+            }
+            uint32_t time = atoi(number);
+            //need to store offset somewhere. Rex where do you want it?
+          }
+          else if(att_data[1] == 'T'){
+            //get systick counter stuff here
+          }
+          else if(att_data[1] == 'E'){
+            char number[4];
+            int p = 0;
+            for(int q = 2; q < 6; q++){
+              number[p] = att_data[q];
+              p++;
+            }
+            uint32_t time = atoi(number);
+            //trigger event at time
+          }
+          
+        }
     }
       else if(handle == TXCharHandle + 2){        
         if(att_data[0] == 0x01)
