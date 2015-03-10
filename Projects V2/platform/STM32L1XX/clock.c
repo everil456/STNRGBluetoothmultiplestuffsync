@@ -7,12 +7,12 @@
 #include "stm32l1xx_systick.h"
 
 // The value that will be load in the SysTick value register.
-#define RELOAD_VALUE        (SYSCLK_FREQ/1000)-1   // One clock each 1 ms
-#define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000)-1   // One clock each 1 ms
+#define RELOAD_VALUE        (SYSCLK_FREQ/1000000)-1   // One clock each 1 ms
+#define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000000)-1   // One clock each 1 ms
 
 static volatile tClockTime count = 0;
 
-const uint32_t CLOCK_SECOND = 1000;
+const uint32_t CLOCK_SECOND = 1000000;
 
 /*---------------------------------------------------------------------------*/
 void SysTick_Handler(void)
@@ -74,7 +74,7 @@ void Clock_Wait(uint32_t i)
   tClockTime start;
 
   start = Clock_Time();
-  while(Clock_Time() - start < (tClockTime)i);
+  while(Clock_Time() - start < (tClockTime)(i*1000));
 }
 /*---------------------------------------------------------------------------*/
 
