@@ -382,7 +382,13 @@ int main(void)
             processInputData(data_buffer, Nb_bytes);    //Transmit the data buffer
             //Schedule measuring event
             startTimer(2);
-        } 
+        }
+        printf("%d\n\r",Clock_Time());
+        /*if(Clock_Time() % 10000000 < 100)
+        {
+          startTimer(2);
+          printf("%d",Clock_Time());
+        }*/
     }
 }
 
@@ -424,7 +430,7 @@ void Make_Connection(void)
         }
         while(!flag_connection_complete)
         {
-         
+         printf("%d\n\r",Clock_Time());
             HCI_Process();    //EVT_LE_META_EVENT event triggered when connection is complete
         }
         flag_connection_complete = 0;
