@@ -159,7 +159,7 @@ NOTES:
 #include "push_button.h"
 #include "timer.h"
 #include <stdio.h>
-#include "syncr.h"
+//#include "syncr.h"
 
 #include "SDK_EVAL_Config.h"
 
@@ -200,6 +200,7 @@ struct timer l2cap_req_timer;
 /** 
   * @brief  Handle of TX,RX  Characteristics.
   */ 
+
 #ifdef CLIENT
 uint16_t tx_handle;
 uint16_t rx_handle;
@@ -209,6 +210,7 @@ uint16_t rx_handle;
 /* Private function prototypes -----------------------------------------------*/
 void Make_Connection(void);
 void User_Process(void);
+
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -242,6 +244,7 @@ int main(void)
     initLED(0);
     initLED(3);
     initLED(4);
+    //initOffset();
     
     /* Initilize event */
     initTimer(2,1000);
@@ -587,6 +590,8 @@ void User_Process(void)
   * @param  pckt  Pointer to the ACI packet
   * @retval None
   */
+
+
 void HCI_Event_CB(void *pckt)
 {
     hci_uart_pckt *hci_pckt = pckt;
@@ -727,6 +732,7 @@ void assert_failed(uint8_t* file, uint32_t line)
       Clock_Wait(10000);
     }
 }
+
 #endif
 
 /******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE****/

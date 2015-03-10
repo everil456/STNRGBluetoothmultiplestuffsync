@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "syncr.h"
 
+extern uint32_t offset=0;
 
 #ifndef DEBUG
 #define DEBUG 1
@@ -92,10 +93,11 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             }
             uint32_t time = atoi(number);
             //need to store offset somewhere. Rex where do you want it?
+            offset = time;
           }
           else if(att_data[1] == 'T'){
                        
-            uint32_t bstime = bstimei();
+            uint32_t bstime = f_bstimei();
             char message_t[8];
             char number[5];
             message_t[0] = 'B';
