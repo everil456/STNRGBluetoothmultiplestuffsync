@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        10/Mar/2015  13:08:40
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        12/Mar/2015  12:51:33
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -139,7 +139,19 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
      77            while(Clock_Time() - start < (tClockTime)(i*1000));
      78          }
      79          /*---------------------------------------------------------------------------*/
-     80          
+     80          /**
+     81           * Wait for a multiple of 1 us.
+     82           *
+     83           */
+     84          void Clock_Waitus(uint32_t i,tClockTime start)
+     85          {
+     86            //tClockTime start;
+     87          
+     88            //start = Clock_Time();
+     89            while(Clock_Time() - start < (tClockTime)(i));
+     90          }
+     91          /*---------------------------------------------------------------------------*/
+     92          
 
    Maximum stack usage in bytes:
 
@@ -159,6 +171,7 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
          0   -> SysTick_CounterCmd
        0   Clock_Time
        0   Clock_Wait
+       0   Clock_Waitus
        0   SysTick_Handler
 
 
@@ -166,23 +179,24 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable4
-       4  ??DataTable4_1
+       4  ??DataTable5
+       4  ??DataTable5_1
        4  CLOCK_SECOND
       38  Clock_Init
       40  Clock_Resume
       10  Clock_Suspend
        6  Clock_Time
       20  Clock_Wait
+      12  Clock_Waitus
       10  SysTick_Handler
        4  count
 
  
    4 bytes in section .bss
    4 bytes in section .rodata
- 132 bytes in section .text
+ 144 bytes in section .text
  
- 132 bytes of CODE  memory
+ 144 bytes of CODE  memory
    4 bytes of CONST memory
    4 bytes of DATA  memory
 

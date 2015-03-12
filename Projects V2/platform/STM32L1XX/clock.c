@@ -77,4 +77,16 @@ void Clock_Wait(uint32_t i)
   while(Clock_Time() - start < (tClockTime)(i*1000));
 }
 /*---------------------------------------------------------------------------*/
+/**
+ * Wait for a multiple of 1 us.
+ *
+ */
+void Clock_Waitus(uint32_t i,tClockTime start)
+{
+  //tClockTime start;
+
+  //start = Clock_Time();
+  while(Clock_Time() - start < (tClockTime)(i));
+}
+/*---------------------------------------------------------------------------*/
 

@@ -371,7 +371,7 @@ int main(void)
         HCI_Process();          //Process any transmission,reception,etc.
         User_Process();         //Update connections and get characteristic handles if needed
         
-        //Check for button presses
+        /*//Check for button presses
         if (!GPIO_ReadInputDataBit(GPIOC, BUTTON) && buttonOK)       //If the button has been pressed
         {
             buttonOK = false;
@@ -379,16 +379,20 @@ int main(void)
             //Send stimulate command to other blueNRG
             uint8_t data_buffer[] = {0x45,0x56,0x45,0x4e,0x54,0x0d};    //ASCII for "EVENT"
             uint16_t Nb_bytes = 6;      //Data buffer size
-            processInputData(data_buffer, Nb_bytes);    //Transmit the data buffer
+            //processInputData(data_buffer, Nb_bytes);    //Transmit the data buffer
             //Schedule measuring event
             startTimer(2);
-        }
-        printf("%d\n\r",Clock_Time());
-        /*if(Clock_Time() % 10000000 < 100)
+        }*/
+        //printf("%d\n\r",Clock_Time());
+        tClockTime ct, mod;
+        ct = Clock_Time();
+        mod = ct % 10000000;
+        if(mod < 100)
         {
           startTimer(2);
-          printf("%d",Clock_Time());
-        }*/
+          while(Clock_Time() < ct - mod + 100);// to replace with... while(Clock_Time() < event); then after this place the pin up command
+          printf("%d\n\r%d\n\r",ct,Clock_Time());
+        }
     }
 }
 
@@ -430,7 +434,7 @@ void Make_Connection(void)
         }
         while(!flag_connection_complete)
         {
-         printf("%d\n\r",Clock_Time());
+         //printf("%d\n\r",Clock_Time());
             HCI_Process();    //EVT_LE_META_EVENT event triggered when connection is complete
         }
         flag_connection_complete = 0;

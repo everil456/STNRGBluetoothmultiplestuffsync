@@ -47,6 +47,7 @@ tClockTime Clock_Time(void);
  *
  */
 void Clock_Wait(uint32_t i);
+void Clock_Waitus(uint32_t i,tClockTime start);
 
 void Clock_Suspend(void);
 
