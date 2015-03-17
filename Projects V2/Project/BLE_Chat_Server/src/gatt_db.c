@@ -78,7 +78,10 @@ fail:
 
 void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
 {
+  tClockTime ct = Clock_Timeus();
     if(handle == RXCharHandle + 1){
+      uint32_t got_time = (uint32_t) ct;
+      printf("got_time: %d\n\r",got_time);
       printf("reveived: ");
         for(int i = 0; i < data_length; i++)
           printf("%c", att_data[i]);
@@ -99,7 +102,7 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
           }
           else if(att_data[1] == 'T'){
             printf("at index 1 received a T\n\r");           
-            uint32_t bstime = f_bstimei();
+            uint32_t bstime = got_time;
             printf("bstime: %d\n\r", bstime);
             char message_t[8];
             char number[5];
