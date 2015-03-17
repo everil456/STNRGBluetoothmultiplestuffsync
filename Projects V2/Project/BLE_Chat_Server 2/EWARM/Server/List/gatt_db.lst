@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  10:06:42
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  11:49:03
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -150,68 +150,72 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
      78          
      79          void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
      80          {
-     81              if(handle == RXCharHandle + 1){
-     82                printf("reveived: ");
-     83                  for(int i = 0; i < data_length; i++)
-     84                    printf("%c", att_data[i]);
-     85                  printf("\r\n");
-     86                  if(att_data[0] == '1'){
-     87                    printf("at index 0 received a 1\n\r");
-     88                    if(att_data[1] == 'O'){
-     89                      printf("at index 1 received a O\n\r");
-     90                      char number[4];
-     91                      int p = 0;
-     92                      for(int q = 2; q < 6; q++){
-     93                        number[p] = att_data[q];
-     94                        p++;
-     95                      }
-     96                      uint32_t time = atoi(number);
-     97                      //here lies the value of offset. RIP offset
-     98                      offset = time;
-     99                    }
-    100                    else if(att_data[1] == 'T'){ 
-    101                      printf("at index 1 received a T\n\r");
-    102                      uint32_t hhtime = f_hhtimei();
-    103                      printf("hhtime: %d\n\r", hhtime);
-    104                      char message_t[8];
-    105                      char number[5];
-    106                      message_t[0] = 'H';
-    107                      message_t[1] = 'T';
-    108                      sprintf(number, "%d", hhtime);
-    109                      int p = 0;
-    110                      for(int q = 2; q < 6; q++){
-    111                        message_t[q] = number[p];
-    112                        p++;
-    113                      }
-    114                      message_t[6] = '\n';
-    115                      message_t[7] = '\0';
-    116                      printf(message_t);
-    117                      Clock_Wait(500);
-    118                      processInputData(message_t, 8);
-    119                      
-    120                      
-    121                    }
-    122                    else if(att_data[1] == 'E'){
-    123                      printf("at index 1 received a E\n\r");
-    124                      char number[4];
-    125                      int p = 0;
-    126                      for(int q = 2; q < 6; q++){
-    127                        number[p] = att_data[q];
-    128                        p++;
-    129                      }
-    130                      uint32_t time = atoi(number);
-    131                      //trigger event at time
-    132                    }
-    133                    
-    134                  }
-    135              }
-    136                else if(handle == TXCharHandle + 2){        
-    137                  if(att_data[0] == 0x01)
-    138                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
+     81            tClockTime ct = Clock_Timeus();
+     82            
+     83              if(handle == RXCharHandle + 1){
+     84                uint32_t got_time = (uint32_t) ct;
+     85                printf("got_time: %d\n\r",got_time);
+     86                printf("reveived: ");
+     87                  for(int i = 0; i < data_length; i++)
+     88                    printf("%c", att_data[i]);
+     89                  printf("\r\n");
+     90                  if(att_data[0] == '1'){
+     91                    printf("at index 0 received a 1\n\r");
+     92                    if(att_data[1] == 'O'){
+     93                      printf("at index 1 received a O\n\r");
+     94                      char number[4];
+     95                      int p = 0;
+     96                      for(int q = 2; q < 6; q++){
+     97                        number[p] = att_data[q];
+     98                        p++;
+     99                      }
+    100                      uint32_t time = atoi(number);
+    101                      //here lies the value of offset. RIP offset
+    102                      offset = time;
+    103                    }
+    104                    else if(att_data[1] == 'T'){ 
+    105                      printf("at index 1 received a T\n\r");
+    106                      uint32_t hhtime = got_time;
+    107                      printf("hhtime: %d\n\r", hhtime);
+    108                      char message_t[8];
+    109                      char number[5];
+    110                      message_t[0] = 'H';
+    111                      message_t[1] = 'T';
+    112                      sprintf(number, "%d", hhtime);
+    113                      int p = 0;
+    114                      for(int q = 2; q < 6; q++){
+    115                        message_t[q] = number[p];
+    116                        p++;
+    117                      }
+    118                      message_t[6] = '\n';
+    119                      message_t[7] = '\0';
+    120                      printf(message_t);
+    121                      Clock_Wait(500);
+    122                      processInputData(message_t, 8);
+    123                      
+    124                      
+    125                    }
+    126                    else if(att_data[1] == 'E'){
+    127                      printf("at index 1 received a E\n\r");
+    128                      char number[4];
+    129                      int p = 0;
+    130                      for(int q = 2; q < 6; q++){
+    131                        number[p] = att_data[q];
+    132                        p++;
+    133                      }
+    134                      uint32_t time = atoi(number);
+    135                      //trigger event at time
+    136                    }
+    137                    
+    138                  }
     139              }
-    140          }
-    141          
-    142          
+    140                else if(handle == TXCharHandle + 2){        
+    141                  if(att_data[0] == 0x01)
+    142                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
+    143              }
+    144          }
+    145          
+    146          
 
    Maximum stack usage in bytes:
 
@@ -222,10 +226,10 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
         88   -> aci_gatt_add_serv
         88   -> printf
       48   Attribute_Modified_CB
+        48   -> Clock_Timeus
         48   -> Clock_Wait
         48   -> __aeabi_memcpy
         48   -> __iar_Stoul
-        48   -> f_hhtimei
         48   -> printf
         48   -> processInputData
         48   -> sprintf
@@ -235,27 +239,28 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable15
-       4  ??DataTable15_1
-       4  ??DataTable15_2
-       4  ??DataTable15_3
-       4  ??DataTable15_4
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable16_2
+       4  ??DataTable16_3
+       4  ??DataTable16_4
       16  ?_0
       16  ?_1
       28  ?_10
-      16  ?_11
-       4  ?_12
-      28  ?_13
+      28  ?_11
+      16  ?_12
+       4  ?_13
+      28  ?_14
       16  ?_2
       64  ?_3
       36  ?_4
-      12  ?_5
-       4  ?_6
+      16  ?_5
+      12  ?_6
        4  ?_7
-      28  ?_8
+       4  ?_8
       28  ?_9
      158  Add_Chat_Service
-     298  Attribute_Modified_CB
+     312  Attribute_Modified_CB
       12  chatServHandle
           TXCharHandle
           RXCharHandle
@@ -264,9 +269,9 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
  
   12 bytes in section .bss
   12 bytes in section .rodata
- 764 bytes in section .text
+ 794 bytes in section .text
  
- 764 bytes of CODE  memory
+ 794 bytes of CODE  memory
   12 bytes of CONST memory
   12 bytes of DATA  memory
 
