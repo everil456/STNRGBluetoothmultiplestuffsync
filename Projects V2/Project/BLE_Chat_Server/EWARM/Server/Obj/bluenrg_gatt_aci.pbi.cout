@@ -70,7 +70,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -DSYSCLK_FREQ_HSI_32MHz=1
 -DENABLE_USB=1
 -DENABLE_USB_PRINTF=1
--DSERVER=1
+-DCLIENT=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -263,7 +263,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__IAR_COMPILERBASE__=594182
 -D_GOANNA=1
 -D__DATE__="Mar 17 2015"
--D__TIME__="11:47:32"
+-D__TIME__="15:57:43"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
