@@ -41,6 +41,7 @@ void Clock_Init(void);
  * @return The current clock time, measured in system ticks.
  */
 tClockTime Clock_Time(void);
+tClockTime Clock_Timeus(void);
 
 /**
  * This function waits for a given number of milliseconds.
