@@ -61,6 +61,12 @@ void Clock_Resume(Clock_TypeDef ClockType)
 
 tClockTime Clock_Time(void)
 {
+  return count/1000;
+}
+/*---------------------------------------------------------------------------*/
+
+tClockTime Clock_Timeus(void)
+{
   return count;
 }
 
