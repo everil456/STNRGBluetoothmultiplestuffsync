@@ -368,6 +368,7 @@ int main(void)
     while(1)
     { 
         //printf("main\r\n");
+       
         HCI_Process();          //Process any transmission,reception,etc.
         User_Process();         //Update connections and get characteristic handles if needed
         
@@ -385,13 +386,14 @@ int main(void)
         }*/
         //printf("%d\n\r",Clock_Time());
         tClockTime ct, mod;
-        ct = Clock_Time();
+        ct = Clock_Timeus();
         mod = ct % 10000000;
         if(mod < 100)
         {
           startTimer(2);
-          while(Clock_Time() < ct - mod + 100);// to replace with... while(Clock_Time() < event); then after this place the pin up command
-          printf("%d\n\r%d\n\r",ct,Clock_Time());
+          while(Clock_Timeus() < ct - mod + 100);// to replace with... while(Clock_Time() < event); then after this place the pin up command
+         
+          //printf("%d\n%d\r\n",ct, Clock_Timeus());
         }
     }
 }
@@ -434,7 +436,7 @@ void Make_Connection(void)
         }
         while(!flag_connection_complete)
         {
-         //printf("%d\n\r",Clock_Time());
+         //printf("%d\n\r",Clock_Timeus());
             HCI_Process();    //EVT_LE_META_EVENT event triggered when connection is complete
         }
         flag_connection_complete = 0;
@@ -550,9 +552,10 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
     for(int i = 0; i < numSlaves; i++)
     {
       if(attr_handle == slaves[i].tx_handle+1){     //If the notification is from the TX attribute...
-        printf("received %d: ",i);
+        printf("received ");
         
         if(attr_value[0] == 'B'){
+          printf("BS: ");
           if(attr_value[1] == 'T'){
             char array[40];
             int index = 2;
@@ -570,14 +573,19 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
             else if(attr_value[1] == 'E'){
               char array[40];
               array[0] = '1';
+              char array1[40];
+              array1[0] = '0';
               for(int index = 1; index <attr_len; index++){
                   array[index] = attr_value[index];
+                  array1[index] = attr_value[index];
                   
               }
                 processInputData(array, attr_len);
+                processInputData(array1, attr_len);
           }
         }
         else if (attr_value[0] == 'H'){
+          printf("HH: ");
             if(attr_value[1] == 'T'){
             char array[40];
             int index = 2;
@@ -594,13 +602,16 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
           }
             else if(attr_value[1] == 'E'){
               char array[40];
-              array[0] = '0';
+              array[0] = '1';
+              char array1[40];
+              array1[0] = '0';
               for(int index = 1; index <attr_len; index++){
                   array[index] = attr_value[index];
+                  array1[index] = attr_value[index];
                   
               }
                 processInputData(array, attr_len);
-            
+                processInputData(array1, attr_len);            
           }
         }  
         for(int i = 0; i < attr_len; i++) //Print out the received message
