@@ -78,12 +78,14 @@ fail:
 
 void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
 {
-  tClockTime ct = Clock_Timeus();
-  
+  tClockTime ct;
+  ct = Clock_Time();
+  printf("got_time: ");
+  printf("%lu\n\r",ct);
     if(handle == RXCharHandle + 1){
-      uint32_t got_time = (uint32_t) ct;
-      printf("got_time: %d\n\r",got_time);
-      printf("reveived: ");
+      //uint32_t got_time = (uint32_t) ct;
+      
+      printf("recieved: ");
         for(int i = 0; i < data_length; i++)
           printf("%c", att_data[i]);
         printf("\r\n");
@@ -97,24 +99,29 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
               number[p] = att_data[q];
               p++;
             }
+            
+            printf("number is: %c%c%c%c\n\r",number[0],number[1],number[2],number[3]);
             uint32_t time = atoi(number);
+            printf("time: %d\n\r",time);
             //here lies the value of offset. RIP offset
             offset = time;
           }
           else if(att_data[1] == 'T'){ 
             printf("at index 1 received a T\n\r");
-            uint32_t hhtime = got_time;
-            printf("hhtime: %d\n\r", hhtime);
+            //uint32_t hhtime = got_time;
+            printf("hhtime: ");
+            //printf("%d\n\r", hhtime);
             char message_t[8];
             char number[5];
             message_t[0] = 'H';
             message_t[1] = 'T';
-            sprintf(number, "%d", hhtime);
+            //sprintf(number, "%d", hhtime);
             int p = 0;
             for(int q = 2; q < 6; q++){
               message_t[q] = number[p];
               p++;
             }
+            
             message_t[6] = '\n';
             message_t[7] = '\0';
             printf(message_t);
@@ -133,6 +140,9 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             }
             uint32_t time = atoi(number);
             //trigger event at time
+            startTimer(2);
+            printf("Event at time: ");
+            printf("%d\n\r", time);
           }
           
         }
