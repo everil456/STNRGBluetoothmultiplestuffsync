@@ -1,66 +1,67 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        12/Mar/2015  12:51:32
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  10:01:36
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\src\BLE_Chat_main.c
 #    Command line =  
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\src\BLE_Chat_main.c" -D
 #        USE_STDPERIPH_DRIVER -D STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D
-#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        ENABLE_USB -D ENABLE_USB_PRINTF -D CLIENT=1 -lcN "C:\School\2014
+#        Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\" --diag_suppress Pa050
-#        -o "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\" --debug --endian=little
 #        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
 #        (x86)\IAR Systems\Embedded Workbench
-#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
-#        V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Client\EWARM\..\inc\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        LE\SimpleBlueNRG_HCI\" -I "C:\School\2014 Fall\ECE 4900\Bluetooth
+#        Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\includes\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
 #        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
 #        Workbench 7.0\arm\CMSIS\Include\"
 #    List file    =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\List\BLE_Chat_main.lst
 #    Object file  =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
 #        V2\Project\BLE_Chat_Client\EWARM\Client\Obj\BLE_Chat_main.o
 #
 ###############################################################################
 
-C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Chat_main.c
+C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Chat_main.c
       1          /******************** (C) COPYRIGHT 2014 STMicroelectronics ********************
       2          * File Name          : BLE_Chat_main.c
       3          * Author             : AMS - AAS Division
@@ -453,7 +454,7 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
     390                  if(mod < 100)
     391                  {
     392                    startTimer(2);
-    393                    while(Clock_Time() < ct - mod + 100);
+    393                    while(Clock_Time() < ct - mod + 100);// to replace with... while(Clock_Time() < event); then after this place the pin up command
     394                    printf("%d\n\r%d\n\r",ct,Clock_Time());
     395                  }
     396              }
@@ -652,7 +653,7 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
     589                        index++;
     590                      }
     591                        hhtimei = s2i(array);
-    592                        send_times(bstimei, hhtimei);
+    592                        send_times();
     593                      
     594                    }
     595                      else if(attr_value[1] == 'E'){
@@ -680,7 +681,7 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
     617            
     618            if((bstimei != 0) && (hhtimei != 0)){
     619              
-    620              offsetp = calculate( bstimei,  hhtimei);
+    620              offsetp = calculate( bstimei,  hhtimei, offsetp);
     621              
     622              bstimei = 0;
     623              hhtimei = 0;
@@ -892,12 +893,12 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
     829                              if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
     830                              {
     831                                slaves[index].tx_handle = resp->attr_handle;
-    832                                PRINTF("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
+    832                                printf("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
     833                              }
     834                              else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
     835                              {
     836                                slaves[index].rx_handle = resp->attr_handle;
-    837                                PRINTF("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
+    837                                printf("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
     838                              }
     839                          }
     840                          break;  
@@ -1079,7 +1080,7 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
       12  ?_9
      140  GAP_ConnectionComplete_CB
       86  GAP_DisconnectionComplete_CB
-     360  GATT_Notification_CB
+     352  GATT_Notification_CB
      410  HCI_Event_CB
      102  Make_Connection
      410  User_Process
@@ -1094,18 +1095,18 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\Project\BLE_Chat_Client\src\BLE_Ch
        8  l2cap_req_timer
      432  main
        2  rx_handle
-     132  send_times
+     134  send_times
        2  tx_handle
 
  
     26 bytes in section .bss
     16 bytes in section .data
     14 bytes in section .rodata
- 2 647 bytes in section .text
+ 2 641 bytes in section .text
  
- 2 647 bytes of CODE  memory
+ 2 641 bytes of CODE  memory
     14 bytes of CONST memory
     42 bytes of DATA  memory
 
 Errors: none
-Warnings: 9
+Warnings: 8

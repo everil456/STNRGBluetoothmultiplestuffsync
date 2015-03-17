@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "syncr.h"
 
+extern uint32_t offset=0;
 
 #ifndef DEBUG
 #define DEBUG 1
@@ -83,7 +84,9 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
           printf("%c", att_data[i]);
         printf("\r\n");
         if(att_data[0] == '1'){
+          printf("at index 0 received a 1\n\r");
           if(att_data[1] == 'O'){
+            printf("at index 1 received a O\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){
@@ -91,10 +94,13 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
               p++;
             }
             uint32_t time = atoi(number);
-            //need to store offset somewhere. Rex where do you want it?
+            //here lies the value of offset. RIP offset
+            offset = time;
           }
-          else if(att_data[1] == 'T'){            
-            uint32_t hhtime = hhtimei();
+          else if(att_data[1] == 'T'){ 
+            printf("at index 1 received a T\n\r");
+            uint32_t hhtime = f_hhtimei();
+            printf("hhtime: %d\n\r", hhtime);
             char message_t[8];
             char number[5];
             message_t[0] = 'H';
@@ -107,12 +113,14 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             }
             message_t[6] = '\n';
             message_t[7] = '\0';
+            printf(message_t);
             Clock_Wait(500);
             processInputData(message_t, 8);
             
             
           }
           else if(att_data[1] == 'E'){
+            printf("at index 1 received a E\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){

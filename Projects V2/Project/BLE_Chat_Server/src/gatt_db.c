@@ -84,7 +84,9 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
           printf("%c", att_data[i]);
         printf("\r\n");
         if(att_data[0] == '0'){
+          printf("at index 0 received a 0\n\r");
           if(att_data[1] == 'O'){
+            printf("at index 1 received an O\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){
@@ -96,8 +98,9 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             offset = time;
           }
           else if(att_data[1] == 'T'){
-                       
+            printf("at index 1 received a T\n\r");           
             uint32_t bstime = f_bstimei();
+            printf("bstime: %d\n\r", bstime);
             char message_t[8];
             char number[5];
             message_t[0] = 'B';
@@ -111,10 +114,12 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             message_t[6] = '\n';
             message_t[7] = '\0';
             Clock_Wait(500);
+            printf(message_t);
             processInputData(message_t, 8);  
           
           }
           else if(att_data[1] == 'E'){
+            printf("at index 1 received an E\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){
@@ -123,6 +128,7 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             }
             uint32_t time = atoi(number);
             //trigger event at time
+            printf("Event at time: %d\n\r", time);
           }
           
         }

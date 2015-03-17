@@ -589,7 +589,7 @@ void GATT_Notification_CB(uint16_t attr_handle, uint8_t attr_len, uint8_t *attr_
               index++;
             }
               hhtimei = s2i(array);
-              send_times(bstimei, hhtimei);
+              send_times();
             
           }
             else if(attr_value[1] == 'E'){
@@ -617,7 +617,7 @@ void send_times(){
   
   if((bstimei != 0) && (hhtimei != 0)){
     
-    offsetp = calculate( bstimei,  hhtimei);
+    offsetp = calculate( bstimei,  hhtimei, offsetp);
     
     bstimei = 0;
     hhtimei = 0;
@@ -829,12 +829,12 @@ void HCI_Event_CB(void *pckt)   //This function is called when ACI events occur 
                     if (arrayFlags[index].start_read_TX_char_handle && !arrayFlags[index].end_read_TX_char_handle)
                     {
                       slaves[index].tx_handle = resp->attr_handle;
-                      PRINTF("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
+                      printf("Device %d TX Char Handle: %04X\n\r", index, slaves[index].tx_handle);
                     }
                     else if (arrayFlags[index].start_read_RX_char_handle && !arrayFlags[index].end_read_RX_char_handle)
                     {
                       slaves[index].rx_handle = resp->attr_handle;
-                      PRINTF("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
+                      printf("Device %d RX Char Handle: %04X\n\r", index, slaves[index].rx_handle);
                     }
                 }
                 break;  

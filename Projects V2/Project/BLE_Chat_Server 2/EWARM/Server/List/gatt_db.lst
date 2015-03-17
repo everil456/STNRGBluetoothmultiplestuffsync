@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        06/Mar/2015  10:13:13
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  10:06:42
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -81,129 +81,137 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
       9          #include <stdlib.h>
      10          #include "syncr.h"
      11          
-     12          
-     13          #ifndef DEBUG
-     14          #define DEBUG 1
-     15          #endif
-     16          
-     17          #if DEBUG
-     18          #include <stdio.h>
-     19          #define PRINTF(...) printf(__VA_ARGS__)
-     20          #else
-     21          #define PRINTF(...)
-     22          #endif
-     23          
+     12          extern uint32_t offset=0;
+     13          
+     14          #ifndef DEBUG
+     15          #define DEBUG 1
+     16          #endif
+     17          
+     18          #if DEBUG
+     19          #include <stdio.h>
+     20          #define PRINTF(...) printf(__VA_ARGS__)
+     21          #else
+     22          #define PRINTF(...)
+     23          #endif
      24          
-     25          #define COPY_UUID_128(uuid_struct, uuid_15, uuid_14, uuid_13, uuid_12, uuid_11, uuid_10, uuid_9, uuid_8, uuid_7, uuid_6, uuid_5, uuid_4, uuid_3, uuid_2, uuid_1, uuid_0) \
-     26            do {\
-     27            	uuid_struct.uuid128[0] = uuid_0; uuid_struct.uuid128[1] = uuid_1; uuid_struct.uuid128[2] = uuid_2; uuid_struct.uuid128[3] = uuid_3; \
-     28          	uuid_struct.uuid128[4] = uuid_4; uuid_struct.uuid128[5] = uuid_5; uuid_struct.uuid128[6] = uuid_6; uuid_struct.uuid128[7] = uuid_7; \
-     29          	uuid_struct.uuid128[8] = uuid_8; uuid_struct.uuid128[9] = uuid_9; uuid_struct.uuid128[10] = uuid_10; uuid_struct.uuid128[11] = uuid_11; \
-     30          	uuid_struct.uuid128[12] = uuid_12; uuid_struct.uuid128[13] = uuid_13; uuid_struct.uuid128[14] = uuid_14; uuid_struct.uuid128[15] = uuid_15; \
-     31          	}while(0)
-     32          
-     33          uint16_t chatServHandle, TXCharHandle, RXCharHandle;
-     34          /*  User Function where serial received data should be processed */
-     35          void processInputData(uint8_t * rx_data, uint16_t data_size);
-     36          
-     37          /*******************************************************************************
-     38          * Function Name  : Add_Chat_Service
-     39          * Description    : Add the 'Accelerometer' service.
-     40          * Input          : None
-     41          * Return         : Status.
-     42          *******************************************************************************/
-     43          tBleStatus Add_Chat_Service(void)
-     44          {
-     45            	tBleStatus ret;
-     46              
-     47              /*
-     48              UUIDs:
-     49              D973F2E0-B19E-11E2-9E96-0800200C9A66
-     50              D973F2E1-B19E-11E2-9E96-0800200C9A66
-     51              D973F2E2-B19E-11E2-9E96-0800200C9A66
-     52              */
-     53              
-     54              const uint8_t service_uuid[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe0,0xf2,0x73,0xd9};
-     55              const uint8_t charUuidTX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe1,0xf2,0x73,0xd9};
-     56              const uint8_t charUuidRX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe2,0xf2,0x73,0xd9};
-     57              
-     58              ret = aci_gatt_add_serv(UUID_TYPE_128, service_uuid, PRIMARY_SERVICE, 7, &chatServHandle); /* original is 9?? */
-     59              if (ret != BLE_STATUS_SUCCESS) goto fail;    
-     60                  
-     61              ret =  aci_gatt_add_char(chatServHandle, UUID_TYPE_128, charUuidTX, 20, CHAR_PROP_NOTIFY, ATTR_PERMISSION_NONE, 0,
-     62                                16, 1, &TXCharHandle);
-     63              if (ret != BLE_STATUS_SUCCESS) goto fail;
-     64              
-     65              ret =  aci_gatt_add_char(chatServHandle, UUID_TYPE_128, charUuidRX, 20, CHAR_PROP_WRITE|CHAR_PROP_WRITE_WITHOUT_RESP, ATTR_PERMISSION_NONE, GATT_NOTIFY_ATTRIBUTE_WRITE,
-     66                                16, 1, &RXCharHandle);
-     67              if (ret != BLE_STATUS_SUCCESS) goto fail;
-     68              
-     69          	PRINTF("Chat Service added.\r\nTX Char Handle %04X, RX Char Handle %04X\r\n", TXCharHandle, RXCharHandle);
-     70          	return BLE_STATUS_SUCCESS; 
-     71          	
-     72          fail:
-     73            	PRINTF("Error while adding Chat service.\n");
-     74          	return BLE_STATUS_ERROR ;
-     75          }
-     76          
+     25          
+     26          #define COPY_UUID_128(uuid_struct, uuid_15, uuid_14, uuid_13, uuid_12, uuid_11, uuid_10, uuid_9, uuid_8, uuid_7, uuid_6, uuid_5, uuid_4, uuid_3, uuid_2, uuid_1, uuid_0) \
+     27            do {\
+     28            	uuid_struct.uuid128[0] = uuid_0; uuid_struct.uuid128[1] = uuid_1; uuid_struct.uuid128[2] = uuid_2; uuid_struct.uuid128[3] = uuid_3; \
+     29          	uuid_struct.uuid128[4] = uuid_4; uuid_struct.uuid128[5] = uuid_5; uuid_struct.uuid128[6] = uuid_6; uuid_struct.uuid128[7] = uuid_7; \
+     30          	uuid_struct.uuid128[8] = uuid_8; uuid_struct.uuid128[9] = uuid_9; uuid_struct.uuid128[10] = uuid_10; uuid_struct.uuid128[11] = uuid_11; \
+     31          	uuid_struct.uuid128[12] = uuid_12; uuid_struct.uuid128[13] = uuid_13; uuid_struct.uuid128[14] = uuid_14; uuid_struct.uuid128[15] = uuid_15; \
+     32          	}while(0)
+     33          
+     34          uint16_t chatServHandle, TXCharHandle, RXCharHandle;
+     35          /*  User Function where serial received data should be processed */
+     36          void processInputData(uint8_t * rx_data, uint16_t data_size);
+     37          
+     38          /*******************************************************************************
+     39          * Function Name  : Add_Chat_Service
+     40          * Description    : Add the 'Accelerometer' service.
+     41          * Input          : None
+     42          * Return         : Status.
+     43          *******************************************************************************/
+     44          tBleStatus Add_Chat_Service(void)
+     45          {
+     46            	tBleStatus ret;
+     47              
+     48              /*
+     49              UUIDs:
+     50              D973F2E0-B19E-11E2-9E96-0800200C9A66
+     51              D973F2E1-B19E-11E2-9E96-0800200C9A66
+     52              D973F2E2-B19E-11E2-9E96-0800200C9A66
+     53              */
+     54              
+     55              const uint8_t service_uuid[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe0,0xf2,0x73,0xd9};
+     56              const uint8_t charUuidTX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe1,0xf2,0x73,0xd9};
+     57              const uint8_t charUuidRX[16] = {0x66,0x9a,0x0c,0x20,0x00,0x08,0x96,0x9e,0xe2,0x11,0x9e,0xb1,0xe2,0xf2,0x73,0xd9};
+     58              
+     59              ret = aci_gatt_add_serv(UUID_TYPE_128, service_uuid, PRIMARY_SERVICE, 7, &chatServHandle); /* original is 9?? */
+     60              if (ret != BLE_STATUS_SUCCESS) goto fail;    
+     61                  
+     62              ret =  aci_gatt_add_char(chatServHandle, UUID_TYPE_128, charUuidTX, 20, CHAR_PROP_NOTIFY, ATTR_PERMISSION_NONE, 0,
+     63                                16, 1, &TXCharHandle);
+     64              if (ret != BLE_STATUS_SUCCESS) goto fail;
+     65              
+     66              ret =  aci_gatt_add_char(chatServHandle, UUID_TYPE_128, charUuidRX, 20, CHAR_PROP_WRITE|CHAR_PROP_WRITE_WITHOUT_RESP, ATTR_PERMISSION_NONE, GATT_NOTIFY_ATTRIBUTE_WRITE,
+     67                                16, 1, &RXCharHandle);
+     68              if (ret != BLE_STATUS_SUCCESS) goto fail;
+     69              
+     70          	PRINTF("Chat Service added.\r\nTX Char Handle %04X, RX Char Handle %04X\r\n", TXCharHandle, RXCharHandle);
+     71          	return BLE_STATUS_SUCCESS; 
+     72          	
+     73          fail:
+     74            	PRINTF("Error while adding Chat service.\n");
+     75          	return BLE_STATUS_ERROR ;
+     76          }
      77          
-     78          void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
-     79          {
-     80              if(handle == RXCharHandle + 1){
-     81                printf("reveived: ");
-     82                  for(int i = 0; i < data_length; i++)
-     83                    printf("%c", att_data[i]);
-     84                  printf("\r\n");
-     85                  if(att_data[0] == '1'){
-     86                    if(att_data[1] == 'O'){
-     87                      char number[4];
-     88                      int p = 0;
-     89                      for(int q = 2; q < 6; q++){
-     90                        number[p] = att_data[q];
-     91                        p++;
-     92                      }
-     93                      uint32_t time = atoi(number);
-     94                      //need to store offset somewhere. Rex where do you want it?
-     95                    }
-     96                    else if(att_data[1] == 'T'){            
-     97                      uint32_t hhtime = hhtimei();
-     98                      char message_t[8];
-     99                      char number[5];
-    100                      message_t[0] = 'H';
-    101                      message_t[1] = 'T';
-    102                      sprintf(number, "%d", hhtime);
-    103                      int p = 0;
-    104                      for(int q = 2; q < 6; q++){
-    105                        message_t[q] = number[p];
-    106                        p++;
-    107                      }
-    108                      message_t[6] = '\n';
-    109                      message_t[7] = '\0';
-    110                      Clock_Wait(500);
-    111                      processInputData(message_t, 8);
-    112                      
-    113                      
-    114                    }
-    115                    else if(att_data[1] == 'E'){
-    116                      char number[4];
-    117                      int p = 0;
-    118                      for(int q = 2; q < 6; q++){
-    119                        number[p] = att_data[q];
-    120                        p++;
-    121                      }
-    122                      uint32_t time = atoi(number);
-    123                      //trigger event at time
-    124                    }
-    125                    
-    126                  }
-    127              }
-    128                else if(handle == TXCharHandle + 2){        
-    129                  if(att_data[0] == 0x01)
-    130                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
-    131              }
-    132          }
-    133          
-    134          
+     78          
+     79          void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
+     80          {
+     81              if(handle == RXCharHandle + 1){
+     82                printf("reveived: ");
+     83                  for(int i = 0; i < data_length; i++)
+     84                    printf("%c", att_data[i]);
+     85                  printf("\r\n");
+     86                  if(att_data[0] == '1'){
+     87                    printf("at index 0 received a 1\n\r");
+     88                    if(att_data[1] == 'O'){
+     89                      printf("at index 1 received a O\n\r");
+     90                      char number[4];
+     91                      int p = 0;
+     92                      for(int q = 2; q < 6; q++){
+     93                        number[p] = att_data[q];
+     94                        p++;
+     95                      }
+     96                      uint32_t time = atoi(number);
+     97                      //here lies the value of offset. RIP offset
+     98                      offset = time;
+     99                    }
+    100                    else if(att_data[1] == 'T'){ 
+    101                      printf("at index 1 received a T\n\r");
+    102                      uint32_t hhtime = f_hhtimei();
+    103                      printf("hhtime: %d\n\r", hhtime);
+    104                      char message_t[8];
+    105                      char number[5];
+    106                      message_t[0] = 'H';
+    107                      message_t[1] = 'T';
+    108                      sprintf(number, "%d", hhtime);
+    109                      int p = 0;
+    110                      for(int q = 2; q < 6; q++){
+    111                        message_t[q] = number[p];
+    112                        p++;
+    113                      }
+    114                      message_t[6] = '\n';
+    115                      message_t[7] = '\0';
+    116                      printf(message_t);
+    117                      Clock_Wait(500);
+    118                      processInputData(message_t, 8);
+    119                      
+    120                      
+    121                    }
+    122                    else if(att_data[1] == 'E'){
+    123                      printf("at index 1 received a E\n\r");
+    124                      char number[4];
+    125                      int p = 0;
+    126                      for(int q = 2; q < 6; q++){
+    127                        number[p] = att_data[q];
+    128                        p++;
+    129                      }
+    130                      uint32_t time = atoi(number);
+    131                      //trigger event at time
+    132                    }
+    133                    
+    134                  }
+    135              }
+    136                else if(handle == TXCharHandle + 2){        
+    137                  if(att_data[0] == 0x01)
+    138                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
+    139              }
+    140          }
+    141          
+    142          
 
    Maximum stack usage in bytes:
 
@@ -213,48 +221,54 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
         88   -> aci_gatt_add_char
         88   -> aci_gatt_add_serv
         88   -> printf
-      40   Attribute_Modified_CB
-        40   -> Clock_Wait
-        40   -> __aeabi_memcpy
-        40   -> __iar_Stoul
-        40   -> hhtimei
-        40   -> printf
-        40   -> processInputData
-        40   -> sprintf
+      48   Attribute_Modified_CB
+        48   -> Clock_Wait
+        48   -> __aeabi_memcpy
+        48   -> __iar_Stoul
+        48   -> f_hhtimei
+        48   -> printf
+        48   -> processInputData
+        48   -> sprintf
 
 
    Section sizes:
 
    Bytes  Function/Label
    -----  --------------
-       4  ??DataTable10
-       4  ??DataTable10_1
-       4  ??DataTable10_2
-       4  ??DataTable10_3
-       4  ??DataTable10_4
+       4  ??DataTable15
+       4  ??DataTable15_1
+       4  ??DataTable15_2
+       4  ??DataTable15_3
+       4  ??DataTable15_4
       16  ?_0
       16  ?_1
+      28  ?_10
+      16  ?_11
+       4  ?_12
+      28  ?_13
       16  ?_2
       64  ?_3
       36  ?_4
       12  ?_5
        4  ?_6
        4  ?_7
-       4  ?_8
+      28  ?_8
+      28  ?_9
      158  Add_Chat_Service
-     202  Attribute_Modified_CB
-       6  chatServHandle
+     298  Attribute_Modified_CB
+      12  chatServHandle
           TXCharHandle
           RXCharHandle
+          offset
 
  
-   6 bytes in section .bss
+  12 bytes in section .bss
   12 bytes in section .rodata
- 540 bytes in section .text
+ 764 bytes in section .text
  
- 540 bytes of CODE  memory
+ 764 bytes of CODE  memory
   12 bytes of CONST memory
-   6 bytes of DATA  memory
+  12 bytes of DATA  memory
 
 Errors: none
 Warnings: 1

@@ -19,6 +19,6 @@ uint32_t s2i(char array[]);
 
 uint32_t f_hhtimei();
 
-uint32_t  calculate(uint32_t bstimei, uint32_t hhtimei);
+uint32_t  calculate(uint32_t bstimei, uint32_t hhtimei, uint32_t offsetp);
 
 #endif

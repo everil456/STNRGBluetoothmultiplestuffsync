@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        06/Mar/2015  09:44:36
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  10:06:34
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -396,7 +396,7 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
     324                                                 NULL,
     325                                                 7,
     326                                                 16,
-    327                                                 USE_FIXED_PIN_FOR_PAIRING,       //*************************************
+    327                                                 USE_FIXED_PIN_FOR_PAIRING,       ********
     328                                                 123456,
     329                                                 BONDING);
     330              PRINTF("BLE Stack Initialized.\r\n");*/
@@ -912,4 +912,4 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
     16 bytes of DATA  memory
 
 Errors: none
-Warnings: 2
+Warnings: 1

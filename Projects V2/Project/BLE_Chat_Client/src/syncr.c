@@ -24,6 +24,7 @@ offsetp = the assumed real offset between the bstimep and the hhtimep
 //***on event, do this
 
 
+
 uint32_t s2i(char array[]){
   
   return atoi(array);
@@ -55,14 +56,14 @@ uint32_t f_hhtimei()
 
 //for ss, comment out in bs hh code
 
-uint32_t  calculate(uint32_t bstimei, uint32_t hhtimei)
+uint32_t  calculate(uint32_t bstimei, uint32_t hhtimei, uint32_t offsetp)
 {
   /*on receiving bstimei or hhtimei compare bstimei + offset with hhtimei, if
   close to sync interval,uint32_t do nothing, if close to clock overflow, try bstimei + offset - clock overflow
   and if that is close, then do the calculation and update offsetp*/
   
 uint32_t offseti = bstimei - hhtimei; 
-uint32_t offsetp = update_offsetp(offsetp,offseti);//this function prints, so if you dont like it, comment out the printing inside the function
+offsetp = update_offsetp(offsetp,offseti);//this function prints, so if you dont like it, comment out the printing inside the function
 
 /*offsetp for offset permanent, 
 or offfset pervaisive, offseti for offset instantaneous, or offset momentary */
@@ -88,14 +89,14 @@ uint32_t tolerance2 = 24000000; // 3 seconds, we need to reset offsetp
 // if offseti is very close to offsetp
 if (((offseti - offsetp) < tolerance)&&((offseti - offsetp) > - tolerance)) 
 {
-  uint32_t offsetp = offsetp + (offseti - offsetp)/n; 
-  PRINTF("offsetp: %10d\n\r",offsetp);
+  offsetp = offsetp + (offseti - offsetp)/n; 
+  printf("offsetp: %10d\n\r",offsetp);
   return offsetp;
 }
 // if offseti is semi close to offsetp
 else if (((offseti - offsetp) < tolerance2)&&((offseti - offsetp) > - tolerance2)) 
 {
-  uint32_t offsetp = offsetp + (offseti - offsetp)/n2; 
+  offsetp = offsetp + (offseti - offsetp)/n2; 
   return offsetp;
 }
 //offsetp needs to be initialized
@@ -107,7 +108,7 @@ else if (offsetp == 0)
 // Error
 else
 {
-  PRINTF("Error: offseti not within %10d clock ticks of offsetp.\n\r  offseti: %10d\n\r",tolerance2,offseti);
+  printf("Error: offseti not within %10d clock ticks of offsetp.\n\r  offseti: %10d\n\r",tolerance2,offseti);
   return offsetp;
 }
 }
