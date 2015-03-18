@@ -14,8 +14,7 @@
 void processInputData(uint8_t * rx_data, uint16_t data_size);
 
 volatile tClockTime count, countr, counter, synccount, eventr = 6500000; //defined in Main
-extern uint8_t syncReq = 0;
-
+extern uint16_t syncReq;
 const uint32_t CLOCK_SECOND = 1000;
 
 /*---------------------------------------------------------------------------*/
@@ -35,7 +34,7 @@ void SysTick_Handler(void)
     syncReq = 1; // this variable will trigger the sending of the time sync command.
 	synccount = 0; 
   }
-  if(countr == eventr)&&(eventr != 0)
+  if((countr == eventr)&&(eventr != 0))
   {
     //startTimer(2); //turn on led for a second or something like that.
 	eventr = 0; //eventr will need to be something other than 0 for an event to take place
@@ -82,27 +81,14 @@ void Clock_Resume(Clock_TypeDef ClockType)
 
 tClockTime Clock_Time(void)
 {
-<<<<<<< .mine
-=======
-
->>>>>>> .r36
   return count;
-<<<<<<< .mine
-=======
   ////printf("inside Clock_Time\r\n");
->>>>>>> .r36
 }
 /*---------------------------------------------------------------------------*/
 
 tClockTime Clock_Timeus(void)
 {
-<<<<<<< .mine
   return countr;
-=======
-
-  return count;
-  
->>>>>>> .r36
 }
 
 /*---------------------------------------------------------------------------*/
@@ -115,22 +101,8 @@ void Clock_Wait(uint32_t i)
   tClockTime start;
 
   start = Clock_Time();
-<<<<<<< .mine
-=======
-
->>>>>>> .r36
   while(Clock_Time() - start < (tClockTime)(i));
-<<<<<<< .mine
-=======
-  //while(Clock_Time() - start < (tClockTime)(i*1000));
-
-  while(Clock_Time() - start < (tClockTime)(i*1000));
-
-  //while(Clock_Time() - start < (tClockTime)(i*1000));
-  while(Clock_Time() - start < (tClockTime)(i));
-
->>>>>>> .r36
-}
+ }
 /*---------------------------------------------------------------------------*/
 /**
  * Wait for a multiple of 1 us.
