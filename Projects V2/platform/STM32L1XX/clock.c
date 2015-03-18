@@ -62,27 +62,15 @@ void Clock_Resume(Clock_TypeDef ClockType)
 
 tClockTime Clock_Time(void)
 {
-<<<<<<< .mine
-  return count;
-=======
-<<<<<<< Updated upstream
-  return count/1000;
->>>>>>> .r34
-=======
 
+  return count;
   ////printf("inside Clock_Time\r\n");
-
-  return count;
->>>>>>> Stashed changes
 }
 /*---------------------------------------------------------------------------*/
 
 tClockTime Clock_Timeus(void)
 {
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   return count;
   
 }
@@ -97,17 +85,15 @@ void Clock_Wait(uint32_t i)
   tClockTime start;
 
   start = Clock_Time();
-<<<<<<< .mine
+
   while(Clock_Time() - start < (tClockTime)(i));
   //while(Clock_Time() - start < (tClockTime)(i*1000));
-=======
-<<<<<<< Updated upstream
+
   while(Clock_Time() - start < (tClockTime)(i*1000));
->>>>>>> .r34
-=======
+
   //while(Clock_Time() - start < (tClockTime)(i*1000));
   while(Clock_Time() - start < (tClockTime)(i));
->>>>>>> Stashed changes
+
 }
 /*---------------------------------------------------------------------------*/
 /**
