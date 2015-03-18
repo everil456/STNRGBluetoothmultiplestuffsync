@@ -89,7 +89,7 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
         for(int i = 0; i < data_length; i++)
           printf("%c", att_data[i]);
         printf("\r\n");
-        if(att_data[0] == '0'){
+        if(att_data[0] == '1'){
           printf("at index 0 received a 0\n\r");
           if(att_data[1] == 'O'){
             printf("at index 1 received an O\n\r");
@@ -116,17 +116,36 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
           }
           else if(att_data[1] == 'T'){
             printf("at index 1 received a T\n\r");           
-            uint32_t bstime = got_time;
-            printf("bstime: ");
-            printf("%lu\n\r", bstime);
+            uint32_t hhtime = got_time;
+            printf("hhtime: ");
+            printf("%lu\n\r", hhtime);
             char message_t[8];
-            char number[5];
+            char number[4];
             message_t[0] = 'H';
             message_t[1] = 'T';
-            sprintf(number, "%lu", bstime);
+            
+            //sprintf(number, "%lu", hhtime);
+            
+            int size = sizeof(number)/sizeof(number[0]);
+            uint32_t two = 0xFF;
+            int i;
+            for(i = 0; i < size; i ++){
+                int shift = ((size - i)-1)*8;
+                uint32_t and = two<<shift;
+		printf("and: %lu\r\n",and);
+		uint32_t cut = hhtime & and;
+		printf("cut: %lu\r\n",cut);
+		cut = cut>>shift;
+		printf("cut: %lu\r\n",cut);
+		number[i] = (char)cut;
+		printf("array at %d is %c\r\n",i,number[i]);
+            }
+            printf("size: %d\n\r",size);
+            
             int p = 0;
             for(int q = 2; q < 6; q++){
               message_t[q] = number[p];
+              printf("P: %d\n\r number: %c\n\r",p,number[p]);
               p++;
             }
             message_t[6] = '\n';

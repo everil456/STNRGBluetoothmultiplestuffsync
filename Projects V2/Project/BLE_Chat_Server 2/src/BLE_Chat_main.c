@@ -193,7 +193,7 @@ NOTES:
 /* Private variables ---------------------------------------------------------*/
 volatile int app_flags = SET_CONNECTABLE;
 volatile uint16_t connection_handle = 0;
-extern uint16_t chatServHandle, TXCharHandle, RXCharHandle;
+extern uint16_t chatServHandle, TXCharHandle, RXCharHandle, syncReq = 0;
 struct timer l2cap_req_timer;
 
 /** 
