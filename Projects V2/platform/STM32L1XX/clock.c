@@ -13,8 +13,8 @@
 
 void processInputData(uint8_t * rx_data, uint16_t data_size);
 
-volatile tClockTime count, countr, counter, eventr = 6500000; //defined in Main
-volatile u8 eventEanble = 0;
+volatile tClockTime count, countr, counter, synccount, eventr = 6500000; //defined in Main
+extern uint8_t syncReq = 0;
 
 const uint32_t CLOCK_SECOND = 1000;
 
@@ -23,20 +23,22 @@ void SysTick_Handler(void)
 {
   countr++;
   counter++;
+  synccount++;
   
-  if(counter >= 500)
+  if(counter == 500)
   {
     counter = 0;
     count++;
   }
-  if(countr >= eventr)//&&(eventEanble)
+  if(synccount == 500000)
   {
-    //printf("%d\n\r%d\n\r%d\n\r", count, eventr, countr);
-    //startTimer(2);
-    uint8_t a[3]={'0','T','\n'};
-    uint8_t b[3]={'1','T','\n'};
-    uint16_t size = sizeof(a)/sizeof(a[0]);
-    //eventr += 7654321;
+    syncReq = 1; // this variable will trigger the sending of the time sync command.
+	synccount = 0; 
+  }
+  if(countr == eventr)&&(eventr != 0)
+  {
+    //startTimer(2); //turn on led for a second or something like that.
+	eventr = 0; //eventr will need to be something other than 0 for an event to take place
   }
 }
 /*---------------------------------------------------------------------------*/

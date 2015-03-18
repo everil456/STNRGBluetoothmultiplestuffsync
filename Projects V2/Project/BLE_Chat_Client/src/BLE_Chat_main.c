@@ -388,12 +388,15 @@ int main(void)
         tClockTime ct, mod;
         ct = Clock_Timeus();
         mod = ct % 10000000;
-        if(mod < 100)
-        {
-          startTimer(2);
-          while(Clock_Timeus() < ct - mod + 100);// to replace with... while(Clock_Time() < event); then after this place the pin up command
-         
-          //printf("%d\n%d\r\n",ct, Clock_Timeus());
+        if(syncReq == 1)
+        { 
+        syncReq = 0;  
+        uint8_t a[3]={'0','T','\n'};
+        uint8_t b[3]={'1','T','\n'};
+        uint16_t sizeOfa = sizeof(a)/sizeof(a[0]);
+	uint16_t sizeOfb = sizeof(b)/sizeof(b[0]);
+	processInputData(a, sizeOfa);
+	processInputData(b, sizeOfb);
         }
     }
 }
