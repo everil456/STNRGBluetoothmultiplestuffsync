@@ -1,0 +1,221 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  15:47:19
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\src\syncr.c
+#    Command line =  
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\src\syncr.c" -D USE_STDPERIPH_DRIVER -D
+#        STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D ENABLE_USB -D
+#        ENABLE_USB_PRINTF -D SERVER=1 -lcN "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\" --diag_suppress Pa050
+#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\" -I "C:\School\2014 Fall\ECE 4900\Bluetooth
+#        Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
+#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\School\2014 Fall\ECE
+#        4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
+#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
+#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
+#        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
+#        Workbench 7.0\arm\CMSIS\Include\"
+#    List file    =  
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\List\syncr.lst
+#    Object file  =  
+#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\syncr.o
+#
+###############################################################################
+
+C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Chat_Server\src\syncr.c
+      1          #include "syncr.h"
+      2          #include <stdio.h>
+      3          #include <stm32l1xx_systick.h>
+      4          #include <stm32l1xx_type.h>
+      5          #include <stdlib.h>
+      6          #include "clock.h"
+      7          
+      8          /*vocabulary
+      9          bs = base station
+     10          hh = hand held device
+     11          ss = sync server, this will be the master bluetooth device
+     12          p for permanent, or pervaisive
+     13          i for instantaneous, momentary, discrete, etc
+     14          bstimei = base station time, instantaneous, discrete, value to be sent to ss
+     15          hhtimei = "    "       "       "       "       "       "       "       "
+     16          bstimep = clock value on base station, accessed with getTime() function
+     17          hhtimep = clocktime on the handheld device
+     18          offseti = momentary offset between bstimei and hhtimei. 
+     19          offsetp = the assumed real offset between the bstimep and the hhtimep
+     20          */
+     21          //*** we need to initialize offsetp to 0 somewhere that happens only once on startup or reset.
+     22          
+     23          //for bs, comment out in hh ss code
+     24          
+     25          //***on event, do this
+     26          
+     27          
+     28          
+     29          uint32_t s2i(char array[]){
+     30            
+     31            return atoi(array);
+     32            
+     33          }
+     34          
+     35          uint32_t f_bstimei()
+     36          {
+     37            return get_time();
+     38            //***send bstimei to ss
+     39            //message to ss that has bstimei count and variable name
+     40          }
+     41          
+     42          //set bstimep and hhtimep on bs
+     43          /*
+     44          {
+     45            bstimep = get_time();
+     46            hhtimep = bstimep + offsetp;
+     47          }*/
+     48          
+     49          //for hh, comment out in bs ss code
+     50          //***on event, do this
+     51          uint32_t f_hhtimei()
+     52          {
+     53            return get_time();
+     54            //***send hhtimei to ss
+     55            //message to ss that has hhtimei count and variable name
+     56          }
+     57          
+     58          //for ss, comment out in bs hh code
+     59          
+     60          uint32_t  calculate(uint32_t bstimei, uint32_t hhtimei, uint32_t offsetp)
+     61          {
+     62            /*on receiving bstimei or hhtimei compare bstimei + offset with hhtimei, if
+     63            close to sync interval,uint32_t do nothing, if close to clock overflow, try bstimei + offset - clock overflow
+     64            and if that is close, then do the calculation and update offsetp*/
+     65            
+     66          uint32_t offseti = bstimei - hhtimei; 
+     67          offsetp = update_offsetp(offsetp,offseti);//this function prints, so if you dont like it, comment out the printing inside the function
+     68          
+     69          /*offsetp for offset permanent, 
+     70          or offfset pervaisive, offseti for offset instantaneous, or offset momentary */
+     71            //***send offsetp to bs
+     72          return offsetp;
+     73          }
+     74          
+     75          // functions
+     76          uint32_t get_time()
+     77          {
+     78            u32 timei = Clock_Timeus(); // timei for instantaneous time
+     79            uint32_t ret = (uint32_t)timei;    
+     80            return(ret);
+     81          }
+     82          
+     83          uint32_t update_offsetp(uint32_t offsetp, uint32_t offseti)
+     84          {
+     85            //variables
+     86          uint32_t n = 10; //number to divide offset error by before adding it to offfsetp
+     87          uint32_t tolerance = 200; // 800 at 8 MHz = 100 us, tolerance to call a value good
+     88          uint32_t n2 = 4; //number to divide offset error by before adding it to offfsetp
+     89          uint32_t tolerance2 = 24000000; // 3 seconds, we need to reset offsetp
+     90          // if offseti is very close to offsetp
+     91          if (((offseti - offsetp) < tolerance)&&((offseti - offsetp) > - tolerance)) 
+     92          {
+     93            offsetp = offsetp + (offseti - offsetp)/n; 
+     94            printf("offsetp: %10d\n\r",offsetp);
+     95            return offsetp;
+     96          }
+     97          // if offseti is semi close to offsetp
+     98          else if (((offseti - offsetp) < tolerance2)&&((offseti - offsetp) > - tolerance2)) 
+     99          {
+    100            offsetp = offsetp + (offseti - offsetp)/n2; 
+    101            return offsetp;
+    102          }
+    103          //offsetp needs to be initialized
+    104          else if (offsetp == 0) 
+    105          {
+    106            uint32_t offsetp = offseti; 
+    107            return offsetp;
+    108          }
+    109          // Error
+    110          else
+    111          {
+    112            printf("Error: offseti not within %10d clock ticks of offsetp.\n\r  offseti: %10d\n\r",tolerance2,offseti);
+    113            return offsetp;
+    114          }
+    115          }
+    116            
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   calculate
+       0   f_bstimei
+         0   -> Clock_Timeus
+       0   f_hhtimei
+         0   -> Clock_Timeus
+       0   get_time
+         0   -> Clock_Timeus
+       0   s2i
+         0   -> __iar_Stoul
+       8   update_offsetp
+         8   -> printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+      16  ?_0
+      76  ?_1
+      26  calculate
+       4  f_bstimei
+       4  f_hhtimei
+       4  get_time
+       8  s2i
+      24  update_offsetp
+
+ 
+  16 bytes in section .rodata
+ 150 bytes in section .text
+ 
+ 150 bytes of CODE  memory
+  16 bytes of CONST memory
+
+Errors: none
+Warnings: none

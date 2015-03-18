@@ -1,5 +1,6 @@
 #include "clock.h"
 #include "hal.h"
+#include <stdio.h>
 
 /* Added define for clock settings */
 #include "SDK_EVAL_Clock.h"
@@ -61,13 +62,25 @@ void Clock_Resume(Clock_TypeDef ClockType)
 
 tClockTime Clock_Time(void)
 {
+<<<<<<< Updated upstream
   return count/1000;
+=======
+
+  ////printf("inside Clock_Time\r\n");
+
+  return count;
+>>>>>>> Stashed changes
 }
 /*---------------------------------------------------------------------------*/
 
 tClockTime Clock_Timeus(void)
 {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
   return count;
+  
 }
 
 /*---------------------------------------------------------------------------*/
@@ -80,7 +93,12 @@ void Clock_Wait(uint32_t i)
   tClockTime start;
 
   start = Clock_Time();
+<<<<<<< Updated upstream
   while(Clock_Time() - start < (tClockTime)(i*1000));
+=======
+  //while(Clock_Time() - start < (tClockTime)(i*1000));
+  while(Clock_Time() - start < (tClockTime)(i));
+>>>>>>> Stashed changes
 }
 /*---------------------------------------------------------------------------*/
 /**
