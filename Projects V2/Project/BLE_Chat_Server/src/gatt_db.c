@@ -120,10 +120,27 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             printf("bstime: ");
             printf("%lu\n\r", bstime);
             char message_t[8];
-            char number[5];
+            char number[4];
             message_t[0] = 'B';
             message_t[1] = 'T';
-            sprintf(number, "%lu", bstime);
+            
+            //sprintf(number, "%lu", bstime);
+            
+            int size = sizeof(number)/sizeof(number[0]);
+            uint32_t two = 0xFF;
+            int i;
+            for(i = 0; i < size; i ++){
+                int shift = ((size - i)-1)*8;
+                uint32_t and = two<<shift;
+		printf("and: %lu\r\n",and);
+		uint32_t cut = bstime & and;
+		printf("cut: %lu\r\n",cut);
+		cut = cut>>shift;
+		printf("cut: %lu\r\n",cut);
+		number[i] = (char)cut;
+		printf("array at %d is %c\r\n",i,number[i]);
+            }
+                        
             int p = 0;
             for(int q = 2; q < 6; q++){
               message_t[q] = number[p];
