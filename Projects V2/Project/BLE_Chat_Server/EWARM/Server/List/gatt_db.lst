@@ -1,67 +1,67 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  15:46:49
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  10:36:03
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\src\gatt_db.c
 #    Command line =  
-#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\src\gatt_db.c" -D USE_STDPERIPH_DRIVER -D
 #        STM32L1XX_MD -D SYSCLK_FREQ_HSI_32MHz -D ENABLE_USB -D
-#        ENABLE_USB_PRINTF -D SERVER=1 -lcN "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\SVN\trunk\Projects
+#        ENABLE_USB_PRINTF -D SERVER=1 -lcN
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\List\" --diag_suppress Pa050
-#        -o "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -o "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
 #        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
 #        (x86)\IAR Systems\Embedded Workbench
-#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\SVN\trunk\Projects
-#        V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\SVN\trunk\Projects
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
+#        V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\" -I "C:\School\2014 Fall\ECE 4900\Bluetooth
-#        Code\SVN\trunk\Projects
+#        LE\SimpleBlueNRG_HCI\" -I
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\includes\" -I "C:\School\2014 Fall\ECE
-#        4900\Bluetooth Code\SVN\trunk\Projects
+#        LE\SimpleBlueNRG_HCI\includes\" -I
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
-#        "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
-#        -I "C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
 #        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
 #        Workbench 7.0\arm\CMSIS\Include\"
 #    List file    =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\List\gatt_db.lst
 #    Object file  =  
-#        C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\gatt_db.o
 #
 ###############################################################################
 
-C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Chat_Server\src\gatt_db.c
+C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects V2\Project\BLE_Chat_Server\src\gatt_db.c
       1          #include "hal_types.h"
       2          #include "gatt_server.h"
       3          #include "gap.h"
@@ -147,7 +147,7 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
      83            printf("got_time: ");
      84            printf("%lu\n\r",ct);
      85              if(handle == RXCharHandle + 1){
-     86               // uint32_t got_time = (uint32_t) ct;
+     86                uint32_t got_time = (uint32_t) ct;
      87                
      88                printf("recieved: ");
      89                  for(int i = 0; i < data_length; i++)
@@ -165,58 +165,74 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
     101                        p++;
     102                      }
     103                      printf("number is: %c%c%c%c\n\r",number[0],number[1],number[2],number[3]);
-    104                      uint32_t time = atoi(number);
-    105                      printf("time: %d\n\r",time);
-    106                      //need to store offset somewhere. Rex where do you want it?
-    107                      offset = time;
-    108                    }
-    109                    else if(att_data[1] == 'T'){
-    110                      printf("at index 1 received a T\n\r");           
-    111                      //uint32_t bstime = got_time;
-    112                      printf("bstime: ");
-    113                      //printf("%d\n\r", bstime);
-    114                      char message_t[8];
-    115                      char number[5];
-    116                      message_t[0] = 'B';
-    117                      message_t[1] = 'T';
-    118                      //sprintf(number, "%d", bstime);
-    119                      int p = 0;
-    120                      for(int q = 2; q < 6; q++){
-    121                        message_t[q] = number[p];
-    122                        p++;
-    123                      }
-    124                      message_t[6] = '\n';
-    125                      message_t[7] = '\0';
-    126                      Clock_Wait(500);
-    127                      printf(message_t);
-    128                      processInputData(message_t, 8);  
-    129                    
-    130                    }
-    131                    else if(att_data[1] == 'E'){
-    132                      printf("at index 1 received an E\n\r");
-    133                      char number[4];
-    134                      int p = 0;
-    135                      for(int q = 2; q < 6; q++){
-    136                        number[p] = att_data[q];
-    137                        p++;
-    138                      }
-    139                      uint32_t time = atoi(number);
-    140                      //trigger event at time
-    141                      startTimer(2);
-    142                      printf("Event at time: ");
-    143                      printf("%d\n\r", time);
-    144                    }
-    145                    
-    146                  }
-    147                    
-    148              }
-    149                else if(handle == TXCharHandle + 2){        
-    150                  if(att_data[0] == 0x01)
-    151                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
-    152              }
-    153          }
-    154          
-    155          
+    104                      int size = sizeof(number)/sizeof(number[0]);	
+    105                      int q;
+    106                      uint32_t time = 0;
+    107                      for(q = 0; q < size; q++){
+    108                              uint32_t j = number[q];
+    109                              int shift = ((size - q)-1)*8;
+    110                              uint32_t k = j<<shift;
+    111                              time += k;
+    112                      }           
+    113                      printf("time: %lu\n\r",time);
+    114                      //need to store offset somewhere. Rex where do you want it?
+    115                      offset = time;
+    116                    }
+    117                    else if(att_data[1] == 'T'){
+    118                      printf("at index 1 received a T\n\r");           
+    119                      uint32_t bstime = got_time;
+    120                      printf("bstime: ");
+    121                      printf("%lu\n\r", bstime);
+    122                      char message_t[8];
+    123                      char number[5];
+    124                      message_t[0] = 'B';
+    125                      message_t[1] = 'T';
+    126                      sprintf(number, "%lu", bstime);
+    127                      int p = 0;
+    128                      for(int q = 2; q < 6; q++){
+    129                        message_t[q] = number[p];
+    130                        p++;
+    131                      }
+    132                      message_t[6] = '\n';
+    133                      message_t[7] = '\0';
+    134                      Clock_Wait(500);
+    135                      printf(message_t);
+    136                      processInputData(message_t, 8);  
+    137                    
+    138                    }
+    139                    else if(att_data[1] == 'E'){
+    140                      printf("at index 1 received an E\n\r");
+    141                      char number[4];
+    142                      int p = 0;
+    143                      for(int q = 2; q < 6; q++){
+    144                        number[p] = att_data[q];
+    145                        p++;
+    146                      }
+    147                      int size = sizeof(number)/sizeof(number[0]);	
+    148                      int q;
+    149                      uint32_t time = 0;
+    150                      for(q = 0; q < size; q++){
+    151                              uint32_t j = number[q];
+    152                              int shift = ((size - q)-1)*8;
+    153                              uint32_t k = j<<shift;
+    154                              time += k;
+    155                      }     
+    156                      //trigger event at time
+    157                      startTimer(2);
+    158                      printf("Event at time: ");
+    159                      printf("%lu\n\r", time);
+    160                    }
+    161                    
+    162                  }
+    163                    
+    164              }
+    165                else if(handle == TXCharHandle + 2){        
+    166                  if(att_data[0] == 0x01)
+    167                      APP_FLAG_SET(NOTIFICATIONS_ENABLED);
+    168              }
+    169          }
+    170          
+    171          
 
    Maximum stack usage in bytes:
 
@@ -226,14 +242,14 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
         88   -> aci_gatt_add_char
         88   -> aci_gatt_add_serv
         88   -> printf
-      40   Attribute_Modified_CB
-        40   -> Clock_Time
-        40   -> Clock_Wait
-        40   -> __aeabi_memcpy
-        40   -> __iar_Stoul
-        40   -> printf
-        40   -> processInputData
-        40   -> startTimer
+      48   Attribute_Modified_CB
+        48   -> Clock_Time
+        48   -> Clock_Wait
+        48   -> __aeabi_memcpy
+        48   -> printf
+        48   -> processInputData
+        48   -> sprintf
+        48   -> startTimer
 
 
    Section sizes:
@@ -244,6 +260,7 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
        4  ??DataTable20_1
        4  ??DataTable20_2
        4  ??DataTable20_3
+       4  ??DataTable20_4
       16  ?_0
       16  ?_1
       28  ?_10
@@ -252,9 +269,9 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
       12  ?_13
       28  ?_14
       12  ?_15
-      28  ?_16
-      16  ?_17
-       8  ?_18
+       4  ?_16
+      28  ?_17
+      16  ?_18
       16  ?_2
       64  ?_3
       36  ?_4
@@ -264,7 +281,7 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
        4  ?_8
        4  ?_9
      158  Add_Chat_Service
-     364  Attribute_Modified_CB
+     366  Attribute_Modified_CB
       12  chatServHandle
           TXCharHandle
           RXCharHandle
@@ -272,11 +289,11 @@ C:\School\2014 Fall\ECE 4900\Bluetooth Code\SVN\trunk\Projects V2\Project\BLE_Ch
 
  
   12 bytes in section .bss
-   8 bytes in section .rodata
- 902 bytes in section .text
+  12 bytes in section .rodata
+ 900 bytes in section .text
  
- 902 bytes of CODE  memory
-   8 bytes of CONST memory
+ 900 bytes of CODE  memory
+  12 bytes of CONST memory
   12 bytes of DATA  memory
 
 Errors: none

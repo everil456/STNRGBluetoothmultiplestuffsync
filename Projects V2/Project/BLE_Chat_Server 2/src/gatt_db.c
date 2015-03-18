@@ -83,69 +83,84 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
   printf("got_time: ");
   printf("%lu\n\r",ct);
     if(handle == RXCharHandle + 1){
-      //uint32_t got_time = (uint32_t) ct;
+      uint32_t got_time = (uint32_t) ct;
       
       printf("recieved: ");
         for(int i = 0; i < data_length; i++)
           printf("%c", att_data[i]);
         printf("\r\n");
-        if(att_data[0] == '1'){
-          printf("at index 0 received a 1\n\r");
+        if(att_data[0] == '0'){
+          printf("at index 0 received a 0\n\r");
           if(att_data[1] == 'O'){
-            printf("at index 1 received a O\n\r");
+            printf("at index 1 received an O\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){
               number[p] = att_data[q];
+              
               p++;
             }
-            
             printf("number is: %c%c%c%c\n\r",number[0],number[1],number[2],number[3]);
-            uint32_t time = atoi(number);
-            printf("time: %d\n\r",time);
-            //here lies the value of offset. RIP offset
+            int size = sizeof(number)/sizeof(number[0]);	
+            int q;
+            uint32_t time = 0;
+            for(q = 0; q < size; q++){
+                    uint32_t j = number[q];
+                    int shift = ((size - q)-1)*8;
+                    uint32_t k = j<<shift;
+                    time += k;
+            }           
+            printf("time: %lu\n\r",time);
+            //need to store offset somewhere. Rex where do you want it?
             offset = time;
           }
-          else if(att_data[1] == 'T'){ 
-            printf("at index 1 received a T\n\r");
-            //uint32_t hhtime = got_time;
-            printf("hhtime: ");
-            //printf("%d\n\r", hhtime);
+          else if(att_data[1] == 'T'){
+            printf("at index 1 received a T\n\r");           
+            uint32_t bstime = got_time;
+            printf("bstime: ");
+            printf("%lu\n\r", bstime);
             char message_t[8];
             char number[5];
             message_t[0] = 'H';
             message_t[1] = 'T';
-            //sprintf(number, "%d", hhtime);
+            sprintf(number, "%lu", bstime);
             int p = 0;
             for(int q = 2; q < 6; q++){
               message_t[q] = number[p];
               p++;
             }
-            
             message_t[6] = '\n';
             message_t[7] = '\0';
-            printf(message_t);
             Clock_Wait(500);
-            processInputData(message_t, 8);
-            
-            
+            printf(message_t);
+            processInputData(message_t, 8);  
+          
           }
           else if(att_data[1] == 'E'){
-            printf("at index 1 received a E\n\r");
+            printf("at index 1 received an E\n\r");
             char number[4];
             int p = 0;
             for(int q = 2; q < 6; q++){
               number[p] = att_data[q];
               p++;
             }
-            uint32_t time = atoi(number);
+            int size = sizeof(number)/sizeof(number[0]);	
+            int q;
+            uint32_t time = 0;
+            for(q = 0; q < size; q++){
+                    uint32_t j = number[q];
+                    int shift = ((size - q)-1)*8;
+                    uint32_t k = j<<shift;
+                    time += k;
+            }     
             //trigger event at time
             startTimer(2);
             printf("Event at time: ");
-            printf("%d\n\r", time);
+            printf("%lu\n\r", time);
           }
           
         }
+          
     }
       else if(handle == TXCharHandle + 2){        
         if(att_data[0] == 0x01)

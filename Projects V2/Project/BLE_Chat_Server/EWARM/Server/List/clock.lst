@@ -1,141 +1,69 @@
 ###############################################################################
 #
-<<<<<<< Updated upstream
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  12:44:10
-=======
-<<<<<<< .mine
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  15:46:48
-=======
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        17/Mar/2015  12:44:10
->>>>>>> .r30
->>>>>>> Stashed changes
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  10:36:03
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\platform\STM32L1XX\clock.c
 #    Command line =  
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\platform\STM32L1XX\clock.c" -D USE_STDPERIPH_DRIVER -D STM32L1XX_MD
 #        -D SYSCLK_FREQ_HSI_32MHz -D ENABLE_USB -D ENABLE_USB_PRINTF -D
-#        SERVER=1 -lcN "C:\Users\Rex\Desktop\Github\trunk\Projects
-#        V2\Project\BLE_Chat_Server\EWARM\Server\List\" --diag_suppress Pa050
-#        -o "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        SERVER=1 -lcN "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase
+#        3\trunk\Projects V2\Project\BLE_Chat_Server\EWARM\Server\List\"
+#        --diag_suppress Pa050 -o
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\" --debug --endian=little
 #        --cpu=Cortex-M3 -e --fpu=None --dlib_config "C:\Program Files
 #        (x86)\IAR Systems\Embedded Workbench
 #        7.0\arm\INC\c\DLib_Config_Normal.h" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\inc\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
-#        LE\SimpleBlueNRG_HCI\" -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        LE\SimpleBlueNRG_HCI\" -I
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\Bluetooth
 #        LE\SimpleBlueNRG_HCI\includes\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\" -I
-#        "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32L1xx\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32_USB-FS-Device_Driver\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\I2C\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LIS3DH\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\STLM75\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\HTS221\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\LPS25H\inc\"
-#        -I "C:\Users\Rex\Desktop\Github\trunk\Projects
+#        -I "C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\..\..\..\platform\STM32L1XX\Libraries\SDK_Eval_STM32L\inc\"
 #        -Ohs --use_c++_inline -I "C:\Program Files (x86)\IAR Systems\Embedded
 #        Workbench 7.0\arm\CMSIS\Include\"
 #    List file    =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\List\clock.lst
 #    Object file  =  
-#        C:\Users\Rex\Desktop\Github\trunk\Projects
+#        C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects
 #        V2\Project\BLE_Chat_Server\EWARM\Server\Obj\clock.o
 #
 ###############################################################################
 
-C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
+C:\Users\Ryan\Documents\school\uou\Cadwell\Phase 3\trunk\Projects V2\platform\STM32L1XX\clock.c
       1          #include "clock.h"
       2          #include "hal.h"
-<<<<<<< .mine
-      3          #include <stdio.h>
-      4          
-      5          /* Added define for clock settings */
-      6          #include "SDK_EVAL_Clock.h"
-      7          
-      8          #include "stm32l1xx_systick.h"
-      9          
-     10          // The value that will be load in the SysTick value register.
-     11          #define RELOAD_VALUE        (SYSCLK_FREQ/1000)-1   // One clock each 1 ms
-     12          #define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000)-1   // One clock each 1 ms
-     13          
-     14          static volatile tClockTime count = 0;
-     15          
-     16          const uint32_t CLOCK_SECOND = 1000;
-     17          
-     18          /*---------------------------------------------------------------------------*/
-     19          void SysTick_Handler(void)
-     20          {
-     21            count++;
-     22          }
-     23          
-     24          /*---------------------------------------------------------------------------*/
-     25          
-     26          void Clock_Init(void)
-     27          {
-     28            ATOMIC_SECTION_BEGIN();
-     29          
-     30            SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
-     31            SysTick_SetReload(RELOAD_VALUE);
-     32            SysTick_CounterCmd(SysTick_Counter_Enable);
-     33            SysTick_ITConfig(ENABLE);
-     34          
-     35            ATOMIC_SECTION_END();
-     36          }
-     37          
-     38          void Clock_Suspend(void)
-     39          {
-     40            SysTick->CTRL = 0;
-     41            SysTick_CounterCmd(SysTick_Counter_Clear);
-     42          }
-     43          
-     44          void Clock_Resume(Clock_TypeDef ClockType)
-     45          {
-     46            uint32_t reload_value;
-     47            
-     48            if(ClockType == CLOCK_SLEEP){
-     49              reload_value = RELOAD_VALUE_SLEEP;
-     50            }
-     51            else {
-     52              reload_value = RELOAD_VALUE;
-     53            }  
-     54            
-     55            SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK);
-     56            SysTick_SetReload(reload_value);
-     57            SysTick_CounterCmd(SysTick_Counter_Enable);
-     58            SysTick_ITConfig(ENABLE);
-     59          }
-     60          
-     61          /*---------------------------------------------------------------------------*/
-     62          
-     63          tClockTime Clock_Time(void)
-     64          {
-     65          
-     66            ////printf("inside Clock_Time\r\n");
-=======
       3          
       4          /* Added define for clock settings */
       5          #include "SDK_EVAL_Clock.h"
@@ -143,12 +71,12 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
       7          #include "stm32l1xx_systick.h"
       8          
       9          // The value that will be load in the SysTick value register.
-     10          #define RELOAD_VALUE        (SYSCLK_FREQ/1000000)-1   // One clock each 1 ms
-     11          #define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000000)-1   // One clock each 1 ms
+     10          #define RELOAD_VALUE        (SYSCLK_FREQ/1000)-1   // One clock each 1 ms
+     11          #define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000)-1   // One clock each 1 ms
      12          
      13          static volatile tClockTime count = 0;
      14          
-     15          const uint32_t CLOCK_SECOND = 1000000;
+     15          const uint32_t CLOCK_SECOND = 1000;
      16          
      17          /*---------------------------------------------------------------------------*/
      18          void SysTick_Handler(void)
@@ -197,55 +125,10 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
      61          
      62          tClockTime Clock_Time(void)
      63          {
-     64            return count/1000;
+     64            return count;
      65          }
      66          /*---------------------------------------------------------------------------*/
-<<<<<<< Updated upstream
      67          
-=======
->>>>>>> .r30
-     67          
-<<<<<<< .mine
-     68            return count;
-     69          }
-     70          /*---------------------------------------------------------------------------*/
-     71          
-     72          tClockTime Clock_Timeus(void)
-     73          {
-     74          
-     75            return count;
-     76            
-     77          }
-     78          
-     79          /*---------------------------------------------------------------------------*/
-     80          /**
-     81           * Wait for a multiple of 1 ms.
-     82           *
-     83           */
-     84          void Clock_Wait(uint32_t i)
-     85          {
-     86            tClockTime start;
-     87          
-     88            start = Clock_Time();
-     89            //while(Clock_Time() - start < (tClockTime)(i*1000));
-     90            while(Clock_Time() - start < (tClockTime)(i));
-     91          }
-     92          /*---------------------------------------------------------------------------*/
-     93          /**
-     94           * Wait for a multiple of 1 us.
-     95           *
-     96           */
-     97          void Clock_Waitus(uint32_t i,tClockTime start)
-     98          {
-     99            //tClockTime start;
-    100          
-    101            //start = Clock_Time();
-    102            while(Clock_Time() - start < (tClockTime)(i));
-    103          }
-    104          /*---------------------------------------------------------------------------*/
-    105          
-=======
->>>>>>> Stashed changes
      68          tClockTime Clock_Timeus(void)
      69          {
      70            return count;
@@ -261,26 +144,23 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
      80            tClockTime start;
      81          
      82            start = Clock_Time();
-     83            while(Clock_Time() - start < (tClockTime)(i*1000));
-     84          }
-     85          /*---------------------------------------------------------------------------*/
-     86          /**
-     87           * Wait for a multiple of 1 us.
-     88           *
-     89           */
-     90          void Clock_Waitus(uint32_t i,tClockTime start)
-     91          {
-     92            //tClockTime start;
-     93          
-     94            //start = Clock_Time();
-     95            while(Clock_Time() - start < (tClockTime)(i));
-     96          }
-     97          /*---------------------------------------------------------------------------*/
-     98          
-<<<<<<< Updated upstream
-=======
->>>>>>> .r30
->>>>>>> Stashed changes
+     83            while(Clock_Time() - start < (tClockTime)(i));
+     84            //while(Clock_Time() - start < (tClockTime)(i*1000));
+     85          }
+     86          /*---------------------------------------------------------------------------*/
+     87          /**
+     88           * Wait for a multiple of 1 us.
+     89           *
+     90           */
+     91          void Clock_Waitus(uint32_t i,tClockTime start)
+     92          {
+     93            //tClockTime start;
+     94          
+     95            //start = Clock_Time();
+     96            while(Clock_Time() - start < (tClockTime)(i));
+     97          }
+     98          /*---------------------------------------------------------------------------*/
+     99          
 
    Maximum stack usage in bytes:
 
@@ -312,52 +192,22 @@ C:\Users\Rex\Desktop\Github\trunk\Projects V2\platform\STM32L1XX\clock.c
        4  ??DataTable6
        4  ??DataTable6_1
        4  CLOCK_SECOND
-      38  Clock_Init
+      40  Clock_Init
       40  Clock_Resume
       10  Clock_Suspend
-<<<<<<< Updated upstream
-      14  Clock_Time
-       6  Clock_Timeus
-      30  Clock_Wait
-      20  Clock_Waitus
-=======
-<<<<<<< .mine
        6  Clock_Time
-=======
-      14  Clock_Time
->>>>>>> .r30
        6  Clock_Timeus
-<<<<<<< .mine
       14  Clock_Wait
       12  Clock_Waitus
-=======
-      30  Clock_Wait
-      20  Clock_Waitus
->>>>>>> .r30
->>>>>>> Stashed changes
       10  SysTick_Handler
        4  count
 
  
    4 bytes in section .bss
    4 bytes in section .rodata
-<<<<<<< Updated upstream
- 176 bytes in section .text
- 
- 176 bytes of CODE  memory
-=======
-<<<<<<< .mine
  146 bytes in section .text
-=======
- 176 bytes in section .text
->>>>>>> .r30
  
-<<<<<<< .mine
  146 bytes of CODE  memory
-=======
- 176 bytes of CODE  memory
->>>>>>> .r30
->>>>>>> Stashed changes
    4 bytes of CONST memory
    4 bytes of DATA  memory
 

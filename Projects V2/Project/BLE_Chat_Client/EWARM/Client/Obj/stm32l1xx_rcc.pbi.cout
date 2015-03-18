@@ -263,8 +263,12 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CMSIS\Include
 -D__IAR_COMPILERBASE__=594182
 -D_GOANNA=1
 -D__DATE__="Mar 17 2015"
+<<<<<<< .mine
+-D__TIME__="15:56:40"
+=======
 <<<<<<< Updated upstream
 -D__TIME__="10:02:46"
+>>>>>>> .r34
 =======
 -D__TIME__="15:56:40"
 >>>>>>> Stashed changes
