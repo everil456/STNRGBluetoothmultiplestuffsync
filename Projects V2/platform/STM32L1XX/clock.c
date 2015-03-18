@@ -8,19 +8,37 @@
 #include "stm32l1xx_systick.h"
 
 // The value that will be load in the SysTick value register.
-#define RELOAD_VALUE        (SYSCLK_FREQ/1000)-1   // One clock each 1 ms
+#define RELOAD_VALUE        (SYSCLK_FREQ/500000)-1   // One clock each 2 us
 #define RELOAD_VALUE_SLEEP  (SYSCLK_FREQ_SLEEP/1000)-1   // One clock each 1 ms
 
-static volatile tClockTime count = 0;
+void processInputData(uint8_t * rx_data, uint16_t data_size);
+
+volatile tClockTime count, countr, counter, eventr = 6500000; //defined in Main
+volatile u8 eventEanble = 0;
 
 const uint32_t CLOCK_SECOND = 1000;
 
 /*---------------------------------------------------------------------------*/
 void SysTick_Handler(void)
 {
-  count++;
+  countr++;
+  counter++;
+  
+  if(counter >= 500)
+  {
+    counter = 0;
+    count++;
+  }
+  if(countr >= eventr)//&&(eventEanble)
+  {
+    //printf("%d\n\r%d\n\r%d\n\r", count, eventr, countr);
+    //startTimer(2);
+    uint8_t a[3]={'0','T','\n'};
+    uint8_t b[3]={'1','T','\n'};
+    uint16_t size = sizeof(a)/sizeof(a[0]);
+    //eventr += 7654321;
+  }
 }
-
 /*---------------------------------------------------------------------------*/
 
 void Clock_Init(void)
@@ -62,17 +80,27 @@ void Clock_Resume(Clock_TypeDef ClockType)
 
 tClockTime Clock_Time(void)
 {
+<<<<<<< .mine
+=======
 
+>>>>>>> .r36
   return count;
+<<<<<<< .mine
+=======
   ////printf("inside Clock_Time\r\n");
+>>>>>>> .r36
 }
 /*---------------------------------------------------------------------------*/
 
 tClockTime Clock_Timeus(void)
 {
+<<<<<<< .mine
+  return countr;
+=======
 
   return count;
   
+>>>>>>> .r36
 }
 
 /*---------------------------------------------------------------------------*/
@@ -85,8 +113,13 @@ void Clock_Wait(uint32_t i)
   tClockTime start;
 
   start = Clock_Time();
+<<<<<<< .mine
+=======
 
+>>>>>>> .r36
   while(Clock_Time() - start < (tClockTime)(i));
+<<<<<<< .mine
+=======
   //while(Clock_Time() - start < (tClockTime)(i*1000));
 
   while(Clock_Time() - start < (tClockTime)(i*1000));
@@ -94,18 +127,19 @@ void Clock_Wait(uint32_t i)
   //while(Clock_Time() - start < (tClockTime)(i*1000));
   while(Clock_Time() - start < (tClockTime)(i));
 
+>>>>>>> .r36
 }
 /*---------------------------------------------------------------------------*/
 /**
  * Wait for a multiple of 1 us.
  *
  */
-void Clock_Waitus(uint32_t i,tClockTime start)
+void Clock_Waitus(uint32_t i)
 {
-  //tClockTime start;
+  tClockTime startus;
 
-  //start = Clock_Time();
-  while(Clock_Time() - start < (tClockTime)(i));
+  startus = Clock_Timeus();
+  while(Clock_Timeus() - startus < (tClockTime)(i));
 }
 /*---------------------------------------------------------------------------*/
 
