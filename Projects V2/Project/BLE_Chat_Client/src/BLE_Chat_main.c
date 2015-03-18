@@ -384,10 +384,6 @@ int main(void)
             //Schedule measuring event
             startTimer(2);
         }*/
-        //printf("%d\n\r",Clock_Time());
-        tClockTime ct, mod;
-        ct = Clock_Timeus();
-        mod = ct % 10000000;
         if(syncReq == 1)
         { 
         syncReq = 0;  
