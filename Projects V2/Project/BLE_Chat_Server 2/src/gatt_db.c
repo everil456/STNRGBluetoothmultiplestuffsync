@@ -79,7 +79,7 @@ fail:
 void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_data)
 {
   tClockTime ct;
-  ct = Clock_Time();
+  ct = Clock_Timeus();
   printf("got_time: ");
   printf("%lu\n\r",ct);
     if(handle == RXCharHandle + 1){
@@ -150,7 +150,7 @@ void Attribute_Modified_CB(uint16_t handle, uint8_t data_length, uint8_t *att_da
             }
             message_t[6] = '\n';
             message_t[7] = '\0';
-            Clock_Wait(500);
+            Clock_Wait(50);
             printf(message_t);
             processInputData(message_t, 8);  
           
