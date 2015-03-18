@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  14:13:34
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  14:22:39
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -271,7 +271,7 @@ C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects V2\Project\
     197          /* Private variables ---------------------------------------------------------*/
     198          volatile int app_flags = SET_CONNECTABLE;                       //Set the devices connectable by setting a flag
     199          volatile uint16_t connection_handle = 0;                        //Unique connection handle for a given connection
-    200          extern uint16_t chatServHandle, TXCharHandle, RXCharHandle, syncReq;     //Unique handles for the chat service, TX characteristic and RX characteristic
+    200          extern uint16_t chatServHandle, TXCharHandle, RXCharHandle, syncReq = 0;     //Unique handles for the chat service, TX characteristic and RX characteristic
     201          struct timer l2cap_req_timer;                                   //Timer used when connection parameters are requested
     202          //volatile int numConnected = 0;
     203          volatile int flag_scan_complete = 0;
@@ -1119,17 +1119,18 @@ C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects V2\Project\
      420  main
        2  rx_handle
      134  send_times
+       2  syncReq
        2  tx_handle
 
  
-    26 bytes in section .bss
+    28 bytes in section .bss
     16 bytes in section .data
     14 bytes in section .rodata
  2 687 bytes in section .text
  
  2 687 bytes of CODE  memory
     14 bytes of CONST memory
-    42 bytes of DATA  memory
+    44 bytes of DATA  memory
 
 Errors: none
 Warnings: 10

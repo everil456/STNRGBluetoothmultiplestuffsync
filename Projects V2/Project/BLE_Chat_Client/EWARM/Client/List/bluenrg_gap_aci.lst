@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  14:13:35
+# IAR ANSI C/C++ Compiler V7.30.4.8167/W32 for ARM        18/Mar/2015  14:22:40
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
@@ -1172,14 +1172,14 @@ C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects V2\Bluetoot
       72  aci_gap_authorization_response
       72  aci_gap_clear_security_database
       72  aci_gap_configure_whitelist
-     134  aci_gap_create_connection
+     136  aci_gap_create_connection
       68  aci_gap_delete_ad_type
      106  aci_gap_get_security_level
      108  aci_gap_init
       76  aci_gap_pass_key_response
       78  aci_gap_resolve_private_address
       76  aci_gap_send_pairing_request
-     118  aci_gap_set_auth_requirement
+     116  aci_gap_set_auth_requirement
       72  aci_gap_set_author_requirement
       86  aci_gap_set_direct_connectable
      194  aci_gap_set_discoverable

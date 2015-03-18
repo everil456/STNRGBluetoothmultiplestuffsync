@@ -287,6 +287,12 @@
       <file>$PROJ_DIR$\..\inc\usb_pwr.h</file>
       <file>$PROJ_DIR$\Client\Obj\hci.o</file>
       <file>$PROJ_DIR$\..\..\..\platform\STM32L1XX\Libraries\STM32L1xx_StdPeriph_Driver\inc\misc.h</file>
+      <file>$PROJ_DIR$\Client\List\BLE_Chat.map</file>
+      <file>$PROJ_DIR$\stm32l1xx_flash.icf</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
       <file>$PROJ_DIR$\Client\List\osal.lst</file>
       <file>$PROJ_DIR$\Client\List\chat.lst</file>
       <file>$PROJ_DIR$\Client\List\bluenrg_gatt_aci.lst</file>
@@ -352,7 +358,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 298 279</file>
+          <file> 304 279</file>
         </tool>
       </outputs>
       <inputs>
@@ -375,7 +381,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 288 140</file>
+          <file> 294 140</file>
         </tool>
       </outputs>
       <inputs>
@@ -398,7 +404,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 283 215</file>
+          <file> 289 215</file>
         </tool>
       </outputs>
       <inputs>
@@ -421,7 +427,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 290 217</file>
+          <file> 296 217</file>
         </tool>
       </outputs>
       <inputs>
@@ -444,7 +450,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 291 165</file>
+          <file> 297 165</file>
         </tool>
       </outputs>
       <inputs>
@@ -467,7 +473,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 287 256</file>
+          <file> 293 256</file>
         </tool>
       </outputs>
       <inputs>
@@ -486,7 +492,7 @@
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 104</file>
+          <file> 104 281</file>
         </tool>
       </outputs>
     </file>
@@ -499,14 +505,10 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 323 190</file>
+          <file> 329 190</file>
         </tool>
       </outputs>
       <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 182 199 170 211 151 195 277 122 136 255 266 85 86 99 222 275 154 92 204 174 265 207 232 209 224 184 270 216 146 280 246 239 84 249 187 212 131 223 142 102 197 163 118 243 109 173 160 185 114 81 134</file>
-        </tool>
         <tool>
           <name>ICCARM</name>
           <file> 246 211 195 174 232 266 249 212 131 207 187 239 85 223 84 255 265 209 142 86 102 224 197 170 163 184 118 99 243 270 109 277 173 216 160 222 185 146 114 182 81 280 122 134 275 151 154 136 92 199 204</file>
@@ -522,7 +524,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 332 192</file>
+          <file> 338 192</file>
         </tool>
       </outputs>
       <inputs>
@@ -545,7 +547,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 303 79</file>
+          <file> 309 79</file>
         </tool>
       </outputs>
       <inputs>
@@ -568,7 +570,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 308 205</file>
+          <file> 314 205</file>
         </tool>
       </outputs>
       <inputs>
@@ -591,7 +593,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 322 107</file>
+          <file> 328 107</file>
         </tool>
       </outputs>
       <inputs>
@@ -614,7 +616,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 310 128</file>
+          <file> 316 128</file>
         </tool>
       </outputs>
       <inputs>
@@ -637,7 +639,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 293 226</file>
+          <file> 299 226</file>
         </tool>
       </outputs>
       <inputs>
@@ -660,7 +662,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 317 159</file>
+          <file> 323 159</file>
         </tool>
       </outputs>
       <inputs>
@@ -683,7 +685,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 314 229</file>
+          <file> 320 229</file>
         </tool>
       </outputs>
       <inputs>
@@ -706,7 +708,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 305 231</file>
+          <file> 311 231</file>
         </tool>
       </outputs>
       <inputs>
@@ -729,7 +731,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 304 208</file>
+          <file> 310 208</file>
         </tool>
       </outputs>
       <inputs>
@@ -752,7 +754,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 328 72</file>
+          <file> 334 72</file>
         </tool>
       </outputs>
       <inputs>
@@ -775,7 +777,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 296 227</file>
+          <file> 302 227</file>
         </tool>
       </outputs>
       <inputs>
@@ -798,7 +800,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 286 78</file>
+          <file> 292 78</file>
         </tool>
       </outputs>
       <inputs>
@@ -821,7 +823,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 302 189</file>
+          <file> 308 189</file>
         </tool>
       </outputs>
       <inputs>
@@ -844,7 +846,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 316 87</file>
+          <file> 322 87</file>
         </tool>
       </outputs>
       <inputs>
@@ -867,7 +869,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 318 186</file>
+          <file> 324 186</file>
         </tool>
       </outputs>
       <inputs>
@@ -890,7 +892,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 313 144</file>
+          <file> 319 144</file>
         </tool>
       </outputs>
     </file>
@@ -903,7 +905,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 299 273</file>
+          <file> 305 273</file>
         </tool>
       </outputs>
     </file>
@@ -916,13 +918,13 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 289 103</file>
+          <file> 295 103</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 276 55 114 105 211 53 269 255 187 197 54 210 65 176 234 232 249 109 122 11 56 60 193 83 67 61 46 271 213 156 195 212 266 223 85 142 118 160 136 10 44 246 0 66 179 89 251 194 155 174 239 84 131 102 163 243 173 185 81 151 199 3 1 48 106 265 207 209 86 224 170 184 99 270 277 216 222 146 182 280 275 154 92 204 134 57 5 59 64 132 157 272 202 200 201</file>
+          <file> 67 114 105 211 276 46 156 255 187 197 54 61 194 232 249 109 122 11 56 60 193 83 210 55 65 176 234 195 212 266 223 85 142 118 160 136 10 44 246 0 66 179 53 271 89 213 251 155 269 174 239 84 131 102 163 243 173 185 81 151 199 3 1 48 106 265 207 209 86 224 170 184 99 270 277 216 222 146 182 280 275 154 92 204 134 57 5 59 64 132 157 272 202 200 201</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -939,7 +941,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 324 178</file>
+          <file> 330 178</file>
         </tool>
       </outputs>
       <inputs>
@@ -962,7 +964,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 282 90</file>
+          <file> 288 90</file>
         </tool>
       </outputs>
       <inputs>
@@ -985,7 +987,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 300 180</file>
+          <file> 306 180</file>
         </tool>
       </outputs>
       <inputs>
@@ -1008,10 +1010,14 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 312 112</file>
+          <file> 318 112</file>
         </tool>
       </outputs>
       <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 211 84 232 243 174 102 185 161 239 131 163 173 81 195 255 265 249 187 212 266 223 85 142 197 118 109 160 114 100 207 209 86 224 170 184 99 270 277 216 222 146 182 280</file>
+        </tool>
         <tool>
           <name>ICCARM</name>
           <file> 100 161 211 195 174 232 266 249 212 131 207 187 239 85 223 84 255 265 209 142 86 102 224 197 170 163 184 118 99 243 270 109 277 173 216 160 222 185 146 114 182 81 280</file>
@@ -1027,7 +1033,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 330 139</file>
+          <file> 336 139</file>
         </tool>
       </outputs>
       <inputs>
@@ -1050,7 +1056,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 295 116</file>
+          <file> 301 116</file>
         </tool>
       </outputs>
     </file>
@@ -1063,7 +1069,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 309 177</file>
+          <file> 315 177</file>
         </tool>
       </outputs>
       <inputs>
@@ -1086,7 +1092,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 331 133</file>
+          <file> 337 133</file>
         </tool>
       </outputs>
       <inputs>
@@ -1109,7 +1115,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 307 198</file>
+          <file> 313 198</file>
         </tool>
       </outputs>
     </file>
@@ -1122,7 +1128,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 329 225</file>
+          <file> 335 225</file>
         </tool>
       </outputs>
       <inputs>
@@ -1145,7 +1151,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 284 188</file>
+          <file> 290 188</file>
         </tool>
       </outputs>
       <inputs>
@@ -1168,7 +1174,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 292</file>
+          <file> 298 240</file>
         </tool>
       </outputs>
       <inputs>
@@ -1200,7 +1206,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 285 143</file>
+          <file> 291 143</file>
         </tool>
       </outputs>
       <inputs>
@@ -1223,7 +1229,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 315 206</file>
+          <file> 321 206</file>
         </tool>
       </outputs>
       <inputs>
@@ -1246,7 +1252,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 311 91</file>
+          <file> 317 91</file>
         </tool>
       </outputs>
       <inputs>
@@ -1269,7 +1275,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 297 233</file>
+          <file> 303 233</file>
         </tool>
       </outputs>
       <inputs>
@@ -1292,7 +1298,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 320 241</file>
+          <file> 326 241</file>
         </tool>
       </outputs>
       <inputs>
@@ -1315,7 +1321,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 281 152</file>
+          <file> 287 152</file>
         </tool>
       </outputs>
       <inputs>
@@ -1338,7 +1344,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 294 167</file>
+          <file> 300 167</file>
         </tool>
       </outputs>
       <inputs>
@@ -1361,7 +1367,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 335 121</file>
+          <file> 341 121</file>
         </tool>
       </outputs>
       <inputs>
@@ -1384,7 +1390,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 321 111</file>
+          <file> 327 111</file>
         </tool>
       </outputs>
       <inputs>
@@ -1407,7 +1413,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 334 203</file>
+          <file> 340 203</file>
         </tool>
       </outputs>
       <inputs>
@@ -1430,7 +1436,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 333 250</file>
+          <file> 339 250</file>
         </tool>
       </outputs>
       <inputs>
@@ -1453,7 +1459,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 319 261</file>
+          <file> 325 261</file>
         </tool>
       </outputs>
       <inputs>
@@ -1476,7 +1482,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 325 124</file>
+          <file> 331 124</file>
         </tool>
       </outputs>
       <inputs>
@@ -1499,7 +1505,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 326 126</file>
+          <file> 332 126</file>
         </tool>
       </outputs>
       <inputs>
@@ -1522,7 +1528,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 327 88</file>
+          <file> 333 88</file>
         </tool>
       </outputs>
       <inputs>
@@ -1545,7 +1551,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 301 110</file>
+          <file> 307 110</file>
         </tool>
       </outputs>
       <inputs>
@@ -1568,7 +1574,7 @@
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 306 264</file>
+          <file> 312 264</file>
         </tool>
       </outputs>
       <inputs>
@@ -1586,10 +1592,20 @@
       <name>$PROJ_DIR$\Client\Exe\BLE_Chat.out</name>
       <outputs>
         <tool>
+          <name>ILINK</name>
+          <file> 281</file>
+        </tool>
+        <tool>
           <name>OBJCOPY</name>
           <file> 191</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 282 103 217 215 140 165 256 90 240 180 226 188 143 279 227 233 167 78 152 273 116 144 198 261 206 91 205 110 245 159 189 229 79 231 264 177 87 208 186 128 112 178 133 88 241 124 107 121 111 225 190 126 192 250 203 72 139 283 286 284 285</file>
+        </tool>
+      </inputs>
     </file>
   </configuration>
   <configuration>

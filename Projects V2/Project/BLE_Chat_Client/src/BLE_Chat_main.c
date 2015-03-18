@@ -197,7 +197,7 @@ NOTES:
 /* Private variables ---------------------------------------------------------*/
 volatile int app_flags = SET_CONNECTABLE;                       //Set the devices connectable by setting a flag
 volatile uint16_t connection_handle = 0;                        //Unique connection handle for a given connection
-extern uint16_t chatServHandle, TXCharHandle, RXCharHandle, syncReq;     //Unique handles for the chat service, TX characteristic and RX characteristic
+extern uint16_t chatServHandle, TXCharHandle, RXCharHandle, syncReq = 0;     //Unique handles for the chat service, TX characteristic and RX characteristic
 struct timer l2cap_req_timer;                                   //Timer used when connection parameters are requested
 //volatile int numConnected = 0;
 volatile int flag_scan_complete = 0;

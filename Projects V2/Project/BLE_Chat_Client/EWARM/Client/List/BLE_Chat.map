@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.30.4.8167/W32 for ARM                 18/Mar/2015  14:14:10
+# IAR ELF Linker V7.30.4.8167/W32 for ARM                 18/Mar/2015  14:23:16
 # Copyright 2007-2014 IAR Systems AB.
 #
 #    Output file  =  
@@ -132,15 +132,6 @@
 #        __iar_sh_stdout=__iar_sh_stdout_swo --vfe
 #
 ###############################################################################
-
-*******************************************************************************
-*** MESSAGES
-***
-
-Error[Li005]: no definition for "syncReq" [referenced from
-          C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects
-          V2\Project\BLE_Chat_Client\EWARM\Client\Obj\BLE_Chat_main.o]
-
 
 *******************************************************************************
 *** RUNTIME MODEL ATTRIBUTES
@@ -276,7 +267,7 @@ __SystemLibrary = DLib
   .text               ro code  0x08007460     0x4  startup_stm32l1xx_md.o [1]
   .rodata             const    0x08007464     0x0  zero_init3.o [4]
   .rodata             const    0x08007464     0x0  copy_init3.o [4]
-  Initializer bytes   const    0x08007464   0x1c4  <for P2 s0> (used: 0x0)
+  Initializer bytes   const    0x08007464   0x1c4  <for P2 s0>
                              - 0x08007628  0x4534
 
 "P2":                                      0x1b28
@@ -304,7 +295,7 @@ __SystemLibrary = DLib
   .bss                zero     0x20000ed8    0x14  flags.o [1]
   .bss                zero     0x20000eec     0xc  BLE_Chat_main.o [1]
   .bss                zero     0x20000ef8     0x6  gatt_db.o [1]
-  .bss                zero     0x20000efe     0x2  usb_init.o [1]
+  .bss                zero     0x20000efe     0x2  BLE_Chat_main.o [1]
   .bss                zero     0x20000f00     0x4  push_button.o [1]
   .bss                zero     0x20000f04     0x4  SDK_EVAL_Io.o [1]
   .bss                zero     0x20000f08     0x4  usb_core.o [1]
@@ -312,11 +303,12 @@ __SystemLibrary = DLib
   .bss                zero     0x20000f10     0x4  usb_int.o [1]
   .bss                zero     0x20000f14     0x4  usb_istr.o [1]
   .bss                zero     0x20000f18     0x4  usb_pwr.o [1]
-  .bss                zero     0x20000f1c     0x1  hw_config.o [1]
-  .bss                zero     0x20000f1d     0x1  SDK_EVAL_Config.o [1]
-  .bss                zero     0x20000f1e     0x1  usb_core.o [1]
-  .bss                zero     0x20000f1f     0x1  usb_init.o [1]
-  .bss                zero     0x20000f20     0x1  usb_prop.o [1]
+  .bss                zero     0x20000f1c     0x2  usb_init.o [1]
+  .bss                zero     0x20000f1e     0x1  hw_config.o [1]
+  .bss                zero     0x20000f1f     0x1  SDK_EVAL_Config.o [1]
+  .bss                zero     0x20000f20     0x1  usb_core.o [1]
+  .bss                zero     0x20000f21     0x1  usb_init.o [1]
+  .bss                zero     0x20000f22     0x1  usb_prop.o [1]
   CSTACK                       0x20000f28   0xc00  <Block>
     CSTACK            uninit   0x20000f28   0xc00  <Block tail>
                              - 0x20001b28  0x1b28
@@ -329,8 +321,8 @@ __SystemLibrary = DLib
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0xd5d:
-          0x200001c4  0xd5d
+    1 destination range, total size 0xd5f:
+          0x200001c4  0xd5f
 
 Copy (__iar_copy_init3)
     1 source range, total size 0x1c4:
@@ -347,7 +339,7 @@ Copy (__iar_copy_init3)
     Module                  ro code  ro data  rw data
     ------                  -------  -------  -------
 C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects V2\Project\BLE_Chat_Client\EWARM\Client\Obj: [1]
-    BLE_Chat_main.o           2 696       16       28
+    BLE_Chat_main.o           2 696       16       30
     SDK_EVAL_Config.o           200                 1
     SDK_EVAL_Io.o                36                 4
     SDK_EVAL_Spi_Driver.o     1 622      148      148
@@ -394,7 +386,7 @@ C:\Users\Rex\Desktop\Github\STNRGBluetoothmultiplestuffsync\Projects V2\Project\
     usb_regs.o                  518
     usb_sil.o                    64
     -------------------------------------------------
-    Total:                   14 838      636    3 869
+    Total:                   14 838      636    3 871
 
 command line: [2]
     -------------------------------------------------
@@ -439,7 +431,7 @@ shb_l.a: [5]
     Gaps                         24
     Linker created                        36    3 072
 -----------------------------------------------------
-    Grand Total:             17 284      676    6 945
+    Grand Total:             17 284      676    6 947
 
 
 *******************************************************************************
@@ -471,7 +463,7 @@ Clock_Time              0x080043a9    0x6  Code  Gb  clock.o [1]
 Clock_Wait              0x080043af    0xe  Code  Gb  clock.o [1]
 Config_Descriptor       0x200001b4    0x8  Data  Gb  usb_prop.o [1]
 DataStageIn             0x080065ff   0xb4  Code  Lc  usb_core.o [1]
-Data_Mul_MaxPacketSize  0x20000f1e    0x1  Data  Gb  usb_core.o [1]
+Data_Mul_MaxPacketSize  0x20000f20    0x1  Data  Gb  usb_core.o [1]
 Data_Setup0             0x080067b7  0x1ba  Code  Lc  usb_core.o [1]
 DebugMon_Handler        0x0800738d    0x2  Code  Gb  stm32l1xx_it.o [1]
 Device_Descriptor       0x200001ac    0x8  Data  Gb  usb_prop.o [1]
@@ -481,7 +473,7 @@ Device_Table            0x200001bc    0x4  Data  Gb  usb_prop.o [1]
 Disable_SPI_IRQ         0x08004a9d   0x1c  Code  Gb  SDK_EVAL_Spi_Driver.o [1]
 EP1_IN_Callback         0x080071dd   0x5c  Code  Gb  usb_endp.o [1]
 EP3_OUT_Callback        0x08007239   0x1e  Code  Gb  usb_endp.o [1]
-EPindex                 0x20000f1f    0x1  Data  Gb  usb_init.o [1]
+EPindex                 0x20000f21    0x1  Data  Gb  usb_init.o [1]
 EXTI15_10_IRQHandler    0x08007395    0x4  Code  Gb  stm32l1xx_it.o [1]
 EXTI9_5_IRQHandler      0x0800411b   0x24  Code  Gb  push_button.o [1]
 EXTI_ClearFlag          0x0800597d    0x6  Code  Gb  stm32l1xx_exti.o [1]
@@ -542,7 +534,7 @@ RCC_Configuration       0x08003cd5   0x2a  Code  Gb  hw_config.o [1]
 RXCharHandle            0x20000efc    0x2  Data  Gb  gatt_db.o [1]
 Region$$Table$$Base     0x08007318          --   Gb  - Linker created -
 Region$$Table$$Limit    0x0800733c          --   Gb  - Linker created -
-Request                 0x20000f20    0x1  Data  Gb  usb_prop.o [1]
+Request                 0x20000f22    0x1  Data  Gb  usb_prop.o [1]
 SOF_Callback            0x08007257   0x1e  Code  Gb  usb_endp.o [1]
 SPI_Cmd                 0x08006055   0x14  Code  Gb  stm32l1xx_spi.o [1]
 SPI_Configure_Platform  0x08004745  0x16e  Code  Lc  SDK_EVAL_Spi_Driver.o [1]
@@ -702,10 +694,10 @@ _call_main              0x08007349         Code  Gb  cmain.o [4]
 _exit                   0x08007361         Code  Gb  cexit.o [4]
 _main                   0x08007353         Code  Gb  cmain.o [4]
 aci_gap_create_connection
-                        0x080050c1   0x86  Code  Gb  bluenrg_gap_aci.o [1]
+                        0x080050bf   0x88  Code  Gb  bluenrg_gap_aci.o [1]
 aci_gap_init            0x08004fdf   0x6c  Code  Gb  bluenrg_gap_aci.o [1]
 aci_gap_set_auth_requirement
-                        0x0800504b   0x76  Code  Gb  bluenrg_gap_aci.o [1]
+                        0x0800504b   0x74  Code  Gb  bluenrg_gap_aci.o [1]
 aci_gatt_disc_charac_by_uuid
                         0x08004e7f   0x82  Code  Gb  bluenrg_gatt_aci.o [1]
 aci_gatt_init           0x08004e45   0x3a  Code  Gb  bluenrg_gatt_aci.o [1]
@@ -775,7 +767,7 @@ processInputData        0x08005175  0x148  Code  Gb  chat.o [1]
 putchar                 0x08003eed   0x74  Code  Gb  hw_config.o [1]
 readPacketListFull      0x200009a4    0x1  Data  Gb  hci.o [1]
 s2i                     0x080052dd    0x8  Code  Gb  syncr.o [1]
-s_SdkEvalVersion        0x20000f1d    0x1  Data  Lc  SDK_EVAL_Config.o [1]
+s_SdkEvalVersion        0x20000f1f    0x1  Data  Lc  SDK_EVAL_Config.o [1]
 s_SpiCsPin              0x20000060    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
 s_SpiCsPinVersion       0x08004d50    0x8  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
 s_SpiCsPort             0x2000005c    0x4  Data  Lc  SDK_EVAL_Spi_Driver.o [1]
@@ -836,10 +828,11 @@ slaves                  0x200000c4   0x18  Data  Gb  slave_devices.o [1]
 sprintf                 0x08005351   0x34  Code  Gb  sprintf.o [3]
 strchr                  0x08006225         Code  Gb  strchr.o [4]
 strlen                  0x0800623d         Code  Gb  strlen.o [4]
+syncReq                 0x20000efe    0x2  Data  Gb  BLE_Chat_main.o [1]
 synccount               0x2000018c    0x4  Data  Gb  clock.o [1]
 turnLED                 0x08004049   0x9e  Code  Gb  led.o [1]
-user_timer_expired      0x20000f1c    0x1  Data  Gb  hw_config.o [1]
-wInterrupt_Mask         0x20000efe    0x2  Data  Gb  usb_init.o [1]
+user_timer_expired      0x20000f1e    0x1  Data  Gb  hw_config.o [1]
+wInterrupt_Mask         0x20000f1c    0x2  Data  Gb  usb_init.o [1]
 wIstr                   0x20000f16    0x2  Data  Gb  usb_istr.o [1]
 
 
@@ -851,7 +844,7 @@ wIstr                   0x20000f16    0x2  Data  Gb  usb_istr.o [1]
 
   17 284 bytes of readonly  code memory
      676 bytes of readonly  data memory
-   6 945 bytes of readwrite data memory
+   6 947 bytes of readwrite data memory
 
-Errors: 1
+Errors: none
 Warnings: none
